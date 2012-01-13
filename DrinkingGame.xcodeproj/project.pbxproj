@@ -91,6 +91,8 @@
 				3F34A41314C05F340056DAE5 /* Alkocounter.m */,
 				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
 				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
+				1446C72814C0609600BAC380 /* DGSpelare.h */,
+				1446C72914C0609600BAC380 /* DGSpelare.m */,
 			);
 			path = DrinkingGame;
 			sourceTree = "<group>";
