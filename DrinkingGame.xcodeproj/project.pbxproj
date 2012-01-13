@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F34A41414C05F340056DAE5 /* Alkocounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F34A41314C05F340056DAE5 /* Alkocounter.m */; };
 		3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFEC814C04EF300A992F7 /* UIKit.framework */; };
 		3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECA14C04EF300A992F7 /* Foundation.framework */; };
 		3F3AFECD14C04EF300A992F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECC14C04EF300A992F7 /* CoreGraphics.framework */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F34A41214C05F340056DAE5 /* Alkocounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alkocounter.h; sourceTree = "<group>"; };
+		3F34A41314C05F340056DAE5 /* Alkocounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alkocounter.m; sourceTree = "<group>"; };
 		3F3AFEC414C04EF300A992F7 /* DrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3AFEC814C04EF300A992F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F3AFECA14C04EF300A992F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,6 +87,8 @@
 				3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */,
 				3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */,
 				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
+				3F34A41214C05F340056DAE5 /* Alkocounter.h */,
+				3F34A41314C05F340056DAE5 /* Alkocounter.m */,
 				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
 				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
 			);
@@ -164,6 +169,7 @@
 				3F3AFED514C04EF300A992F7 /* main.m in Sources */,
 				3F3AFED914C04EF300A992F7 /* DrinkingGameAppDelegate.m in Sources */,
 				3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */,
+				3F34A41414C05F340056DAE5 /* Alkocounter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +287,7 @@
 				3F3AFEE714C04EF300A992F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
