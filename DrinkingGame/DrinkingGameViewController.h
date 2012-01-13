@@ -10,5 +10,5 @@
 
 @interface DrinkingGameViewController : UIViewController
 
-//homo
+//moj rasse
 @end
