@@ -10,4 +10,9 @@
 
 @interface DGSpelare : NSObject
 
+@property (nonatomic, retain) NSString *gender;
+@property (nonatomic, retain) NSNumber *weight;
+@property (nonatomic, retain) UIImage *picture;
+@property (nonatomic, retain) NSNumber *alcoholQuantity;
+
 @end

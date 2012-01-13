@@ -10,4 +10,9 @@
 
 @implementation DGSpelare
 
+@synthesize gender;
+@synthesize weight;
+@synthesize picture;
+@synthesize alcoholQuantity;
+
 @end
