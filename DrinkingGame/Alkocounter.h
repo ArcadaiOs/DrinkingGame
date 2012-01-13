@@ -7,6 +7,6 @@
 //
 
 
-@interface Alkocounter : Alkocounter
+@interface Alkocounter : NSObject
 
 @end

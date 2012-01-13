@@ -21,7 +21,6 @@
 #pragma mark - View lifecycle
 
 //test1//
-//test2//
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
