@@ -3,6 +3,7 @@
 //  DrinkingGame
 //
 //  Created by Andrej Scherbakov-Parland on 1/13/12.
+// Edited bu Jon Ståhlström on 1/13/12
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
