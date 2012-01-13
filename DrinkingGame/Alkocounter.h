@@ -7,7 +7,6 @@
 //
 
 
-//jens was here sd
 @interface Alkocounter : Alkocounter
 
 @end
