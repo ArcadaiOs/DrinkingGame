@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFEC814C04EF300A992F7 /* UIKit.framework */; };
+		3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECA14C04EF300A992F7 /* Foundation.framework */; };
+		3F3AFECD14C04EF300A992F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECC14C04EF300A992F7 /* CoreGraphics.framework */; };
+		3F3AFED314C04EF300A992F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFED114C04EF300A992F7 /* InfoPlist.strings */; };
+		3F3AFED514C04EF300A992F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFED414C04EF300A992F7 /* main.m */; };
+		3F3AFED914C04EF300A992F7 /* DrinkingGameAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFED814C04EF300A992F7 /* DrinkingGameAppDelegate.m */; };
+		3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */; };
+		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
+		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3F3AFEC414C04EF300A992F7 /* DrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F3AFEC814C04EF300A992F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3F3AFECA14C04EF300A992F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3F3AFECC14C04EF300A992F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3F3AFED014C04EF300A992F7 /* DrinkingGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrinkingGame-Info.plist"; sourceTree = "<group>"; };
+		3F3AFED214C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3F3AFED414C04EF300A992F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F3AFED614C04EF300A992F7 /* DrinkingGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrinkingGame-Prefix.pch"; sourceTree = "<group>"; };
+		3F3AFED714C04EF300A992F7 /* DrinkingGameAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrinkingGameAppDelegate.h; sourceTree = "<group>"; };
+		3F3AFED814C04EF300A992F7 /* DrinkingGameAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkingGameAppDelegate.m; sourceTree = "<group>"; };
+		3F3AFEDB14C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrinkingGameViewController.h; sourceTree = "<group>"; };
+		3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkingGameViewController.m; sourceTree = "<group>"; };
+		3F3AFEE114C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DrinkingGameViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F3AFEC114C04EF300A992F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */,
+				3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */,
+				3F3AFECD14C04EF300A992F7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F3AFEB914C04EF300A992F7 = {
+			isa = PBXGroup;
+			children = (
+				3F3AFECE14C04EF300A992F7 /* DrinkingGame */,
+				3F3AFEC714C04EF300A992F7 /* Frameworks */,
+				3F3AFEC514C04EF300A992F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F3AFEC514C04EF300A992F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F3AFEC414C04EF300A992F7 /* DrinkingGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F3AFEC714C04EF300A992F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F3AFEC814C04EF300A992F7 /* UIKit.framework */,
+				3F3AFECA14C04EF300A992F7 /* Foundation.framework */,
+				3F3AFECC14C04EF300A992F7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F3AFECE14C04EF300A992F7 /* DrinkingGame */ = {
+			isa = PBXGroup;
+			children = (
+				3F3AFED714C04EF300A992F7 /* DrinkingGameAppDelegate.h */,
+				3F3AFED814C04EF300A992F7 /* DrinkingGameAppDelegate.m */,
+				3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */,
+				3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */,
+				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
+				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
+				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
+			);
+			path = DrinkingGame;
+			sourceTree = "<group>";
+		};
+		3F3AFECF14C04EF300A992F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F3AFED014C04EF300A992F7 /* DrinkingGame-Info.plist */,
+				3F3AFED114C04EF300A992F7 /* InfoPlist.strings */,
+				3F3AFED414C04EF300A992F7 /* main.m */,
+				3F3AFED614C04EF300A992F7 /* DrinkingGame-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F3AFEC314C04EF300A992F7 /* DrinkingGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F3AFEE514C04EF300A992F7 /* Build configuration list for PBXNativeTarget "DrinkingGame" */;
+			buildPhases = (
+				3F3AFEC014C04EF300A992F7 /* Sources */,
+				3F3AFEC114C04EF300A992F7 /* Frameworks */,
+				3F3AFEC214C04EF300A992F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DrinkingGame;
+			productName = DrinkingGame;
+			productReference = 3F3AFEC414C04EF300A992F7 /* DrinkingGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F3AFEBB14C04EF300A992F7 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3F3AFEBE14C04EF300A992F7 /* Build configuration list for PBXProject "DrinkingGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3F3AFEB914C04EF300A992F7;
+			productRefGroup = 3F3AFEC514C04EF300A992F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F3AFEC314C04EF300A992F7 /* DrinkingGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F3AFEC214C04EF300A992F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F3AFED314C04EF300A992F7 /* InfoPlist.strings in Resources */,
+				3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */,
+				3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F3AFEC014C04EF300A992F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F3AFED514C04EF300A992F7 /* main.m in Sources */,
+				3F3AFED914C04EF300A992F7 /* DrinkingGameAppDelegate.m in Sources */,
+				3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3F3AFED114C04EF300A992F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F3AFED214C04EF300A992F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F3AFEDB14C04EF300A992F7 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F3AFEE114C04EF300A992F7 /* en */,
+			);
+			name = DrinkingGameViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F3AFEE314C04EF300A992F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3F3AFEE414C04EF300A992F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F3AFEE614C04EF300A992F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DrinkingGame/DrinkingGame-Prefix.pch";
+				INFOPLIST_FILE = "DrinkingGame/DrinkingGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3F3AFEE714C04EF300A992F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DrinkingGame/DrinkingGame-Prefix.pch";
+				INFOPLIST_FILE = "DrinkingGame/DrinkingGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F3AFEBE14C04EF300A992F7 /* Build configuration list for PBXProject "DrinkingGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F3AFEE314C04EF300A992F7 /* Debug */,
+				3F3AFEE414C04EF300A992F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F3AFEE514C04EF300A992F7 /* Build configuration list for PBXNativeTarget "DrinkingGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F3AFEE614C04EF300A992F7 /* Debug */,
+				3F3AFEE714C04EF300A992F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F3AFEBB14C04EF300A992F7 /* Project object */;
+}
