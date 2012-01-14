@@ -23,7 +23,7 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
-// Yellow bitchees
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
