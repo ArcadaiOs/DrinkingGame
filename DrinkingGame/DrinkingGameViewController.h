@@ -10,5 +10,4 @@
 
 @interface DrinkingGameViewController : UIViewController
 
-//moj rasse
 @end
