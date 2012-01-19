@@ -7,7 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DrinkingGameViewController.h"
+typedef enum GameType {
+    turnBased,
+    allAtOnce,
+    oneonone,
+    twoontwo
+    }GameType;
 
-@interface DGGame : NSObject
+
+@interface DGGame : NSObject{
+    NSString *name;
+    GameType type;
+    DrinkingGameViewController *myController;
+
+}
+
+-(id) startGameWithController:(DrinkingGameViewController*) controller;
+-(void) endGame;
 
 @end

@@ -18,6 +18,9 @@
 		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
 		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
 		3F5E08EF14C8361100198D6E /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E08EE14C8361100198D6E /* DGGame.m */; };
+		3F5E08F214C83CF800198D6E /* DGTestGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E08F114C83CF800198D6E /* DGTestGame.m */; };
+		3F5E08F614C83D6300198D6E /* DGTestGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E08F414C83D6300198D6E /* DGTestGameView.m */; };
+		3F5E08F714C83D6300198D6E /* DGTestGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5E08F514C83D6300198D6E /* DGTestGameView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,11 @@
 		3F3AFEE114C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DrinkingGameViewController.xib; sourceTree = "<group>"; };
 		3F5E08ED14C8361100198D6E /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3F5E08EE14C8361100198D6E /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
+		3F5E08F014C83CF800198D6E /* DGTestGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGTestGame.h; sourceTree = "<group>"; };
+		3F5E08F114C83CF800198D6E /* DGTestGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGTestGame.m; sourceTree = "<group>"; };
+		3F5E08F314C83D6300198D6E /* DGTestGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGTestGameView.h; sourceTree = "<group>"; };
+		3F5E08F414C83D6300198D6E /* DGTestGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGTestGameView.m; sourceTree = "<group>"; };
+		3F5E08F514C83D6300198D6E /* DGTestGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGTestGameView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,11 @@
 				1446C72914C0609600BAC380 /* DGPlayer.m */,
 				3F5E08ED14C8361100198D6E /* DGGame.h */,
 				3F5E08EE14C8361100198D6E /* DGGame.m */,
+				3F5E08F014C83CF800198D6E /* DGTestGame.h */,
+				3F5E08F114C83CF800198D6E /* DGTestGame.m */,
+				3F5E08F314C83D6300198D6E /* DGTestGameView.h */,
+				3F5E08F414C83D6300198D6E /* DGTestGameView.m */,
+				3F5E08F514C83D6300198D6E /* DGTestGameView.xib */,
 			);
 			path = DrinkingGame;
 			sourceTree = "<group>";
@@ -161,6 +174,7 @@
 				3F3AFED314C04EF300A992F7 /* InfoPlist.strings in Resources */,
 				3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */,
 				3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */,
+				3F5E08F714C83D6300198D6E /* DGTestGameView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +190,8 @@
 				3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */,
 				1446C72A14C0609600BAC380 /* DGPlayer.m in Sources */,
 				3F5E08EF14C8361100198D6E /* DGGame.m in Sources */,
+				3F5E08F214C83CF800198D6E /* DGTestGame.m in Sources */,
+				3F5E08F614C83D6300198D6E /* DGTestGameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,14 +10,19 @@
 
 @implementation DGGame
 
-- (id)init
-{
+-(id) startGameWithController:(DrinkingGameViewController *)controller{
     self = [super init];
     if (self) {
         // Initialization code here.
+        myController = controller;
+        NSLog(@"gamewithcontroller");
+        [self init];
     }
     
     return self;
+    
 }
+-(void) endGame{
 
+}
 @end

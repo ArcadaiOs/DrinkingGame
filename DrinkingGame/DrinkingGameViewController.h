@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef struct{
+    NSString *playerName;
+    int score;
+} score;
 
 @interface DrinkingGameViewController : UIViewController
+
+
+-(void) gameEndedWithScores:(NSString*) scores;
 
 @end
