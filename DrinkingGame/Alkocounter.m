@@ -20,7 +20,10 @@
 }
 // --- Variabler --- //
 
-//volym% = v
+//volym% (spritsort) = v (måste användaren mata in m.h.a. dropdown meny)
+//vikt = w (för att kunna räkna ut den teoretiska vattenmängden i kroppen )
+//kön = g(för att veta vilken av vattenmängds konstanterna man skall använda 0,63 eller 0,71)
+//
 
 // --- Vätskemängden för man och kvinna --- //
 //Promillehalten beräknas som antalet gram alkohol i kroppen dividerat med antalet kilo vätska i kroppen och antalet kilo vätska i kroppen beräknas som andelen vätska i kroppen multiplicerat med vikten i kg. Den promillehalt som uppnås beror på kön då kvinnor har mindre andel vätska och mer underhudsfett än män. När promillehalten beräknas för en man kan andelen vätska sättas till cirka 71 % och när promillehalten beräknas för en kvinna kan andelen vätska sättas till cirka 63 %.
@@ -40,6 +43,9 @@
 // --- Förbränningen av alkohol --- //
 //Förbränningen av alkohol i gram per timme beror på kön då en man förbränner cirka 0,1 gram ren alkohol per kilo och timme medan en kvinna förbränner cirka 0,085 gram ren alkohol per kilo och timme.
 
+
+//-- Ekvationen --//
+// MAN 
 
 // --- Fun facts --- //
 //0,2 - Värmekänsla, avspänning, gränsen för rattfylleri.
