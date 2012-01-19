@@ -18,6 +18,9 @@
 		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
 		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
 		3F5E08EF14C8361100198D6E /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E08EE14C8361100198D6E /* DGGame.m */; };
+		3F90FE4614C8471C006DA077 /* DGPlayers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F90FE4414C8471C006DA077 /* DGPlayers.xcdatamodeld */; };
+		3F90FE5114C8498A006DA077 /* DGPlayerDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F90FE5014C8498A006DA077 /* DGPlayerDB.m */; };
+		3F90FE5314C84A38006DA077 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F90FE5214C84A38006DA077 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,11 @@
 		3F3AFEE114C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DrinkingGameViewController.xib; sourceTree = "<group>"; };
 		3F5E08ED14C8361100198D6E /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3F5E08EE14C8361100198D6E /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
+		3F90FE4514C8471C006DA077 /* DGPlayers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DGPlayers.xcdatamodel; sourceTree = "<group>"; };
+		3F90FE4E14C8493B006DA077 /* DGPlayers 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DGPlayers 2.xcdatamodel"; sourceTree = "<group>"; };
+		3F90FE4F14C8498A006DA077 /* DGPlayerDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayerDB.h; sourceTree = "<group>"; };
+		3F90FE5014C8498A006DA077 /* DGPlayerDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayerDB.m; sourceTree = "<group>"; };
+		3F90FE5214C84A38006DA077 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F90FE5314C84A38006DA077 /* CoreData.framework in Frameworks */,
 				3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */,
 				3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */,
 				3F3AFECD14C04EF300A992F7 /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +67,7 @@
 		3F3AFEB914C04EF300A992F7 = {
 			isa = PBXGroup;
 			children = (
+				3F90FE5214C84A38006DA077 /* CoreData.framework */,
 				3F3AFECE14C04EF300A992F7 /* DrinkingGame */,
 				3F3AFEC714C04EF300A992F7 /* Frameworks */,
 				3F3AFEC514C04EF300A992F7 /* Products */,
@@ -96,6 +106,7 @@
 				1446C72914C0609600BAC380 /* DGPlayer.m */,
 				3F5E08ED14C8361100198D6E /* DGGame.h */,
 				3F5E08EE14C8361100198D6E /* DGGame.m */,
+				3F90FE4414C8471C006DA077 /* DGPlayers.xcdatamodeld */,
 			);
 			path = DrinkingGame;
 			sourceTree = "<group>";
@@ -103,6 +114,8 @@
 		3F3AFECF14C04EF300A992F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F90FE4F14C8498A006DA077 /* DGPlayerDB.h */,
+				3F90FE5014C8498A006DA077 /* DGPlayerDB.m */,
 				3F3AFED014C04EF300A992F7 /* DrinkingGame-Info.plist */,
 				3F3AFED114C04EF300A992F7 /* InfoPlist.strings */,
 				3F3AFED414C04EF300A992F7 /* main.m */,
@@ -176,6 +189,8 @@
 				3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */,
 				1446C72A14C0609600BAC380 /* DGPlayer.m in Sources */,
 				3F5E08EF14C8361100198D6E /* DGGame.m in Sources */,
+				3F90FE4614C8471C006DA077 /* DGPlayers.xcdatamodeld in Sources */,
+				3F90FE5114C8498A006DA077 /* DGPlayerDB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +311,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3F90FE4414C8471C006DA077 /* DGPlayers.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3F90FE4E14C8493B006DA077 /* DGPlayers 2.xcdatamodel */,
+				3F90FE4514C8471C006DA077 /* DGPlayers.xcdatamodel */,
+			);
+			currentVersion = 3F90FE4E14C8493B006DA077 /* DGPlayers 2.xcdatamodel */;
+			path = DGPlayers.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3F3AFEBB14C04EF300A992F7 /* Project object */;
 }
