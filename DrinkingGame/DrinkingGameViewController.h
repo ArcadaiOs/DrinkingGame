@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrinkingGameViewController : UIViewController
+@interface DrinkingGameViewController :  UIViewController
+{
+    IBOutlet UIPickerView *singlePicker;
+    NSArray *pickerData;
+}
+@property(nonatomic , retain) UIPickerView *singlePicker;
+@property(nonatomic , retain) NSArray *pickerData;
+-(IBAction)buttonPressed1;
 
-//moj rasse
 @end
+

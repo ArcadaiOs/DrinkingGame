@@ -10,36 +10,81 @@
 
 @implementation DrinkingGameViewController
 
-- (void)didReceiveMemoryWarning
+@synthesize singlePicker;
+@synthesize pickerData;
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
+    {
+        // Custom initialization
+    }
+    return self;
 }
 
-#pragma mark - View lifecycle
+-(IBAction)buttonPressed1
+{
+    NSInteger row = [singlePicker selectedRowInComponent:0];
+    
+    NSString *selected = [pickerData objectAtIndex:row];
+    
+    NSString *title = [[NSString alloc] initWithFormat:
+                       @"you selected %@!", selected];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message : @"Thank you for choosing." delegate:nil cancelButtonTitle :@"Welcome" otherButtonTitles :nil];
+    
+    [alert show];
+    [alert release];
+    [title release];
+}
 
-//test1//
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-}
-*/
+    NSArray *array = [[NSArray alloc] initWithObjects:@"2 players",@"3 players",@"4 players",@"5 players",@"6 players", @"7 players",@"8 players",nil];
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    
+    self.pickerData = array;
+    [array release];
+    [super viewDidLoad];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (void)viewDidUnload
+{
+    
+}
+
+- (void)dealloc
+{
+    [singlePicker release];
+    [pickerData release];
+    [super dealloc];
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [pickerData count];
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return[pickerData objectAtIndex:row];
 }
 
 @end
