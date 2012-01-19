@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1446C72A14C0609600BAC380 /* DGSpelare.m in Sources */ = {isa = PBXBuildFile; fileRef = 1446C72914C0609600BAC380 /* DGSpelare.m */; };
+		1446C72A14C0609600BAC380 /* DGPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1446C72914C0609600BAC380 /* DGPlayer.m */; };
 		3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFEC814C04EF300A992F7 /* UIKit.framework */; };
 		3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECA14C04EF300A992F7 /* Foundation.framework */; };
 		3F3AFECD14C04EF300A992F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECC14C04EF300A992F7 /* CoreGraphics.framework */; };
@@ -17,11 +17,12 @@
 		3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */; };
 		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
 		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
+		3F5E08EF14C8361100198D6E /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E08EE14C8361100198D6E /* DGGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1446C72814C0609600BAC380 /* DGSpelare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGSpelare.h; sourceTree = "<group>"; };
-		1446C72914C0609600BAC380 /* DGSpelare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGSpelare.m; sourceTree = "<group>"; };
+		1446C72814C0609600BAC380 /* DGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayer.h; sourceTree = "<group>"; };
+		1446C72914C0609600BAC380 /* DGPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayer.m; sourceTree = "<group>"; };
 		3F3AFEC414C04EF300A992F7 /* DrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3AFEC814C04EF300A992F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F3AFECA14C04EF300A992F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -36,6 +37,8 @@
 		3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrinkingGameViewController.h; sourceTree = "<group>"; };
 		3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkingGameViewController.m; sourceTree = "<group>"; };
 		3F3AFEE114C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DrinkingGameViewController.xib; sourceTree = "<group>"; };
+		3F5E08ED14C8361100198D6E /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
+		3F5E08EE14C8361100198D6E /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +92,10 @@
 				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
 				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
 				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
-				1446C72814C0609600BAC380 /* DGSpelare.h */,
-				1446C72914C0609600BAC380 /* DGSpelare.m */,
+				1446C72814C0609600BAC380 /* DGPlayer.h */,
+				1446C72914C0609600BAC380 /* DGPlayer.m */,
+				3F5E08ED14C8361100198D6E /* DGGame.h */,
+				3F5E08EE14C8361100198D6E /* DGGame.m */,
 			);
 			path = DrinkingGame;
 			sourceTree = "<group>";
@@ -169,7 +174,8 @@
 				3F3AFED514C04EF300A992F7 /* main.m in Sources */,
 				3F3AFED914C04EF300A992F7 /* DrinkingGameAppDelegate.m in Sources */,
 				3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */,
-				1446C72A14C0609600BAC380 /* DGSpelare.m in Sources */,
+				1446C72A14C0609600BAC380 /* DGPlayer.m in Sources */,
+				3F5E08EF14C8361100198D6E /* DGGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
