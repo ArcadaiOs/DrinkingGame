@@ -12,7 +12,7 @@
 
 @property (nonatomic, retain) NSString *gender;
 @property (nonatomic, retain) NSNumber *weight;
-@property (nonatomic, retain) UIImageView *picture;
+@property (nonatomic, retain) UIImage *picture;
 @property (nonatomic, retain) NSNumber *alcoholQuantity;
 
 @end

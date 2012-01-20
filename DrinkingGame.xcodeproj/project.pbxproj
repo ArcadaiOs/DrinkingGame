@@ -18,6 +18,8 @@
 		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
 		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
 		3F4B650514C98C0900946B54 /* DGPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B650414C98C0900946B54 /* DGPlayerModel.m */; };
+		3F4B650D14C99DD300946B54 /* PlayerPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B650B14C99DD300946B54 /* PlayerPhotoViewController.m */; };
+		3F4B650E14C99DD300946B54 /* PlayerPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B650C14C99DD300946B54 /* PlayerPhotoViewController.xib */; };
 		3F5E08EF14C8361100198D6E /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E08EE14C8361100198D6E /* DGGame.m */; };
 		3F90FE4614C8471C006DA077 /* DGPlayers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F90FE4414C8471C006DA077 /* DGPlayers.xcdatamodeld */; };
 		3F90FE5114C8498A006DA077 /* DGPlayerDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F90FE5014C8498A006DA077 /* DGPlayerDB.m */; };
@@ -44,6 +46,9 @@
 		3F4B650214C9866F00946B54 /* DGPlayers 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DGPlayers 3.xcdatamodel"; sourceTree = "<group>"; };
 		3F4B650314C98C0900946B54 /* DGPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayerModel.h; sourceTree = "<group>"; };
 		3F4B650414C98C0900946B54 /* DGPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayerModel.m; sourceTree = "<group>"; };
+		3F4B650A14C99DD300946B54 /* PlayerPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPhotoViewController.h; sourceTree = "<group>"; };
+		3F4B650B14C99DD300946B54 /* PlayerPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerPhotoViewController.m; sourceTree = "<group>"; };
+		3F4B650C14C99DD300946B54 /* PlayerPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerPhotoViewController.xib; sourceTree = "<group>"; };
 		3F5E08ED14C8361100198D6E /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3F5E08EE14C8361100198D6E /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
 		3F90FE4514C8471C006DA077 /* DGPlayers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DGPlayers.xcdatamodel; sourceTree = "<group>"; };
@@ -101,6 +106,9 @@
 			children = (
 				3F3AFED714C04EF300A992F7 /* DrinkingGameAppDelegate.h */,
 				3F3AFED814C04EF300A992F7 /* DrinkingGameAppDelegate.m */,
+				3F4B650A14C99DD300946B54 /* PlayerPhotoViewController.h */,
+				3F4B650B14C99DD300946B54 /* PlayerPhotoViewController.m */,
+				3F4B650C14C99DD300946B54 /* PlayerPhotoViewController.xib */,
 				3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */,
 				3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */,
 				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
@@ -183,6 +191,7 @@
 				3F3AFED314C04EF300A992F7 /* InfoPlist.strings in Resources */,
 				3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */,
 				3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */,
+				3F4B650E14C99DD300946B54 /* PlayerPhotoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +210,7 @@
 				3F90FE4614C8471C006DA077 /* DGPlayers.xcdatamodeld in Sources */,
 				3F90FE5114C8498A006DA077 /* DGPlayerDB.m in Sources */,
 				3F4B650514C98C0900946B54 /* DGPlayerModel.m in Sources */,
+				3F4B650D14C99DD300946B54 /* PlayerPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
