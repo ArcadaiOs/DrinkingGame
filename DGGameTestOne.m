@@ -18,9 +18,15 @@
     }
     return self;
 }
--(int[]) nrOfRands:(int)rands minimi:(int)min maximi:(int)max{
+-(int*) nrOfRands:(int)rands minimi:(int)min maximi:(int)max{
+    int *ret;
+    ret = (int*) malloc(rands*sizeof(int));
+    for(int i=0;i<rands;i++){
+        ret[i]=arc4random() % max + min;
+    }
     
     
+    return ret;
     
 }
 

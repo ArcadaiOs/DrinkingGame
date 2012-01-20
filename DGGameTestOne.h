@@ -16,7 +16,7 @@
 }
 
 
--(int[]) nrOfRands:(int) rands minimi:(int) min maximi:(int) max;
+-(int*) nrOfRands:(int) rands minimi:(int) min maximi:(int) max;
 
 -(IBAction) buttonPressed:(id)sender;
 
