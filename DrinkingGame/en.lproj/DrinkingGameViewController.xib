@@ -213,11 +213,19 @@
 						<int key="objectID">26</int>
 						<reference key="object" ref="292559864"/>
 						<reference key="parent" ref="774585933"/>
+						<string key="objectName">Button7</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">27</int>
 						<reference key="object" ref="1071222933"/>
 						<reference key="parent" ref="774585933"/>
+						<string key="objectName">Button6</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">46</int>
+						<reference key="object" ref="20970309"/>
+						<reference key="parent" ref="774585933"/>
+						<string key="objectName">Button5</string>
 					</object>
 				</object>
 			</object>
