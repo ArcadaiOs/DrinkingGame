@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DGGame.h"
-#import "DGGameTestOne.h"
+#import "DGGameSimonSays.h"
 
 
 typedef struct{

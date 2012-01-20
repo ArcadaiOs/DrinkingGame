@@ -16,7 +16,7 @@
     [currentCame.view removeFromSuperview];
     [currentCame release];
 
-    currentCame = [[DGGameTestOne alloc] init];
+    currentCame = [[DGGameSimonSays alloc] init];
     [self.view addSubview:currentCame.view];
     
     
