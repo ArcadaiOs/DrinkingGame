@@ -18,6 +18,21 @@
     }
     return self;
 }
+-(int[]) nrOfRands:(int)rands minimi:(int)min maximi:(int)max{
+    
+    
+    
+}
+
+
+-(IBAction)buttonPressed:(id)sender{
+    UIButton *button = (UIButton*) sender;
+    NSLog(@"BUttonPResed %@", button.titleLabel.text);
+    
+    [button setBackgroundColor:[UIColor colorWithRed:0.5 green:0.9 blue:0.1 alpha:1.0]] ;
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.

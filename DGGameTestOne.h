@@ -7,13 +7,17 @@
 //
 
 #import "DGGame.h"
+#import <stdlib.h>
+#import <time.h>
 
 @interface DGGameTestOne : DGGame{
-    
     
     
 }
 
 
+-(int[]) nrOfRands:(int) rands minimi:(int) min maximi:(int) max;
+
+-(IBAction) buttonPressed:(id)sender;
 
 @end
