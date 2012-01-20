@@ -8,11 +8,49 @@
 
 #import "DrinkingGameViewController.h"
 
+#define kStateFirst 1
+#define kStateSecond 2
+#define kStateThird 3
+#define kStateFourth 4
+#define kStateFifth 5
+
+
 @implementation DrinkingGameViewController
 
-@synthesize singlePicker;
-@synthesize pickerData;
+@synthesize singlePicker, pickerData;
+@synthesize gameState, previousState;
+@synthesize box, players;
 
+
+
+-(void) menuLoop {
+    
+    if (gameState == kStateFirst) {
+    
+        if (previousState == kStateFirst)
+        {
+    
+            box.hidden = 1;
+            players.hidden = 0;
+
+            
+            
+    
+}
+        
+        previousState = kStateFirst;
+
+    }
+    
+    else if (gameState == kStateSecond) {
+        
+        gameState = kStateSecond;
+        
+        
+        
+        
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,14 +67,14 @@
     
     NSString *selected = [pickerData objectAtIndex:row];
     
-    NSString *title = [[NSString alloc] initWithFormat:
-                       @"you selected %@!", selected];
+//    NSString *title = [[NSString alloc] initWithFormat:
+//                       @"You chose %@!", selected];
+//    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message : @"Good luck & Have fun!" delegate:nil cancelButtonTitle :@"Continue" otherButtonTitles :nil];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message : @"Thank you for choosing." delegate:nil cancelButtonTitle :@"Welcome" otherButtonTitles :nil];
-    
-    [alert show];
-    [alert release];
-    [title release];
+//    [alert show];
+//    [alert release];
+//    [title release];
 }
 
 
