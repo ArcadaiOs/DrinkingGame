@@ -6,24 +6,19 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "DrinkingGameViewController.h"
+#import <UIKit/UIKit.h>
+
 typedef enum GameType {
     turnBased,
     allAtOnce,
     oneonone,
     twoontwo
-    }GameType;
+}GameType;
 
 
-@interface DGGame : NSObject{
+@interface DGGame : UIView{
     NSString *name;
     GameType type;
-    DrinkingGameViewController *myController;
-
 }
-
--(id) startGameWithController:(DrinkingGameViewController*) controller;
--(void) endGame;
 
 @end

@@ -8,9 +8,6 @@
 
 #import "DGGame.h"
 
-@interface DGTestGame : DGGame{
-    UIView *myView;
-    
-}
+@interface DGTestGame : DGGame
 
 @end

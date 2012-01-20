@@ -7,7 +7,6 @@
 //
 
 #import "DGTestGame.h"
-#import "DGTestGameView.h"
 
 @implementation DGTestGame
 
@@ -15,12 +14,9 @@
 {
     self = [super init];
     if (self) {
-        NSLog(@"TESTGAME");
         // Initialization code here.
-        name = @"Hattar";
-        type = turnBased;
-        myView = [[DGTestGameView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-        [myController setView:myView];
+
+        
     }
     
     return self;

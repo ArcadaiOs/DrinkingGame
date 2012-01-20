@@ -32,10 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    DGGame *test = [[DGTestGame alloc] startGameWithController:self];
-
-//    [test endGame];
-
+    DGGame *gameOne = [DGTestGame alloc];
+    [gameOne init];
+    
+    
+    
     
 }
 
