@@ -20,9 +20,8 @@
 		3F753C0014C8540C00EE60D6 /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F753BFF14C8540C00EE60D6 /* Box.png */; };
 		3F9B0E0C14C98CE100B82B9E /* DGmenubg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B0E0B14C98CE100B82B9E /* DGmenubg.png */; };
 		3F9B0E1114C9904E00B82B9E /* DGmenuAmountOfPlayers.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B0E1014C9904E00B82B9E /* DGmenuAmountOfPlayers.png */; };
-		3F9B0E1314C9910000B82B9E /* DGmenu1Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B0E1214C9910000B82B9E /* DGmenu1Player.png */; };
-		3F9B0E1514C992CE00B82B9E /* DGmenu2Players.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B0E1414C992CE00B82B9E /* DGmenu2Players.png */; };
 		3F9B0E1714C99B7500B82B9E /* DGmenuNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B0E1614C99B7500B82B9E /* DGmenuNumbers.png */; };
+		3F9B0E1B14C99EC100B82B9E /* DGmenuSelected3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B0E1A14C99EC100B82B9E /* DGmenuSelected3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +43,8 @@
 		3F753BFF14C8540C00EE60D6 /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
 		3F9B0E0B14C98CE100B82B9E /* DGmenubg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenubg.png; sourceTree = "<group>"; };
 		3F9B0E1014C9904E00B82B9E /* DGmenuAmountOfPlayers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenuAmountOfPlayers.png; sourceTree = "<group>"; };
-		3F9B0E1214C9910000B82B9E /* DGmenu1Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenu1Player.png; sourceTree = "<group>"; };
-		3F9B0E1414C992CE00B82B9E /* DGmenu2Players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenu2Players.png; sourceTree = "<group>"; };
 		3F9B0E1614C99B7500B82B9E /* DGmenuNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenuNumbers.png; sourceTree = "<group>"; };
+		3F9B0E1A14C99EC100B82B9E /* DGmenuSelected3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenuSelected3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +117,8 @@
 		3FC478E614C8308700BB7021 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				3F9B0E1A14C99EC100B82B9E /* DGmenuSelected3.png */,
 				3F9B0E1614C99B7500B82B9E /* DGmenuNumbers.png */,
-				3F9B0E1414C992CE00B82B9E /* DGmenu2Players.png */,
-				3F9B0E1214C9910000B82B9E /* DGmenu1Player.png */,
 				3F9B0E1014C9904E00B82B9E /* DGmenuAmountOfPlayers.png */,
 				3F9B0E0B14C98CE100B82B9E /* DGmenubg.png */,
 				3F753BFF14C8540C00EE60D6 /* Box.png */,
@@ -184,9 +181,8 @@
 				3F753C0014C8540C00EE60D6 /* Box.png in Resources */,
 				3F9B0E0C14C98CE100B82B9E /* DGmenubg.png in Resources */,
 				3F9B0E1114C9904E00B82B9E /* DGmenuAmountOfPlayers.png in Resources */,
-				3F9B0E1314C9910000B82B9E /* DGmenu1Player.png in Resources */,
-				3F9B0E1514C992CE00B82B9E /* DGmenu2Players.png in Resources */,
 				3F9B0E1714C99B7500B82B9E /* DGmenuNumbers.png in Resources */,
+				3F9B0E1B14C99EC100B82B9E /* DGmenuSelected3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
