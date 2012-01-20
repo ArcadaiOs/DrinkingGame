@@ -21,6 +21,8 @@
     UIImageView *box;
     UILabel *players;
     
+    UIButton *btnContinue;
+    UIButton *btnBack;
     
     
 }
@@ -32,8 +34,14 @@
 @property (nonatomic, retain) IBOutlet UIImageView *box;
 @property (nonatomic, retain) IBOutlet UILabel *players;
 
+@property (nonatomic, retain) IBOutlet UIButton *btnContinue;
+@property (nonatomic, retain) IBOutlet UIButton *btnBack;
+
 
 -(IBAction)buttonPressed1;
+-(IBAction)buttonClickedContinue;
+-(IBAction)buttonClickedBack;
+
 
 @end
 

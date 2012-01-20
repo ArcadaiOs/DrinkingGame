@@ -20,6 +20,7 @@
 @synthesize singlePicker, pickerData;
 @synthesize gameState, previousState;
 @synthesize box, players;
+@synthesize btnContinue, btnBack;
 
 
 
@@ -30,7 +31,7 @@
         if (previousState == kStateFirst)
         {
     
-            box.hidden = 1;
+            box.hidden = 0;
             players.hidden = 0;
 
             
@@ -46,7 +47,8 @@
         
         gameState = kStateSecond;
         
-        
+        box.hidden = 1;
+        players.hidden = 1;
         
         
     }
@@ -80,9 +82,11 @@
 
 - (void)viewDidLoad
 {
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0/60 target:self selector:@selector(menuLoop) userInfo:nil repeats:YES];
     NSArray *array = [[NSArray alloc] initWithObjects:@"2 players",@"3 players",@"4 players",@"5 players",@"6 players", @"7 players",@"8 players",nil];
 
-    
+    gameState = kStateFirst;
     self.pickerData = array;
     [array release];
     [super viewDidLoad];
@@ -125,4 +129,56 @@
     return[pickerData objectAtIndex:row];
 }
 
+
+
+
+-(IBAction)buttonClickedContinue {
+
+ 
+    if (gameState == kStateFirst) {
+        
+        gameState = kStateSecond;
+    }
+    else if (gameState == kStateSecond) {
+        gameState = kStateThird;
+    
+    }
+    
+    else if (gameState == kStateThird) {
+        
+        gameState = kStateFourth;
+    }
+    
+    else if (gameState == kStateFourth) {
+        
+        gameState = kStateFifth;
+    }
+}
+
+
+-(IBAction)buttonClickedBack {
+    
+    if (gameState == kStateSecond) {
+        
+        gameState = kStateFirst;
+    }
+    else if (gameState == kStateThird) {
+        gameState = kStateSecond;
+        
+    }
+    
+    else if (gameState == kStateFourth) {
+        
+        gameState = kStateThird;
+    }
+    
+    else if (gameState == kStateFifth) {
+        
+        gameState = kStateFourth;
+    }
+}
+
+
+
+    
 @end
