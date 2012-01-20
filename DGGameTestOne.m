@@ -1,30 +1,23 @@
 //
-//  DrinkingGameViewController.m
+//  DGGameTestOne.m
 //  DrinkingGame
 //
-//  Created by student on 1/13/12.
+//  Created by student on 1/20/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DrinkingGameViewController.h"
+#import "DGGameTestOne.h"
 
+@implementation DGGameTestOne
 
-@implementation DrinkingGameViewController
--(IBAction)launchTestGame:(id)sender{
-    NSLog(@"LAUNCH");
-    
-    [currentCame.view removeFromSuperview];
-    [currentCame release];
-
-    currentCame = [[DGGameTestOne alloc] init];
-    [self.view addSubview:currentCame.view];
-    
-    
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
--(void) gameEndedWithScores:(NSString*) scores{
-    NSLog(@"Game ended: %@", scores);
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -35,15 +28,11 @@
 
 #pragma mark - View lifecycle
 
-//test1//
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    // Do any additional setup after loading the view from its nib.
 }
-
 
 - (void)viewDidUnload
 {

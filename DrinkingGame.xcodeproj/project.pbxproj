@@ -17,9 +17,9 @@
 		3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */; };
 		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
 		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
-		3F5E090114C84D6300198D6E /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E090014C84D6300198D6E /* DGGame.m */; };
-		3F5E090614C84E1500198D6E /* DGTestGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5E090514C84E1500198D6E /* DGTestGame.xib */; };
-		3F5E090914C84E3A00198D6E /* DGTestGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E090814C84E3A00198D6E /* DGTestGame.m */; };
+		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
+		3FBCABE914C97F950032EBA1 /* DGGameTestOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE714C97F950032EBA1 /* DGGameTestOne.m */; };
+		3FBCABEA14C97F950032EBA1 /* DGGameTestOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FBCABE814C97F950032EBA1 /* DGGameTestOne.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +39,11 @@
 		3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrinkingGameViewController.h; sourceTree = "<group>"; };
 		3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkingGameViewController.m; sourceTree = "<group>"; };
 		3F3AFEE114C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DrinkingGameViewController.xib; sourceTree = "<group>"; };
-		3F5E08FF14C84D6300198D6E /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DGGame.h; path = ../DGGame.h; sourceTree = "<group>"; };
-		3F5E090014C84D6300198D6E /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DGGame.m; path = ../DGGame.m; sourceTree = "<group>"; };
-		3F5E090514C84E1500198D6E /* DGTestGame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGTestGame.xib; sourceTree = "<group>"; };
-		3F5E090714C84E3A00198D6E /* DGTestGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGTestGame.h; sourceTree = "<group>"; };
-		3F5E090814C84E3A00198D6E /* DGTestGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGTestGame.m; sourceTree = "<group>"; };
+		3FBCABE114C97F4E0032EBA1 /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
+		3FBCABE214C97F4E0032EBA1 /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
+		3FBCABE614C97F950032EBA1 /* DGGameTestOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGameTestOne.h; sourceTree = "<group>"; };
+		3FBCABE714C97F950032EBA1 /* DGGameTestOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGameTestOne.m; sourceTree = "<group>"; };
+		3FBCABE814C97F950032EBA1 /* DGGameTestOne.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGGameTestOne.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +96,12 @@
 				3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */,
 				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
 				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
-				3F5E08FF14C84D6300198D6E /* DGGame.h */,
-				3F5E090014C84D6300198D6E /* DGGame.m */,
 				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
 				1446C72814C0609600BAC380 /* DGPlayer.h */,
 				1446C72914C0609600BAC380 /* DGPlayer.m */,
-				3F5E08F814C846BA00198D6E /* DGTestGame */,
+				3FBCABE114C97F4E0032EBA1 /* DGGame.h */,
+				3FBCABE214C97F4E0032EBA1 /* DGGame.m */,
+				3FBCABEB14C97F9A0032EBA1 /* DGGameTestOne */,
 			);
 			path = DrinkingGame;
 			sourceTree = "<group>";
@@ -117,14 +117,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3F5E08F814C846BA00198D6E /* DGTestGame */ = {
+		3FBCABEB14C97F9A0032EBA1 /* DGGameTestOne */ = {
 			isa = PBXGroup;
 			children = (
-				3F5E090514C84E1500198D6E /* DGTestGame.xib */,
-				3F5E090714C84E3A00198D6E /* DGTestGame.h */,
-				3F5E090814C84E3A00198D6E /* DGTestGame.m */,
+				3FBCABE614C97F950032EBA1 /* DGGameTestOne.h */,
+				3FBCABE714C97F950032EBA1 /* DGGameTestOne.m */,
+				3FBCABE814C97F950032EBA1 /* DGGameTestOne.xib */,
 			);
-			name = DGTestGame;
+			name = DGGameTestOne;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -178,7 +178,7 @@
 				3F3AFED314C04EF300A992F7 /* InfoPlist.strings in Resources */,
 				3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */,
 				3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */,
-				3F5E090614C84E1500198D6E /* DGTestGame.xib in Resources */,
+				3FBCABEA14C97F950032EBA1 /* DGGameTestOne.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +193,8 @@
 				3F3AFED914C04EF300A992F7 /* DrinkingGameAppDelegate.m in Sources */,
 				3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */,
 				1446C72A14C0609600BAC380 /* DGPlayer.m in Sources */,
-				3F5E090114C84D6300198D6E /* DGGame.m in Sources */,
-				3F5E090914C84E3A00198D6E /* DGTestGame.m in Sources */,
+				3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */,
+				3FBCABE914C97F950032EBA1 /* DGGameTestOne.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

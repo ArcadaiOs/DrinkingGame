@@ -7,14 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DGGame.h"
+#import "DGGameTestOne.h"
+
+
 typedef struct{
     NSString *playerName;
     int score;
 } score;
 
-@interface DrinkingGameViewController : UIViewController
+@interface DrinkingGameViewController : UIViewController{
+    DGGame *currentCame;
+    
+    
+}
 
 
 -(void) gameEndedWithScores:(NSString*) scores;
-
+-(IBAction) launchTestGame:(id)sender;
 @end

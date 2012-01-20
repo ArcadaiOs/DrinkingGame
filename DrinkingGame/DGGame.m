@@ -1,28 +1,30 @@
 //
-//  DrinkingGameViewController.m
+//  DGGame.m
 //  DrinkingGame
 //
-//  Created by student on 1/13/12.
+//  Created by student on 1/20/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DrinkingGameViewController.h"
+#import "DGGame.h"
 
+@implementation DGGame
 
-@implementation DrinkingGameViewController
--(IBAction)launchTestGame:(id)sender{
-    NSLog(@"LAUNCH");
-    
-    [currentCame.view removeFromSuperview];
-    [currentCame release];
-
-    currentCame = [[DGGameTestOne alloc] init];
-    [self.view addSubview:currentCame.view];
-    
-    
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
--(void) gameEndedWithScores:(NSString*) scores{
-    NSLog(@"Game ended: %@", scores);
+
+-(IBAction)endGame:(id)sender{
+    
+    
+    // killmiself
+    [self.view removeFromSuperview];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +37,11 @@
 
 #pragma mark - View lifecycle
 
-//test1//
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    // Do any additional setup after loading the view from its nib.
 }
-
 
 - (void)viewDidUnload
 {
