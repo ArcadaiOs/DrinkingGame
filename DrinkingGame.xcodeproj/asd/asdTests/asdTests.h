@@ -1,19 +1,13 @@
 //
-//  DGGameTestOne.h
-//  DrinkingGame
+//  asdTests.h
+//  asdTests
 //
 //  Created by student on 1/20/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DGGame.h"
+#import <SenTestingKit/SenTestingKit.h>
 
-@interface DGGameTestOne : DGGame{
-    
-    
-    
-}
-
-
+@interface asdTests : SenTestCase
 
 @end

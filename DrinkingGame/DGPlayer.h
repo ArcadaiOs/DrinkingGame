@@ -1,18 +1,19 @@
 //
-//  DGSpelare.h
+//  DGPlayer.h
 //  DrinkingGame
 //
-//  Created by Andrej Scherbakov-Parland on 1/13/12.
+//  Created by student on 1/20/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface DGPlayer : NSObject
 
-@property (nonatomic, retain) NSString *gender;
-@property (nonatomic, retain) NSNumber *weight;
-@property (nonatomic, retain) UIImage *picture;
-@property (nonatomic, retain) NSNumber *alcoholQuantity;
+@interface DGPlayer : NSManagedObject {
+@private
+}
+@property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) NSNumber * alcoholeLevel;
 
 @end

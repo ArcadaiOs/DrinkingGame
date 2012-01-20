@@ -1,18 +1,16 @@
 //
-//  DGSpelare.m
+//  DGPlayer.m
 //  DrinkingGame
 //
-//  Created by Andrej Scherbakov-Parland on 1/13/12.
+//  Created by student on 1/20/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "DGPlayer.h"
 
-@implementation DGPlayer
 
-@synthesize gender;
-@synthesize weight;
-@synthesize picture;
-@synthesize alcoholQuantity;
+@implementation DGPlayer
+@dynamic image;
+@dynamic alcoholeLevel;
 
 @end
