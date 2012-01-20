@@ -1,34 +1,22 @@
 //
-//  DrinkingGameViewController.m
+//  LoseViewController.m
 //  DrinkingGame
 //
-//  Created by student on 1/13/12.
+//  Created by student on 1/19/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DrinkingGameViewController.h"
-#import "Q2ViewController.h"
 #import "LoseViewController.h"
 
-@implementation DrinkingGameViewController
+@implementation LoseViewController
 
-- (IBAction)Q2;
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    
-    Q2ViewController *Q2 = [[Q2ViewController alloc] initWithNibName:nil bundle:nil];
-    
-    [self presentModalViewController:Q2 animated:NO];
-    
-}
-- (IBAction)Lose;
-
-{
-    
-    LoseViewController *Lose = [[LoseViewController alloc] initWithNibName:nil bundle:nil];
-    
-    [self presentModalViewController:Lose animated:NO];
-    
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,14 +29,11 @@
 
 #pragma mark - View lifecycle
 
-//test11//
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
 }
-*/
 
 - (void)viewDidUnload
 {
