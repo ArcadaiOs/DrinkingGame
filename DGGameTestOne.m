@@ -24,10 +24,7 @@
     for(int i=0;i<rands;i++){
         ret[i]=arc4random() % max + min;
     }
-    
-    
     return ret;
-    
 }
 
 
