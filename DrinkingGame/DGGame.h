@@ -22,6 +22,7 @@ typedef enum {
     GameType gameType;
     
     
+    
 }
 -(IBAction) endGame:(id)sender;
 
