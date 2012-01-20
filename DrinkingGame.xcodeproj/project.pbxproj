@@ -149,6 +149,9 @@
 /* Begin PBXProject section */
 		3F3AFEBB14C04EF300A992F7 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 3F3AFEBE14C04EF300A992F7 /* Build configuration list for PBXProject "DrinkingGame" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -272,6 +275,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrinkingGame/DrinkingGame-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "DrinkingGame/DrinkingGame-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -283,6 +287,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrinkingGame/DrinkingGame-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "DrinkingGame/DrinkingGame-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
