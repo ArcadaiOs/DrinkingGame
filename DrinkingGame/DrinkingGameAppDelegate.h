@@ -14,6 +14,15 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain) IBOutlet DrinkingGameViewController *viewController;
+
+
+- (void)createEditableCopyOfDatabaseIfNeeded;
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 @end

@@ -15,11 +15,40 @@
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 
+@synthesize managedObjectContext = __managedObjectContext;
+@synthesize managedObjectModel = __managedObjectModel;
+@synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+
+
+
+-(void) createEditableCopyOfDatabaseIfNeeded {
+    
+    //First test for existence - we dont want to wipe out a usres db 
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *documentsDir = [self applicationDocumentsDirectory];
+    NSURL *writableDBPath = [documentsDir URLByAppendingPathComponent:@"DrinkingGame.sqlite"];
+    
+    BOOL dbExists = [fileManager fileExistsAtPath:[writableDBPath path]];
+    if (!dbExists) {
+        
+        //the writable database does not exist, so copy the default to the appropriate location.
+        NSURL *defaultDBPath = [[NSBundle mainBundle] URLForResource:@"DrinkingGame" withExtension:@"sqlite"];
+        
+        NSError *error;
+        BOOL success = [fileManager copyItemAtURL:defaultDBPath toURL:writableDBPath error: &error];
+        if (!success) {
+            NSAssert1(0, @"Failed to create writable database file with message lol `%@´.",[error localizedDescription]);
+        }                               
+    }
+}
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-     
-    self.window.rootViewController = self.viewController;
+    [self createEditableCopyOfDatabaseIfNeeded ]; 
+   // self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -63,11 +92,22 @@
      */
 }
 
+
+
+
+
+
+
+
+
 - (void)dealloc
 {
     [_window release];
     [_viewController release];
+    [__managedObjectContext release];
+    [__persistentStoreCoordinator release];
     [super dealloc];
+    
 }
 
 @end
