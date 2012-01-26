@@ -46,7 +46,7 @@
 					<object class="IBUIButton" id="477212621">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{73, 177}, {76, 78}}</string>
+						<string key="NSFrame">{{122, 191}, {76, 78}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="114454261"/>
@@ -72,6 +72,10 @@
 						<object class="NSColor" key="IBUINormalTitleShadowColor" id="773379262">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
+						</object>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">Box.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="114454261">
@@ -587,8 +591,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="141403425"/>
 							<reference ref="567119667"/>
-							<reference ref="166461037"/>
-							<reference ref="477212621"/>
 							<reference ref="114454261"/>
 							<reference ref="258986489"/>
 							<reference ref="20970309"/>
@@ -703,6 +705,12 @@
 						<reference key="object" ref="823538919"/>
 						<reference key="parent" ref="774585933"/>
 						<string key="objectName">Image View - DGmenuSelected8.png</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">38</int>
+						<reference key="object" ref="477212621"/>
+						<reference key="parent" ref="774585933"/>
+						<string key="objectName">Button2</string>
 					</object>
 				</object>
 			</object>
@@ -1039,6 +1047,7 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>Box.png</string>
 				<string>DGmenuAmountOfPlayers.png</string>
 				<string>DGmenuNumbers.png</string>
 				<string>DGmenuSelected3.png</string>
@@ -1046,6 +1055,7 @@
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{205, 53}</string>
 				<string>{768, 1024}</string>
 				<string>{768, 1024}</string>
 				<string>{768, 1024}</string>
