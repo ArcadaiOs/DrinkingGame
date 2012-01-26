@@ -113,10 +113,10 @@
 @property (nonatomic, retain) IBOutlet UIImageView *bottleCustomSelected;
 
 
-@property (nonatomic, retain) IBOutlet UIButton *Menu2EasySelected;
-@property (nonatomic, retain) IBOutlet UIButton *Menu2MediumSelected;
-@property (nonatomic, retain) IBOutlet UIButton *Menu2HardSelected;
-@property (nonatomic, retain) IBOutlet UIButton *Menu2CustomSelected;
+@property (nonatomic, retain) IBOutlet UIButton *buttonEasySelected;
+@property (nonatomic, retain) IBOutlet UIButton *buttonMediumSelected;
+@property (nonatomic, retain) IBOutlet UIButton *buttonHardSelected;
+@property (nonatomic, retain) IBOutlet UIButton *buttonCustomSelected;
 
 
 //-(IBAction)buttonPressed1;

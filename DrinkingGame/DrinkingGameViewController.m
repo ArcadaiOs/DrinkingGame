@@ -26,8 +26,9 @@
 @synthesize btn2, btn3, btn4, btn5, btn6, btn7, btn8;
 //menu 2
 @synthesize menu2;
+
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
-@synthesize Menu2EasySelected, Menu2HardSelected, Menu2CustomSelected, Menu2MediumSelected;
+@synthesize buttonEasySelected, buttonHardSelected, buttonCustomSelected, buttonMediumSelected;
 
 
 -(void) menuLoop {
@@ -37,14 +38,27 @@
         if (previousState == kStateFirst)
         {
     
-
+            buttonEasySelected.hidden = 1;
+            buttonMediumSelected.hidden = 1;
+            buttonHardSelected.hidden = 1;
+            buttonCustomSelected.hidden = 1;
             
+            
+            
+            btn2.hidden = 0;
+            btn3.hidden = 0;
+            btn4.hidden = 0;
+            btn5.hidden = 0;
+            btn6.hidden = 0;
+            btn7.hidden = 0;
+            btn8.hidden = 0;
             Menu2EasySelected.hidden = 1;
             Menu2MediumSelected.hidden = 1;
             Menu2HardSelected.hidden = 1;
             Menu2CustomSelected.hidden = 1;
 
             menu2.hidden = 1;
+            
             
       
 }
@@ -61,6 +75,20 @@
         players.hidden = 1;
         menuNumbers.hidden = 1;
         menu2.hidden = 0;
+        
+        
+        buttonEasySelected.hidden = 0;
+        buttonMediumSelected.hidden = 0;
+        buttonHardSelected.hidden = 0;
+        buttonCustomSelected.hidden = 0;
+        
+        btn2.hidden = 1;
+        btn3.hidden = 1;
+        btn4.hidden = 1;
+        btn5.hidden = 1;
+        btn6.hidden = 1;
+        btn7.hidden = 1;
+        btn8.hidden = 1;
         
         selected2.hidden = 1;
         selected3.hidden = 1;
@@ -269,35 +297,35 @@
 
 -(IBAction)buttonEasySelected {
     
-    Menu2EasySelected.hidden = 0;
-    Menu2MediumSelected.hidden = 1;
-    Menu2HardSelected.hidden = 1;
-    Menu2CustomSelected.hidden = 1;
+    bottleEasySelected.hidden = 0;
+    bottleMediumSelected.hidden = 1;
+    bottleHardSelected.hidden = 1;
+    bottleCustomSelected.hidden = 1;
     
 }
 
 -(IBAction)buttonMediumSelected {
     
-    Menu2EasySelected.hidden = 1;
-    Menu2MediumSelected.hidden = 0;
-    Menu2HardSelected.hidden = 1;
-    Menu2CustomSelected.hidden = 1;
+    bottleEasySelected.hidden = 1;
+    bottleMediumSelected.hidden = 0;
+    bottleHardSelected.hidden = 1;
+    bottleCustomSelected.hidden = 1;
 }
 
 -(IBAction)buttonHardSelected {
 
-    Menu2EasySelected.hidden = 1;
-    Menu2MediumSelected.hidden = 1;
-    Menu2HardSelected.hidden = 0;
-    Menu2CustomSelected.hidden = 1;
+    bottleEasySelected.hidden = 1;
+    bottleMediumSelected.hidden = 1;
+    bottleHardSelected.hidden = 0;
+    bottleCustomSelected.hidden = 1;
 }
 
 -(IBAction)buttonCustomSelected {
     
-    Menu2EasySelected.hidden = 1;
-    Menu2MediumSelected.hidden = 1;
-    Menu2HardSelected.hidden = 1;
-    Menu2CustomSelected.hidden = 0;
+    bottleEasySelected.hidden = 1;
+    bottleMediumSelected.hidden = 1;
+    bottleHardSelected.hidden = 1;
+    bottleCustomSelected.hidden = 0;
 }
 
     
