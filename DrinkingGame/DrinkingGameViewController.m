@@ -8,11 +8,59 @@
 
 #import "DrinkingGameViewController.h"
 
+#define kStateFirst 1
+#define kStateSecond 2
+#define kStateThird 3
+#define kStateFourth 4
+#define kStateFifth 5
+
+
 @implementation DrinkingGameViewController
 
-@synthesize singlePicker;
-@synthesize pickerData;
 
+@synthesize gameState, previousState;
+@synthesize players, background1, menuNumbers;
+@synthesize btnContinue, btnBack;
+@synthesize btn2, btn3, btn4, btn5, btn6, btn7, btn8;
+
+
+
+-(void) menuLoop {
+    
+    if (gameState == kStateFirst) {
+    
+        if (previousState == kStateFirst)
+        {
+    
+
+            
+    
+}
+        
+        previousState = kStateFirst;
+
+    }
+    
+    else if (gameState == kStateSecond) {
+        
+        gameState = kStateSecond;
+
+        background1.hidden = 1;
+        players.hidden = 1;
+        menuNumbers.hidden = 1;
+        
+    }
+    
+    else if (gameState == kStateThird) {
+        
+        gameState = kStateThird;
+    }
+    
+    else if (gameState == kStateFourth) {
+        
+        gameState = kStateFourth;
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,29 +71,15 @@
     return self;
 }
 
--(IBAction)buttonPressed1
-{
-    NSInteger row = [singlePicker selectedRowInComponent:0];
-    
-    NSString *selected = [pickerData objectAtIndex:row];
-    
-    NSString *title = [[NSString alloc] initWithFormat:
-                       @"you selected %@!", selected];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message : @"Thank you for choosing." delegate:nil cancelButtonTitle :@"Welcome" otherButtonTitles :nil];
-    
-    [alert show];
-    [alert release];
-    [title release];
-}
-
 
 - (void)viewDidLoad
 {
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0/60 target:self selector:@selector(menuLoop) userInfo:nil repeats:YES];
     NSArray *array = [[NSArray alloc] initWithObjects:@"2 players",@"3 players",@"4 players",@"5 players",@"6 players", @"7 players",@"8 players",nil];
 
-    
-    self.pickerData = array;
+    gameState = kStateFirst;
+
     [array release];
     [super viewDidLoad];
 }
@@ -67,24 +101,64 @@
 
 - (void)dealloc
 {
-    [singlePicker release];
-    [pickerData release];
+
     [super dealloc];
 }
 
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
+
+
+
+-(IBAction)buttonClickedContinue {
+
+ 
+    if (gameState == kStateFirst) {
+        
+        gameState = kStateSecond;
+    }
+    else if (gameState == kStateSecond) {
+        gameState = kStateThird;
+    
+    }
+    
+    else if (gameState == kStateThird) {
+        
+        gameState = kStateFourth;
+    }
+    
+    else if (gameState == kStateFourth) {
+        
+        gameState = kStateFifth;
+    }
 }
 
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return [pickerData count];
+
+-(IBAction)buttonClickedBack {
+    
+    if (gameState == kStateSecond) {
+        
+        gameState = kStateFirst;
+    }
+    else if (gameState == kStateThird) {
+        gameState = kStateSecond;
+        
+    }
+    
+    else if (gameState == kStateFourth) {
+        
+        gameState = kStateThird;
+    }
+    
+    else if (gameState == kStateFifth) {
+        
+        gameState = kStateFourth;
+    }
 }
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return[pickerData objectAtIndex:row];
+-(IBAction)buttonClicked2 {
+    
+    gameState = kStateSecond;
+    
 }
 
+    
 @end
