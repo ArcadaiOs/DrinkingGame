@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="DGDrink" representedClassName="DGDrink">
-        <attribute name="alcoholeProcent" optional="YES" attributeType="Float" defaultValueString="0"/>
-        <attribute name="volumeCentiLiter" optional="YES" attributeType="Integer 16" defaultValueString="0"/>
+    <entity name="DGConsumption" representedClassName="DGConsumption">
+        <attribute name="alcoholeGrams" optional="YES" attributeType="Float" defaultValueString="0.0"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date"/>
         <relationship name="player" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DGPlayer"/>
     </entity>
     <entity name="DGPlayer" representedClassName="DGPlayer">
-        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="image" optional="YES" attributeType="Float" defaultValueString="0.0"/>
         <attribute name="isFemale" optional="YES" attributeType="Boolean"/>
-        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0"/>
+        <attribute name="promille" optional="YES"/>
+        <attribute name="waterWeightGram" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0"/>
     </entity>
     <elements>
         <element name="DGPlayer" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="DGDrink" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="DGConsumption" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

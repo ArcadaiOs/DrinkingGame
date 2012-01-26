@@ -16,5 +16,5 @@
 @property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) NSNumber * weight;
 @property (nonatomic, retain) NSNumber * isFemale;
-
+-(float) getAlcoholePromille;
 @end

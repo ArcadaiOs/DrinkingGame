@@ -15,6 +15,9 @@
 		3F10BE3914C9960800220F88 /* simon_red_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F10BE3114C9960800220F88 /* simon_red_up.png */; };
 		3F10BE3A14C9960800220F88 /* simon_yel_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F10BE3214C9960800220F88 /* simon_yel_dwn.png */; };
 		3F10BE3B14C9960800220F88 /* simon_yel_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F10BE3314C9960800220F88 /* simon_yel_up.png */; };
+		3F3A730814D17F9D00ECD451 /* DGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A730714D17F9D00ECD451 /* DGController.m */; };
+		3F3A731414D1821800ECD451 /* DGDrink.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A731314D1821800ECD451 /* DGDrink.m */; };
+		3F3A731A14D186F500ECD451 /* DGConsumption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A731914D186F500ECD451 /* DGConsumption.m */; };
 		3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFEC814C04EF300A992F7 /* UIKit.framework */; };
 		3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECA14C04EF300A992F7 /* Foundation.framework */; };
 		3F3AFECD14C04EF300A992F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECC14C04EF300A992F7 /* CoreGraphics.framework */; };
@@ -28,7 +31,6 @@
 		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
 		3FC64CE514D178D8007D2F87 /* DGData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FC64CE314D178D8007D2F87 /* DGData.xcdatamodeld */; };
 		3FC64CE814D17AF6007D2F87 /* DGPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC64CE714D17AF6007D2F87 /* DGPlayer.m */; };
-		3FC64CEE14D17B43007D2F87 /* DGDrink.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC64CED14D17B43007D2F87 /* DGDrink.m */; };
 		3FE08EF714C98B3F0010A03C /* DGRandomShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08EF514C98B3F0010A03C /* DGRandomShot.m */; };
 		3FE08EF814C98B3F0010A03C /* DGRandomShot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */; };
 		3FE08EFE14C992E00010A03C /* simon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFB14C992E00010A03C /* simon.png */; };
@@ -45,6 +47,12 @@
 		3F10BE3114C9960800220F88 /* simon_red_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_red_up.png; sourceTree = "<group>"; };
 		3F10BE3214C9960800220F88 /* simon_yel_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_yel_dwn.png; sourceTree = "<group>"; };
 		3F10BE3314C9960800220F88 /* simon_yel_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_yel_up.png; sourceTree = "<group>"; };
+		3F3A730614D17F9D00ECD451 /* DGController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGController.h; sourceTree = "<group>"; };
+		3F3A730714D17F9D00ECD451 /* DGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGController.m; sourceTree = "<group>"; };
+		3F3A731214D1821800ECD451 /* DGDrink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGDrink.h; sourceTree = "<group>"; };
+		3F3A731314D1821800ECD451 /* DGDrink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGDrink.m; sourceTree = "<group>"; };
+		3F3A731814D186F500ECD451 /* DGConsumption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGConsumption.h; sourceTree = "<group>"; };
+		3F3A731914D186F500ECD451 /* DGConsumption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGConsumption.m; sourceTree = "<group>"; };
 		3F3AFEC414C04EF300A992F7 /* DrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3AFEC814C04EF300A992F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F3AFECA14C04EF300A992F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,8 +73,6 @@
 		3FC64CE414D178D8007D2F87 /* DGData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DGData.xcdatamodel; sourceTree = "<group>"; };
 		3FC64CE614D17AF6007D2F87 /* DGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayer.h; sourceTree = "<group>"; };
 		3FC64CE714D17AF6007D2F87 /* DGPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayer.m; sourceTree = "<group>"; };
-		3FC64CEC14D17B43007D2F87 /* DGDrink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGDrink.h; sourceTree = "<group>"; };
-		3FC64CED14D17B43007D2F87 /* DGDrink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGDrink.m; sourceTree = "<group>"; };
 		3FE08EF414C98B3F0010A03C /* DGRandomShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShot.h; sourceTree = "<group>"; };
 		3FE08EF514C98B3F0010A03C /* DGRandomShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShot.m; sourceTree = "<group>"; };
 		3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGRandomShot.xib; sourceTree = "<group>"; };
@@ -114,6 +120,44 @@
 			name = DGPlayer;
 			sourceTree = "<group>";
 		};
+		3F3A731014D1810100ECD451 /* DGConsumption */ = {
+			isa = PBXGroup;
+			children = (
+				3F3A731814D186F500ECD451 /* DGConsumption.h */,
+				3F3A731914D186F500ECD451 /* DGConsumption.m */,
+			);
+			name = DGConsumption;
+			sourceTree = "<group>";
+		};
+		3F3A731114D1820400ECD451 /* DGDrink */ = {
+			isa = PBXGroup;
+			children = (
+				3F3A731214D1821800ECD451 /* DGDrink.h */,
+				3F3A731314D1821800ECD451 /* DGDrink.m */,
+			);
+			name = DGDrink;
+			sourceTree = "<group>";
+		};
+		3F3A731B14D188BB00ECD451 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				3F3A731014D1810100ECD451 /* DGConsumption */,
+				3F10BE9214C99B7E00220F88 /* DGPlayer */,
+				3F3A731114D1820400ECD451 /* DGDrink */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		3F3A731C14D188D100ECD451 /* games */ = {
+			isa = PBXGroup;
+			children = (
+				3FE08EF314C98A8F0010A03C /* DGRandomShot */,
+				3FBCABE114C97F4E0032EBA1 /* DGGame.h */,
+				3FBCABE214C97F4E0032EBA1 /* DGGame.m */,
+			);
+			name = games;
+			sourceTree = "<group>";
+		};
 		3F3AFEB914C04EF300A992F7 = {
 			isa = PBXGroup;
 			children = (
@@ -154,11 +198,10 @@
 				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
 				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
 				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
-				3FE08EF314C98A8F0010A03C /* DGRandomShot */,
-				3FBCABE114C97F4E0032EBA1 /* DGGame.h */,
-				3FBCABE214C97F4E0032EBA1 /* DGGame.m */,
-				3FC64CEA14D17B19007D2F87 /* DGDrink */,
-				3F10BE9214C99B7E00220F88 /* DGPlayer */,
+				3F3A731C14D188D100ECD451 /* games */,
+				3F3A731B14D188BB00ECD451 /* models */,
+				3F3A730714D17F9D00ECD451 /* DGController.m */,
+				3F3A730614D17F9D00ECD451 /* DGController.h */,
 			);
 			path = DrinkingGame;
 			sourceTree = "<group>";
@@ -172,15 +215,6 @@
 				3F3AFED614C04EF300A992F7 /* DrinkingGame-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3FC64CEA14D17B19007D2F87 /* DGDrink */ = {
-			isa = PBXGroup;
-			children = (
-				3FC64CEC14D17B43007D2F87 /* DGDrink.h */,
-				3FC64CED14D17B43007D2F87 /* DGDrink.m */,
-			);
-			name = DGDrink;
 			sourceTree = "<group>";
 		};
 		3FE08EF314C98A8F0010A03C /* DGRandomShot */ = {
@@ -283,7 +317,9 @@
 				3FE08EF714C98B3F0010A03C /* DGRandomShot.m in Sources */,
 				3FC64CE514D178D8007D2F87 /* DGData.xcdatamodeld in Sources */,
 				3FC64CE814D17AF6007D2F87 /* DGPlayer.m in Sources */,
-				3FC64CEE14D17B43007D2F87 /* DGDrink.m in Sources */,
+				3F3A730814D17F9D00ECD451 /* DGController.m in Sources */,
+				3F3A731414D1821800ECD451 /* DGDrink.m in Sources */,
+				3F3A731A14D186F500ECD451 /* DGConsumption.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

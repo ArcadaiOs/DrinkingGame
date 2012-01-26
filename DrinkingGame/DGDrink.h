@@ -3,19 +3,18 @@
 //  DrinkingGame
 //
 //  Created by student on 1/26/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
-@class DGPlayer;
-
-@interface DGDrink : NSManagedObject {
-@private
+@interface DGDrink : NSObject{
+    NSNumber * volumeCl;
+    NSNumber * procent;
+    NSString * name;
 }
-@property (nonatomic, retain) NSNumber * volumeCentiLiter;
-@property (nonatomic, retain) NSNumber * alcoholeProcent;
-@property (nonatomic, retain) DGPlayer *player;
--(float)getAlcoholeContent;
+@property (nonatomic, retain) NSNumber * volumeCl;
+@property (nonatomic, retain) NSNumber * procent;
+@property (nonatomic, retain) NSString * name;
+- (id)initWithVolumeCl: (float) volumeCl procent: (float) procent andName:(NSString*) name;
 @end

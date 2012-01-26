@@ -3,18 +3,26 @@
 //  DrinkingGame
 //
 //  Created by student on 1/26/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "DGDrink.h"
-#import "DGPlayer.h"
-
 
 @implementation DGDrink
-@dynamic volumeCentiLiter;
-@dynamic alcoholeProcent;
-@dynamic player;
--(float)getAlcoholeContent{
-    return [self.volumeCentiLiter floatValue] * ([self.alcoholeProcent floatValue]/100);
+@synthesize volumeCl;
+@synthesize procent;
+@synthesize name;
+
+- (id)initWithVolumeCl: (float) volumeCl procent: (float) procent andName:(NSString*) name
+{
+    self = [super init];
+    if (self) {
+        self.volumeCl = [NSNumber numberWithFloat:volumeCl];
+        self.procent = [NSNumber numberWithFloat:procent];
+        self.name = name;
+    }
+    
+    return self;
 }
+
 @end
