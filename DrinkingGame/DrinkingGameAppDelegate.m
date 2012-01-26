@@ -8,47 +8,35 @@
 // hello woedlllll
 #import "DrinkingGameAppDelegate.h"
 
+#import "PlayerPhotoViewController.h"
 #import "DrinkingGameViewController.h"
+
 
 @implementation DrinkingGameAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 
-@synthesize managedObjectContext = __managedObjectContext;
-@synthesize managedObjectModel = __managedObjectModel;
-@synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
 
-
--(void) createEditableCopyOfDatabaseIfNeeded {
-    
-    //First test for existence - we dont want to wipe out a usres db 
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *documentsDir = [self applicationDocumentsDirectory];
-    NSURL *writableDBPath = [documentsDir URLByAppendingPathComponent:@"DrinkingGame.sqlite"];
-    
-    BOOL dbExists = [fileManager fileExistsAtPath:[writableDBPath path]];
-    if (!dbExists) {
-        
-        //the writable database does not exist, so copy the default to the appropriate location.
-        NSURL *defaultDBPath = [[NSBundle mainBundle] URLForResource:@"DrinkingGame" withExtension:@"sqlite"];
-        
-        NSError *error;
-        BOOL success = [fileManager copyItemAtURL:defaultDBPath toURL:writableDBPath error: &error];
-        if (!success) {
-            NSAssert1(0, @"Failed to create writable database file with message lol `%@´.",[error localizedDescription]);
-        }                               
-    }
-}
 
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
-    [self createEditableCopyOfDatabaseIfNeeded ]; 
+    self.viewController = [[PlayerPhotoViewController alloc] initWithNibName:@"PlayerPhotoViewController" bundle:nil];
+    
+//    self.viewController = [[DrinkingGameViewController alloc]        initWithNibName:@"DrinkingGameViewController"            bundle:nil];
+    
+    
    // self.window.rootViewController = self.viewController;
+    self.window.rootViewController = self.viewController;
+    // Override point for customization after application launch.
+
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -103,9 +91,7 @@
 - (void)dealloc
 {
     [_window release];
-    [_viewController release];
-    [__managedObjectContext release];
-    [__persistentStoreCoordinator release];
+    self.window.rootViewController = nil;
     [super dealloc];
     
 }

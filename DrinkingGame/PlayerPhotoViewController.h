@@ -7,20 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DGPlayerDB.h"
 
 @interface PlayerPhotoViewController : UIViewController
-<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>{
-@private
-    UIImage *picture_;
-    DGPlayerDB *dgplayer;
+
+<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+{
+// @private
+   IBOutlet UIImageView *_pictureView;
 }
 
-@property (nonatomic, retain) IBOutlet UIImage *picture;
-@property (nonatomic, retain) IBOutlet DGPlayerDB *dgplayer;
+@property (nonatomic, retain) IBOutlet UIImageView *pictureView;
 
 - (IBAction)doneButtonPressed;
--(IBAction)takePictureButtonPressed;
+- (IBAction)takePictureButtonPressed;
 
 
 @end

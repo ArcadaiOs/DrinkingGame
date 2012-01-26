@@ -24,6 +24,7 @@
 		3F90FE4614C8471C006DA077 /* DGPlayers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F90FE4414C8471C006DA077 /* DGPlayers.xcdatamodeld */; };
 		3F90FE5114C8498A006DA077 /* DGPlayerDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F90FE5014C8498A006DA077 /* DGPlayerDB.m */; };
 		3F90FE5314C84A38006DA077 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F90FE5214C84A38006DA077 /* CoreData.framework */; };
+		3FC1559A14D18776001E23A5 /* simon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC1559914D18776001E23A5 /* simon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		3F90FE4F14C8498A006DA077 /* DGPlayerDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayerDB.h; sourceTree = "<group>"; };
 		3F90FE5014C8498A006DA077 /* DGPlayerDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayerDB.m; sourceTree = "<group>"; };
 		3F90FE5214C84A38006DA077 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3FC1559914D18776001E23A5 /* simon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		3F3AFECE14C04EF300A992F7 /* DrinkingGame */ = {
 			isa = PBXGroup;
 			children = (
+				3FC1559914D18776001E23A5 /* simon.png */,
 				3F3AFED714C04EF300A992F7 /* DrinkingGameAppDelegate.h */,
 				3F3AFED814C04EF300A992F7 /* DrinkingGameAppDelegate.m */,
 				3F4B650A14C99DD300946B54 /* PlayerPhotoViewController.h */,
@@ -192,6 +195,7 @@
 				3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */,
 				3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */,
 				3F4B650E14C99DD300946B54 /* PlayerPhotoViewController.xib in Resources */,
+				3FC1559A14D18776001E23A5 /* simon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

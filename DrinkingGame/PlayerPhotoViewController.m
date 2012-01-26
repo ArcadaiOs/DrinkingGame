@@ -8,24 +8,20 @@
 
 #import "PlayerPhotoViewController.h"
 
-@interface PlayerPhotoViewController (Private)
-
-@end
 
 @implementation PlayerPhotoViewController
 
-@synthesize picture=picture_;
-@synthesize dgplayer=dgplayer_;
+@synthesize pictureView = _pictureView;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [self initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [self initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -60,13 +56,13 @@
     [self dismissModalViewControllerAnimated:YES];
     
 }
-//- (void) viewWillAppear:(BOOL)animated{
-//    [self viewWillAppear:animated];
+- (void) viewWillAppear:(BOOL)animated{
+    [self viewWillAppear:animated];
 //    if (dgplayer_.picture != nil) {
-//        self.dgplayer.picture = [UIImage imageWithData:dgplayer.picture];
+//        self.picture.image = [UIImage imageWithData:dgplayer_.picture];
 //    }
-//    
-//}
+    
+}
 
 -(IBAction)takePictureButtonPressed{
     NSLog(@"%@",@"Taking a picture...");
@@ -93,7 +89,7 @@
 #pragma mark - UIImagePickerControllerDelegate methods
 
 -(void) imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    dgplayer_.picture = UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage]);
+    self.pictureView = UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage]);
     [self dismissModalViewControllerAnimated:YES];
     [picker release];
 }
@@ -129,8 +125,7 @@
 
 -(void)dealloc
 {
-    [picture_ release];
-    [dgplayer_ release];
+    [_pictureView release];
     [self dealloc];
     
 }
