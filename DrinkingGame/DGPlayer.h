@@ -2,7 +2,7 @@
 //  DGPlayer.h
 //  DrinkingGame
 //
-//  Created by student on 1/20/12.
+//  Created by student on 1/26/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 @private
 }
 @property (nonatomic, retain) NSData * image;
-@property (nonatomic, retain) NSNumber * alcoholeLevel;
+@property (nonatomic, retain) NSNumber * weight;
+@property (nonatomic, retain) NSNumber * isFemale;
 
 @end
