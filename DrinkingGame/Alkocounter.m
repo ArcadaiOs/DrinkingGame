@@ -22,15 +22,16 @@
 
 //promillehalt = svårighetsgrad
 // p1 = 1,0‰
-// p2 = 1.5‰
-// p3 = 2.0‰
+// p2 = 1.25‰
+// p3 = 1.5‰
 
 //vikt = w (för att kunna räkna ut den teoretiska vattenmängden i kroppen )
 
-//volym% (spritsort)
-// v1 = 5% öl
-// v2 = 12% vin
-// v3 = 40% brännvin
+//volym% (spritmängd i gram)
+// v1 = 4,7% öl 16cl ()
+// v2 = 11% vin 8cl ()
+// v3 = 40% brännvin 4cl ()
+
 
 //kön(för att veta vilken av vattenmängds konstanterna man skall använda 0,63 eller 0,71)
 // g1 = 0.71
@@ -38,28 +39,16 @@
 
 //glasstorlek = s (Alkoholmatrisen)
 
-//-- Ekvationen --//
-// MAN => w*0.71 = KiloVattenienMan(KVM)
-// KVINNA => w*0.63 = KiloVattenienKvinna(KVK)
-// GRE/(KVM*1000) = P1
+//-- Ekvationen till spelarmakaren --//
+// MAN => (w*0.71)*1000 = Gram Vatten i en Man (sparas som vv)
+// KVINNA => (w*0.63)*1000 = Gram Vatten i en Kvinna (sparas som vv)
 
-// Gram ren etanol i kroppen för att uppnå P1
-// GRE = (KVM*1000)*P1
-
-// Räkna hur stor portionen skall för en person
-// GRE/10 = port (1 portion)
-
-// Kolla den närmaste glass storleken
-
+// Hämtar spelarens vv och alkoholenhet
+// Alkoholenhet/vv = promille i blodet utan förbränning (sparas som pb)
 
 // mata in inmundigad alkohol mängd
 
-//-- Alkoholmatrisen --//
-//  40%  12%  5%        100%
-//  1cl  4cl  0.5dl
-//  2cl  8cl  1dl
-//  4cl  16cl 2dl       
-
+//
 
 // --- Förbränningen av alkohol --- //
 //Förbränningen av alkohol i gram per timme beror på kön då en man förbränner cirka 0,1 gram ren alkohol per kilo och timme medan en kvinna förbränner cirka 0,085 gram ren alkohol per kilo och timme.
