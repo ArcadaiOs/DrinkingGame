@@ -20,6 +20,7 @@
 
 @synthesize gameState, previousState;
 @synthesize players, background1, menuNumbers;
+@synthesize selected2, selected3, selected4, selected5, selected6, selected7, selected8;
 @synthesize btnContinue, btnBack;
 @synthesize btn2, btn3, btn4, btn5, btn6, btn7, btn8;
 
@@ -34,7 +35,7 @@
     
 
             
-    
+      
 }
         
         previousState = kStateFirst;
@@ -154,9 +155,83 @@
     }
 }
 
--(IBAction)buttonClicked2 {
+-(IBAction)buttonPlayers2 {
     
-    gameState = kStateSecond;
+    
+    selected2.hidden = 0;
+    selected3.hidden = 1;
+    selected4.hidden = 1;
+    selected5.hidden = 1;
+    selected6.hidden = 1;
+    selected7.hidden = 1;
+    selected8.hidden = 1;
+    
+}
+
+-(IBAction)buttonPlayers3 {
+    
+    selected2.hidden = 1;
+    selected3.hidden = 0;
+    selected4.hidden = 1;
+    selected5.hidden = 1;
+    selected6.hidden = 1;
+    selected7.hidden = 1;
+    selected8.hidden = 1;
+    
+}
+-(IBAction)buttonPlayers4 {
+    
+    selected2.hidden = 1;
+    selected3.hidden = 1;
+    selected4.hidden = 0;
+    selected5.hidden = 1;
+    selected6.hidden = 1;
+    selected7.hidden = 1;
+    selected8.hidden = 1;
+    
+}
+-(IBAction)buttonPlayers5 {
+    
+    selected2.hidden = 1;
+    selected3.hidden = 1;
+    selected4.hidden = 1;
+    selected5.hidden = 0;
+    selected6.hidden = 1;
+    selected7.hidden = 1;
+    selected8.hidden = 1;
+    
+}
+-(IBAction)buttonPlayers6 {
+    
+    selected2.hidden = 1;
+    selected3.hidden = 1;
+    selected4.hidden = 1;
+    selected5.hidden = 1;
+    selected6.hidden = 0;
+    selected7.hidden = 1;
+    selected8.hidden = 1;
+    
+}
+-(IBAction)buttonPlayers7 {
+    
+    selected2.hidden = 1;
+    selected3.hidden = 1;
+    selected4.hidden = 1;
+    selected5.hidden = 1;
+    selected6.hidden = 1;
+    selected7.hidden = 0;
+    selected8.hidden = 1;
+    
+}
+-(IBAction)buttonPlayers8 {
+    
+    selected2.hidden = 1;
+    selected3.hidden = 1;
+    selected4.hidden = 1;
+    selected5.hidden = 1;
+    selected6.hidden = 1;
+    selected7.hidden = 1;
+    selected8.hidden = 0;
     
 }
 

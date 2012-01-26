@@ -20,6 +20,14 @@
     UIImageView *background1;
     UIImageView *menuNumbers;
     
+    UIImageView *selected2;
+    UIImageView *selected3;
+    UIImageView *selected4;
+    UIImageView *selected5;
+    UIImageView *selected6;
+    UIImageView *selected7;
+    UIImageView *selected8;
+    
     UIButton *btnContinue;
     UIButton *btnBack;
     
@@ -53,9 +61,26 @@
 @property (nonatomic, retain) IBOutlet UIImageView *background1;
 @property (nonatomic, retain) IBOutlet UIImageView *menuNumbers;
 
+@property (nonatomic, retain) IBOutlet UIImageView *selected2;
+@property (nonatomic, retain) IBOutlet UIImageView *selected3;
+@property (nonatomic, retain) IBOutlet UIImageView *selected4;
+@property (nonatomic, retain) IBOutlet UIImageView *selected5;
+@property (nonatomic, retain) IBOutlet UIImageView *selected6;
+@property (nonatomic, retain) IBOutlet UIImageView *selected7;
+@property (nonatomic, retain) IBOutlet UIImageView *selected8;
+
 -(IBAction)buttonPressed1;
 -(IBAction)buttonClickedContinue;
 -(IBAction)buttonClickedBack;
+
+-(IBAction)buttonPlayers2;
+-(IBAction)buttonPlayers3;
+-(IBAction)buttonPlayers4;
+-(IBAction)buttonPlayers5;
+-(IBAction)buttonPlayers6;
+-(IBAction)buttonPlayers7;
+-(IBAction)buttonPlayers8;
+
 
 -(IBAction)buttonPressed1;
 @end
