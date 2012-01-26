@@ -19,11 +19,15 @@
 
 
 @synthesize gameState, previousState;
-@synthesize players, background1, menuNumbers;
+//menu 1
+@synthesize players, background1, menuNumbers, pointBackActive, pointNextActive, pointBack, pointNext;
 @synthesize selected2, selected3, selected4, selected5, selected6, selected7, selected8;
 @synthesize btnContinue, btnBack;
 @synthesize btn2, btn3, btn4, btn5, btn6, btn7, btn8;
-
+//menu 2
+@synthesize menu2;
+@synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
+@synthesize Menu2EasySelected, Menu2HardSelected, Menu2CustomSelected, Menu2MediumSelected;
 
 
 -(void) menuLoop {
@@ -35,6 +39,13 @@
     
 
             
+            Menu2EasySelected.hidden = 1;
+            Menu2MediumSelected.hidden = 1;
+            Menu2HardSelected.hidden = 1;
+            Menu2CustomSelected.hidden = 1;
+
+            menu2.hidden = 1;
+            
       
 }
         
@@ -45,11 +56,21 @@
     else if (gameState == kStateSecond) {
         
         gameState = kStateSecond;
-
-        background1.hidden = 1;
+        
+        background1.hidden = 0;
         players.hidden = 1;
         menuNumbers.hidden = 1;
+        menu2.hidden = 0;
         
+        selected2.hidden = 1;
+        selected3.hidden = 1;
+        selected4.hidden = 1;
+        selected5.hidden = 1;
+        selected6.hidden = 1;
+        selected7.hidden = 1;
+        selected8.hidden = 1;
+
+
     }
     
     else if (gameState == kStateThird) {
@@ -155,9 +176,12 @@
     }
 }
 
+
+//Meny 1
+
 -(IBAction)buttonPlayers2 {
     
-    
+    pointNextActive.hidden = 0;
     selected2.hidden = 0;
     selected3.hidden = 1;
     selected4.hidden = 1;
@@ -167,9 +191,9 @@
     selected8.hidden = 1;
     
 }
-
 -(IBAction)buttonPlayers3 {
     
+    pointNextActive.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 0;
     selected4.hidden = 1;
@@ -181,6 +205,7 @@
 }
 -(IBAction)buttonPlayers4 {
     
+    pointNextActive.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 0;
@@ -192,6 +217,7 @@
 }
 -(IBAction)buttonPlayers5 {
     
+    pointNextActive.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 1;
@@ -203,6 +229,7 @@
 }
 -(IBAction)buttonPlayers6 {
     
+    pointNextActive.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 1;
@@ -214,6 +241,7 @@
 }
 -(IBAction)buttonPlayers7 {
     
+    pointNextActive.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 1;
@@ -225,6 +253,7 @@
 }
 -(IBAction)buttonPlayers8 {
     
+    pointNextActive.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 1;
@@ -233,6 +262,42 @@
     selected7.hidden = 1;
     selected8.hidden = 0;
     
+}
+
+//Meny 2
+
+
+-(IBAction)buttonEasySelected {
+    
+    Menu2EasySelected.hidden = 0;
+    Menu2MediumSelected.hidden = 1;
+    Menu2HardSelected.hidden = 1;
+    Menu2CustomSelected.hidden = 1;
+    
+}
+
+-(IBAction)buttonMediumSelected {
+    
+    Menu2EasySelected.hidden = 1;
+    Menu2MediumSelected.hidden = 0;
+    Menu2HardSelected.hidden = 1;
+    Menu2CustomSelected.hidden = 1;
+}
+
+-(IBAction)buttonHardSelected {
+
+    Menu2EasySelected.hidden = 1;
+    Menu2MediumSelected.hidden = 1;
+    Menu2HardSelected.hidden = 0;
+    Menu2CustomSelected.hidden = 1;
+}
+
+-(IBAction)buttonCustomSelected {
+    
+    Menu2EasySelected.hidden = 1;
+    Menu2MediumSelected.hidden = 1;
+    Menu2HardSelected.hidden = 1;
+    Menu2CustomSelected.hidden = 0;
 }
 
     

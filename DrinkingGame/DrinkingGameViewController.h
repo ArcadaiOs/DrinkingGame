@@ -11,9 +11,14 @@
 @interface DrinkingGameViewController :  UIViewController
 {
     
+
     
-        NSInteger gameState;
-        NSInteger previousState;
+    
+    NSInteger gameState;
+    NSInteger previousState;
+    
+    
+    //Menu 1
     
 
     UIImageView *players;
@@ -28,6 +33,12 @@
     UIImageView *selected7;
     UIImageView *selected8;
     
+    UIImageView *pointNextActive;
+    UIImageView *pointBackActive;
+    
+    UIImageView *pointNext;
+    UIImageView *pointBack;
+    
     UIButton *btnContinue;
     UIButton *btnBack;
     
@@ -40,12 +51,28 @@
     UIButton *btn8;
     
     
+    //Menu 2
+    
+    UIImageView *menu2;
+    
+    UIImageView *bottleEasySelected;
+    UIImageView *bottleMediumSelected;
+    UIImageView *bottleHardSelected;
+    UIImageView *bottleCustomSelected;
+    
+    UIButton *Menu2EasySelected;
+    UIButton *Menu2MediumSelected;
+    UIButton *Menu2HardSelected;
+    UIButton *Menu2CustomSelected;
+    
 }
+
 
 @property (nonatomic) NSInteger gameState;
 @property (nonatomic) NSInteger previousState;
 
 
+//Menu 1
 
 @property (nonatomic, retain) IBOutlet UIButton *btn2;
 @property (nonatomic, retain) IBOutlet UIButton *btn3;
@@ -57,9 +84,16 @@
 @property (nonatomic, retain) IBOutlet UIButton *btnContinue;
 @property (nonatomic, retain) IBOutlet UIButton *btnBack;
 
+
 @property (nonatomic, retain) IBOutlet UIImageView *players;
 @property (nonatomic, retain) IBOutlet UIImageView *background1;
 @property (nonatomic, retain) IBOutlet UIImageView *menuNumbers;
+
+@property (nonatomic, retain) IBOutlet UIImageView *pointBackActive;
+@property (nonatomic, retain) IBOutlet UIImageView *pointNextActive;
+
+@property (nonatomic, retain) IBOutlet UIImageView *pointBack;
+@property (nonatomic, retain) IBOutlet UIImageView *pointNext;
 
 @property (nonatomic, retain) IBOutlet UIImageView *selected2;
 @property (nonatomic, retain) IBOutlet UIImageView *selected3;
@@ -69,7 +103,23 @@
 @property (nonatomic, retain) IBOutlet UIImageView *selected7;
 @property (nonatomic, retain) IBOutlet UIImageView *selected8;
 
--(IBAction)buttonPressed1;
+//Menu 2
+
+@property (nonatomic, retain) IBOutlet UIImageView *menu2;
+
+@property (nonatomic, retain) IBOutlet UIImageView *bottleEasySelected;
+@property (nonatomic, retain) IBOutlet UIImageView *bottleMediumSelected;
+@property (nonatomic, retain) IBOutlet UIImageView *bottleHardSelected;
+@property (nonatomic, retain) IBOutlet UIImageView *bottleCustomSelected;
+
+
+@property (nonatomic, retain) IBOutlet UIButton *Menu2EasySelected;
+@property (nonatomic, retain) IBOutlet UIButton *Menu2MediumSelected;
+@property (nonatomic, retain) IBOutlet UIButton *Menu2HardSelected;
+@property (nonatomic, retain) IBOutlet UIButton *Menu2CustomSelected;
+
+
+//-(IBAction)buttonPressed1;
 -(IBAction)buttonClickedContinue;
 -(IBAction)buttonClickedBack;
 
@@ -82,6 +132,11 @@
 -(IBAction)buttonPlayers8;
 
 
--(IBAction)buttonPressed1;
+-(IBAction)buttonEasySelected;
+-(IBAction)buttonMediumSelected;
+-(IBAction)buttonHardSelected;
+-(IBAction)buttonCustomSelected;
+
+//-(IBAction)buttonPressed1;
 @end
 
