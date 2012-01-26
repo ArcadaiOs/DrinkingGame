@@ -17,6 +17,8 @@
     
 
     UIImageView *players;
+    UIImageView *background1;
+    UIImageView *menuNumbers;
     
     UIButton *btnContinue;
     UIButton *btnBack;
@@ -48,6 +50,8 @@
 @property (nonatomic, retain) IBOutlet UIButton *btnBack;
 
 @property (nonatomic, retain) IBOutlet UIImageView *players;
+@property (nonatomic, retain) IBOutlet UIImageView *background1;
+@property (nonatomic, retain) IBOutlet UIImageView *menuNumbers;
 
 -(IBAction)buttonPressed1;
 -(IBAction)buttonClickedContinue;

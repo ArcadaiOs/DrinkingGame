@@ -19,7 +19,7 @@
 
 
 @synthesize gameState, previousState;
-@synthesize players;
+@synthesize players, background1, menuNumbers;
 @synthesize btnContinue, btnBack;
 @synthesize btn2, btn3, btn4, btn5, btn6, btn7, btn8;
 
@@ -33,7 +33,7 @@
         {
     
 
-            players.hidden = 0;
+            
     
 }
         
@@ -45,8 +45,20 @@
         
         gameState = kStateSecond;
 
+        background1.hidden = 1;
         players.hidden = 1;
+        menuNumbers.hidden = 1;
         
+    }
+    
+    else if (gameState == kStateThird) {
+        
+        gameState = kStateThird;
+    }
+    
+    else if (gameState == kStateFourth) {
+        
+        gameState = kStateFourth;
     }
 }
 
