@@ -8,6 +8,8 @@
 
 #import "DGGame.h"
 #import "DGController.h"
-@interface DGRandomShot : DGGame
+@interface DGRandomShot : DGGame{
+    IBOutlet UIImageView* img;
+}
 
 @end

@@ -25,7 +25,8 @@
     currentCame = [[DGGameSimonSays alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
 }
-
+-(IBAction) showPlayer:(id)sender{
+}
 -(void) gameEndedWithScores:(NSString*) scores{
     NSLog(@"Game ended: %@", scores);
 }
