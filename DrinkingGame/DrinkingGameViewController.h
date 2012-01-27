@@ -25,7 +25,7 @@ typedef struct{
 }
 @property (nonatomic, retain) DGController* controller;
 
-
+-(IBAction) showPlayer:(id)sender;
 -(void) gameEndedWithScores:(NSString*) scores;
 -(IBAction) launchTestGame:(id)sender;
 -(IBAction) launchSimon:(id)sender;
