@@ -13,7 +13,7 @@
 }
 
 @synthesize playList;
-
+@synthesize playEnumerator;
 
 -(void) nextPlay:(NSTimer *)timer{
     
@@ -21,8 +21,13 @@
     
     id next = [en nextObject];
     if(next == nil){
-        NSLog(@"end of array");
+        NSLog(@"end of array, start player action");
         [timer invalidate];
+
+        //playEnumerator = [playList objectEnumerator];
+        playerAction = true;
+        playCount = 0;
+        
     } else {
         NSNumber* num = (NSNumber*)next;
         NSLog(@"Timergot: %i", [num intValue]);
@@ -30,6 +35,11 @@
     }
     
 }
+
+
+/*
+ Function that starts the gameLoop
+*/
 -(IBAction) startGame:(id) sender{
     playEnumerator = [playList objectEnumerator];
     
@@ -41,6 +51,10 @@
      ];
     
 }
+
+/*
+    Resets button highligt state, Button should have reference in the Timer
+*/
 -(void) timerFired:(NSTimer *)timer {
     UIButton *b = (UIButton*) [timer userInfo];
     b.highlighted = false;
@@ -54,26 +68,87 @@
     }
     return self;
 }
+/*
+    Get some amount of random numbers between min and max values
+*/
 -(int*) nrOfRands:(int)rands minimi:(int)min maximi:(int)max{
     int *ret;
-    ret = (int*) malloc(rands*sizeof(int));
-    for(int i=0;i<rands;i++){
-        ret[i]=arc4random() % max + min;
+    
+    if(min>max) {
+        ret = (int*) malloc(rands*sizeof(int));    
+        ret[0] = -1;
+    } else {
+        ret = (int*) malloc(rands*sizeof(int));
+        for(int i=0;i<rands;i++){
+            ret[i]=arc4random() % max + min;
+        }    
     }
+    
     return ret;
+    
 }
-
+/*
+    gets One random number
+*/
 -(int) getRandomIntMin:(int)min max:(int)max{
-    return (int) ((arc4random() % max) + min);
+    if(min>max)
+        return -1;
+    else
+        return (int) ((arc4random() % max) + min);
 }
 
 -(IBAction)buttonPressed:(id)sender{
     UIButton *button = (UIButton*) sender;
-    NSLog(@"BUttonPResed %@", button.titleLabel.text);
+    //NSLog(@"BUttonPResed %@", button.titleLabel.text);
+    if(playerAction){
+        
+        if(playCount < ([playList count]) ){
+            NSLog(@"COMPARING: BUTTON: %i LIST: %i, COUNT %i", [self colorToIntId:button.titleLabel.text],
+                  [[playList objectAtIndex:playCount] intValue],playCount);
+            
+            if([[playList objectAtIndex:playCount] intValue] == [self colorToIntId:button.titleLabel.text] ){
+                if(playCount == [playList count]-1){
+                    NSLog(@"WIN");
+                    [self flashButton:1 duration:2.0f];
+                    [self flashButton:2 duration:2.0f];
+                    [self flashButton:3 duration:2.0f];
+                    [self flashButton:4 duration:2.0f];
+                }
+                
+                playCount++;        
+            } else {
+                NSLog(@"PLAYER FAIL");
+                playCount = 0;
+                playerAction = false;
+                
+            }
+            
+            } else{
+            NSLog(@"PLAYER FAIL");
+            
+            playerAction = false;
+            playCount = 0;
+        }
+        
+        
+    } else {
+        NSLog(@"should wait");
+    }
     
     
 }
-
+-(int) colorToIntId:(NSString* )colorName{
+    if([colorName compare:@"BLUE"] == NSOrderedSame){
+        return 1;
+    } else if ([colorName compare:@"YELLOW"] == NSOrderedSame){
+        return 2;
+    } else if ([colorName compare:@"RED"] == NSOrderedSame){
+        return 3;
+    } else if ([colorName compare:@"GREEN"] == NSOrderedSame){
+        return 4;
+    } 
+    return 0;
+}
 
 -(void) flashButton:(int)buttonNr duration:(float)seconds{
     UIButton *btn;
@@ -120,6 +195,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    playerAction = false;
     NSLog(@"simon is loaded");
     playList = [[NSMutableArray alloc] init];
 

@@ -24,6 +24,8 @@
     
     // killmiself
     [self.view removeFromSuperview];
+    //[self release];
+    
     
 }
 

@@ -18,10 +18,17 @@
     
     NSMutableArray* playList;
     NSEnumerator* playEnumerator;
+    
+    Boolean playerAction;
+    NSTimer* playActionTimeOut;
+    int playCount;
+    
 }
 
 @property (nonatomic, retain) NSMutableArray* playList;
+@property (nonatomic, retain) NSEnumerator* playEnumerator;
 
+-(int) colorToIntId:(NSString* )colorName;
 -(void) nextPlay: (NSTimer*) timer;
 -(void) flashButton:(int) buttonNr duration:(float) seconds;
 
