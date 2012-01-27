@@ -10,6 +10,7 @@
 #import "DGGame.h"
 #import "DGRandomShot.h"
 #import "DGController.h"
+#import "DGGameSimonSays.h"
 
 typedef struct{
     NSString *playerName;

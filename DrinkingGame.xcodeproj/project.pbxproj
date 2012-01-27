@@ -321,6 +321,7 @@
 				3F10BE3B14C9960800220F88 /* simon_yel_up.png in Resources */,
 				3F50863514D2C5F6006588E3 /* Soini.jpeg in Resources */,
 				3FC785AD14D2D96300F3CCE3 /* niini.png in Resources */,
+				3F1D4EE814D2C21A006D5BE7 /* DGGameSimonSays.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +341,7 @@
 				3F3A731414D1821800ECD451 /* DGDrink.m in Sources */,
 				3F3A731A14D186F500ECD451 /* DGConsumption.m in Sources */,
 				3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */,
+				3F1D4EE914D2C21A006D5BE7 /* DGGameSimonSays.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
