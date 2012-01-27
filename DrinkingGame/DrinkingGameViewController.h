@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DGGame.h"
-#import "DGGameTestOne.h"
-
+#import "DGRandomShot.h"
 
 typedef struct{
     NSString *playerName;

@@ -20,10 +20,10 @@
                   [[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"],
                   [[DGDrink alloc] initWithVolumeCl:16 procent:4.7f andName:@"Beer"],
                   nil];
+        
         // Initialization code here.
     }
     
     return self;
 }
-
 @end
