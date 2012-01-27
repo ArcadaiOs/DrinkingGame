@@ -12,15 +12,20 @@
 @implementation DrinkingGameViewController
 @synthesize controller;
 -(IBAction)launchTestGame:(id)sender{
-    NSLog(@"LAUNCH");
-    
     [currentCame.view removeFromSuperview];
     [currentCame release];
     currentCame = [[DGRandomShot alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
-    
-    
 }
+
+-(IBAction)launchSimon:(id)sender{
+    [currentCame.view removeFromSuperview];
+    [currentCame release];
+    
+    currentCame = [[DGGameSimonSays alloc] init];
+    [self.view addSubview:currentCame.view];
+}
+
 -(void) gameEndedWithScores:(NSString*) scores{
     NSLog(@"Game ended: %@", scores);
 }
