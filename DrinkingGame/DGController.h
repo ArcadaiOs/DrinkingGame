@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "DGDrink.h"
+#import "DGPlayer.h"
 @interface DGController : NSObject{
-    NSArray* drinks;
-    NSArray* players;
+    NSMutableArray* drinks;
+    NSMutableArray* players;
 }
 
-@property (nonatomic, retain) NSArray* drinks;
-@property (nonatomic, retain) NSArray* players;
+@property (nonatomic, retain) NSMutableArray* drinks;
+@property (nonatomic, retain) NSMutableArray* players;
+-(void) addPlayer;
 @end

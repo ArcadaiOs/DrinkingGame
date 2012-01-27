@@ -6,7 +6,7 @@
         <relationship name="player" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DGPlayer" inverseName="consumption" inverseEntity="DGPlayer"/>
     </entity>
     <entity name="DGPlayer" representedClassName="DGPlayer">
-        <attribute name="image" optional="YES" attributeType="Float" defaultValueString="0.0"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="isFemale" optional="YES" attributeType="Boolean"/>
         <attribute name="promille" optional="YES" attributeType="Float" defaultValueString="0.0"/>
         <attribute name="waterWeightGram" optional="YES" attributeType="Integer 32" defaultValueString="0"/>

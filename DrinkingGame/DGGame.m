@@ -9,11 +9,12 @@
 #import "DGGame.h"
 
 @implementation DGGame
-
-- (id)init
+@synthesize controller;
+- (id)initWithController: (DGController*) controller
 {
     self = [super init];
     if (self) {
+        self.controller = controller;
         // Custom initialization
     }
     return self;

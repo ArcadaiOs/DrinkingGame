@@ -2,19 +2,28 @@
 //  DGPlayer.h
 //  DrinkingGame
 //
-//  Created by student on 1/26/12.
+//  Created by student on 1/27/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class DGConsumption;
 
-@interface DGPlayer : NSManagedObject {
+@interface DGPlayer : NSObject {
 @private
+    UIImage * image;
+    Boolean isFemale;
+    NSNumber * promille;
+    NSNumber * waterWeightGram;
+    NSNumber * weight;
+    NSMutableArray* consumptions;
 }
-@property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) UIImage * image;
+@property (nonatomic) Boolean isFemale;
+@property (nonatomic, retain) NSNumber * promille;
+@property (nonatomic, retain) NSNumber * waterWeightGram;
 @property (nonatomic, retain) NSNumber * weight;
-@property (nonatomic, retain) NSNumber * isFemale;
--(float) getAlcoholePromille;
+- (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale;
 @end

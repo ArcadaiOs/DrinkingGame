@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DGGame.h"
 #import "DGRandomShot.h"
+#import "DGController.h"
 
 typedef struct{
     NSString *playerName;
@@ -17,9 +18,11 @@ typedef struct{
 
 @interface DrinkingGameViewController : UIViewController{
     DGGame *currentCame;
+    DGController* controller;
     
     
 }
+@property (nonatomic, retain) DGController* controller;
 
 
 -(void) gameEndedWithScores:(NSString*) scores;

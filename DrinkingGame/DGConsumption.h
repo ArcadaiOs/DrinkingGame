@@ -11,8 +11,11 @@
 
 @class DGPlayer;
 
-@interface DGConsumption : NSManagedObject {
+@interface DGConsumption : NSObject {
 @private
+    NSNumber * alcoholeGrams;
+    NSDate * timestamp;
+    DGPlayer *player;
 }
 @property (nonatomic, retain) NSNumber * alcoholeGrams;
 @property (nonatomic, retain) NSDate * timestamp;

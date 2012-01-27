@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DGController.h"
 typedef enum {
     turnBased,
     allAtOnce,
@@ -20,10 +20,10 @@ typedef enum {
 
 @interface DGGame : UIViewController{
     GameType gameType;
-    
-    
-    
+    DGController* controller;
 }
+@property (nonatomic, retain) DGController* controller;
+- (id)initWithController: (DGController*) controller;
 -(IBAction) endGame:(id)sender;
 
 @end

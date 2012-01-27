@@ -28,9 +28,11 @@
 		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
 		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
 		3F40EB8F14C9A85D009B35A5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F40EB8E14C9A85D009B35A5 /* CoreData.framework */; };
+		3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F50863214D2C40A006588E3 /* DGPlayer.m */; };
+		3F50863514D2C5F6006588E3 /* Soini.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F50863414D2C5F6006588E3 /* Soini.jpeg */; };
 		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
 		3FC64CE514D178D8007D2F87 /* DGData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FC64CE314D178D8007D2F87 /* DGData.xcdatamodeld */; };
-		3FC64CE814D17AF6007D2F87 /* DGPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC64CE714D17AF6007D2F87 /* DGPlayer.m */; };
+		3FC785AD14D2D96300F3CCE3 /* niini.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC785AC14D2D96300F3CCE3 /* niini.png */; };
 		3FE08EF714C98B3F0010A03C /* DGRandomShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08EF514C98B3F0010A03C /* DGRandomShot.m */; };
 		3FE08EF814C98B3F0010A03C /* DGRandomShot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */; };
 		3FE08EFE14C992E00010A03C /* simon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFB14C992E00010A03C /* simon.png */; };
@@ -68,11 +70,13 @@
 		3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkingGameViewController.m; sourceTree = "<group>"; };
 		3F3AFEE114C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DrinkingGameViewController.xib; sourceTree = "<group>"; };
 		3F40EB8E14C9A85D009B35A5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3F50863114D2C40A006588E3 /* DGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayer.h; sourceTree = "<group>"; };
+		3F50863214D2C40A006588E3 /* DGPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayer.m; sourceTree = "<group>"; };
+		3F50863414D2C5F6006588E3 /* Soini.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Soini.jpeg; sourceTree = "<group>"; };
 		3FBCABE114C97F4E0032EBA1 /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3FBCABE214C97F4E0032EBA1 /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
 		3FC64CE414D178D8007D2F87 /* DGData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DGData.xcdatamodel; sourceTree = "<group>"; };
-		3FC64CE614D17AF6007D2F87 /* DGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayer.h; sourceTree = "<group>"; };
-		3FC64CE714D17AF6007D2F87 /* DGPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayer.m; sourceTree = "<group>"; };
+		3FC785AC14D2D96300F3CCE3 /* niini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = niini.png; sourceTree = "<group>"; };
 		3FE08EF414C98B3F0010A03C /* DGRandomShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShot.h; sourceTree = "<group>"; };
 		3FE08EF514C98B3F0010A03C /* DGRandomShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShot.m; sourceTree = "<group>"; };
 		3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGRandomShot.xib; sourceTree = "<group>"; };
@@ -114,8 +118,8 @@
 		3F10BE9214C99B7E00220F88 /* DGPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				3FC64CE614D17AF6007D2F87 /* DGPlayer.h */,
-				3FC64CE714D17AF6007D2F87 /* DGPlayer.m */,
+				3F50863114D2C40A006588E3 /* DGPlayer.h */,
+				3F50863214D2C40A006588E3 /* DGPlayer.m */,
 			);
 			name = DGPlayer;
 			sourceTree = "<group>";
@@ -230,6 +234,8 @@
 		3FE08EFA14C992E00010A03C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				3FC785AC14D2D96300F3CCE3 /* niini.png */,
+				3F50863414D2C5F6006588E3 /* Soini.jpeg */,
 				3F10BE2B14C9960800220F88 /* images */,
 				3FE08EFB14C992E00010A03C /* simon.png */,
 				3FE08EFC14C992E00010A03C /* simon.psd */,
@@ -300,6 +306,8 @@
 				3F10BE3914C9960800220F88 /* simon_red_up.png in Resources */,
 				3F10BE3A14C9960800220F88 /* simon_yel_dwn.png in Resources */,
 				3F10BE3B14C9960800220F88 /* simon_yel_up.png in Resources */,
+				3F50863514D2C5F6006588E3 /* Soini.jpeg in Resources */,
+				3FC785AD14D2D96300F3CCE3 /* niini.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,10 +324,10 @@
 				3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */,
 				3FE08EF714C98B3F0010A03C /* DGRandomShot.m in Sources */,
 				3FC64CE514D178D8007D2F87 /* DGData.xcdatamodeld in Sources */,
-				3FC64CE814D17AF6007D2F87 /* DGPlayer.m in Sources */,
 				3F3A730814D17F9D00ECD451 /* DGController.m in Sources */,
 				3F3A731414D1821800ECD451 /* DGDrink.m in Sources */,
 				3F3A731A14D186F500ECD451 /* DGConsumption.m in Sources */,
+				3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

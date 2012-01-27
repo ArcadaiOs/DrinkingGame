@@ -7,7 +7,7 @@
 //
 
 #import "DGGame.h"
-
+#import "DGController.h"
 @interface DGRandomShot : DGGame
 
 @end

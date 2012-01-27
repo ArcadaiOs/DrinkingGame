@@ -10,13 +10,13 @@
 
 
 @implementation DrinkingGameViewController
+@synthesize controller;
 -(IBAction)launchTestGame:(id)sender{
     NSLog(@"LAUNCH");
     
     [currentCame.view removeFromSuperview];
     [currentCame release];
-
-    currentCame = [[DGRandomShot alloc] init];
+    currentCame = [[DGRandomShot alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
     
     
@@ -40,7 +40,10 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
+    controller = [[DGController alloc] init];
+    //[ctrl fetchRecords];
     
 }
 
