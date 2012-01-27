@@ -10,11 +10,6 @@
 
 @implementation DGGameSimonSays{
    
-  //  IBOutlet UIButton* blueButton;
-  //  IBOutlet UIButton* yellowButton;
-  //  IBOutlet UIButton* redButton;
-  //  IBOutlet UIButton* greenButton;
-
 }
 
 @synthesize playList;
@@ -22,8 +17,30 @@
 
 -(void) nextPlay:(NSTimer *)timer{
     
+    NSEnumerator* en = (NSEnumerator*) timer.userInfo;
+    
+    id next = [en nextObject];
+    if(next == nil){
+        NSLog(@"end of array");
+        [timer invalidate];
+    } else {
+        NSNumber* num = (NSNumber*)next;
+        NSLog(@"Timergot: %i", [num intValue]);
+        [self flashButton:[num intValue] duration:0.2];
+    }
+    
 }
-
+-(IBAction) startGame:(id) sender{
+    playEnumerator = [playList objectEnumerator];
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.5
+                                     target:self
+                                   selector:@selector(nextPlay:)
+                                   userInfo:playEnumerator
+                                    repeats:true
+     ];
+    
+}
 -(void) timerFired:(NSTimer *)timer {
     UIButton *b = (UIButton*) [timer userInfo];
     b.highlighted = false;
@@ -56,10 +73,11 @@
     
     
 }
--(IBAction) flashRandomColor:(id) sender{
-    int b = [self getRandomIntMin:1 max:4];
+
+
+-(void) flashButton:(int)buttonNr duration:(float)seconds{
     UIButton *btn;
-    switch (b) {
+    switch (buttonNr) {
         case 1:
             btn = blueButton;
             break;
@@ -74,18 +92,19 @@
         default:
             return;
     }
-    //btn.isHighlighted = true;
     btn.highlighted = true;
-    [NSTimer scheduledTimerWithTimeInterval:1
+    [NSTimer scheduledTimerWithTimeInterval:seconds
                                      target:self
                                    selector:@selector(timerFired:)
                                    userInfo:btn
                                     repeats:false
      ];
     
-    
-    NSLog(@"rand %i name: %@", b, btn.currentTitle);
-    
+}
+
+-(IBAction) flashRandomColor:(id) sender{
+    int b = [self getRandomIntMin:1 max:4];
+    [self flashButton:b duration:0.2];
 }
 - (void)didReceiveMemoryWarning
 {

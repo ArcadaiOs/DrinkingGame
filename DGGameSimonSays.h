@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSMutableArray* playList;
 
 -(void) nextPlay: (NSTimer*) timer;
+-(void) flashButton:(int) buttonNr duration:(float) seconds;
 
 -(int*) nrOfRands:(int) rands minimi:(int) min maximi:(int) max;
 -(int) getRandomIntMin:(int) min max:(int) max;
@@ -32,5 +33,5 @@
 -(IBAction) buttonPressed:(id)sender;
 
 -(IBAction) flashRandomColor:(id)sender;
-
+-(IBAction) startGame:(id)sender;
 @end

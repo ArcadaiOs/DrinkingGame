@@ -143,7 +143,7 @@
 				1446C72814C0609600BAC380 /* DGPlayer.h */,
 				1446C72914C0609600BAC380 /* DGPlayer.m */,
 				3FE08EF314C98A8F0010A03C /* DGRandomShot */,
-				3FBCABEB14C97F9A0032EBA1 /* DGGameTestOne */,
+				3FBCABEB14C97F9A0032EBA1 /* DGGameSimonSays */,
 				3FBCABE114C97F4E0032EBA1 /* DGGame.h */,
 				3FBCABE214C97F4E0032EBA1 /* DGGame.m */,
 			);
@@ -161,14 +161,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3FBCABEB14C97F9A0032EBA1 /* DGGameTestOne */ = {
+		3FBCABEB14C97F9A0032EBA1 /* DGGameSimonSays */ = {
 			isa = PBXGroup;
 			children = (
 				3FBCABE614C97F950032EBA1 /* DGGameSimonSays.h */,
 				3FBCABE714C97F950032EBA1 /* DGGameSimonSays.m */,
 				3FBCABE814C97F950032EBA1 /* DGGameSimonSays.xib */,
 			);
-			name = DGGameTestOne;
+			name = DGGameSimonSays;
 			path = ..;
 			sourceTree = "<group>";
 		};
