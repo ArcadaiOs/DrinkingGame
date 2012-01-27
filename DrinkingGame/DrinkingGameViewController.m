@@ -31,86 +31,86 @@
 @synthesize buttonEasySelected, buttonHardSelected, buttonCustomSelected, buttonMediumSelected;
 
 
--(void) menuLoop {
-    
-    if (gameState == kStateFirst) {
-    
-        if (previousState == kStateFirst)
-        {
-    
-            buttonEasySelected.hidden = 1;
-            buttonMediumSelected.hidden = 1;
-            buttonHardSelected.hidden = 1;
-            buttonCustomSelected.hidden = 1;
-            
-            
-            
-            btn2.hidden = 0;
-            btn3.hidden = 0;
-            btn4.hidden = 0;
-            btn5.hidden = 0;
-            btn6.hidden = 0;
-            btn7.hidden = 0;
-            btn8.hidden = 0;
-            Menu2EasySelected.hidden = 1;
-            Menu2MediumSelected.hidden = 1;
-            Menu2HardSelected.hidden = 1;
-            Menu2CustomSelected.hidden = 1;
-
-            menu2.hidden = 1;
-            
-            
-      
-}
-        
-        previousState = kStateFirst;
-
-    }
-    
-    else if (gameState == kStateSecond) {
-        
-        gameState = kStateSecond;
-        
-        background1.hidden = 0;
-        players.hidden = 1;
-        menuNumbers.hidden = 1;
-        menu2.hidden = 0;
-        
-        
-        buttonEasySelected.hidden = 0;
-        buttonMediumSelected.hidden = 0;
-        buttonHardSelected.hidden = 0;
-        buttonCustomSelected.hidden = 0;
-        
-        btn2.hidden = 1;
-        btn3.hidden = 1;
-        btn4.hidden = 1;
-        btn5.hidden = 1;
-        btn6.hidden = 1;
-        btn7.hidden = 1;
-        btn8.hidden = 1;
-        
-        selected2.hidden = 1;
-        selected3.hidden = 1;
-        selected4.hidden = 1;
-        selected5.hidden = 1;
-        selected6.hidden = 1;
-        selected7.hidden = 1;
-        selected8.hidden = 1;
-
-
-    }
-    
-    else if (gameState == kStateThird) {
-        
-        gameState = kStateThird;
-    }
-    
-    else if (gameState == kStateFourth) {
-        
-        gameState = kStateFourth;
-    }
-}
+//-(void) menuLoop {
+//    
+//    if (gameState == kStateFirst) {
+//    
+//        if (previousState == kStateFirst)
+//        {
+//    
+//            buttonEasySelected.hidden = 1;
+//            buttonMediumSelected.hidden = 1;
+//            buttonHardSelected.hidden = 1;
+//            buttonCustomSelected.hidden = 1;
+//            
+//            
+//            
+//            btn2.hidden = 0;
+//            btn3.hidden = 0;
+//            btn4.hidden = 0;
+//            btn5.hidden = 0;
+//            btn6.hidden = 0;
+//            btn7.hidden = 0;
+//            btn8.hidden = 0;
+//            Menu2EasySelected.hidden = 1;
+//            Menu2MediumSelected.hidden = 1;
+//            Menu2HardSelected.hidden = 1;
+//            Menu2CustomSelected.hidden = 1;
+//
+//            menu2.hidden = 1;
+//            
+//            
+//      
+//}
+//        
+//        previousState = kStateFirst;
+//
+//    }
+//    
+//    else if (gameState == kStateSecond) {
+//        
+//        gameState = kStateSecond;
+//        
+//        background1.hidden = 0;
+//        players.hidden = 1;
+//        menuNumbers.hidden = 1;
+//        menu2.hidden = 0;
+//        
+//        
+//        buttonEasySelected.hidden = 0;
+//        buttonMediumSelected.hidden = 0;
+//        buttonHardSelected.hidden = 0;
+//        buttonCustomSelected.hidden = 0;
+//        
+//        btn2.hidden = 1;
+//        btn3.hidden = 1;
+//        btn4.hidden = 1;
+//        btn5.hidden = 1;
+//        btn6.hidden = 1;
+//        btn7.hidden = 1;
+//        btn8.hidden = 1;
+//        
+//        selected2.hidden = 1;
+//        selected3.hidden = 1;
+//        selected4.hidden = 1;
+//        selected5.hidden = 1;
+//        selected6.hidden = 1;
+//        selected7.hidden = 1;
+//        selected8.hidden = 1;
+//
+//
+//    }
+//    
+//    else if (gameState == kStateThird) {
+//        
+//        gameState = kStateThird;
+//    }
+//    
+//    else if (gameState == kStateFourth) {
+//        
+//        gameState = kStateFourth;
+//    }
+//}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -160,25 +160,32 @@
 
 -(IBAction)buttonClickedContinue {
 
- 
-    if (gameState == kStateFirst) {
-        
-        gameState = kStateSecond;
-    }
-    else if (gameState == kStateSecond) {
-        gameState = kStateThird;
+// 
+//    if (gameState == kStateFirst) {
+//        
+//        gameState = kStateSecond;
+//    }
+//    else if (gameState == kStateSecond) {
+//        gameState = kStateThird;
+//    
+//    }
+//    
+//    else if (gameState == kStateThird) {
+//        
+//        gameState = kStateFourth;
+//    }
+//    
+//    else if (gameState == kStateFourth) {
+//        
+//        gameState = kStateFifth;
+//    }
     
-    }
+//    [self.view removeFromSuperview];
+//    
+//    [self.view addSubview:secondView];
     
-    else if (gameState == kStateThird) {
-        
-        gameState = kStateFourth;
-    }
-    
-    else if (gameState == kStateFourth) {
-        
-        gameState = kStateFifth;
-    }
+    self.view = secondView;
+
 }
 
 

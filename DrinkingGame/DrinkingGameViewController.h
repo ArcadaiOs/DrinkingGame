@@ -65,6 +65,8 @@
     UIButton *Menu2HardSelected;
     UIButton *Menu2CustomSelected;
     
+    IBOutlet UIView *secondView;
+    
 }
 
 
