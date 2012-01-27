@@ -8,11 +8,11 @@
 
 #import "DrinkingGameViewController.h"
 
-#define kStateFirst 1
-#define kStateSecond 2
-#define kStateThird 3
-#define kStateFourth 4
-#define kStateFifth 5
+//#define kStateFirst 1
+//#define kStateSecond 2
+//#define kStateThird 3
+//#define kStateFourth 4
+//#define kStateFifth 5
 
 
 @implementation DrinkingGameViewController
@@ -20,7 +20,7 @@
 
 @synthesize gameState, previousState;
 //menu 1
-@synthesize players, background1, menuNumbers, pointBackActive, pointNextActive, pointBack, pointNext;
+@synthesize players, background1, menuNumbers, pointBackActive1, pointNextActive1, pointBack, pointNext;
 @synthesize selected2, selected3, selected4, selected5, selected6, selected7, selected8;
 @synthesize btnContinue, btnBack;
 @synthesize btn2, btn3, btn4, btn5, btn6, btn7, btn8;
@@ -31,47 +31,49 @@
 @synthesize buttonEasySelected, buttonHardSelected, buttonCustomSelected, buttonMediumSelected;
 
 
+
+
 //-(void) menuLoop {
+    
+//    if (self.view == rootViewController) {
 //    
-//    if (gameState == kStateFirst) {
-//    
-//        if (previousState == kStateFirst)
+//        if (self.view == viewController)
 //        {
 //    
-//            buttonEasySelected.hidden = 1;
-//            buttonMediumSelected.hidden = 1;
-//            buttonHardSelected.hidden = 1;
-//            buttonCustomSelected.hidden = 1;
-//            
-//            
-//            
-//            btn2.hidden = 0;
-//            btn3.hidden = 0;
-//            btn4.hidden = 0;
-//            btn5.hidden = 0;
-//            btn6.hidden = 0;
-//            btn7.hidden = 0;
-//            btn8.hidden = 0;
-//            Menu2EasySelected.hidden = 1;
-//            Menu2MediumSelected.hidden = 1;
-//            Menu2HardSelected.hidden = 1;
-//            Menu2CustomSelected.hidden = 1;
-//
-//            menu2.hidden = 1;
-//            
-//            
+////            buttonEasySelected.hidden = 1;
+////            buttonMediumSelected.hidden = 1;
+////            buttonHardSelected.hidden = 1;
+////            buttonCustomSelected.hidden = 1;
+////            
+////            
+////            
+////            btn2.hidden = 0;
+////            btn3.hidden = 0;
+////            btn4.hidden = 0;
+////            btn5.hidden = 0;
+////            btn6.hidden = 0;
+////            btn7.hidden = 0;
+////            btn8.hidden = 0;
+////            Menu2EasySelected.hidden = 1;
+////            Menu2MediumSelected.hidden = 1;
+////            Menu2HardSelected.hidden = 1;
+////            Menu2CustomSelected.hidden = 1;
+////
+////            menu2.hidden = 1;
+////            
+////            
 //      
 //}
 //        
-//        previousState = kStateFirst;
+//        self.view = firstview;
 //
 //    }
 //    
-//    else if (gameState == kStateSecond) {
+//     if (self.view == secondView) {
 //        
-//        gameState = kStateSecond;
+//        self.view = secondView;
 //        
-//        background1.hidden = 0;
+//        background1.hidden = 1;
 //        players.hidden = 1;
 //        menuNumbers.hidden = 1;
 //        menu2.hidden = 0;
@@ -97,7 +99,7 @@
 //        selected6.hidden = 1;
 //        selected7.hidden = 1;
 //        selected8.hidden = 1;
-//
+
 //
 //    }
 //    
@@ -112,25 +114,33 @@
 //    }
 //}
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
-    {
-        // Custom initialization
-    }
-    return self;
-}
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
+//    {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 
 - (void)viewDidLoad
 {
     
-    [NSTimer scheduledTimerWithTimeInterval:1.0/60 target:self selector:@selector(menuLoop) userInfo:nil repeats:YES];
-    NSArray *array = [[NSArray alloc] initWithObjects:@"2 players",@"3 players",@"4 players",@"5 players",@"6 players", @"7 players",@"8 players",nil];
+//    selected2.hidden = 1;
+//    selected3.hidden = 1;
+//    selected4.hidden = 1;
+//    selected5.hidden = 1;
+//    selected6.hidden = 1;
+//    selected7.hidden = 1;
+//    selected8.hidden = 1;
+    
+//    [NSTimer scheduledTimerWithTimeInterval:1.0/60 target:self selector:@selector(menuLoop) userInfo:nil repeats:YES];
+//    NSArray *array = [[NSArray alloc] initWithObjects:@"2 players",@"3 players",@"4 players",@"5 players",@"6 players", @"7 players",@"8 players",nil];
+//
+//    gameState = kStateFirst;
 
-    gameState = kStateFirst;
-
-    [array release];
+//    [array release];
     [super viewDidLoad];
 }
 
@@ -184,31 +194,50 @@
 //    
 //    [self.view addSubview:secondView];
     
-    self.view = secondView;
+    if (self.view == secondView) {
+        
+        self.view = thirdView;
+    }
+    else {
+        
+        self.view = secondView;
+    }
 
 }
 
 
 -(IBAction)buttonClickedBack {
     
-    if (gameState == kStateSecond) {
+    if (self.view == thirdView) {
         
-        gameState = kStateFirst;
+        self.view = secondView;
     }
-    else if (gameState == kStateThird) {
-        gameState = kStateSecond;
+    else {
         
-    }
-    
-    else if (gameState == kStateFourth) {
-        
-        gameState = kStateThird;
+
     }
     
-    else if (gameState == kStateFifth) {
-        
-        gameState = kStateFourth;
-    }
+    
+//    if (gameState == kStateSecond) {
+//        
+//        gameState = kStateFirst;
+//    }
+//    else if (gameState == kStateThird) {
+//        gameState = kStateSecond;
+//        
+//    }
+//    
+//    else if (gameState == kStateFourth) {
+//        
+//        gameState = kStateThird;
+//    }
+//    
+//    else if (gameState == kStateFifth) {
+//        
+//        gameState = kStateFourth;
+//    }
+    
+    
 }
 
 
@@ -216,7 +245,8 @@
 
 -(IBAction)buttonPlayers2 {
     
-    pointNextActive.hidden = 0;
+    btnContinue.hidden = 0;
+    pointNextActive1.hidden = 0;
     selected2.hidden = 0;
     selected3.hidden = 1;
     selected4.hidden = 1;
@@ -228,7 +258,8 @@
 }
 -(IBAction)buttonPlayers3 {
     
-    pointNextActive.hidden = 0;
+    btnContinue.hidden = 0;
+    pointNextActive1.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 0;
     selected4.hidden = 1;
@@ -240,7 +271,8 @@
 }
 -(IBAction)buttonPlayers4 {
     
-    pointNextActive.hidden = 0;
+    btnContinue.hidden = 0;
+    pointNextActive1.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 0;
@@ -252,7 +284,8 @@
 }
 -(IBAction)buttonPlayers5 {
     
-    pointNextActive.hidden = 0;
+    btnContinue.hidden = 0;
+    pointNextActive1.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 1;
@@ -264,7 +297,8 @@
 }
 -(IBAction)buttonPlayers6 {
     
-    pointNextActive.hidden = 0;
+    btnContinue.hidden = 0;
+    pointNextActive1.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 1;
@@ -276,7 +310,8 @@
 }
 -(IBAction)buttonPlayers7 {
     
-    pointNextActive.hidden = 0;
+    btnContinue.hidden = 0;
+    pointNextActive1.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 1;
@@ -288,7 +323,8 @@
 }
 -(IBAction)buttonPlayers8 {
     
-    pointNextActive.hidden = 0;
+    btnContinue.hidden = 0;
+    pointNextActive1.hidden = 0;
     selected2.hidden = 1;
     selected3.hidden = 1;
     selected4.hidden = 1;
