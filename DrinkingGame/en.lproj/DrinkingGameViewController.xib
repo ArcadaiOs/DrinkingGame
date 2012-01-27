@@ -271,7 +271,7 @@
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="773379262"/>
 					</object>
-					<object class="IBUIImageView" id="227123253">
+					<object class="IBUIImageView" id="383693097">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, 1}, {320, 459}}</string>
@@ -285,7 +285,7 @@
 							<string key="NSResourceName">DGmenu2customSelected.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="706778408">
+					<object class="IBUIImageView" id="734665258">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, 1}, {320, 460}}</string>
@@ -438,8 +438,8 @@
 							<reference ref="477212621"/>
 							<reference ref="166461037"/>
 							<reference ref="901713123"/>
-							<reference ref="706778408"/>
-							<reference ref="227123253"/>
+							<reference ref="734665258"/>
+							<reference ref="383693097"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -512,12 +512,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">59</int>
-						<reference key="object" ref="706778408"/>
+						<reference key="object" ref="734665258"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">60</int>
-						<reference key="object" ref="227123253"/>
+						<reference key="object" ref="383693097"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</object>
