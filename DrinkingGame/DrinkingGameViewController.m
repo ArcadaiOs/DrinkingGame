@@ -16,9 +16,17 @@
     [currentCame.view removeFromSuperview];
     [currentCame release];
 
-    currentCame = [[DGGameTestOne alloc] init];
+    currentCame = [[DGRandomShot alloc] init];
     [self.view addSubview:currentCame.view];
     
+    
+}
+-(IBAction)launchSimon:(id)sender{
+    [currentCame.view removeFromSuperview];
+    [currentCame release];
+    
+    currentCame = [[DGGameSimonSays alloc] init];
+    [self.view addSubview:currentCame.view];
     
 }
 -(void) gameEndedWithScores:(NSString*) scores{

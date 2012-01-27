@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "DGGame.h"
-#import "DGGameTestOne.h"
+#import "DGRandomShot.h"
+#import "DGGameSimonSays.h"
 
 
 typedef struct{
@@ -25,4 +26,6 @@ typedef struct{
 
 -(void) gameEndedWithScores:(NSString*) scores;
 -(IBAction) launchTestGame:(id)sender;
+-(IBAction) launchSimon:(id)sender;
+
 @end
