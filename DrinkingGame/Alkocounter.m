@@ -18,6 +18,15 @@
     
     return self;
 }
+
+- (NSNumber*) promileForPlayer:(DGPlayer*)player 
+                      fromTime:(NSTimeInterval*)time {
+    
+    NSNumber * result;
+    
+    return result;
+}
+
 // --- Variabler --- //
 
 //promillehalt = svårighetsgrad
