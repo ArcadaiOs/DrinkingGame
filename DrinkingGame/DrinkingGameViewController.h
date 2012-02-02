@@ -7,7 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DGGame.h"
+#import "DGRandomShot.h"
+#import "DGController.h"
+#import "DGGameSimonSays.h"
 
-@interface DrinkingGameViewController : UIViewController
+typedef struct{
+    NSString *playerName;
+    int score;
+} score;
+
+@interface DrinkingGameViewController : UIViewController{
+    DGGame *currentCame;
+    DGController* controller;
+    
+    
+}
+@property (nonatomic, retain) DGController* controller;
+
+-(IBAction) showPlayer:(id)sender;
+-(void) gameEndedWithScores:(NSString*) scores;
+-(IBAction) launchTestGame:(id)sender;
+-(IBAction) launchSimon:(id)sender;
 
 @end

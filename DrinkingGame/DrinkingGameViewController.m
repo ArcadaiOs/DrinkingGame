@@ -8,7 +8,28 @@
 
 #import "DrinkingGameViewController.h"
 
+
 @implementation DrinkingGameViewController
+@synthesize controller;
+-(IBAction)launchTestGame:(id)sender{
+    [currentCame.view removeFromSuperview];
+    [currentCame release];
+    currentCame = [[DGRandomShot alloc] initWithController:controller];
+    [self.view addSubview:currentCame.view];
+}
+
+-(IBAction)launchSimon:(id)sender{
+    [currentCame.view removeFromSuperview];
+    [currentCame release];
+    
+    currentCame = [[DGGameSimonSays alloc] initWithController:controller];
+    [self.view addSubview:currentCame.view];
+}
+-(IBAction) showPlayer:(id)sender{
+}
+-(void) gameEndedWithScores:(NSString*) scores{
+    NSLog(@"Game ended: %@", scores);
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -21,13 +42,17 @@
 #pragma mark - View lifecycle
 
 //test1//
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
+    controller = [[DGController alloc] init];
+    //[ctrl fetchRecords];
+    
 }
-*/
+
 
 - (void)viewDidUnload
 {
