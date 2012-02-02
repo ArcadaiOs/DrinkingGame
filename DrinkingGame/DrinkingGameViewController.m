@@ -160,6 +160,13 @@
 
 -(IBAction)buttonClickedContinue {
 
+    if (self.view == secondView) { 
+        self.view = thirdView;
+    }
+    else
+    {
+        self.view = secondView;
+    }
 // 
 //    if (gameState == kStateFirst) {
 //        
@@ -184,7 +191,7 @@
 //    
 //    [self.view addSubview:secondView];
     
-    self.view = secondView;
+   
 
 }
 
