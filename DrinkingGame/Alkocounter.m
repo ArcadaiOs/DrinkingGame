@@ -20,25 +20,40 @@
 }
 // --- Variabler --- //
 
-//volym% = v
+//promillehalt = svårighetsgrad
+// p1 = 1,0‰
+// p2 = 1.25‰
+// p3 = 1.5‰
 
-// --- Vätskemängden för man och kvinna --- //
-//Promillehalten beräknas som antalet gram alkohol i kroppen dividerat med antalet kilo vätska i kroppen och antalet kilo vätska i kroppen beräknas som andelen vätska i kroppen multiplicerat med vikten i kg. Den promillehalt som uppnås beror på kön då kvinnor har mindre andel vätska och mer underhudsfett än män. När promillehalten beräknas för en man kan andelen vätska sättas till cirka 71 % och när promillehalten beräknas för en kvinna kan andelen vätska sättas till cirka 63 %.
+//vikt = w (för att kunna räkna ut den teoretiska vattenmängden i kroppen )
 
-//räkna ut vattenmängden i kroppen för en man
-//(vikt i kg / 0.71 = vattenmängden i liter)
-//ekvation = alkohol/vattenmängd i kroppen
+//volym% (spritmängd i gram)
+// v1 = 4,7% öl 16cl ()
+// v2 = 11% vin 8cl ()
+// v3 = 40% brännvin 4cl ()
 
 
-//räkna ut vattenmängden i kroppen för en kvinna
-//vikt i kg / 0.63 = vattenmängden i liter
-//räkna ut alkoholmängden i kroppen för en kvinna
+//kön(för att veta vilken av vattenmängds konstanterna man skall använda 0,63 eller 0,71)
+// g1 = 0.71
+// g2 = 0.63
 
-// --- Ren alkohol per shot --- //
-//antalet gram ren alkohol per varje enhet av dricka utifrån volymprocent, antal centiliter och alkoholens densitet
+//glasstorlek = s (Alkoholmatrisen)
+
+//-- Ekvationen till spelarmakaren --//
+// MAN => (w*0.71)*1000 = Gram Vatten i en Man (sparas som vv)
+// KVINNA => (w*0.63)*1000 = Gram Vatten i en Kvinna (sparas som vv)
+
+// Hämtar spelarens vv och alkoholenhet
+// Alkoholenhet/vv = promille i blodet utan förbränning (sparas som pb)
+
+// mata in inmundigad alkohol mängd
+
+//
 
 // --- Förbränningen av alkohol --- //
 //Förbränningen av alkohol i gram per timme beror på kön då en man förbränner cirka 0,1 gram ren alkohol per kilo och timme medan en kvinna förbränner cirka 0,085 gram ren alkohol per kilo och timme.
+
+
 
 
 // --- Fun facts --- //
