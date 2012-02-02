@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrinkingGameViewController : UIViewController
+@interface DrinkingGameViewController : UIViewController{
+    
+    IBOutlet UILabel *myCounterLabel;
+    
+}
+
+@property (nonatomic, retain) UILabel *myCounterLabel;
+
+-(IBAction)Q2;
+-(IBAction)Lose;
 
 @end

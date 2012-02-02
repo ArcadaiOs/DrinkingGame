@@ -1,26 +1,24 @@
 //
-//  DrinkingGameViewController.m
+//  Q2ViewController.m
 //  DrinkingGame
 //
-//  Created by student on 1/13/12.
+//  Created by student on 1/19/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DrinkingGameViewController.h"
 #import "Q2ViewController.h"
+#import "Q3ViewController.h"
 #import "LoseViewController.h"
 
-@implementation DrinkingGameViewController
+@implementation Q2ViewController
 
-@synthesize myCounterLabel;
-
-- (IBAction)Q2;
+- (IBAction)Q3;
 
 {
     
-    Q2ViewController *Q2 = [[Q2ViewController alloc] initWithNibName:nil bundle:nil];
+    Q3ViewController *Q3 = [[Q3ViewController alloc] initWithNibName:nil bundle:nil];
     
-    [self presentModalViewController:Q2 animated:NO];
+    [self presentModalViewController:Q3 animated:NO];
     
 }
 - (IBAction)Lose;
@@ -31,6 +29,14 @@
     
     [self presentModalViewController:Lose animated:NO];
     
+}
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,30 +49,16 @@
 
 #pragma mark - View lifecycle
 
-- (void)updateCounter:(NSTimer *)theTimer {
-	static int count = 5;
-	count -= 1;
-	NSString *s = [[NSString alloc]
-                   initWithFormat:@"%d", count];
-	self.myCounterLabel.text = s;
-	[s release];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.myCounterLabel.text = @"5";
-    
-	[NSTimer scheduledTimerWithTimeInterval:1.0f
-                                     target:self
-                                   selector:@selector(updateCounter:)
-                                   userInfo:nil
-                                    repeats:YES];}
+    // Do any additional setup after loading the view from its nib.
+}
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-       // Release any retained subviews of the main view.
+    // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
