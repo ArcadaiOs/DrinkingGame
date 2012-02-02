@@ -18,6 +18,13 @@
     return self;
 }
 
+- (NSNumber*) promileForPlayer:(DGPlayer*)player 
+                      fromTime:(NSDate*)time {
+    
+    NSNumber * result;
+    
+    return result; 
+}
 
 // --- Variabler --- //
 
