@@ -70,6 +70,7 @@
     UIButton *Menu2HardSelected;
     UIButton *Menu2CustomSelected;
     
+    IBOutlet UIView *firstView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
 
@@ -92,7 +93,10 @@
 @property (nonatomic, retain) IBOutlet UIButton *btn8;
 @property (nonatomic, retain) IBOutlet UIButton *btnContinue;
 @property (nonatomic, retain) IBOutlet UIButton *btnBack;
-
+@property (nonatomic, retain) IBOutlet UIButton *btnContinue2;
+@property (nonatomic, retain) IBOutlet UIButton *btnBack2;
+@property (nonatomic, retain) IBOutlet UIButton *btnContinue3;
+@property (nonatomic, retain) IBOutlet UIButton *btnBack3;
 
 @property (nonatomic, retain) IBOutlet UIImageView *players;
 @property (nonatomic, retain) IBOutlet UIImageView *background1;
@@ -101,11 +105,11 @@
 @property (nonatomic, retain) IBOutlet UIImageView *pointBackActive1;
 @property (nonatomic, retain) IBOutlet UIImageView *pointNextActive1;
 
-//@property (nonatomic, retain) IBOutlet UIImageView *pointBackActive2;
-//@property (nonatomic, retain) IBOutlet UIImageView *pointNextActive2;
-//
-//@property (nonatomic, retain) IBOutlet UIImageView *pointBackActive3;
-//@property (nonatomic, retain) IBOutlet UIImageView *pointNextActive3;
+@property (nonatomic, retain) IBOutlet UIImageView *pointBackActive2;
+@property (nonatomic, retain) IBOutlet UIImageView *pointNextActive2;
+
+@property (nonatomic, retain) IBOutlet UIImageView *pointBackActive3;
+@property (nonatomic, retain) IBOutlet UIImageView *pointNextActive3;
 
 @property (nonatomic, retain) IBOutlet UIImageView *pointBack;
 @property (nonatomic, retain) IBOutlet UIImageView *pointNext;

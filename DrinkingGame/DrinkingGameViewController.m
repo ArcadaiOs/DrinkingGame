@@ -16,9 +16,9 @@
 
 @synthesize gameState, previousState;
 //menu 1
-@synthesize players, background1, menuNumbers, pointBackActive1, pointNextActive1, pointBack, pointNext;
+@synthesize players, background1, menuNumbers, pointBackActive1, pointNextActive1, pointBackActive2, pointNextActive2, pointBack, pointNext;
 @synthesize selected2, selected3, selected4, selected5, selected6, selected7, selected8;
-@synthesize btnContinue, btnBack;
+@synthesize btnContinue, btnBack, btnContinue2, btnBack2, btnContinue3, btnBack3;
 @synthesize btn2, btn3, btn4, btn5, btn6, btn7, btn8;
 //menu 2
 @synthesize menu2;
@@ -35,6 +35,7 @@
     
 
     [super viewDidLoad];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -62,7 +63,7 @@
 
 
 -(IBAction)buttonClickedContinue {
-
+    firstView = self.view;
 
     
     if (self.view == secondView) {
@@ -73,15 +74,18 @@
         
         self.view = secondView;
     }
+    
 
 }
 
 
+
+
 -(IBAction)buttonClickedBack {
     
-    if (self.view == thirdView) {
+    if (self.view == secondView) {
         
-        self.view = secondView;
+        self.view = firstView;
     }
     else {
         
@@ -222,6 +226,13 @@
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 0;
 }
+
+//Meny 3
+
+
+
+
+
  //lalllaaa
     
 @end
