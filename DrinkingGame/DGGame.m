@@ -23,6 +23,9 @@
 -(void) showPlayer:(DGPlayer *)player{
 
     [playerView setPlayer:player];
+    NSLog(@"ShowPlayer");
+    
+    
     [self presentModalViewController:playerView animated:YES];
 
 }

@@ -43,9 +43,7 @@
 -(IBAction) startGame:(id) sender{
 //    [[[self showPlayer:[controller players] objectAtIndex:1] ]];
     
-    [self showPlayer:[[controller players] objectAtIndex:1]];
-    
-    //DGPlayerView *nextPlayer = [[DGPlayerView alloc] init] ;
+        //DGPlayerView *nextPlayer = [[DGPlayerView alloc] init] ;
     
     //[self presentModalViewController:nextPlayer animated:NO];
     //[self.view addSubview:nextPlayer.view];
@@ -189,6 +187,11 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+-(IBAction)next:(id)sender{
+    NSLog(@"Siin Next");
+    [self showPlayer:[[controller players] objectAtIndex:1]];
+    
 }
 
 #pragma mark - View lifecycle

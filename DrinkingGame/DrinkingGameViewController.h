@@ -11,6 +11,7 @@
 #import "DGRandomShot.h"
 #import "DGController.h"
 #import "DGGameSimonSays.h"
+#import "DGSteadyHands.h"
 #import "DGViewPlayer.h"
 
 

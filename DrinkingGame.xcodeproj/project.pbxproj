@@ -367,6 +367,8 @@
 				3F1D4EE814D2C21A006D5BE7 /* DGGameSimonSays.xib in Resources */,
 				3FC9856914DAA1F70023BB05 /* naama.jpg in Resources */,
 				3FCDE48A14DAB7370087921F /* DGViewPlayer.xib in Resources */,
+				3F52E2B314DAABD000ECA4BB /* DGTestGameTwo.xib in Resources */,
+				3F52E2B914DAAC1D00ECA4BB /* DGSteadyHands.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +390,8 @@
 				3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */,
 				3F1D4EE914D2C21A006D5BE7 /* DGGameSimonSays.m in Sources */,
 				3FCDE48914DAB7370087921F /* DGViewPlayer.m in Sources */,
+				3F52E2B214DAABD000ECA4BB /* DGTestGameTwo.m in Sources */,
+				3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +474,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrinkingGame/DrinkingGame-Prefix.pch";
 				INFOPLIST_FILE = "DrinkingGame/DrinkingGame-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -482,6 +487,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrinkingGame/DrinkingGame-Prefix.pch";
 				INFOPLIST_FILE = "DrinkingGame/DrinkingGame-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

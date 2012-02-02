@@ -10,6 +10,8 @@
 
 @implementation DGViewPlayer
 -(void) setPlayer:(DGPlayer *)newPlayer{
+
+    NSLog(@"Updated playter");
     
     [playerImage setImage:[newPlayer image]];
     [promilLabel setText:[NSString stringWithFormat:@"%d", [[newPlayer promille]stringValue]]];

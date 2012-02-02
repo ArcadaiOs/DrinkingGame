@@ -38,7 +38,7 @@
 -(int) getRandomIntMin:(int) min max:(int) max;
 
 -(void) timerFired: (NSTimer*) timer;
-
+-(IBAction)next:(id)sender;
 -(IBAction) buttonPressed:(id)sender;
 
 -(IBAction) flashRandomColor:(id)sender;
