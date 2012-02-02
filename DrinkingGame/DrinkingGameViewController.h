@@ -12,6 +12,9 @@
 #import "DGController.h"
 #import "DGGameSimonSays.h"
 #import "DGSteadyHands.h"
+#import "DGViewPlayer.h"
+
+
 typedef struct{
     NSString *playerName;
     int score;
