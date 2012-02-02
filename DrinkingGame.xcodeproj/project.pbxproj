@@ -32,6 +32,10 @@
 		3F40EB8F14C9A85D009B35A5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F40EB8E14C9A85D009B35A5 /* CoreData.framework */; };
 		3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F50863214D2C40A006588E3 /* DGPlayer.m */; };
 		3F50863514D2C5F6006588E3 /* Soini.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F50863414D2C5F6006588E3 /* Soini.jpeg */; };
+		3F52E2B214DAABD000ECA4BB /* DGTestGameTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E2B014DAABD000ECA4BB /* DGTestGameTwo.m */; };
+		3F52E2B314DAABD000ECA4BB /* DGTestGameTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F52E2B114DAABD000ECA4BB /* DGTestGameTwo.xib */; };
+		3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */; };
+		3F52E2B914DAAC1D00ECA4BB /* DGSteadyHands.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */; };
 		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
 		3FC785AD14D2D96300F3CCE3 /* niini.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC785AC14D2D96300F3CCE3 /* niini.png */; };
 		3FC9856914DAA1F70023BB05 /* naama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FC9856814DAA1F70023BB05 /* naama.jpg */; };
@@ -78,6 +82,12 @@
 		3F50863114D2C40A006588E3 /* DGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayer.h; sourceTree = "<group>"; };
 		3F50863214D2C40A006588E3 /* DGPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayer.m; sourceTree = "<group>"; };
 		3F50863414D2C5F6006588E3 /* Soini.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Soini.jpeg; sourceTree = "<group>"; };
+		3F52E2AF14DAABD000ECA4BB /* DGTestGameTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGTestGameTwo.h; sourceTree = "<group>"; };
+		3F52E2B014DAABD000ECA4BB /* DGTestGameTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGTestGameTwo.m; sourceTree = "<group>"; };
+		3F52E2B114DAABD000ECA4BB /* DGTestGameTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGTestGameTwo.xib; sourceTree = "<group>"; };
+		3F52E2B514DAAC1D00ECA4BB /* DGSteadyHands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGSteadyHands.h; sourceTree = "<group>"; };
+		3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGSteadyHands.m; sourceTree = "<group>"; };
+		3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGSteadyHands.xib; sourceTree = "<group>"; };
 		3FBCABE114C97F4E0032EBA1 /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3FBCABE214C97F4E0032EBA1 /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
 		3FC785AC14D2D96300F3CCE3 /* niini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = niini.png; sourceTree = "<group>"; };
@@ -170,6 +180,8 @@
 		3F3A731C14D188D100ECD451 /* games */ = {
 			isa = PBXGroup;
 			children = (
+				3F52E2B414DAAC0200ECA4BB /* DGSteadyHands */,
+				3F52E2AD14DAAB9200ECA4BB /* DGTestGameTwo */,
 				3F1D4EE314D2C206006D5BE7 /* DGSimonSays */,
 				3FE08EF314C98A8F0010A03C /* DGRandomShot */,
 				3FBCABE114C97F4E0032EBA1 /* DGGame.h */,
@@ -234,6 +246,26 @@
 				3F3AFED614C04EF300A992F7 /* DrinkingGame-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F52E2AD14DAAB9200ECA4BB /* DGTestGameTwo */ = {
+			isa = PBXGroup;
+			children = (
+				3F52E2AF14DAABD000ECA4BB /* DGTestGameTwo.h */,
+				3F52E2B014DAABD000ECA4BB /* DGTestGameTwo.m */,
+				3F52E2B114DAABD000ECA4BB /* DGTestGameTwo.xib */,
+			);
+			name = DGTestGameTwo;
+			sourceTree = "<group>";
+		};
+		3F52E2B414DAAC0200ECA4BB /* DGSteadyHands */ = {
+			isa = PBXGroup;
+			children = (
+				3F52E2B514DAAC1D00ECA4BB /* DGSteadyHands.h */,
+				3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */,
+				3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */,
+			);
+			name = DGSteadyHands;
 			sourceTree = "<group>";
 		};
 		3FE08EF314C98A8F0010A03C /* DGRandomShot */ = {
@@ -326,6 +358,8 @@
 				3FC785AD14D2D96300F3CCE3 /* niini.png in Resources */,
 				3F1D4EE814D2C21A006D5BE7 /* DGGameSimonSays.xib in Resources */,
 				3FC9856914DAA1F70023BB05 /* naama.jpg in Resources */,
+				3F52E2B314DAABD000ECA4BB /* DGTestGameTwo.xib in Resources */,
+				3F52E2B914DAAC1D00ECA4BB /* DGSteadyHands.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +380,8 @@
 				3F3A731A14D186F500ECD451 /* DGConsumption.m in Sources */,
 				3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */,
 				3F1D4EE914D2C21A006D5BE7 /* DGGameSimonSays.m in Sources */,
+				3F52E2B214DAABD000ECA4BB /* DGTestGameTwo.m in Sources */,
+				3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
