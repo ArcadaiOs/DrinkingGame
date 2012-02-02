@@ -31,5 +31,5 @@ typedef struct{
 -(void) gameEndedWithScores:(NSString*) scores;
 -(IBAction) launchTestGame:(id)sender;
 -(IBAction) launchSimon:(id)sender;
-
+-(IBAction) launchSteadyHands:(id)sender;
 @end
