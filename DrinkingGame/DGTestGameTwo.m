@@ -1,43 +1,14 @@
 //
-//  DGGame.m
+//  DGTestGameTwo.m
 //  DrinkingGame
 //
-//  Created by student on 1/20/12.
+//  Created by JonS on 2/2/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DGGame.h"
+#import "DGTestGameTwo.h"
 
-@implementation DGGame
-@synthesize controller;
-- (id)initWithController: (DGController*) controllerIn
-{
-    self = [super init];
-    if (self) {
-        self.controller = controllerIn;
-        // Custom initialization
-       playerView = [[DGViewPlayer alloc] init];
-    }
-    return self;
-}
--(void) showPlayer:(DGPlayer *)player{
-
-    [playerView setPlayer:player];
-    NSLog(@"ShowPlayer");
-    
-    
-    [self presentModalViewController:playerView animated:YES];
-
-}
--(IBAction)endGame:(id)sender{
-    
-    
-    // killmiself
-    [self.view removeFromSuperview];
-    //[self release];
-    
-    
-}
+@implementation DGTestGameTwo
 
 - (void)didReceiveMemoryWarning
 {
@@ -53,7 +24,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
 }
 
 - (void)viewDidUnload

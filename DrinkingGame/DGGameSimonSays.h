@@ -16,6 +16,8 @@
     IBOutlet UIButton* redButton;
     IBOutlet UIButton* greenButton;
     
+    IBOutlet UIImageView* playerImage;
+    
     NSMutableArray* playList;
     NSEnumerator* playEnumerator;
     
@@ -36,9 +38,11 @@
 -(int) getRandomIntMin:(int) min max:(int) max;
 
 -(void) timerFired: (NSTimer*) timer;
-
+-(IBAction)next:(id)sender;
 -(IBAction) buttonPressed:(id)sender;
 
 -(IBAction) flashRandomColor:(id)sender;
 -(IBAction) startGame:(id)sender;
+
+
 @end

@@ -11,6 +11,9 @@
 #import "DGRandomShot.h"
 #import "DGController.h"
 #import "DGGameSimonSays.h"
+#import "DGSteadyHands.h"
+#import "DGViewPlayer.h"
+
 
 typedef struct{
     NSString *playerName;
@@ -29,5 +32,5 @@ typedef struct{
 -(void) gameEndedWithScores:(NSString*) scores;
 -(IBAction) launchTestGame:(id)sender;
 -(IBAction) launchSimon:(id)sender;
-
+-(IBAction) launchSteadyHands:(id)sender;
 @end
