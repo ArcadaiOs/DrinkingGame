@@ -43,10 +43,10 @@
 				<int key="NSvFlags">274</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIImageView" id="158956512">
+					<object class="IBUIImageView" id="689850668">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 86}, {285, 288}}</string>
+						<string key="NSFrame">{{20, 86}, {280, 288}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:541</string>
@@ -364,7 +364,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">playerImage</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="158956512"/>
+						<reference key="destination" ref="689850668"/>
 					</object>
 					<int key="connectionID">38</int>
 				</object>
@@ -389,7 +389,7 @@
 							<reference ref="124183183"/>
 							<reference ref="844649116"/>
 							<reference ref="1045014938"/>
-							<reference ref="158956512"/>
+							<reference ref="689850668"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -440,7 +440,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">37</int>
-						<reference key="object" ref="158956512"/>
+						<reference key="object" ref="689850668"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>

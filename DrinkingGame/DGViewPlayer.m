@@ -1,39 +1,27 @@
 //
-//  DGGame.m
+//  DGViewPlayer.m
 //  DrinkingGame
 //
-//  Created by student on 1/20/12.
+//  Created by student on 2/2/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DGGame.h"
+#import "DGViewPlayer.h"
 
-@implementation DGGame
-@synthesize controller;
-- (id)initWithController: (DGController*) controller
+@implementation DGViewPlayer
+-(void) setPlayer:(DGPlayer *)newPlayer{
+    
+    [playerImage setImage:[newPlayer image]];
+    [promilLabel setText:[NSString stringWithFormat:@"%d", [[newPlayer promille]stringValue]]];
+    
+}
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super init];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.controller = controller;
         // Custom initialization
-       playerView = [[DGViewPlayer alloc] init];
     }
     return self;
-}
--(void) showPlayer:(DGPlayer *)player{
-
-    [playerView setPlayer:player];
-    [self presentModalViewController:playerView animated:YES];
-
-}
--(IBAction)endGame:(id)sender{
-    
-    
-    // killmiself
-    [self.view removeFromSuperview];
-    //[self release];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +31,10 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
+-(IBAction)done:(id)sender{
+    
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 #pragma mark - View lifecycle
 
@@ -50,7 +42,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
 }
 
 - (void)viewDidUnload

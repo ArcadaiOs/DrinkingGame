@@ -41,7 +41,14 @@
  Function that starts the gameLoop
 */
 -(IBAction) startGame:(id) sender{
-
+//    [[[self showPlayer:[controller players] objectAtIndex:1] ]];
+    
+    [self showPlayer:[[controller players] objectAtIndex:1]];
+    
+    //DGPlayerView *nextPlayer = [[DGPlayerView alloc] init] ;
+    
+    //[self presentModalViewController:nextPlayer animated:NO];
+    //[self.view addSubview:nextPlayer.view];
 
     [playerImage setImage:[[[controller players] objectAtIndex:1] image]];
     
@@ -116,14 +123,13 @@
                 NSLog(@"PLAYER FAIL");
                 playCount = 0;
                 playerAction = false;
-                
             }
             
             } else{
-            NSLog(@"PLAYER FAIL");
+                NSLog(@"PLAYER FAIL");
             
-            playerAction = false;
-            playCount = 0;
+                playerAction = false;
+                playCount = 0;
         }
         
         
@@ -193,6 +199,8 @@
     // Do any additional setup after loading the view from its nib.
     playerAction = false;
     NSLog(@"simon is loaded");
+    [self.view setBackgroundColor: [UIColor colorWithRed:0.435 green:0.435 blue:0.435 alpha:1.0]];
+
     playList = [[NSMutableArray alloc] init];
 
 
@@ -204,15 +212,7 @@
         NSLog(@"added: %i",rand);
     }
     
-    // iterate through the playList
-    NSEnumerator * enumerator = [playList objectEnumerator];
-    id element;
-    
-    while(element = [enumerator nextObject])
-    {
-        // Do your thing with the object.
-        NSLog( @"got: %i", [(NSNumber*)element intValue]);
-    }
+
 
 }
 
