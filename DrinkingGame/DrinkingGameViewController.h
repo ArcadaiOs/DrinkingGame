@@ -134,7 +134,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *buttonCustomSelected;
 
 
-//-(IBAction)buttonPressed1;
+
 -(IBAction)buttonClickedContinue;
 -(IBAction)buttonClickedBack;
 
@@ -152,6 +152,6 @@
 -(IBAction)buttonHardSelected;
 -(IBAction)buttonCustomSelected;
 
-//-(IBAction)buttonPressed1;
+
 @end
 
