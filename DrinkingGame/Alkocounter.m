@@ -15,12 +15,11 @@
     if (self) {
         // Initialization code here.
     }
-    
     return self;
 }
 
 - (NSNumber*) promileForPlayer:(DGPlayer*)player 
-                      fromTime:(NSTimeInterval*)time {
+                      fromTime:(NSDate*)time {
     
     NSNumber * result;
     
@@ -28,6 +27,10 @@
 }
 
 // --- Variabler --- //
+
+//intake[g]/vv[g] = pb (bara första gången)
+//(pb*vv)*vikt[kg]/delta t [h] = pbf (efter förbränning)
+//((pbf*vv)+intake)/vv = pb
 
 //promillehalt = svårighetsgrad
 // p1 = 1,0‰
