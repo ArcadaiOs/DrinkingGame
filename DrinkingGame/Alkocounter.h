@@ -6,7 +6,7 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-@class DGPlayer;
+#import "DGPlayer.h" ;
 
 @interface Alkocounter : NSObject
 

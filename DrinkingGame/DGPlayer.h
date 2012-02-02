@@ -18,6 +18,7 @@
     NSNumber * promille;
     NSNumber * waterWeightGram;
     NSNumber * weight;
+    NSDate * lastUpdate;
     NSMutableArray* consumptions;
 }
 @property (nonatomic, retain) UIImage * image;
@@ -25,5 +26,6 @@
 @property (nonatomic, retain) NSNumber * promille;
 @property (nonatomic, retain) NSNumber * waterWeightGram;
 @property (nonatomic, retain) NSNumber * weight;
+@property (nonatomic, retain) NSDate * lastUpdate;
 - (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale;
 @end
