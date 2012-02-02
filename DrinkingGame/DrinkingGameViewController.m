@@ -22,7 +22,7 @@
     [currentCame.view removeFromSuperview];
     [currentCame release];
     
-    currentCame = [[DGGameSimonSays alloc] init];
+    currentCame = [[DGGameSimonSays alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
 }
 -(IBAction) showPlayer:(id)sender{
