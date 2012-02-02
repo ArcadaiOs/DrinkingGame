@@ -15,10 +15,15 @@
     if (self) {
         // Initialization code here.
     }
-    
     return self;
 }
+
+
 // --- Variabler --- //
+
+//intake[g]/vv[g] = pb (bara första gången)
+//(pb*vv)*vikt[kg]/delta t [h] = pbf (efter förbränning)
+//((pbf*vv)+intake)/vv = pb
 
 //promillehalt = svårighetsgrad
 // p1 = 1,0‰
