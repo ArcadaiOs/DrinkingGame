@@ -9,9 +9,6 @@
 #import "DGGame.h"
 #import "DGController.h"
 
-@interface DGTestGameTwo : DGGame{
-
-
-}
+@interface DGTestGameTwo : UIViewController
 
 @end

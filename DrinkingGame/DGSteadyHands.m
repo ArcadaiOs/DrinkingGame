@@ -12,6 +12,7 @@
 @synthesize labelX,labelY,labelZ,progressX,progressY,progressZ;
 @synthesize accelerometer;
 
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -29,15 +30,14 @@
     self.accelerometer = [UIAccelerometer sharedAccelerometer];
     self.accelerometer.updateInterval = .1;
     self.accelerometer.delegate = self;
-    
 }
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
     labelX.text = [NSString stringWithFormat:@"%@%f", @"X: ", acceleration.x];
     labelY.text = [NSString stringWithFormat:@"%@%f", @"Y: ", acceleration.y];
     labelZ.text = [NSString stringWithFormat:@"%@%f", @"Z: ", acceleration.z];
-    accelvalue+=acceleration.x;
-    accelvalue+=acceleration.y;
-    accelvalue+=acceleration.z;
+    //accelvalue+=acceleration.x;
+    //accelvalue+=acceleration.y;
+    //accelvalue+=acceleration.z;
     self.progressX.progress = ABS(acceleration.x);
     self.progressY.progress = ABS(acceleration.y);
     self.progressZ.progress = ABS(acceleration.z);
