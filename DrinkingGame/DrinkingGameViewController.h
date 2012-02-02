@@ -33,8 +33,13 @@
     UIImageView *selected7;
     UIImageView *selected8;
     
-    UIImageView *pointNextActive;
-    UIImageView *pointBackActive;
+    UIImageView *pointNextActive1;
+    UIImageView *pointBackActive1;
+    
+//    UIImageView *pointNextActive2;
+//    UIImageView *pointBackActive2;
+//    UIImageView *pointNextActive3;
+//    UIImageView *pointBackActive3;
     
     UIImageView *pointNext;
     UIImageView *pointBack;
@@ -67,6 +72,8 @@
     
     IBOutlet UIView *thirdView;
     IBOutlet UIView *secondView;
+    IBOutlet UIView *thirdView;
+
     
 }
 
@@ -92,8 +99,14 @@
 @property (nonatomic, retain) IBOutlet UIImageView *background1;
 @property (nonatomic, retain) IBOutlet UIImageView *menuNumbers;
 
-@property (nonatomic, retain) IBOutlet UIImageView *pointBackActive;
-@property (nonatomic, retain) IBOutlet UIImageView *pointNextActive;
+@property (nonatomic, retain) IBOutlet UIImageView *pointBackActive1;
+@property (nonatomic, retain) IBOutlet UIImageView *pointNextActive1;
+
+//@property (nonatomic, retain) IBOutlet UIImageView *pointBackActive2;
+//@property (nonatomic, retain) IBOutlet UIImageView *pointNextActive2;
+//
+//@property (nonatomic, retain) IBOutlet UIImageView *pointBackActive3;
+//@property (nonatomic, retain) IBOutlet UIImageView *pointNextActive3;
 
 @property (nonatomic, retain) IBOutlet UIImageView *pointBack;
 @property (nonatomic, retain) IBOutlet UIImageView *pointNext;
@@ -122,7 +135,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *buttonCustomSelected;
 
 
-//-(IBAction)buttonPressed1;
+
 -(IBAction)buttonClickedContinue;
 -(IBAction)buttonClickedBack;
 
@@ -140,6 +153,6 @@
 -(IBAction)buttonHardSelected;
 -(IBAction)buttonCustomSelected;
 
-//-(IBAction)buttonPressed1;
+
 @end
 
