@@ -12,9 +12,10 @@
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<string>IBProxyObject</string>
-			<string>IBUIView</string>
 			<string>IBUIButton</string>
+			<string>IBUIImageView</string>
+			<string>IBUIView</string>
+			<string>IBProxyObject</string>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -42,10 +43,21 @@
 				<int key="NSvFlags">274</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<object class="IBUIImageView" id="158956512">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{20, 86}, {285, 288}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:541</string>
+						<int key="IBUIContentMode">2</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
 					<object class="IBUIButton" id="1045014938">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{113, 414}, {95, 37}}</string>
+						<string key="NSFrame">{{113, 417}, {95, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -115,7 +127,7 @@
 						<string key="NSFrame">{{160, 230}, {150, 150}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="1045014938"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:222</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -216,28 +228,6 @@
 							<string key="NSResourceName">simon_yel_up.png</string>
 						</object>
 					</object>
-					<object class="IBUIButton" id="309599725">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 20}, {72, 37}}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="103372345"/>
-						<string key="NSReuseIdentifierKey">_NS:222</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<reference key="IBUIFont" ref="727855864"/>
-						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">rand</string>
-						<reference key="IBUIHighlightedTitleColor" ref="341316758"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="377057337"/>
-					</object>
 					<object class="IBUIButton" id="103372345">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
@@ -264,7 +254,7 @@
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="309599725"/>
+				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
@@ -354,23 +344,6 @@
 					<int key="connectionID">23</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">greenButton</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="110465845"/>
-					</object>
-					<int key="connectionID">24</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">flashRandomColor:</string>
-						<reference key="source" ref="309599725"/>
-						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<int key="connectionID">25</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">startGame:</string>
 						<reference key="source" ref="103372345"/>
@@ -378,6 +351,22 @@
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">27</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">greenButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="110465845"/>
+					</object>
+					<int key="connectionID">36</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">playerImage</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="158956512"/>
+					</object>
+					<int key="connectionID">38</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -394,13 +383,13 @@
 						<reference key="object" ref="191373211"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="103372345"/>
 							<reference ref="1058340162"/>
 							<reference ref="110465845"/>
 							<reference ref="124183183"/>
-							<reference ref="1045014938"/>
-							<reference ref="309599725"/>
-							<reference ref="103372345"/>
 							<reference ref="844649116"/>
+							<reference ref="1045014938"/>
+							<reference ref="158956512"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -445,13 +434,13 @@
 						<string key="objectName">yellowButton</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">19</int>
-						<reference key="object" ref="309599725"/>
+						<int key="objectID">26</int>
+						<reference key="object" ref="103372345"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">26</int>
-						<reference key="object" ref="103372345"/>
+						<int key="objectID">37</int>
+						<reference key="object" ref="158956512"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -481,8 +470,8 @@
 					<string>14.IBUIButtonInspectorSelectedEdgeInsetMetadataKey</string>
 					<string>14.IBUIButtonInspectorSelectedStateConfigurationMetadataKey</string>
 					<string>14.object.labelIdentifier</string>
-					<string>19.IBPluginDependency</string>
 					<string>26.IBPluginDependency</string>
+					<string>37.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
@@ -525,7 +514,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">27</int>
+			<int key="maxID">38</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -597,6 +586,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>blueButton</string>
 							<string>greenButton</string>
+							<string>playerImage</string>
 							<string>redButton</string>
 							<string>yellowButton</string>
 						</object>
@@ -604,6 +594,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIButton</string>
 							<string>UIButton</string>
+							<string>UIImageView</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
 						</object>
@@ -614,6 +605,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>blueButton</string>
 							<string>greenButton</string>
+							<string>playerImage</string>
 							<string>redButton</string>
 							<string>yellowButton</string>
 						</object>
@@ -626,6 +618,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">greenButton</string>
 								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">playerImage</string>
+								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">redButton</string>

@@ -41,6 +41,10 @@
  Function that starts the gameLoop
 */
 -(IBAction) startGame:(id) sender{
+
+
+    [playerImage setImage:[[[controller players] objectAtIndex:1] image]];
+    
     playEnumerator = [playList objectEnumerator];
     
     [NSTimer scheduledTimerWithTimeInterval:0.5
@@ -59,15 +63,7 @@
     UIButton *b = (UIButton*) [timer userInfo];
     b.highlighted = false;
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    
-    }
-    return self;
-}
+
 /*
     Get some amount of random numbers between min and max values
 */
@@ -164,6 +160,7 @@
             break;
         case 4:
             btn = greenButton;
+            break;
         default:
             return;
     }
@@ -176,7 +173,6 @@
      ];
     
 }
-
 -(IBAction) flashRandomColor:(id) sender{
     int b = [self getRandomIntMin:1 max:4];
     [self flashButton:b duration:0.2];
