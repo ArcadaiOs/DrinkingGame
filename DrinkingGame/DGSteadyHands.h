@@ -16,6 +16,7 @@
     IBOutlet UIProgressView *progressY;
     IBOutlet UIProgressView *progressZ;
     UIAccelerometer *accelerometer;
+    double accelvalue;
 }
 @property(nonatomic,retain) IBOutlet UILabel *labelX;
 @property(nonatomic,retain) IBOutlet UILabel *labelY;
@@ -24,4 +25,5 @@
 @property(nonatomic,retain) IBOutlet UIProgressView *progressY;
 @property(nonatomic,retain) IBOutlet UIProgressView *progressZ;
 @property(nonatomic,retain) UIAccelerometer *accelerometer;
+
 @end
