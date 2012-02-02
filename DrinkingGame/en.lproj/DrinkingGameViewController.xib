@@ -211,7 +211,6 @@
 						<string key="NSFrame">{{220, 384}, {85, 56}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:222</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -550,7 +549,6 @@
 						<string key="NSFrame">{{213, 379}, {87, 61}}</string>
 						<reference key="NSSuperview" ref="771949408"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:222</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -803,7 +801,10 @@
 						<string key="NSReuseIdentifierKey">_NS:541</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="184789643"/>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">DGmenu3polaroidbg.png</string>
+						</object>
 					</object>
 					<object class="IBUIImageView" id="694954471">
 						<reference key="NSNextResponder" ref="20786732"/>
@@ -815,7 +816,10 @@
 						<string key="NSReuseIdentifierKey">_NS:541</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="743390922"/>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">DGmenu3.png</string>
+						</object>
 					</object>
 					<object class="IBUIImageView" id="73643516">
 						<reference key="NSNextResponder" ref="20786732"/>
@@ -827,7 +831,40 @@
 						<string key="NSReuseIdentifierKey">_NS:541</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="187081542"/>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">DGmenu3selectedCross.png</string>
+						</object>
+					</object>
+					<object class="IBUITextField" id="976800685">
+						<reference key="NSNextResponder" ref="269409064"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{103, 291}, {115, 31}}</string>
+						<reference key="NSSuperview" ref="269409064"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:294</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<string key="IBUIText">NAME</string>
+						<int key="IBUIBorderStyle">3</int>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MAA</bytes>
+							<reference key="NSCustomColorSpace" ref="216595776"/>
+						</object>
+						<object class="NSFont" key="IBUIFont" id="769919695">
+							<string key="NSName">Rockwell-ExtraBold</string>
+							<double key="NSSize">14</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<int key="IBUITextAlignment">1</int>
+						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
+						<float key="IBUIMinimumFontSize">17</float>
+						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						</object>
 					</object>
 					<object class="IBUIImageView" id="381553428">
 						<reference key="NSNextResponder" ref="20786732"/>
@@ -2280,6 +2317,9 @@
 				<string>DGmenu2easySelected.png</string>
 				<string>DGmenu2hardSelected.png</string>
 				<string>DGmenu2mediumSelected.png</string>
+				<string>DGmenu3.png</string>
+				<string>DGmenu3polaroidbg.png</string>
+				<string>DGmenu3selectedCross.png</string>
 				<string>DGmenuAmountOfPlayers.png</string>
 				<string>DGmenuNumbers.png</string>
 				<string>DGmenuPointBack.png</string>
@@ -2291,6 +2331,9 @@
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{205, 53}</string>
+				<string>{768, 1024}</string>
+				<string>{768, 1024}</string>
+				<string>{768, 1024}</string>
 				<string>{768, 1024}</string>
 				<string>{768, 1024}</string>
 				<string>{768, 1024}</string>
