@@ -63,38 +63,16 @@
 
 -(IBAction)buttonClickedContinue {
 
-    if (self.view == secondView) { 
+
+    
+    if (self.view == secondView) {
+        
         self.view = thirdView;
     }
-    else
-    {
+    else {
+        
         self.view = secondView;
     }
-// 
-//    if (gameState == kStateFirst) {
-//        
-//        gameState = kStateSecond;
-//    }
-//    else if (gameState == kStateSecond) {
-//        gameState = kStateThird;
-//    
-//    }
-//    
-//    else if (gameState == kStateThird) {
-//        
-//        gameState = kStateFourth;
-//    }
-//    
-//    else if (gameState == kStateFourth) {
-//        
-//        gameState = kStateFifth;
-//    }
-    
-//    [self.view removeFromSuperview];
-//    
-//    [self.view addSubview:secondView];
-    
-   
 
 }
 

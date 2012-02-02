@@ -70,7 +70,6 @@
     UIButton *Menu2HardSelected;
     UIButton *Menu2CustomSelected;
     
-    IBOutlet UIView *thirdView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
 
