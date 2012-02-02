@@ -6,7 +6,8 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DGGame.h"
+#import "DGController.h"
 
 @interface DGTestGameTwo : UIViewController
 

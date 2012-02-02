@@ -2,13 +2,13 @@
 //  DGSteadyHands.h
 //  DrinkingGame
 //
-//  Created by student on 2/2/12.
+//  Created by JonS on 2/2/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
+#import "DGGame.h"
+#import "DGController.h"
 
-#import <UIKit/UIKit.h>
-
-@interface DGSteadyHands : UIViewController{
+@interface DGSteadyHands : DGGame <UIAccelerometerDelegate> {
     IBOutlet UILabel *labelX;
     IBOutlet UILabel *labelY;
     IBOutlet UILabel *labelZ;
