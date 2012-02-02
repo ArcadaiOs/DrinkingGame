@@ -196,6 +196,7 @@
 
 -(IBAction)buttonEasySelected {
     
+    pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 0;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
@@ -205,6 +206,7 @@
 
 -(IBAction)buttonMediumSelected {
     
+    pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 0;
     bottleHardSelected.hidden = 1;
@@ -213,6 +215,7 @@
 
 -(IBAction)buttonHardSelected {
 
+    pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 0;
@@ -221,6 +224,7 @@
 
 -(IBAction)buttonCustomSelected {
     
+    pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
