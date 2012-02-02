@@ -24,7 +24,7 @@
     
     NSNumber * result;
     
-    return result;
+    return result; 
 }
 
 // --- Variabler --- //
