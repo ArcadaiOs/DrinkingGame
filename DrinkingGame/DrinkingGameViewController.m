@@ -14,7 +14,7 @@
 @implementation DrinkingGameViewController
 
 
-@synthesize gameState, previousState;
+//@synthesize gameState, previousState;
 //menu 1
 @synthesize players, background1, menuNumbers, pointBackActive1, pointNextActive1, pointBackActive2, pointNextActive2, pointNextActive3, pointBackActive3, pointBack, pointNext;
 @synthesize selected2, selected3, selected4, selected5, selected6, selected7, selected8;
@@ -22,7 +22,7 @@
 @synthesize btn2, btn3, btn4, btn5, btn6, btn7, btn8;
 //menu 2
 @synthesize menu2;
-
+@synthesize menu3CrossMale, menu3CrossFemale, menu3male, menu3female;
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasySelected, buttonHardSelected, buttonCustomSelected, buttonMediumSelected;
 
@@ -238,8 +238,18 @@
 
 //Meny 3
 
+-(IBAction)menu3male {
+    
+    menu3CrossMale.hidden = 0;
+    menu3CrossFemale.hidden = 1;
+    
+}
 
+-(IBAction)menu3female {
+    
+    menu3CrossMale.hidden = 1;
+    menu3CrossFemale.hidden = 0;
 
-
+}
     
 @end

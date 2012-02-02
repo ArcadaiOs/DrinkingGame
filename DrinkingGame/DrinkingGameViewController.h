@@ -74,12 +74,17 @@
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
 
+    //Menu 3
     
+    UIImageView *menu3CrossMale;
+        UIImageView *menu3CrossFemale;
+    UIButton *menu3male;
+    UIButton *menu3female;
 }
 
 
-@property (nonatomic) NSInteger gameState;
-@property (nonatomic) NSInteger previousState;
+//@property (nonatomic) NSInteger gameState;
+//@property (nonatomic) NSInteger previousState;
 
 
 //Menu 1
@@ -138,6 +143,14 @@
 @property (nonatomic, retain) IBOutlet UIButton *buttonCustomSelected;
 
 
+//Menu 3
+
+@property (nonatomic, retain) IBOutlet UIImageView *menu3CrossFemale;
+@property (nonatomic, retain) IBOutlet UIImageView *menu3CrossMale;
+@property (nonatomic, retain) IBOutlet UIButton *menu3female;
+@property (nonatomic, retain) IBOutlet UIButton *menu3male;
+
+
 
 -(IBAction)buttonClickedContinue;
 -(IBAction)buttonClickedBack;
@@ -156,6 +169,8 @@
 -(IBAction)buttonHardSelected;
 -(IBAction)buttonCustomSelected;
 
+-(IBAction)menu3female;
+-(IBAction)menu3male;
 
 @end
 
