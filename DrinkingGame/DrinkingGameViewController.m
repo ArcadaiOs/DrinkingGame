@@ -16,7 +16,7 @@
 
 @synthesize gameState, previousState;
 //menu 1
-@synthesize players, background1, menuNumbers, pointBackActive1, pointNextActive1, pointBackActive2, pointNextActive2, pointBack, pointNext;
+@synthesize players, background1, menuNumbers, pointBackActive1, pointNextActive1, pointBackActive2, pointNextActive2, pointNextActive3, pointBackActive3, pointBack, pointNext;
 @synthesize selected2, selected3, selected4, selected5, selected6, selected7, selected8;
 @synthesize btnContinue, btnBack, btnContinue2, btnBack2, btnContinue3, btnBack3;
 @synthesize btn2, btn3, btn4, btn5, btn6, btn7, btn8;
@@ -87,6 +87,11 @@
         
         self.view = firstView;
     }
+    if (self.view == thirdView) {
+        
+        self.view = secondView;
+    }
+
     else {
         
 
@@ -196,6 +201,7 @@
 
 -(IBAction)buttonEasySelected {
     
+    pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 0;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
@@ -205,6 +211,7 @@
 
 -(IBAction)buttonMediumSelected {
     
+    pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 0;
     bottleHardSelected.hidden = 1;
@@ -213,6 +220,7 @@
 
 -(IBAction)buttonHardSelected {
 
+    pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 0;
@@ -221,6 +229,7 @@
 
 -(IBAction)buttonCustomSelected {
     
+    pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
@@ -232,7 +241,5 @@
 
 
 
-
- //lalllaaa
     
 @end

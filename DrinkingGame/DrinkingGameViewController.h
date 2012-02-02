@@ -36,10 +36,10 @@
     UIImageView *pointNextActive1;
     UIImageView *pointBackActive1;
     
-//    UIImageView *pointNextActive2;
-//    UIImageView *pointBackActive2;
-//    UIImageView *pointNextActive3;
-//    UIImageView *pointBackActive3;
+    UIImageView *pointNextActive2;
+    UIImageView *pointBackActive2;
+    UIImageView *pointNextActive3;
+    UIImageView *pointBackActive3;
     
     UIImageView *pointNext;
     UIImageView *pointBack;
