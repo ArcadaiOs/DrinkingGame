@@ -32,17 +32,22 @@
 		3F40EB8F14C9A85D009B35A5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F40EB8E14C9A85D009B35A5 /* CoreData.framework */; };
 		3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F50863214D2C40A006588E3 /* DGPlayer.m */; };
 		3F50863514D2C5F6006588E3 /* Soini.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F50863414D2C5F6006588E3 /* Soini.jpeg */; };
-		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
 		3F52E2B214DAABD000ECA4BB /* DGTestGameTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E2B014DAABD000ECA4BB /* DGTestGameTwo.m */; };
 		3F52E2B314DAABD000ECA4BB /* DGTestGameTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F52E2B114DAABD000ECA4BB /* DGTestGameTwo.xib */; };
 		3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */; };
 		3F52E2B914DAAC1D00ECA4BB /* DGSteadyHands.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */; };
+		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
 		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
 		3FC785AD14D2D96300F3CCE3 /* niini.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC785AC14D2D96300F3CCE3 /* niini.png */; };
 		3FC9856914DAA1F70023BB05 /* naama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FC9856814DAA1F70023BB05 /* naama.jpg */; };
 		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
 		3FCDE48914DAB7370087921F /* DGViewPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDE48714DAB7360087921F /* DGViewPlayer.m */; };
 		3FCDE48A14DAB7370087921F /* DGViewPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDE48814DAB7360087921F /* DGViewPlayer.xib */; };
+		3FD60C1014DC097F00DEAE7A /* hannibal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C0F14DC097F00DEAE7A /* hannibal.jpg */; };
+		3FD60C1514DC0A1C00DEAE7A /* norris.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C1114DC0A1C00DEAE7A /* norris.jpg */; };
+		3FD60C1614DC0A1C00DEAE7A /* haddock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C1214DC0A1C00DEAE7A /* haddock.jpg */; };
+		3FD60C1714DC0A1C00DEAE7A /* naama2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C1314DC0A1C00DEAE7A /* naama2.jpg */; };
+		3FD60C1814DC0A1C00DEAE7A /* poirot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C1414DC0A1C00DEAE7A /* poirot.jpg */; };
 		3FE08EF714C98B3F0010A03C /* DGRandomShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08EF514C98B3F0010A03C /* DGRandomShot.m */; };
 		3FE08EF814C98B3F0010A03C /* DGRandomShot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */; };
 		3FE08EFE14C992E00010A03C /* simon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFB14C992E00010A03C /* simon.png */; };
@@ -86,13 +91,13 @@
 		3F50863114D2C40A006588E3 /* DGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayer.h; sourceTree = "<group>"; };
 		3F50863214D2C40A006588E3 /* DGPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayer.m; sourceTree = "<group>"; };
 		3F50863414D2C5F6006588E3 /* Soini.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Soini.jpeg; sourceTree = "<group>"; };
-		3FB138BC14DAC15F00431078 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3F52E2AF14DAABD000ECA4BB /* DGTestGameTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGTestGameTwo.h; sourceTree = "<group>"; };
 		3F52E2B014DAABD000ECA4BB /* DGTestGameTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGTestGameTwo.m; sourceTree = "<group>"; };
 		3F52E2B114DAABD000ECA4BB /* DGTestGameTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGTestGameTwo.xib; sourceTree = "<group>"; };
 		3F52E2B514DAAC1D00ECA4BB /* DGSteadyHands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGSteadyHands.h; sourceTree = "<group>"; };
 		3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGSteadyHands.m; sourceTree = "<group>"; };
 		3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGSteadyHands.xib; sourceTree = "<group>"; };
+		3FB138BC14DAC15F00431078 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3FBCABE114C97F4E0032EBA1 /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3FBCABE214C97F4E0032EBA1 /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
 		3FC785AC14D2D96300F3CCE3 /* niini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = niini.png; sourceTree = "<group>"; };
@@ -102,6 +107,11 @@
 		3FCDE48614DAB7360087921F /* DGViewPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGViewPlayer.h; sourceTree = "<group>"; };
 		3FCDE48714DAB7360087921F /* DGViewPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGViewPlayer.m; sourceTree = "<group>"; };
 		3FCDE48814DAB7360087921F /* DGViewPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGViewPlayer.xib; sourceTree = "<group>"; };
+		3FD60C0F14DC097F00DEAE7A /* hannibal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hannibal.jpg; sourceTree = "<group>"; };
+		3FD60C1114DC0A1C00DEAE7A /* norris.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = norris.jpg; sourceTree = "<group>"; };
+		3FD60C1214DC0A1C00DEAE7A /* haddock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = haddock.jpg; sourceTree = "<group>"; };
+		3FD60C1314DC0A1C00DEAE7A /* naama2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = naama2.jpg; sourceTree = "<group>"; };
+		3FD60C1414DC0A1C00DEAE7A /* poirot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = poirot.jpg; sourceTree = "<group>"; };
 		3FE08EF414C98B3F0010A03C /* DGRandomShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShot.h; sourceTree = "<group>"; };
 		3FE08EF514C98B3F0010A03C /* DGRandomShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShot.m; sourceTree = "<group>"; };
 		3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGRandomShot.xib; sourceTree = "<group>"; };
@@ -298,6 +308,11 @@
 		3FE08EFA14C992E00010A03C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				3FD60C1114DC0A1C00DEAE7A /* norris.jpg */,
+				3FD60C1214DC0A1C00DEAE7A /* haddock.jpg */,
+				3FD60C1314DC0A1C00DEAE7A /* naama2.jpg */,
+				3FD60C1414DC0A1C00DEAE7A /* poirot.jpg */,
+				3FD60C0F14DC097F00DEAE7A /* hannibal.jpg */,
 				3FC9856814DAA1F70023BB05 /* naama.jpg */,
 				3FC785AC14D2D96300F3CCE3 /* niini.png */,
 				3F50863414D2C5F6006588E3 /* Soini.jpeg */,
@@ -378,6 +393,11 @@
 				3FCDE48A14DAB7370087921F /* DGViewPlayer.xib in Resources */,
 				3F52E2B314DAABD000ECA4BB /* DGTestGameTwo.xib in Resources */,
 				3F52E2B914DAAC1D00ECA4BB /* DGSteadyHands.xib in Resources */,
+				3FD60C1014DC097F00DEAE7A /* hannibal.jpg in Resources */,
+				3FD60C1514DC0A1C00DEAE7A /* norris.jpg in Resources */,
+				3FD60C1614DC0A1C00DEAE7A /* haddock.jpg in Resources */,
+				3FD60C1714DC0A1C00DEAE7A /* naama2.jpg in Resources */,
+				3FD60C1814DC0A1C00DEAE7A /* poirot.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

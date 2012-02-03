@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 @interface DGRandomShot : DGGame{
     IBOutlet UIImageView* img;
+    IBOutlet DGRandomShotWheel* rotaView;
 }
 
 @end

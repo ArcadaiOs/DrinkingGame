@@ -10,27 +10,59 @@
 
 @implementation DGRandomShotWheel
 
-- (id)initWithFrame:(CGRect)frame andController:(DGController*) controllerIn
+- (id)initWithFrame:(CGRect)frame andController:(DGController*) controllerIn andSelection:(int) selIn
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         controller = controllerIn;
-        // Initialization code
+        count = [controller.players count];
+        step = (M_PI * 2)/count;
+        sel = selIn;
+        NSLog(@"sel: %i",sel);
     }
     return self;
 }
-
+-(void) spin{
+    float spin = M_PI + M_PI_2;//sel*step + M_PI_2 -step/2;
+    NSLog(@"spin: %f",spin);
+    NSLog(@"step: %f",step);
+    CABasicAnimation* spinAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    spinAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    spinAnimation.toValue = [NSNumber numberWithFloat:spin];
+    spinAnimation.removedOnCompletion = NO;
+    spinAnimation.fillMode = kCAFillModeForwards;
+    [spinAnimation setDuration:sel+1];
+    [self.layer addAnimation:spinAnimation forKey:@"spinAnimation"];
+}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
+    CGContextRef ctx = NULL;
+    int bitmapBytesPerRow = 480 * 4;
+    int bitmapByteCount = bitmapBytesPerRow * 320;
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    char* byteArr = (char*)malloc(bitmapByteCount);
+    ctx = CGBitmapContextCreate(byteArr, 480, 320, 8, bitmapBytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGColorSpaceRelease( colorSpace );// 6
+    
+    CGContextSetRGBFillColor (ctx, 1, 1, 0, 1);
+    // Y is flipped
+    CGContextTranslateCTM(ctx, 0, 320);
+    CGContextScaleCTM(ctx, 1.0, -1.0);
+    
+    
+    
     int i;
-    float angle,x,y;
+    float angle,lineWidth = 2.0f, size = 600, imgSize = 200;
     DGPlayer* player;
+    CGPoint linePos;
+    CGPoint nextlinePos;
+    CGPoint center = CGPointMake(rect.size.width/2, rect.size.height/2);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetLineWidth(context, 2.0);
+    CGContextSetLineWidth(context, lineWidth);
     
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
     
@@ -40,41 +72,49 @@
     
     CGContextSetStrokeColorWithColor(context, color);
     
-    int count = [controller.players count];
-    NSLog(@"players: %i",count);
     for(i=0;i<count;i++){
         player = [[controller players] objectAtIndex:i];
-        angle = M_PI * 2 * (float)(i+1)/count;
-        NSLog(@"angle: %f",angle);
-        x = 320 * (cosf(angle))+320;
-        y = 320 * (sinf(angle))+320;
-        CGContextMoveToPoint(context, 320, 320);
-        CGContextAddLineToPoint(context, x, y);
+        UIColor* imgPattern = [UIColor colorWithPatternImage: [player image]];
+        angle = step * (i+1);
+        CGPoint imgPos = [self getCirclePoint:size/2-imgSize/2-30 pos:center angle:angle];
+        if(i==0){
+            linePos = [self getCirclePoint:size/2 pos:center angle:angle+step/2];
+        }else{
+            linePos = nextlinePos;
+        }
+        nextlinePos = [self getCirclePoint:size/2 pos:center angle:angle+step/2+step];
+        CGContextMoveToPoint(context, rect.size.width/2, rect.size.height/2);
+        CGContextAddLineToPoint(context, linePos.x, linePos.y);
         
     
-        UIImageView *imageView = [ [ UIImageView alloc ] initWithFrame:CGRectMake(x, y, 100, 100) ];
+        /*UIImageView *imageView = [ [ UIImageView alloc ] initWithFrame:CGRectMake(imgPos.x, imgPos.y, imgSize, imgSize) ];
         imageView.image = [player image];
+        [imageView setCenter:CGPointMake(imgPos.x, imgPos.y)];
         [self addSubview:imageView];
-        //CGAffineTransform rotate = CGAffineTransformMakeTranslation(-50, -50);
         CGAffineTransform rotate = CGAffineTransformMakeRotation( angle+M_PI_2 );
-        //CGAffineTransformRotate(rotate, angle+M_PI_2);
-        //CGAffineTransformTranslate(rotate, 50, 50);
-        [imageView setTransform:rotate];
+        [imageView setTransform:rotate];*/
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGMutablePathRef slice = CGPathCreateMutable();
+        CGContextBeginPath(context);
+        CGContextMoveToPoint(context, 0, 0); 
+        CGContextAddLineToPoint(context, linePos.x, linePos.y);
+        CGContextAddLineToPoint(context, nextlinePos.x, nextlinePos.y);
+        CGContextClosePath(context);
+        
+        // Fill the path
+        CGContextSetFillColorWithColor(context, [imgPattern CGColor]);
+        CGContextFillPath(context);
+        CGPathRelease(slice);
     }
-    
-    /*UIImage *image = [UIImage imageNamed:@"soini.jpeg"];
-    UIImageView *imageView = [ [ UIImageView alloc ] initWithFrame:CGRectMake(0.0, 0.0, image.size.width, image.size.height) ];
-    imageView.image = image;
-    [self addSubview:imageView];
-    CGAffineTransform rotate = CGAffineTransformMakeRotation( 1.0 / 180.0 * 3.14 );
-    [imageView setTransform:rotate];*/
-    
-    CGContextAddEllipseInRect(context, rect);
+    NSLog(@"%f\t%f\t%f\t%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
+    CGContextAddEllipseInRect(context, CGRectMake((rect.size.width-size)/2, (rect.size.height-size)/2, size, size));
     
     CGContextStrokePath(context);
     CGColorSpaceRelease(colorspace);
     CGColorRelease(color);
 }
-
+- (CGPoint) getCirclePoint: (CGFloat) diam pos:(CGPoint) pos angle: (CGFloat) angle{
+    return CGPointMake(diam*(cosf(angle))+pos.x,diam*(sinf(angle))+pos.y);
+}
 
 @end
