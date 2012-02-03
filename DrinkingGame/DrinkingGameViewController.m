@@ -12,7 +12,6 @@
 
 @implementation DrinkingGameViewController
 
-@synthesize myCounterLabel;
 
 - (IBAction)Q2;
 
@@ -21,15 +20,6 @@
     Q2ViewController *Q2 = [[Q2ViewController alloc] initWithNibName:nil bundle:nil];
     
     [self presentModalViewController:Q2 animated:NO];
-    
-}
-- (IBAction)Lose;
-
-{
-    
-    LoseViewController *Lose = [[LoseViewController alloc] initWithNibName:nil bundle:nil];
-    
-    [self presentModalViewController:Lose animated:NO];
     
 }
 
@@ -43,24 +33,12 @@
 
 #pragma mark - View lifecycle
 
-- (void)updateCounter:(NSTimer *)theTimer {
-	static int count = 5;
-	count -= 1;
-	NSString *s = [[NSString alloc] initWithFormat:@"%d", count];
-	self.myCounterLabel.text = s;
-	[s release];
-    }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.myCounterLabel.text = @"5";
-    
-	timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                     target:self
-                                   selector:@selector(updateCounter:)
-                                   userInfo:nil
-                                    repeats:YES];}
+}
 
 - (void)viewDidUnload
 {

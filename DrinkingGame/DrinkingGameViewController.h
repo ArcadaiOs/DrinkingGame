@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DrinkingGameViewController : UIViewController{
-
-    
+  
 }
-
 
 -(IBAction)Q2;
 
