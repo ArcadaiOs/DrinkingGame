@@ -77,7 +77,7 @@
         UIColor* imgPattern = [UIColor colorWithPatternImage: [player image]];
         //UIColor* imgPattern = [[UIColor alloc] initWithRed:20.0 / 255 green:59.0 / 255 blue:102.0 / 255 alpha:1.0];
         angle = step * (i+1);
-        CGPoint imgPos = [self getCirclePoint:size/2-imgSize/2-30 pos:center angle:angle];
+        //CGPoint imgPos = [self getCirclePoint:size/2-imgSize/2-30 pos:center angle:angle];
         if(i==0){
             linePos = [self getCirclePoint:size/2 pos:center angle:angle+step/2];
         }else{
