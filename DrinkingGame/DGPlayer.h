@@ -32,4 +32,7 @@
 - (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale;
 -(NSComparisonResult) comparePromille:(id) element; 
 
+@property (nonatomic, retain) NSDate * lastUpdate;
+@property (nonatomic, retain) NSNumber * gramAlcBody;
+- (id)initWithimage:(UIImage*) playerImage weight:(int)playerWeight isFemale:(bool) isPlayerFemale;
 @end

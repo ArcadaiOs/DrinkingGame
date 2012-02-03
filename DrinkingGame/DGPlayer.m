@@ -23,7 +23,7 @@
         }else{
             self.waterWeightGram = [NSNumber numberWithFloat:playerWeight*0.71f];
         }
-        self.promille = [NSNumber numberWithFloat:0.0];
+        self.gramAlcBody = [NSNumber numberWithFloat:0.0];
     }
     
     return self;
@@ -34,6 +34,25 @@
 //
 -(NSComparisonResult) comparePromille:(id)element{
     return [((DGPlayer*) element).promille compare:promille];
+- (NSNumber*) promilleForPlayer:(DGPlayer*)player newShot:(NSNumber*) gramAlc{
+    NSNumber *kfb;
+    lastUpdate = [NSDate date];
+    if ([player.gramAlcBody intValue] > 0) {
+        
+        double burn  =  ( [weight doubleValue] / [lastUpdate timeIntervalSinceNow] ) ;
+        
+        if(player.isFemale == isFemale){
+            
+            kfb = [NSNumber numberWithDouble: (0.085 * [gramAlcBody doubleValue]) / burn];
+        }else{
+            kfb = [NSNumber numberWithFloat: (0.1 * [gramAlcBody floatValue]) / burn ];
+        }
+    }
+    int newGram = [kfb intValue] + [gramAlc intValue];
+    player.gramAlcBody = [NSNumber numberWithInt:newGram];
+    
+    
+    return kfb; 
 }
 
 @end
