@@ -75,6 +75,7 @@
     for(i=0;i<count;i++){
         player = [[controller players] objectAtIndex:i];
         UIColor* imgPattern = [UIColor colorWithPatternImage: [player image]];
+        //UIColor* imgPattern = [[UIColor alloc] initWithRed:20.0 / 255 green:59.0 / 255 blue:102.0 / 255 alpha:1.0];
         angle = step * (i+1);
         CGPoint imgPos = [self getCirclePoint:size/2-imgSize/2-30 pos:center angle:angle];
         if(i==0){
@@ -96,7 +97,7 @@
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGMutablePathRef slice = CGPathCreateMutable();
         CGContextBeginPath(context);
-        CGContextMoveToPoint(context, 0, 0); 
+        CGContextMoveToPoint(context, center.x, center.y); 
         CGContextAddLineToPoint(context, linePos.x, linePos.y);
         CGContextAddLineToPoint(context, nextlinePos.x, nextlinePos.y);
         CGContextClosePath(context);
