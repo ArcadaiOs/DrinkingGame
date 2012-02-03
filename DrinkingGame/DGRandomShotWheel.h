@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "DGController.h"
 #import "DGPlayer.h"
 
 @interface DGRandomShotWheel : UIView{
     DGController* controller;
+    int sel;
+    int count;
+    CGFloat step;
 }
-- (id)initWithFrame:(CGRect)frame andController:(DGController*) controllerIn;
+- (id)initWithFrame:(CGRect)frame andController:(DGController*) controllerIn andSelection:(int) selIn;
+-(void) spin;
+- (CGPoint) getCirclePoint: (CGFloat) diam pos:(CGPoint) pos angle: (CGFloat) angle;
 
 @end
