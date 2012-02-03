@@ -19,12 +19,13 @@
     NSNumber * promille;
     NSNumber * waterWeightGram;
     NSNumber * weight;
+    NSDate * lastUpdate;
     NSMutableArray* consumptions;
+    NSNumber * gramAlcBody;
 }
 
 @property (nonatomic, retain) UIImage * image;
 @property (nonatomic) Boolean isFemale;
-@property (nonatomic, retain) NSNumber * promille;
 @property (nonatomic, retain) NSNumber * waterWeightGram;
 @property (nonatomic, retain) NSNumber * weight;
 

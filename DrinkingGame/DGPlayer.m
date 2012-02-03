@@ -16,12 +16,12 @@
 {
     self = [super init];
     if (self) {
-        self.image = imageIn;
-        self.isFemale = isFemaleIn;
-        if(isFemale){
-            self.waterWeightGram = [NSNumber numberWithFloat:weightIn*0.63f];
+        self.image = playerImage;
+        self.isFemale = isPlayerFemale;
+        if(isPlayerFemale){
+            self.waterWeightGram = [NSNumber numberWithFloat:playerWeight*0.63f];
         }else{
-            self.waterWeightGram = [NSNumber numberWithFloat:weightIn*0.71f];
+            self.waterWeightGram = [NSNumber numberWithFloat:playerWeight*0.71f];
         }
         self.promille = [NSNumber numberWithFloat:0.0];
     }
