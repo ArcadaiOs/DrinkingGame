@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface Q2ViewController : UIViewController{
-    
+    NSTimer *timer;
+    IBOutlet UILabel *myCounterLabel;
+    NSUInteger time;
 }
 
+@property (nonatomic, retain) UILabel *myCounterLabel;
 -(IBAction)Q3;
 -(IBAction)Lose;
 

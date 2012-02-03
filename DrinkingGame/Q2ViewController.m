@@ -11,7 +11,7 @@
 #import "LoseViewController.h"
 
 @implementation Q2ViewController
-
+@synthesize myCounterLabel;
 - (IBAction)Q3;
 
 {
@@ -49,17 +49,37 @@
 
 #pragma mark - View lifecycle
 
+
+- (void)updateCounter:(NSTimer *)theTimer {
+	static int count = 5;
+	count -= 1;
+	NSString *s = [[NSString alloc] initWithFormat:@"%d", count];
+	self.myCounterLabel.text = s;
+	[s release];
+    
+    if (count == 0) {
+        LoseViewController *Lose = [[LoseViewController alloc] initWithNibName:nil bundle:nil];
+        
+        [self presentModalViewController:Lose animated:NO];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.myCounterLabel.text = @"5";
+    
+	timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                             target:self
+                                           selector:@selector(updateCounter:)
+                                           userInfo:nil
+                                            repeats:YES];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
