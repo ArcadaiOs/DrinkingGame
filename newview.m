@@ -1,17 +1,17 @@
 //
-//  DrinkingGameViewController.m
+//  newview.m
 //  DrinkingGame
 //
-//  Created by student on 1/13/12.
+//  Created by student on 1/20/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DrinkingGameViewController.h"
+#import "newview.h"
 #import "Labyrinth.h"
 
-@implementation DrinkingGameViewController
+@implementation newview
 
--(IBAction)goTOGAME:(id)sender {
+-(IBAction)goback:(id)sender {
     Labyrinth *second = [[Labyrinth alloc] initWithNibName:nil bundle:nil];
     [self presentModalViewController:second animated:YES];
 }
@@ -19,6 +19,20 @@
 
 
 
+
+
+
+
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -30,14 +44,11 @@
 
 #pragma mark - View lifecycle
 
-//test1//
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
 }
-*/
 
 - (void)viewDidUnload
 {

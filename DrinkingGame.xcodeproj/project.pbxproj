@@ -18,6 +18,13 @@
 		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
 		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
 		3F5E08EF14C8361100198D6E /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E08EE14C8361100198D6E /* DGGame.m */; };
+		3F626EB414C98ACB006AD5B6 /* Labyrinth.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F626EB214C98ACB006AD5B6 /* Labyrinth.m */; };
+		3F626EB514C98ACB006AD5B6 /* Labyrinth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F626EB314C98ACB006AD5B6 /* Labyrinth.xib */; };
+		3F626EBB14C98D7B006AD5B6 /* newview.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F626EB914C98D7B006AD5B6 /* newview.m */; };
+		3F626EBC14C98D7B006AD5B6 /* newview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F626EBA14C98D7B006AD5B6 /* newview.xib */; };
+		3F626EBE14C995F4006AD5B6 /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F626EBD14C995F4006AD5B6 /* face.png */; };
+		3F626EC014C99703006AD5B6 /* LabyrinthBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F626EBF14C99703006AD5B6 /* LabyrinthBG.png */; };
+		3F626EC214C997AA006AD5B6 /* LabyrinthEnd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F626EC114C997AA006AD5B6 /* LabyrinthEnd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,15 @@
 		3F3AFEE114C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DrinkingGameViewController.xib; sourceTree = "<group>"; };
 		3F5E08ED14C8361100198D6E /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3F5E08EE14C8361100198D6E /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
+		3F626EB114C98ACB006AD5B6 /* Labyrinth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Labyrinth.h; sourceTree = "<group>"; };
+		3F626EB214C98ACB006AD5B6 /* Labyrinth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Labyrinth.m; sourceTree = "<group>"; };
+		3F626EB314C98ACB006AD5B6 /* Labyrinth.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Labyrinth.xib; sourceTree = "<group>"; };
+		3F626EB814C98D7B006AD5B6 /* newview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newview.h; sourceTree = "<group>"; };
+		3F626EB914C98D7B006AD5B6 /* newview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newview.m; sourceTree = "<group>"; };
+		3F626EBA14C98D7B006AD5B6 /* newview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newview.xib; sourceTree = "<group>"; };
+		3F626EBD14C995F4006AD5B6 /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
+		3F626EBF14C99703006AD5B6 /* LabyrinthBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabyrinthBG.png; sourceTree = "<group>"; };
+		3F626EC114C997AA006AD5B6 /* LabyrinthEnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabyrinthEnd.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 		3F3AFEB914C04EF300A992F7 = {
 			isa = PBXGroup;
 			children = (
+				3F626EB714C98D3B006AD5B6 /* Labyrinth Game */,
 				3F3AFECE14C04EF300A992F7 /* DrinkingGame */,
 				3F3AFEC714C04EF300A992F7 /* Frameworks */,
 				3F3AFEC514C04EF300A992F7 /* Products */,
@@ -111,6 +128,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3F626EB714C98D3B006AD5B6 /* Labyrinth Game */ = {
+			isa = PBXGroup;
+			children = (
+				3F626EBF14C99703006AD5B6 /* LabyrinthBG.png */,
+				3F626EC114C997AA006AD5B6 /* LabyrinthEnd.png */,
+				3F626EBD14C995F4006AD5B6 /* face.png */,
+				3F626EB814C98D7B006AD5B6 /* newview.h */,
+				3F626EB914C98D7B006AD5B6 /* newview.m */,
+				3F626EBA14C98D7B006AD5B6 /* newview.xib */,
+				3F626EB114C98ACB006AD5B6 /* Labyrinth.h */,
+				3F626EB214C98ACB006AD5B6 /* Labyrinth.m */,
+				3F626EB314C98ACB006AD5B6 /* Labyrinth.xib */,
+			);
+			name = "Labyrinth Game";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,6 +194,11 @@
 				3F3AFED314C04EF300A992F7 /* InfoPlist.strings in Resources */,
 				3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */,
 				3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */,
+				3F626EB514C98ACB006AD5B6 /* Labyrinth.xib in Resources */,
+				3F626EBC14C98D7B006AD5B6 /* newview.xib in Resources */,
+				3F626EBE14C995F4006AD5B6 /* face.png in Resources */,
+				3F626EC014C99703006AD5B6 /* LabyrinthBG.png in Resources */,
+				3F626EC214C997AA006AD5B6 /* LabyrinthEnd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +214,8 @@
 				3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */,
 				1446C72A14C0609600BAC380 /* DGPlayer.m in Sources */,
 				3F5E08EF14C8361100198D6E /* DGGame.m in Sources */,
+				3F626EB414C98ACB006AD5B6 /* Labyrinth.m in Sources */,
+				3F626EBB14C98D7B006AD5B6 /* newview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

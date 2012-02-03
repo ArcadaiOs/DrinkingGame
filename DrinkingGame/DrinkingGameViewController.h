@@ -10,4 +10,6 @@
 
 @interface DrinkingGameViewController : UIViewController
 
+-(IBAction)goTOGAME:(id)sender;
+
 @end
