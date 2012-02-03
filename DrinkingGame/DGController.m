@@ -30,5 +30,7 @@
     
     return self;
 }
-
+-(void)addPlayer{
+[players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] weight:80 isFemale:false]];
+}
 @end
