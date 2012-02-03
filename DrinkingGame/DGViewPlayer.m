@@ -13,7 +13,7 @@
 
     NSLog(@"Updated playter");
     
-    [playerImage setImage:[newPlayer image]];
+    [playerImage setImage:[UIImage imageWithData:[newPlayer image]]];
     [promilLabel setText:[NSString stringWithFormat:@"%d", [[newPlayer promille]stringValue]]];
     
 }

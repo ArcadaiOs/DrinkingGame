@@ -13,13 +13,13 @@
 @synthesize procent;
 @synthesize name;
 
-- (id)initWithVolumeCl: (float) volumeCl procent: (float) procent andName:(NSString*) name
+- (id)initWithVolumeCl: (float) volume procent: (float) drinkProcent andName:(NSString*) drinkName
 {
     self = [super init];
     if (self) {
-        self.volumeCl = [NSNumber numberWithFloat:volumeCl];
-        self.procent = [NSNumber numberWithFloat:procent];
-        self.name = name;
+        self.volumeCl = [NSNumber numberWithFloat:volume];
+        self.procent = [NSNumber numberWithFloat:drinkProcent];
+        self.name = drinkName;
     }
     
     return self;

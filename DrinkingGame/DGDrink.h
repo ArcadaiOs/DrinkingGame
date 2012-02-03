@@ -16,5 +16,5 @@
 @property (nonatomic, retain) NSNumber * volumeCl;
 @property (nonatomic, retain) NSNumber * procent;
 @property (nonatomic, retain) NSString * name;
-- (id)initWithVolumeCl: (float) volumeCl procent: (float) procent andName:(NSString*) name;
+- (id)initWithVolumeCl: (float) volume procent: (float) drinkProcent andName:(NSString*) drinkName;
 @end

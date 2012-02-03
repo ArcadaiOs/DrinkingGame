@@ -16,5 +16,5 @@
 
 @property (nonatomic, retain) NSMutableArray* drinks;
 @property (nonatomic, retain) NSMutableArray* players;
--(void) addPlayer;
+//-(void) addPlayer;
 @end

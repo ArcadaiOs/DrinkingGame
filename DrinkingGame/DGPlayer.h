@@ -13,14 +13,16 @@
 
 @interface DGPlayer : NSObject {
 @private
-    UIImage * image;
+    UIImageView * image;
     Boolean isFemale;
     NSNumber * promille;
     NSNumber * waterWeightGram;
     NSNumber * weight;
     NSMutableArray* consumptions;
+
 }
-@property (nonatomic, retain) UIImage * image;
+@property (nonatomic, retain) IBOutlet NSData * image;
+
 @property (nonatomic) Boolean isFemale;
 @property (nonatomic, retain) NSNumber * promille;
 @property (nonatomic, retain) NSNumber * waterWeightGram;

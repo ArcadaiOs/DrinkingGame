@@ -26,7 +26,7 @@ typedef enum {
     DGViewPlayer *playerView;
 }
 @property (nonatomic, retain) DGController* controller;
-- (id)initWithController: (DGController*) controller;
+- (id)initWithController: (DGController*) dgController;
 -(IBAction) endGame:(id)sender;
 -(void) showPlayer:(DGPlayer*) player;
 @end

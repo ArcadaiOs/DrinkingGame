@@ -11,23 +11,30 @@
 
 
 @implementation DGPlayer
-@synthesize image, isFemale, promille, waterWeightGram, weight;
-- (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale
-{
-    self = [super init];
-    if (self) {
-        self.image = image;
-        self.isFemale = isFemale;
-        if(isFemale){
-            self.waterWeightGram = [NSNumber numberWithFloat:weight*0.63f];
-        }else{
-            self.waterWeightGram = [NSNumber numberWithFloat:weight*0.71f];
-        }
-        self.promille = [NSNumber numberWithFloat:0.0];
-        // Initialization code here.
-    }
+@dynamic isFemale, promille, waterWeightGram, weight;
+@dynamic image;
+
+////- (id)initWithimage:(UIImageView*) image weight:(int)weight isFemale:(bool) isFemale
+////{
+////    self = [super init];
+////    if (self) {
+////        self.image = image;
+////        self.isFemale = isFemale;
+////        if(isFemale){
+////            self.waterWeightGram = [NSNumber numberWithFloat:weight*0.63f];
+////        }else{
+////            self.waterWeightGram = [NSNumber numberWithFloat:weight*0.71f];
+////        }
+////        self.promille = [NSNumber numberWithFloat:0.0];
+////        // Initialization code here.
+////    }
+//    
+//    return self;
+//}
+
+- (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale{
     
-    return self;
+    return nil;
 }
 
 @end

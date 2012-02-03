@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PhotoCameraController.h"
 
-@class DrinkingGameViewController;
+//@class DrinkingGameViewController;
 
 @interface DrinkingGameAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet DrinkingGameViewController *viewController;
+@property (nonatomic, retain) IBOutlet PhotoCameraController *viewControllerPhoto;
 
 @end
