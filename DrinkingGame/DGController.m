@@ -23,10 +23,15 @@
         players = [[NSMutableArray alloc] init];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] weight:120 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"hannibal.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"haddock.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"norris.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama2.jpg"] weight:80 isFemale:false]];
         
         // Initialization code here.
     }
     
     return self;
-}
+} 
 @end

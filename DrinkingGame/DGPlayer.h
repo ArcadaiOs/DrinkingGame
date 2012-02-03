@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "DGConsumption.h"
 
 @class DGConsumption;
 
 @interface DGPlayer : NSObject {
 @private
+    NSMutableString *playerName;
     UIImage * image;
     Boolean isFemale;
     NSNumber * promille;
@@ -23,6 +25,7 @@
     NSNumber * gramAlcBody;
 }
 @property (nonatomic, retain) UIImage * image;
+@property (nonatomic, retain) NSMutableString *playerName;
 @property (nonatomic) Boolean isFemale;
 @property (nonatomic, retain) NSNumber * waterWeightGram;
 @property (nonatomic, retain) NSNumber * weight;

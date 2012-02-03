@@ -11,13 +11,19 @@
 
 @implementation DrinkingGameViewController
 @synthesize controller;
+
 -(IBAction)launchTestGame:(id)sender{
     [currentCame.view removeFromSuperview];
     [currentCame release];
     currentCame = [[DGRandomShot alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
 }
-
+-(IBAction)launchSteadyHands:(id)sender{
+    [currentCame.view removeFromSuperview];
+    [currentCame release];
+    currentCame = [[DGSteadyHands alloc] initWithController:controller];
+    [self.view addSubview:currentCame.view];
+}
 -(IBAction)launchSimon:(id)sender{
     [currentCame.view removeFromSuperview];
     [currentCame release];
@@ -26,6 +32,7 @@
     [self.view addSubview:currentCame.view];
 }
 -(IBAction) showPlayer:(id)sender{
+
 }
 -(void) gameEndedWithScores:(NSString*) scores{
     NSLog(@"Game ended: %@", scores);

@@ -7,7 +7,6 @@
 //
 
 #import "DGPlayer.h"
-#import "DGConsumption.h"
 
 
 @implementation DGPlayer

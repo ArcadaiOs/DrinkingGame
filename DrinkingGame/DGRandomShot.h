@@ -8,8 +8,11 @@
 
 #import "DGGame.h"
 #import "DGController.h"
+#import "DGRandomShotWheel.h"
+#import <QuartzCore/QuartzCore.h>
 @interface DGRandomShot : DGGame{
     IBOutlet UIImageView* img;
+    IBOutlet DGRandomShotWheel* rotaView;
 }
 
 @end

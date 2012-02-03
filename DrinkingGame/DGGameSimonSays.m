@@ -41,6 +41,15 @@
  Function that starts the gameLoop
 */
 -(IBAction) startGame:(id) sender{
+//    [[[self showPlayer:[controller players] objectAtIndex:1] ]];
+    
+        //DGPlayerView *nextPlayer = [[DGPlayerView alloc] init] ;
+    
+    //[self presentModalViewController:nextPlayer animated:NO];
+    //[self.view addSubview:nextPlayer.view];
+
+    [playerImage setImage:[[[controller players] objectAtIndex:1] image]];
+    
     playEnumerator = [playList objectEnumerator];
     
     [NSTimer scheduledTimerWithTimeInterval:0.5
@@ -59,15 +68,7 @@
     UIButton *b = (UIButton*) [timer userInfo];
     b.highlighted = false;
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    
-    }
-    return self;
-}
+
 /*
     Get some amount of random numbers between min and max values
 */
@@ -120,14 +121,13 @@
                 NSLog(@"PLAYER FAIL");
                 playCount = 0;
                 playerAction = false;
-                
             }
             
             } else{
-            NSLog(@"PLAYER FAIL");
+                NSLog(@"PLAYER FAIL");
             
-            playerAction = false;
-            playCount = 0;
+                playerAction = false;
+                playCount = 0;
         }
         
         
@@ -164,6 +164,7 @@
             break;
         case 4:
             btn = greenButton;
+            break;
         default:
             return;
     }
@@ -176,7 +177,6 @@
      ];
     
 }
-
 -(IBAction) flashRandomColor:(id) sender{
     int b = [self getRandomIntMin:1 max:4];
     [self flashButton:b duration:0.2];
@@ -188,6 +188,11 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
+-(IBAction)next:(id)sender{
+    NSLog(@"Siin Next");
+    [self showPlayer:[[controller players] objectAtIndex:1]];
+    
+}
 
 #pragma mark - View lifecycle
 
@@ -197,6 +202,8 @@
     // Do any additional setup after loading the view from its nib.
     playerAction = false;
     NSLog(@"simon is loaded");
+    [self.view setBackgroundColor: [UIColor colorWithRed:0.435 green:0.435 blue:0.435 alpha:1.0]];
+
     playList = [[NSMutableArray alloc] init];
 
 
@@ -208,15 +215,7 @@
         NSLog(@"added: %i",rand);
     }
     
-    // iterate through the playList
-    NSEnumerator * enumerator = [playList objectEnumerator];
-    id element;
-    
-    while(element = [enumerator nextObject])
-    {
-        // Do your thing with the object.
-        NSLog( @"got: %i", [(NSNumber*)element intValue]);
-    }
+
 
 }
 
