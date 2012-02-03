@@ -24,11 +24,11 @@
     Boolean playerAction;
     NSTimer* playActionTimeOut;
     int playCount;
-    
+    int currentPlayer;
 }
 
 @property (nonatomic, retain) NSMutableArray* playList;
-@property (nonatomic, retain) NSEnumerator* playEnumerator;
+@property (readwrite, retain) NSEnumerator* playEnumerator;
 
 -(int) colorToIntId:(NSString* )colorName;
 -(void) nextPlay: (NSTimer*) timer;

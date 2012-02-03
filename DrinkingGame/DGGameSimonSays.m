@@ -41,14 +41,8 @@
  Function that starts the gameLoop
 */
 -(IBAction) startGame:(id) sender{
-//    [[[self showPlayer:[controller players] objectAtIndex:1] ]];
     
-        //DGPlayerView *nextPlayer = [[DGPlayerView alloc] init] ;
-    
-    //[self presentModalViewController:nextPlayer animated:NO];
-    //[self.view addSubview:nextPlayer.view];
-
-    [playerImage setImage:[[[controller players] objectAtIndex:1] image]];
+    [playerImage setImage:[[[controller players] objectAtIndex:currentPlayer] image]];
     
     playEnumerator = [playList objectEnumerator];
     
@@ -58,7 +52,7 @@
                                    userInfo:playEnumerator
                                     repeats:true
      ];
-    
+    currentPlayer = 0;
 }
 
 /*
@@ -114,6 +108,13 @@
                     [self flashButton:2 duration:2.0f];
                     [self flashButton:3 duration:2.0f];
                     [self flashButton:4 duration:2.0f];
+                    
+                    currentPlayer++;
+                    if(currentPlayer == controller.players.count){
+                        currentPlayer = 0;
+                    }
+                    [self next:nil];
+                    
                 }
                 
                 playCount++;        
@@ -137,6 +138,7 @@
     
     
 }
+
 -(int) colorToIntId:(NSString* )colorName{
     if([colorName compare:@"BLUE"] == NSOrderedSame){
         return 1;
@@ -176,6 +178,8 @@
                                     repeats:false
      ];
     
+    //[btn performSelector:@selector(setHighlighted:) withObject:FALSE afterDelay:seconds];
+    
 }
 -(IBAction) flashRandomColor:(id) sender{
     int b = [self getRandomIntMin:1 max:4];
@@ -189,9 +193,14 @@
     // Release any cached data, images, etc that aren't in use.
 }
 -(IBAction)next:(id)sender{
-    NSLog(@"Siin Next");
-    [self showPlayer:[[controller players] objectAtIndex:1]];
+
+    [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
     
+}
+
+-(void) playerReady{
+    NSLog(@"NEXT PLAYER: READU");
+    [self startGame:nil];
 }
 
 #pragma mark - View lifecycle

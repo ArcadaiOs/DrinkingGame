@@ -11,7 +11,8 @@
 
 @implementation DGPlayer
 @synthesize image, isFemale, promille, waterWeightGram, weight;
-- (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn
+
+- (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn 
 {
     self = [super init];
     if (self) {
@@ -23,10 +24,16 @@
             self.waterWeightGram = [NSNumber numberWithFloat:weightIn*0.71f];
         }
         self.promille = [NSNumber numberWithFloat:0.0];
-        // Initialization code here.
     }
     
     return self;
+}
+
+//
+// For sorting players according to Drunkness
+//
+-(NSComparisonResult) comparePromille:(id)element{
+    return [((DGPlayer*) element).promille compare:promille];
 }
 
 @end

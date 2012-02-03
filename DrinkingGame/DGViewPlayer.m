@@ -9,14 +9,15 @@
 #import "DGViewPlayer.h"
 
 @implementation DGViewPlayer
+
+@synthesize delegate;
+
 -(void) setPlayer:(DGPlayer *)newPlayer{
 
-    NSLog(@"Updated playter");
-    
     [playerImage setImage:[newPlayer image]];
-    [promilLabel setText:[NSString stringWithFormat:@"%d", [[newPlayer promille]stringValue]]];
-    
+    [promilLabel setText:[NSString stringWithFormat:@"%f", [[newPlayer promille] floatValue]]];
 }
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,7 +35,10 @@
     // Release any cached data, images, etc that aren't in use.
 }
 -(IBAction)done:(id)sender{
-    
+    if([delegate respondsToSelector:@selector(playerReady)]){
+        [delegate playerReady];
+    }
+    self.view.alpha = 0.0;
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -43,6 +47,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"prom: %@", promilLabel.text);
     // Do any additional setup after loading the view from its nib.
 }
 
