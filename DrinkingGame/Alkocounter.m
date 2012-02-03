@@ -18,15 +18,7 @@
     return self;
 }
 
-- (NSNumber*) promilleForPlayer:(DGPlayer*)player newShot:(NSNumber*) gramAlc{
-    
-    NSNumber * gramPureAlcohol = [NSNumber numberWithFloat:[player.promille floatValue] * [player.waterWeightGram floatValue]];
-    NSNumber * fv = [NSNumber numberWithDouble:[gramPureAlcohol floatValue] * [player.weight floatValue]/ ([player.lastUpdate timeIntervalSinceNow]/3600000)] ;
-    
-    NSNumber * fv2 = [NSNumber numberWithFloat:([fv floatValue] * [player.waterWeightGram floatValue] + [gramAlc floatValue]) / [player.waterWeightGram floatValue]] ;
-    player.promille = fv2;
-    return fv2; 
-}
+
 
 // --- Variabler --- //
 
