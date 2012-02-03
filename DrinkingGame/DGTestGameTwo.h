@@ -11,7 +11,7 @@
 
 @interface DGTestGameTwo : DGGame{
 
-
+    
 }
 
 @end
