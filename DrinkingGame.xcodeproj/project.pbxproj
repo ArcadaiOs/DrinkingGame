@@ -10,7 +10,6 @@
 		3F0B1EEC14DAB02000347814 /* DGmenu3polaroidbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0B1EE914DAB02000347814 /* DGmenu3polaroidbg.png */; };
 		3F0B1EED14DAB02000347814 /* DGmenu3selectedCross.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0B1EEA14DAB02000347814 /* DGmenu3selectedCross.png */; };
 		3F0B1EF014DABB3A00347814 /* DGmenu3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0B1EEF14DABB3A00347814 /* DGmenu3.png */; };
-		3F38EA4614C8368500511ED5 /* o7xa6q5yh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F38EA4514C8368500511ED5 /* o7xa6q5yh.jpg */; };
 		3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFEC814C04EF300A992F7 /* UIKit.framework */; };
 		3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECA14C04EF300A992F7 /* Foundation.framework */; };
 		3F3AFECD14C04EF300A992F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECC14C04EF300A992F7 /* CoreGraphics.framework */; };
@@ -20,7 +19,6 @@
 		3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */; };
 		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
 		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
-		3F753C0014C8540C00EE60D6 /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F753BFF14C8540C00EE60D6 /* Box.png */; };
 		3F9B0E0C14C98CE100B82B9E /* DGmenubg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B0E0B14C98CE100B82B9E /* DGmenubg.png */; };
 		3F9B0E1114C9904E00B82B9E /* DGmenuAmountOfPlayers.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B0E1014C9904E00B82B9E /* DGmenuAmountOfPlayers.png */; };
 		3F9B0E1714C99B7500B82B9E /* DGmenuNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B0E1614C99B7500B82B9E /* DGmenuNumbers.png */; };
@@ -40,7 +38,6 @@
 		3F0B1EE914DAB02000347814 /* DGmenu3polaroidbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenu3polaroidbg.png; sourceTree = "<group>"; };
 		3F0B1EEA14DAB02000347814 /* DGmenu3selectedCross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenu3selectedCross.png; sourceTree = "<group>"; };
 		3F0B1EEF14DABB3A00347814 /* DGmenu3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenu3.png; sourceTree = "<group>"; };
-		3F38EA4514C8368500511ED5 /* o7xa6q5yh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = o7xa6q5yh.jpg; sourceTree = "<group>"; };
 		3F3AFEC414C04EF300A992F7 /* DrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3AFEC814C04EF300A992F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F3AFECA14C04EF300A992F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,7 +52,6 @@
 		3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrinkingGameViewController.h; sourceTree = "<group>"; };
 		3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkingGameViewController.m; sourceTree = "<group>"; };
 		3F3AFEE114C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DrinkingGameViewController.xib; sourceTree = "<group>"; };
-		3F753BFF14C8540C00EE60D6 /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
 		3F9B0E0B14C98CE100B82B9E /* DGmenubg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenubg.png; sourceTree = "<group>"; };
 		3F9B0E1014C9904E00B82B9E /* DGmenuAmountOfPlayers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenuAmountOfPlayers.png; sourceTree = "<group>"; };
 		3F9B0E1614C99B7500B82B9E /* DGmenuNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenuNumbers.png; sourceTree = "<group>"; };
@@ -157,8 +153,6 @@
 				3F9B0E1614C99B7500B82B9E /* DGmenuNumbers.png */,
 				3F9B0E1014C9904E00B82B9E /* DGmenuAmountOfPlayers.png */,
 				3F9B0E0B14C98CE100B82B9E /* DGmenubg.png */,
-				3F753BFF14C8540C00EE60D6 /* Box.png */,
-				3F38EA4514C8368500511ED5 /* o7xa6q5yh.jpg */,
 			);
 			name = Pictures;
 			sourceTree = "<group>";
@@ -213,8 +207,6 @@
 				3F3AFED314C04EF300A992F7 /* InfoPlist.strings in Resources */,
 				3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */,
 				3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */,
-				3F38EA4614C8368500511ED5 /* o7xa6q5yh.jpg in Resources */,
-				3F753C0014C8540C00EE60D6 /* Box.png in Resources */,
 				3F9B0E0C14C98CE100B82B9E /* DGmenubg.png in Resources */,
 				3F9B0E1114C9904E00B82B9E /* DGmenuAmountOfPlayers.png in Resources */,
 				3F9B0E1714C99B7500B82B9E /* DGmenuNumbers.png in Resources */,

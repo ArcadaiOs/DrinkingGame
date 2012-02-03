@@ -9,6 +9,8 @@
 #import "DrinkingGameViewController.h"
 
 
+#define twoPlayers 2
+
 
 
 @implementation DrinkingGameViewController
@@ -25,6 +27,7 @@
 @synthesize menu3CrossMale, menu3CrossFemale, menu3male, menu3female;
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasySelected, buttonHardSelected, buttonCustomSelected, buttonMediumSelected;
+@synthesize weight, name;
 
 
 
@@ -34,6 +37,9 @@
 {
     
 
+
+    
+    
     [super viewDidLoad];
     
 }
@@ -74,11 +80,27 @@
         
         self.view = secondView;
     }
-    
+            
 
+            
 }
 
-
+-(IBAction)buttonGetNewPlayer {
+    
+    // save new player
+    if (amountOfPlayers == 0) {
+        // go and play
+    } else {
+        // clear view 
+        // minska amountOfPlayers by one 
+    }
+    
+    
+    
+    
+    
+    
+}
 
 
 -(IBAction)buttonClickedBack {
@@ -106,6 +128,7 @@
 
 -(IBAction)buttonPlayers2 {
     
+    amountOfPlayers = 2;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 0;
@@ -116,9 +139,11 @@
     selected7.hidden = 1;
     selected8.hidden = 1;
     
+    
 }
 -(IBAction)buttonPlayers3 {
     
+    amountOfPlayers = 3;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -243,6 +268,7 @@
     menu3CrossMale.hidden = 0;
     menu3CrossFemale.hidden = 1;
     
+        [self closekeyboard];
 }
 
 -(IBAction)menu3female {
@@ -250,6 +276,39 @@
     menu3CrossMale.hidden = 1;
     menu3CrossFemale.hidden = 0;
 
+    [self closekeyboard];
+    
 }
+
+
+-(IBAction)openkeyboard {
+    
+    
+    thirdView.superview.frame = CGRectMake(0,-200,320,480);
+
+    
+}
+
+-(IBAction)closekeyboard {
+    
+
+    
+    thirdView.superview.frame = CGRectMake(0,0,320,480);
+    [self.view endEditing:TRUE];
+    // 
+    if  ((![name.text isEqualToString:@"NAME"]) && (![weight.text isEqualToString:@"***"]) && ((menu3CrossMale.hidden == 0) ||
+                                                                                                       (menu3CrossFemale.hidden == 0))) {
+        NSLog(@"lol");
+        btnContinue3.hidden = 0;
+        pointNextActive3.hidden = 0;
+    }
+    
+}
+
+//        if ((menu3CrossMale.hidden == 0) ||
+//            (menu3CrossFemale.hidden == 0)) {
+
+
+
     
 @end

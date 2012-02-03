@@ -12,10 +12,8 @@
 {
     
 
-    
-    
-    NSInteger gameState;
-    NSInteger previousState;
+
+    NSInteger amountOfPlayers;
     
     
     //Menu 1
@@ -70,6 +68,7 @@
     UIButton *Menu2HardSelected;
     UIButton *Menu2CustomSelected;
     
+    IBOutlet UIView *originalCenter;
     IBOutlet UIView *firstView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
@@ -80,6 +79,10 @@
         UIImageView *menu3CrossFemale;
     UIButton *menu3male;
     UIButton *menu3female;
+    
+    
+    UITextField *name;
+    UITextField *weight;
 }
 
 
@@ -150,6 +153,8 @@
 @property (nonatomic, retain) IBOutlet UIButton *menu3female;
 @property (nonatomic, retain) IBOutlet UIButton *menu3male;
 
+@property (nonatomic, retain) IBOutlet UITextField *name;
+@property (nonatomic, retain) IBOutlet UITextField *weight;
 
 
 -(IBAction)buttonClickedContinue;
@@ -172,5 +177,10 @@
 -(IBAction)menu3female;
 -(IBAction)menu3male;
 
+-(IBAction)closekeyboard;
+
+-(IBAction)openkeyboard;
+
+-(IBAction)buttonGetNewPlayer;
 @end
 
