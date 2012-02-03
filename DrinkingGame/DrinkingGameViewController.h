@@ -13,7 +13,7 @@
 #import "DGGameSimonSays.h"
 #import "DGSteadyHands.h"
 #import "DGViewPlayer.h"
-
+#import "DGTestGameTwo.h"
 
 typedef struct{
     NSString *playerName;
@@ -33,4 +33,5 @@ typedef struct{
 -(IBAction) launchTestGame:(id)sender;
 -(IBAction) launchSimon:(id)sender;
 -(IBAction) launchSteadyHands:(id)sender;
+-(IBAction) launchWhackAMole:(id)sender;
 @end

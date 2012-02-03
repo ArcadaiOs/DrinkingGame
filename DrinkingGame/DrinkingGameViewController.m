@@ -24,6 +24,12 @@
     currentCame = [[DGSteadyHands alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
 }
+-(IBAction) launchWhackAMole:(id)sender{
+    [currentCame.view removeFromSuperview];
+    [currentCame release];
+    currentCame = [[DGTestGameTwo alloc] initWithController:controller];
+    [self.view addSubview:currentCame.view];
+}
 -(IBAction)launchSimon:(id)sender{
     [currentCame.view removeFromSuperview];
     [currentCame release];
