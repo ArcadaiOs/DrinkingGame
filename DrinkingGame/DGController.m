@@ -21,16 +21,13 @@
         [drinks addObject:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7f andName:@"Beer"]];
         
         players = [[NSMutableArray alloc] init];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] weight:120 isFemale:false]];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] weight:80 isFemale:false]];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] playerName:@"timo1" weight:120 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] playerName:@"timo2"weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] playerName:@"timo3" weight:80 isFemale:false]];
         
         // Initialization code here.
     }
     
     return self;
-}
--(void)addPlayer{
-[players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] weight:80 isFemale:false]];
-}
+} 
 @end

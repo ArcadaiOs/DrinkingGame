@@ -11,9 +11,7 @@
 
 @implementation DrinkingGameViewController
 @synthesize controller;
--(IBAction)addPlayers:(id)sender{
-    [controller addPlayer];
-}
+
 -(IBAction)launchTestGame:(id)sender{
     [currentCame.view removeFromSuperview];
     [currentCame release];
