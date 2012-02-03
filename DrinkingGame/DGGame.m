@@ -10,11 +10,11 @@
 
 @implementation DGGame
 @synthesize controller;
-- (id)initWithController: (DGController*) controller
+- (id)initWithController: (DGController*) controllerIn
 {
     self = [super init];
     if (self) {
-        self.controller = controller;
+        self.controller = controllerIn;
         // Custom initialization
        playerView = [[DGViewPlayer alloc] init];
     }

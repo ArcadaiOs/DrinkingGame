@@ -7,21 +7,20 @@
 //
 
 #import "DGPlayer.h"
-#import "DGConsumption.h"
 
 
 @implementation DGPlayer
 @synthesize image, isFemale, promille, waterWeightGram, weight;
-- (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale
+- (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn
 {
     self = [super init];
     if (self) {
-        self.image = image;
-        self.isFemale = isFemale;
+        self.image = imageIn;
+        self.isFemale = isFemaleIn;
         if(isFemale){
-            self.waterWeightGram = [NSNumber numberWithFloat:weight*0.63f];
+            self.waterWeightGram = [NSNumber numberWithFloat:weightIn*0.63f];
         }else{
-            self.waterWeightGram = [NSNumber numberWithFloat:weight*0.71f];
+            self.waterWeightGram = [NSNumber numberWithFloat:weightIn*0.71f];
         }
         self.promille = [NSNumber numberWithFloat:0.0];
         // Initialization code here.

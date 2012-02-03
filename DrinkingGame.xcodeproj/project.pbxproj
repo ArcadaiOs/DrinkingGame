@@ -32,6 +32,7 @@
 		3F40EB8F14C9A85D009B35A5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F40EB8E14C9A85D009B35A5 /* CoreData.framework */; };
 		3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F50863214D2C40A006588E3 /* DGPlayer.m */; };
 		3F50863514D2C5F6006588E3 /* Soini.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F50863414D2C5F6006588E3 /* Soini.jpeg */; };
+		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
 		3F52E2B214DAABD000ECA4BB /* DGTestGameTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E2B014DAABD000ECA4BB /* DGTestGameTwo.m */; };
 		3F52E2B314DAABD000ECA4BB /* DGTestGameTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F52E2B114DAABD000ECA4BB /* DGTestGameTwo.xib */; };
 		3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */; };
@@ -39,6 +40,7 @@
 		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
 		3FC785AD14D2D96300F3CCE3 /* niini.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC785AC14D2D96300F3CCE3 /* niini.png */; };
 		3FC9856914DAA1F70023BB05 /* naama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FC9856814DAA1F70023BB05 /* naama.jpg */; };
+		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
 		3FCDE48914DAB7370087921F /* DGViewPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDE48714DAB7360087921F /* DGViewPlayer.m */; };
 		3FCDE48A14DAB7370087921F /* DGViewPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDE48814DAB7360087921F /* DGViewPlayer.xib */; };
 		3FE08EF714C98B3F0010A03C /* DGRandomShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08EF514C98B3F0010A03C /* DGRandomShot.m */; };
@@ -84,6 +86,7 @@
 		3F50863114D2C40A006588E3 /* DGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayer.h; sourceTree = "<group>"; };
 		3F50863214D2C40A006588E3 /* DGPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayer.m; sourceTree = "<group>"; };
 		3F50863414D2C5F6006588E3 /* Soini.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Soini.jpeg; sourceTree = "<group>"; };
+		3FB138BC14DAC15F00431078 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3F52E2AF14DAABD000ECA4BB /* DGTestGameTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGTestGameTwo.h; sourceTree = "<group>"; };
 		3F52E2B014DAABD000ECA4BB /* DGTestGameTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGTestGameTwo.m; sourceTree = "<group>"; };
 		3F52E2B114DAABD000ECA4BB /* DGTestGameTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGTestGameTwo.xib; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 		3FBCABE214C97F4E0032EBA1 /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
 		3FC785AC14D2D96300F3CCE3 /* niini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = niini.png; sourceTree = "<group>"; };
 		3FC9856814DAA1F70023BB05 /* naama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = naama.jpg; sourceTree = "<group>"; };
+		3FC9856D14DABDD80023BB05 /* DGRandomShotWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShotWheel.h; sourceTree = "<group>"; };
+		3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShotWheel.m; sourceTree = "<group>"; };
 		3FCDE48614DAB7360087921F /* DGViewPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGViewPlayer.h; sourceTree = "<group>"; };
 		3FCDE48714DAB7360087921F /* DGViewPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGViewPlayer.m; sourceTree = "<group>"; };
 		3FCDE48814DAB7360087921F /* DGViewPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGViewPlayer.xib; sourceTree = "<group>"; };
@@ -110,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */,
 				3F40EB8F14C9A85D009B35A5 /* CoreData.framework in Frameworks */,
 				3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */,
 				3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */,
@@ -201,6 +207,7 @@
 		3F3AFEB914C04EF300A992F7 = {
 			isa = PBXGroup;
 			children = (
+				3FB138BC14DAC15F00431078 /* QuartzCore.framework */,
 				3F40EB8E14C9A85D009B35A5 /* CoreData.framework */,
 				3F3AFECE14C04EF300A992F7 /* DrinkingGame */,
 				3F3AFEC714C04EF300A992F7 /* Frameworks */,
@@ -282,6 +289,8 @@
 				3FE08EF414C98B3F0010A03C /* DGRandomShot.h */,
 				3FE08EF514C98B3F0010A03C /* DGRandomShot.m */,
 				3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */,
+				3FC9856D14DABDD80023BB05 /* DGRandomShotWheel.h */,
+				3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */,
 			);
 			name = DGRandomShot;
 			sourceTree = "<group>";
@@ -389,6 +398,7 @@
 				3F3A731A14D186F500ECD451 /* DGConsumption.m in Sources */,
 				3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */,
 				3F1D4EE914D2C21A006D5BE7 /* DGGameSimonSays.m in Sources */,
+				3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */,
 				3FCDE48914DAB7370087921F /* DGViewPlayer.m in Sources */,
 				3F52E2B214DAABD000ECA4BB /* DGTestGameTwo.m in Sources */,
 				3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */,
