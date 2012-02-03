@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DrinkingGameViewController : UIViewController{
-    
+    NSTimer *timer;
     IBOutlet UILabel *myCounterLabel;
     
 }
-
 @property (nonatomic, retain) UILabel *myCounterLabel;
 
 -(IBAction)Q2;

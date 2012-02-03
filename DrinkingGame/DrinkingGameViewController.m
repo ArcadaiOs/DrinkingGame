@@ -46,18 +46,17 @@
 - (void)updateCounter:(NSTimer *)theTimer {
 	static int count = 5;
 	count -= 1;
-	NSString *s = [[NSString alloc]
-                   initWithFormat:@"%d", count];
+	NSString *s = [[NSString alloc] initWithFormat:@"%d", count];
 	self.myCounterLabel.text = s;
 	[s release];
-}
+    }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.myCounterLabel.text = @"5";
     
-	[NSTimer scheduledTimerWithTimeInterval:1.0f
+	timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
                                    selector:@selector(updateCounter:)
                                    userInfo:nil
