@@ -20,7 +20,6 @@
 		3F3A730814D17F9D00ECD451 /* DGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A730714D17F9D00ECD451 /* DGController.m */; };
 		3F3A731414D1821800ECD451 /* DGDrink.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A731314D1821800ECD451 /* DGDrink.m */; };
 		3F3A731A14D186F500ECD451 /* DGConsumption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A731914D186F500ECD451 /* DGConsumption.m */; };
-		3F34A41414C05F340056DAE5 /* Alkocounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F34A41314C05F340056DAE5 /* Alkocounter.m */; };
 		3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFEC814C04EF300A992F7 /* UIKit.framework */; };
 		3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECA14C04EF300A992F7 /* Foundation.framework */; };
 		3F3AFECD14C04EF300A992F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECC14C04EF300A992F7 /* CoreGraphics.framework */; };
@@ -68,14 +67,14 @@
 		3F1D4EE514D2C21A006D5BE7 /* DGGameSimonSays.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGGameSimonSays.xib; sourceTree = "<group>"; };
 		3F1D4EE614D2C21A006D5BE7 /* DGGameSimonSays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGameSimonSays.h; sourceTree = "<group>"; };
 		3F1D4EE714D2C21A006D5BE7 /* DGGameSimonSays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGameSimonSays.m; sourceTree = "<group>"; };
+		3F34A41214C05F340056DAE5 /* Alkocounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alkocounter.h; sourceTree = "<group>"; };
+		3F34A41314C05F340056DAE5 /* Alkocounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alkocounter.m; sourceTree = "<group>"; };
 		3F3A730614D17F9D00ECD451 /* DGController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGController.h; sourceTree = "<group>"; };
 		3F3A730714D17F9D00ECD451 /* DGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGController.m; sourceTree = "<group>"; };
 		3F3A731214D1821800ECD451 /* DGDrink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGDrink.h; sourceTree = "<group>"; };
 		3F3A731314D1821800ECD451 /* DGDrink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGDrink.m; sourceTree = "<group>"; };
 		3F3A731814D186F500ECD451 /* DGConsumption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGConsumption.h; sourceTree = "<group>"; };
 		3F3A731914D186F500ECD451 /* DGConsumption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGConsumption.m; sourceTree = "<group>"; };
-		3F34A41214C05F340056DAE5 /* Alkocounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alkocounter.h; sourceTree = "<group>"; };
-		3F34A41314C05F340056DAE5 /* Alkocounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alkocounter.m; sourceTree = "<group>"; };
 		3F3AFEC414C04EF300A992F7 /* DrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3AFEC814C04EF300A992F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F3AFECA14C04EF300A992F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -423,7 +422,10 @@
 				3F3A731A14D186F500ECD451 /* DGConsumption.m in Sources */,
 				3F50863314D2C40A006588E3 /* DGPlayer.m in Sources */,
 				3F1D4EE914D2C21A006D5BE7 /* DGGameSimonSays.m in Sources */,
-				3F34A41414C05F340056DAE5 /* Alkocounter.m in Sources */,
+				3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */,
+				3FCDE48914DAB7370087921F /* DGViewPlayer.m in Sources */,
+				3F52E2B214DAABD000ECA4BB /* DGTestGameTwo.m in Sources */,
+				3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
