@@ -21,13 +21,18 @@
         [drinks addObject:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7f andName:@"Beer"]];
         
         players = [[NSMutableArray alloc] init];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] weight:120 isFemale:false]];
+<<<<<<< HEAD
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] weight:120 isFemale:false ]];
+=======
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"]  weight:120 isFemale:false]];
+>>>>>>> 3dc90b30c9ea22c63561007c4978762919721b9d
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] weight:80 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] weight:80 isFemale:false]];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"hannibal.jpg"] weight:80 isFemale:false]];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"haddock.jpg"] weight:80 isFemale:false]];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"norris.jpg"] weight:80 isFemale:false]];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama2.jpg"] weight:80 isFemale:false]];
+        
+        [[players objectAtIndex:0] setPromille:[NSNumber numberWithFloat:1.0]];
+        [[players objectAtIndex:1] setPromille:[NSNumber numberWithFloat:2.0]];
+        [[players objectAtIndex:2] setPromille:[NSNumber numberWithFloat:0.5]];
+        
         
         // Initialization code here.
     }

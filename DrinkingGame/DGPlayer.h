@@ -14,19 +14,25 @@
 
 @interface DGPlayer : NSObject {
 @private
-    NSMutableString *playerName;
     UIImage * image;
     Boolean isFemale;
     NSNumber * promille;
     NSNumber * waterWeightGram;
     NSNumber * weight;
+    NSDate * lastUpdate;
     NSMutableArray* consumptions;
+    NSNumber * gramAlcBody;
 }
+
 @property (nonatomic, retain) UIImage * image;
-@property (nonatomic, retain) NSMutableString *playerName;
 @property (nonatomic) Boolean isFemale;
-@property (nonatomic, retain) NSNumber * promille;
 @property (nonatomic, retain) NSNumber * waterWeightGram;
 @property (nonatomic, retain) NSNumber * weight;
+
 - (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale;
+-(NSComparisonResult) comparePromille:(id) element; 
+
+@property (nonatomic, retain) NSDate * lastUpdate;
+@property (nonatomic, retain) NSNumber * gramAlcBody;
+- (id)initWithimage:(UIImage*) playerImage weight:(int)playerWeight isFemale:(bool) isPlayerFemale;
 @end

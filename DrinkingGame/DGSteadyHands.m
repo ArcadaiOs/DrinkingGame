@@ -29,6 +29,7 @@
     self.accelerometer = [UIAccelerometer sharedAccelerometer];
     self.accelerometer.updateInterval = .1;
     self.accelerometer.delegate = self;
+
     
 }
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {

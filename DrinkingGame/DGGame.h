@@ -29,4 +29,5 @@ typedef enum {
 - (id)initWithController: (DGController*) controller;
 -(IBAction) endGame:(id)sender;
 -(void) showPlayer:(DGPlayer*) player;
+-(void) playerReady;
 @end

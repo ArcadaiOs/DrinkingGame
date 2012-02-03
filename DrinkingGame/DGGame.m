@@ -16,27 +16,38 @@
     if (self) {
         self.controller = controllerIn;
         // Custom initialization
-       playerView = [[DGViewPlayer alloc] init];
+        playerView = [[DGViewPlayer alloc] init];
+        [playerView setDelegate:self];
+        
     }
     return self;
 }
+
+// this will show a player with his promille and imgae
+// playerReady will execute when player presses Lets Play
 -(void) showPlayer:(DGPlayer *)player{
 
-    [playerView setPlayer:player];
-    NSLog(@"ShowPlayer");
     
-    
-    [self presentModalViewController:playerView animated:YES];
+    playerView.view.alpha = 0.0;
+    [self presentModalViewController:playerView animated:NO];
+    [UIView animateWithDuration:1.0
+                    animations:^{playerView.view.alpha = 1.0;}];
 
+
+    
+    [playerView setPlayer:player];
 }
+
+-(void) playerReady{
+    NSLog(@"PLAYER READU");
+}
+
 -(IBAction)endGame:(id)sender{
     
     
     // killmiself
     [self.view removeFromSuperview];
     //[self release];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning

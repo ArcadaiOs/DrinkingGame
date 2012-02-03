@@ -11,22 +11,48 @@
 
 @implementation DGPlayer
 @synthesize image, isFemale, promille, waterWeightGram, weight;
-- (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn
+
+- (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn 
 {
     self = [super init];
     if (self) {
-        self.image = imageIn;
-        self.isFemale = isFemaleIn;
-        if(isFemale){
-            self.waterWeightGram = [NSNumber numberWithFloat:weightIn*0.63f];
+        self.image = playerImage;
+        self.isFemale = isPlayerFemale;
+        if(isPlayerFemale){
+            self.waterWeightGram = [NSNumber numberWithFloat:playerWeight*0.63f];
         }else{
-            self.waterWeightGram = [NSNumber numberWithFloat:weightIn*0.71f];
+            self.waterWeightGram = [NSNumber numberWithFloat:playerWeight*0.71f];
         }
-        self.promille = [NSNumber numberWithFloat:0.0];
-        // Initialization code here.
+        self.gramAlcBody = [NSNumber numberWithFloat:0.0];
     }
     
     return self;
+}
+
+//
+// For sorting players according to Drunkness
+//
+-(NSComparisonResult) comparePromille:(id)element{
+    return [((DGPlayer*) element).promille compare:promille];
+- (NSNumber*) promilleForPlayer:(DGPlayer*)player newShot:(NSNumber*) gramAlc{
+    NSNumber *kfb;
+    lastUpdate = [NSDate date];
+    if ([player.gramAlcBody intValue] > 0) {
+        
+        double burn  =  ( [weight doubleValue] / [lastUpdate timeIntervalSinceNow] ) ;
+        
+        if(player.isFemale == isFemale){
+            
+            kfb = [NSNumber numberWithDouble: (0.085 * [gramAlcBody doubleValue]) / burn];
+        }else{
+            kfb = [NSNumber numberWithFloat: (0.1 * [gramAlcBody floatValue]) / burn ];
+        }
+    }
+    int newGram = [kfb intValue] + [gramAlc intValue];
+    player.gramAlcBody = [NSNumber numberWithInt:newGram];
+    
+    
+    return kfb; 
 }
 
 @end
