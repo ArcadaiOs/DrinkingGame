@@ -10,7 +10,7 @@
 
 
 @implementation DGPlayer
-@synthesize image, isFemale, gramAlcBody, waterWeightGram, weight, lastUpdate;
+@synthesize image, isFemale, gramAlcBody, waterWeightGram, weight, lastUpdate, playerName;
 - (id)initWithimage:(UIImage*) playerImage weight:(int)playerWeight isFemale:(bool) isPlayerFemale
 {
     self = [super init];
