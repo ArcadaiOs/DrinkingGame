@@ -33,6 +33,5 @@
     }
     
     return self;
-}
-
+} 
 @end
