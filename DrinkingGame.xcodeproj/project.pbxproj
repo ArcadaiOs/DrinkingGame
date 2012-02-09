@@ -32,7 +32,6 @@
 		3F40EB8F14C9A85D009B35A5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F40EB8E14C9A85D009B35A5 /* CoreData.framework */; };
 		3F4B704A14E3E4ED00BAE149 /* DGStartMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B704814E3E4ED00BAE149 /* DGStartMenu.m */; };
 		3F4B704B14E3E4ED00BAE149 /* DGStartMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B704914E3E4ED00BAE149 /* DGStartMenu.xib */; };
-		3F4B706014E3E57E00BAE149 /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B704C14E3E57E00BAE149 /* Box.png */; };
 		3F4B706114E3E57E00BAE149 /* DGmenu1Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B704D14E3E57E00BAE149 /* DGmenu1Player.png */; };
 		3F4B706214E3E57E00BAE149 /* DGmenu1Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B704E14E3E57E00BAE149 /* DGmenu1Selected.png */; };
 		3F4B706314E3E57E00BAE149 /* DGmenu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B704F14E3E57E00BAE149 /* DGmenu2.png */; };
@@ -57,7 +56,6 @@
 		3F52E2B314DAABD000ECA4BB /* DGTestGameTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F52E2B114DAABD000ECA4BB /* DGTestGameTwo.xib */; };
 		3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */; };
 		3F52E2B914DAAC1D00ECA4BB /* DGSteadyHands.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */; };
-		3FA2308614E3E832008AD659 /* DGmenubg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA2308514E3E832008AD659 /* DGmenubg.png */; };
 		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
 		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
 		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
@@ -116,7 +114,6 @@
 		3F4B704714E3E4ED00BAE149 /* DGStartMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGStartMenu.h; sourceTree = "<group>"; };
 		3F4B704814E3E4ED00BAE149 /* DGStartMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGStartMenu.m; sourceTree = "<group>"; };
 		3F4B704914E3E4ED00BAE149 /* DGStartMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGStartMenu.xib; sourceTree = "<group>"; };
-		3F4B704C14E3E57E00BAE149 /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
 		3F4B704D14E3E57E00BAE149 /* DGmenu1Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenu1Player.png; sourceTree = "<group>"; };
 		3F4B704E14E3E57E00BAE149 /* DGmenu1Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenu1Selected.png; sourceTree = "<group>"; };
 		3F4B704F14E3E57E00BAE149 /* DGmenu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenu2.png; sourceTree = "<group>"; };
@@ -144,7 +141,6 @@
 		3F52E2B514DAAC1D00ECA4BB /* DGSteadyHands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGSteadyHands.h; sourceTree = "<group>"; };
 		3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGSteadyHands.m; sourceTree = "<group>"; };
 		3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGSteadyHands.xib; sourceTree = "<group>"; };
-		3FA2308514E3E832008AD659 /* DGmenubg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenubg.png; sourceTree = "<group>"; };
 		3FB138BC14DAC15F00431078 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3FBCABE114C97F4E0032EBA1 /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3FBCABE214C97F4E0032EBA1 /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
@@ -188,7 +184,6 @@
 		3F10BE2B14C9960800220F88 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				3FA2308514E3E832008AD659 /* DGmenubg.png */,
 				3F10BE2C14C9960800220F88 /* simon_blue_dwn.png */,
 				3F10BE2D14C9960800220F88 /* simon_blue_up.png */,
 				3F10BE2E14C9960800220F88 /* simon_green_dwn.png */,
@@ -218,6 +213,41 @@
 				3F1D4EE714D2C21A006D5BE7 /* DGGameSimonSays.m */,
 			);
 			name = DGSimonSays;
+			sourceTree = "<group>";
+		};
+		3F34863214E3EF0A009EEBAE /* menu images */ = {
+			isa = PBXGroup;
+			children = (
+				3F4B704D14E3E57E00BAE149 /* DGmenu1Player.png */,
+				3F4B704E14E3E57E00BAE149 /* DGmenu1Selected.png */,
+				3F4B704F14E3E57E00BAE149 /* DGmenu2.png */,
+				3F4B705014E3E57E00BAE149 /* DGmenu2customSelected.png */,
+				3F4B705114E3E57E00BAE149 /* DGmenu2easySelected.png */,
+				3F4B705214E3E57E00BAE149 /* DGmenu2hardSelected.png */,
+				3F4B705314E3E57E00BAE149 /* DGmenu2mediumSelected.png */,
+				3F4B705414E3E57E00BAE149 /* DGmenu2Players.png */,
+				3F4B705514E3E57E00BAE149 /* DGmenu3.png */,
+				3F4B705614E3E57E00BAE149 /* DGmenu3polaroidbg.png */,
+				3F4B705714E3E57E00BAE149 /* DGmenu3selectedCross.png */,
+				3F4B705814E3E57E00BAE149 /* DGmenuAmountOfPlayers.png */,
+				3F4B705914E3E57E00BAE149 /* DGmenubg.png */,
+				3F4B705A14E3E57E00BAE149 /* DGmenuGameMode.png */,
+				3F4B705B14E3E57E00BAE149 /* DGmenuNumbers.png */,
+				3F4B705C14E3E57E00BAE149 /* DGmenuPointBack.png */,
+				3F4B705D14E3E57E00BAE149 /* DGmenuPointBackActive.png */,
+				3F4B705E14E3E57E00BAE149 /* DGmenuPointNext.png */,
+				3F4B705F14E3E57E00BAE149 /* DGmenuPointNextActive.png */,
+			);
+			name = "menu images";
+			sourceTree = "<group>";
+		};
+		3F34863314E3EF5A009EEBAE /* old files */ = {
+			isa = PBXGroup;
+			children = (
+				3F34A41214C05F340056DAE5 /* Alkocounter.h */,
+				3F34A41314C05F340056DAE5 /* Alkocounter.m */,
+			);
+			name = "old files";
 			sourceTree = "<group>";
 		};
 		3F3A731014D1810100ECD451 /* DGConsumption */ = {
@@ -297,20 +327,19 @@
 			isa = PBXGroup;
 			children = (
 				3F4B704514E3E42F00BAE149 /* startMenu */,
-				3FE08EFA14C992E00010A03C /* resources */,
 				3F3AFED714C04EF300A992F7 /* DrinkingGameAppDelegate.h */,
 				3F3AFED814C04EF300A992F7 /* DrinkingGameAppDelegate.m */,
 				3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */,
 				3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */,
 				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
-				3F34A41214C05F340056DAE5 /* Alkocounter.h */,
-				3F34A41314C05F340056DAE5 /* Alkocounter.m */,
 				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
 				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
 				3F3A731C14D188D100ECD451 /* games */,
 				3F3A731B14D188BB00ECD451 /* models */,
 				3F3A730714D17F9D00ECD451 /* DGController.m */,
 				3F3A730614D17F9D00ECD451 /* DGController.h */,
+				3FE08EFA14C992E00010A03C /* resources */,
+				3F34863314E3EF5A009EEBAE /* old files */,
 			);
 			path = DrinkingGame;
 			sourceTree = "<group>";
@@ -371,26 +400,7 @@
 		3FE08EFA14C992E00010A03C /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				3F4B704C14E3E57E00BAE149 /* Box.png */,
-				3F4B704D14E3E57E00BAE149 /* DGmenu1Player.png */,
-				3F4B704E14E3E57E00BAE149 /* DGmenu1Selected.png */,
-				3F4B704F14E3E57E00BAE149 /* DGmenu2.png */,
-				3F4B705014E3E57E00BAE149 /* DGmenu2customSelected.png */,
-				3F4B705114E3E57E00BAE149 /* DGmenu2easySelected.png */,
-				3F4B705214E3E57E00BAE149 /* DGmenu2hardSelected.png */,
-				3F4B705314E3E57E00BAE149 /* DGmenu2mediumSelected.png */,
-				3F4B705414E3E57E00BAE149 /* DGmenu2Players.png */,
-				3F4B705514E3E57E00BAE149 /* DGmenu3.png */,
-				3F4B705614E3E57E00BAE149 /* DGmenu3polaroidbg.png */,
-				3F4B705714E3E57E00BAE149 /* DGmenu3selectedCross.png */,
-				3F4B705814E3E57E00BAE149 /* DGmenuAmountOfPlayers.png */,
-				3F4B705914E3E57E00BAE149 /* DGmenubg.png */,
-				3F4B705A14E3E57E00BAE149 /* DGmenuGameMode.png */,
-				3F4B705B14E3E57E00BAE149 /* DGmenuNumbers.png */,
-				3F4B705C14E3E57E00BAE149 /* DGmenuPointBack.png */,
-				3F4B705D14E3E57E00BAE149 /* DGmenuPointBackActive.png */,
-				3F4B705E14E3E57E00BAE149 /* DGmenuPointNext.png */,
-				3F4B705F14E3E57E00BAE149 /* DGmenuPointNextActive.png */,
+				3F34863214E3EF0A009EEBAE /* menu images */,
 				3FD60C2E14DC1F9000DEAE7A /* haddock.jpg */,
 				3FD60C2F14DC1F9000DEAE7A /* hannibal.jpg */,
 				3FD60C3014DC1F9000DEAE7A /* naama.jpg */,
@@ -482,7 +492,6 @@
 				3FD60C3C14DC1F9000DEAE7A /* poirot.jpg in Resources */,
 				3FD60C3D14DC1F9000DEAE7A /* Soini.jpeg in Resources */,
 				3F4B704B14E3E4ED00BAE149 /* DGStartMenu.xib in Resources */,
-				3F4B706014E3E57E00BAE149 /* Box.png in Resources */,
 				3F4B706114E3E57E00BAE149 /* DGmenu1Player.png in Resources */,
 				3F4B706214E3E57E00BAE149 /* DGmenu1Selected.png in Resources */,
 				3F4B706314E3E57E00BAE149 /* DGmenu2.png in Resources */,
