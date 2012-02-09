@@ -7,19 +7,41 @@
 //
 
 #import "DrinkingGameViewController.h"
-#import "Q2ViewController.h"
 #import "LoseViewController.h"
 
 @implementation DrinkingGameViewController
+@synthesize myCounterLabel;
+@synthesize s;
 
+- (IBAction)Q2:(id) sender
+{
+    [s dismissModalViewControllerAnimated:false];
+    int i = arc4random() % 3;
+    if(i == 1)
+    {
+        [s setView:firstView];
+    }
+    else if(i == 2)
+    {
+        [s setView:secondView];
+    }
+    else
+    {
+        [s setView:thirdView];
+    }
+    
+    //[s setView:firstView];
 
-- (IBAction)Q2;
+    [self presentModalViewController:s animated:NO ];
+}
+
+- (IBAction)Lose;
 
 {
     
-    Q2ViewController *Q2 = [[Q2ViewController alloc] initWithNibName:nil bundle:nil];
+    LoseViewController *Lose = [[LoseViewController alloc] initWithNibName:nil bundle:nil];
     
-    [self presentModalViewController:Q2 animated:NO];
+    [self presentModalViewController:Lose animated:NO];
     
 }
 
@@ -33,11 +55,24 @@
 
 #pragma mark - View lifecycle
 
-
+- (void)updateCounter:(NSTimer *)theTimer {
+	static int count = 5;
+	count -= 1;
+	NSString *s = [[NSString alloc] initWithFormat:@"%d", count];
+	self.myCounterLabel.text = s;
+	[s release];
+    
+    if (count == 0) {
+        LoseViewController *Lose = [[LoseViewController alloc] initWithNibName:nil bundle:nil];
+        
+        [self presentModalViewController:Lose animated:NO];
+    }
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    s = [[UIViewController alloc] init];
 }
 
 - (void)viewDidUnload

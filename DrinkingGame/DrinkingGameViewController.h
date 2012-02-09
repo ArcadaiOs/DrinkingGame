@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface DrinkingGameViewController : UIViewController{
-  
+    NSTimer *timer;
+    IBOutlet UILabel *myCounterLabel;
+    NSUInteger time;
+    IBOutlet UIView *firstView;
+    IBOutlet UIView *secondView;
+    IBOutlet UIView *thirdView;
+    UIViewController *s;
 }
-
--(IBAction)Q2;
-
+@property(readwrite,retain) UIViewController* s;
+@property (nonatomic, retain) UILabel *myCounterLabel;
+-(IBAction)Q2:(id) sender;
+-(IBAction)Lose;
 @end

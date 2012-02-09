@@ -19,10 +19,6 @@
 		3F41DEAA14C827A4004B63E9 /* q1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEA714C827A4004B63E9 /* q1.png */; };
 		3F41DEAC14C827A4004B63E9 /* q3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEA914C827A4004B63E9 /* q3.png */; };
 		3F41DEB114C828E9004B63E9 /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEAF14C828E9004B63E9 /* win.png */; };
-		3F41DEBA14C829A8004B63E9 /* Q2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41DEB814C829A8004B63E9 /* Q2ViewController.m */; };
-		3F41DEBB14C829A8004B63E9 /* Q2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEB914C829A8004B63E9 /* Q2ViewController.xib */; };
-		3F41DEBF14C82A39004B63E9 /* Q3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41DEBD14C82A39004B63E9 /* Q3ViewController.m */; };
-		3F41DEC014C82A39004B63E9 /* Q3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEBE14C82A39004B63E9 /* Q3ViewController.xib */; };
 		3F41DEC414C82A58004B63E9 /* WinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41DEC214C82A58004B63E9 /* WinViewController.m */; };
 		3F41DEC514C82A58004B63E9 /* WinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEC314C82A58004B63E9 /* WinViewController.xib */; };
 		3F41DEC914C82A8E004B63E9 /* LoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41DEC714C82A8E004B63E9 /* LoseViewController.m */; };
@@ -50,12 +46,6 @@
 		3F41DEA714C827A4004B63E9 /* q1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q1.png; sourceTree = "<group>"; };
 		3F41DEA914C827A4004B63E9 /* q3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q3.png; sourceTree = "<group>"; };
 		3F41DEAF14C828E9004B63E9 /* win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win.png; sourceTree = "<group>"; };
-		3F41DEB714C829A8004B63E9 /* Q2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Q2ViewController.h; sourceTree = "<group>"; };
-		3F41DEB814C829A8004B63E9 /* Q2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Q2ViewController.m; sourceTree = "<group>"; };
-		3F41DEB914C829A8004B63E9 /* Q2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Q2ViewController.xib; sourceTree = "<group>"; };
-		3F41DEBC14C82A39004B63E9 /* Q3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Q3ViewController.h; sourceTree = "<group>"; };
-		3F41DEBD14C82A39004B63E9 /* Q3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Q3ViewController.m; sourceTree = "<group>"; };
-		3F41DEBE14C82A39004B63E9 /* Q3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Q3ViewController.xib; sourceTree = "<group>"; };
 		3F41DEC114C82A57004B63E9 /* WinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinViewController.h; sourceTree = "<group>"; };
 		3F41DEC214C82A58004B63E9 /* WinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinViewController.m; sourceTree = "<group>"; };
 		3F41DEC314C82A58004B63E9 /* WinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WinViewController.xib; sourceTree = "<group>"; };
@@ -117,12 +107,6 @@
 				3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */,
 				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
 				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
-				3F41DEB714C829A8004B63E9 /* Q2ViewController.h */,
-				3F41DEB814C829A8004B63E9 /* Q2ViewController.m */,
-				3F41DEB914C829A8004B63E9 /* Q2ViewController.xib */,
-				3F41DEBC14C82A39004B63E9 /* Q3ViewController.h */,
-				3F41DEBD14C82A39004B63E9 /* Q3ViewController.m */,
-				3F41DEBE14C82A39004B63E9 /* Q3ViewController.xib */,
 				3F41DEC114C82A57004B63E9 /* WinViewController.h */,
 				3F41DEC214C82A58004B63E9 /* WinViewController.m */,
 				3F41DEC314C82A58004B63E9 /* WinViewController.xib */,
@@ -204,8 +188,6 @@
 				3F41DEAA14C827A4004B63E9 /* q1.png in Resources */,
 				3F41DEAC14C827A4004B63E9 /* q3.png in Resources */,
 				3F41DEB114C828E9004B63E9 /* win.png in Resources */,
-				3F41DEBB14C829A8004B63E9 /* Q2ViewController.xib in Resources */,
-				3F41DEC014C82A39004B63E9 /* Q3ViewController.xib in Resources */,
 				3F41DEC514C82A58004B63E9 /* WinViewController.xib in Resources */,
 				3F41DECA14C82A8E004B63E9 /* LoseViewController.xib in Resources */,
 				3F41DED014C83EE6004B63E9 /* q2.png in Resources */,
@@ -224,8 +206,6 @@
 				3F3AFED514C04EF300A992F7 /* main.m in Sources */,
 				3F3AFED914C04EF300A992F7 /* DrinkingGameAppDelegate.m in Sources */,
 				3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */,
-				3F41DEBA14C829A8004B63E9 /* Q2ViewController.m in Sources */,
-				3F41DEBF14C82A39004B63E9 /* Q3ViewController.m in Sources */,
 				3F41DEC414C82A58004B63E9 /* WinViewController.m in Sources */,
 				3F41DEC914C82A8E004B63E9 /* LoseViewController.m in Sources */,
 			);
