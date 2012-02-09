@@ -33,25 +33,13 @@
                                    selector:@selector(updateInterval:)
                                    userInfo:nil
                                     repeats:true];
-    
-        int b = [self getRandomIntMin:1 max:3];
-        if(b==1){
-             [mole1 setHidden:false];
-        
-            }
-        if(b==2){
-            [mole2 setHidden:true];
-        
-            }
-        if(b==1){
-            [mole3 setHidden:true];
-        
-            }
             
     
     
 }
+-(IBAction)startRounds:(id)sender{
 
+}
 -(void)updateInterval:(NSTimer*)theTimer{
    
     [mole1 setHidden:true];
