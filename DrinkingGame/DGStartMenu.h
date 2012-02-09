@@ -64,6 +64,7 @@
     UIImageView *bottleHardSelected;
     UIImageView *bottleCustomSelected;
     
+    
     UIButton *Menu2EasySelected;
     UIButton *Menu2MediumSelected;
     UIButton *Menu2HardSelected;
@@ -143,10 +144,10 @@
 @property (nonatomic, retain) IBOutlet UIImageView *bottleCustomSelected;
 
 
-@property (nonatomic, retain) IBOutlet UIButton *buttonEasySelected;
-@property (nonatomic, retain) IBOutlet UIButton *buttonMediumSelected;
-@property (nonatomic, retain) IBOutlet UIButton *buttonHardSelected;
-@property (nonatomic, retain) IBOutlet UIButton *buttonCustomSelected;
+@property (nonatomic, retain) IBOutlet UIButton *buttonEasy;
+@property (nonatomic, retain) IBOutlet UIButton *buttonMedium;
+@property (nonatomic, retain) IBOutlet UIButton *buttonHard;
+@property (nonatomic, retain) IBOutlet UIButton *buttonCustom;
 
 
 //Menu 3
@@ -174,13 +175,13 @@
 -(IBAction)buttonPlayers8;
 
 
--(IBAction)buttonEasySelected;
--(IBAction)buttonMediumSelected;
--(IBAction)buttonHardSelected;
--(IBAction)buttonCustomSelected;
+-(IBAction)buttonEasyPressed;
+-(IBAction)buttonMediumPressed;
+-(IBAction)buttonHardPressed;
+-(IBAction)buttonCustomPressed;
 
--(IBAction)menu3female;
--(IBAction)menu3male;
+-(IBAction)menu3femalePressed;
+-(IBAction)menu3malePressed;
 
 -(IBAction)closekeyboard;
 

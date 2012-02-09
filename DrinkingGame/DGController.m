@@ -51,7 +51,11 @@ static id sharedController = nil;
     }
 }
 
-+ (id)sharedInstance {
++ (id)sharedInstance {    
+    if (sharedController == nil) {
+        sharedController = [[self alloc] init];
+    }
+    
     return sharedController;
 }
 

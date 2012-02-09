@@ -26,7 +26,7 @@
 @synthesize menu2;
 @synthesize menu3CrossMale, menu3CrossFemale, menu3male, menu3female;
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
-@synthesize buttonEasySelected, buttonHardSelected, buttonCustomSelected, buttonMediumSelected;
+@synthesize buttonEasy, buttonHard, buttonCustom, buttonMedium;
 @synthesize weight, name, gender;
 
 
@@ -93,10 +93,9 @@
 -(IBAction)buttonGetNewPlayer {
     
     // save new player
-    DGController* controller = [DGController getController];
     int w = 0; // number from self.weight
-    BOOL gender = NO; // BOOL from self.gender
-    [controller addPlayerWithimage:[self getImage] weight:w  isFemale:gender];
+    BOOL genderOfPlayer = NO; // BOOL from self.gender
+    [[DGController sharedInstance] addPlayerWithimage:[self getImage] weight:w  isFemale:genderOfPlayer];
     if (amountOfPlayers == 0) {
         // go and play
     } else {
@@ -233,7 +232,7 @@
 //Meny 2
 
 
--(IBAction)buttonEasySelected {
+-(IBAction)buttonEasyPressed {
     
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 0;
@@ -243,7 +242,7 @@
     
 }
 
--(IBAction)buttonMediumSelected {
+-(IBAction)buttonMediumPressed {
     
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
@@ -252,7 +251,7 @@
     bottleCustomSelected.hidden = 1;
 }
 
--(IBAction)buttonHardSelected {
+-(IBAction)buttonHardPressed {
     
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
@@ -261,7 +260,7 @@
     bottleCustomSelected.hidden = 1;
 }
 
--(IBAction)buttonCustomSelected {
+-(IBAction)buttonCustomPressed {
     
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
@@ -272,7 +271,7 @@
 
 //Meny 3
 
--(IBAction)menu3male {
+-(IBAction)menu3malePressed {
     
     menu3CrossMale.hidden = 0;
     menu3CrossFemale.hidden = 1;
@@ -280,7 +279,7 @@
     [self closekeyboard];
 }
 
--(IBAction)menu3female {
+-(IBAction)menu3femalePressed {
     
     menu3CrossMale.hidden = 1;
     menu3CrossFemale.hidden = 0;

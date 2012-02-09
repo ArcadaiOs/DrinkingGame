@@ -12,6 +12,10 @@
 @implementation DrinkingGameViewController
 @synthesize controller;
 
+-(DGController *) controller{
+    return [DGController sharedInstance];
+}
+
 -(IBAction)launchTestGame:(id)sender{
     [currentCame.view removeFromSuperview];
     [currentCame release];
@@ -34,6 +38,7 @@
     [currentCame.view removeFromSuperview];
     [currentCame release];
     currentCame = [[DGStartMenu alloc] init];
+//    UIView * v = [[DGStartMenu alloc] init].view;
     [self.view addSubview:currentCame.view];
 }
 -(IBAction)launchSimon:(id)sender{
