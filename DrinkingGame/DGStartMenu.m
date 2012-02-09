@@ -27,7 +27,7 @@
 @synthesize menu3CrossMale, menu3CrossFemale, menu3male, menu3female;
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasySelected, buttonHardSelected, buttonCustomSelected, buttonMediumSelected;
-@synthesize weight, name;
+@synthesize weight, name, gender;
 
 
 

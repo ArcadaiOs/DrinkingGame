@@ -41,7 +41,7 @@
     return self;
 }
 +(DGController*) getController{
-    self.c
+    return  nil;  // FIX ME
 }
 
 - (void)addPlayerWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn{

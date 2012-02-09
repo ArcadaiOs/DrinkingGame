@@ -84,6 +84,8 @@
     
     UITextField *name;
     UITextField *weight;
+    
+    BOOL gender;
 }
 
 
@@ -156,6 +158,8 @@
 
 @property (nonatomic, retain) IBOutlet UITextField *name;
 @property (nonatomic, retain) IBOutlet UITextField *weight;
+
+@property BOOL gender;
 
 
 -(IBAction)buttonClickedContinue;
