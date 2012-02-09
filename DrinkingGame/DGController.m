@@ -11,7 +11,7 @@
 @implementation DGController
 @synthesize drinks;
 @synthesize players;
-@synthesize controller;
+//@synthesize controller;
 - (id)init
 {
     self = [super init];
@@ -37,7 +37,22 @@
 } 
 -(void) GameEndedWithLooser:(DGPlayer *)looser{
     NSLog(@"GAME ENDED AND LOOSER IS FOUND");
-    
-    
 }
+
+- (void)addPlayerWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn{
+    [players addObject:[[DGPlayer alloc] initWithimage:imageIn weight:weightIn isFemale:isFemaleIn]];
+}
+
+static id sharedController = nil;
+
++ (void)initialize {
+    if (self == [DGController class]) {
+        sharedController = [[self alloc] init];
+    }
+}
+
++ (id)sharedInstance {
+    return sharedController;
+}
+
 @end
