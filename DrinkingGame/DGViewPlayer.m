@@ -15,7 +15,7 @@
 -(void) setPlayer:(DGPlayer *)newPlayer{
 
     [playerImage setImage:[newPlayer image]];
-    [promilLabel setText:[NSString stringWithFormat:@"%.2f", [[newPlayer promille] floatValue]]];
+    [promilLabel setText:[NSString stringWithFormat:@"%.2f", [[newPlayer getPromille] floatValue]]];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

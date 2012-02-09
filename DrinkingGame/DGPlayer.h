@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "DGConsumption.h"
+#import "DGDrink.h"
 
 @class DGConsumption;
 
@@ -16,7 +16,6 @@
 @private
     UIImage * image;
     Boolean isFemale;
-    NSNumber * promille;
     NSNumber * waterWeightGram;
     NSNumber * weight;
     NSDate * lastUpdate;
@@ -28,17 +27,11 @@
 @property (nonatomic) Boolean isFemale;
 @property (nonatomic, retain) NSNumber * waterWeightGram;
 @property (nonatomic, retain) NSNumber * weight;
-@property (nonatomic, retain) NSNumber * promille;
-
-
-- (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale;
--(NSComparisonResult) comparePromille:(id) element; 
-
 @property (nonatomic, retain) NSDate * lastUpdate;
 @property (nonatomic, retain) NSNumber * gramAlcBody;
 
 - (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
 -(NSComparisonResult) comparePromille:(id) element; 
-- (void) takeShot:(NSNumber*) gramAlc;
+- (void) takeShot:(DGDrink*) gramAlc;
 -(NSNumber*) getPromille;
 @end
