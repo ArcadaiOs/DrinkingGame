@@ -11,6 +11,7 @@
 @implementation DGController
 @synthesize drinks;
 @synthesize players;
+@synthesize controller;
 - (id)init
 {
     self = [super init];
@@ -39,6 +40,10 @@
     
     return self;
 }
++(DGController*) getController{
+    self.c
+}
+
 - (void)addPlayerWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn{
     [players addObject:[[DGPlayer alloc] initWithimage:imageIn weight:weightIn isFemale:isFemaleIn]];
 }

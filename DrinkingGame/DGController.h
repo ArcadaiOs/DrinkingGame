@@ -12,7 +12,11 @@
 @interface DGController : NSObject{
     NSMutableArray* drinks;
     NSMutableArray* players;
+    DGController * controller;
 }
 @property (nonatomic, retain) NSMutableArray* drinks;
 @property (nonatomic, retain) NSMutableArray* players;
+@property (nonatomic, retain) DGController * controller;
+- (void)addPlayerWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
++(DGController*) getController;
 @end

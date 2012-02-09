@@ -85,9 +85,18 @@
     
 }
 
+// Pyry should fix this
+-(UIImage*) getImage{
+    return nil;
+}
+
 -(IBAction)buttonGetNewPlayer {
     
     // save new player
+    DGController* controller = [DGController getController];
+    int w = 0; // number from self.weight
+    BOOL gender = NO; // BOOL from self.gender
+    [controller addPlayerWithimage:[self getImage] weight:w  isFemale:gender];
     if (amountOfPlayers == 0) {
         // go and play
     } else {
@@ -267,7 +276,7 @@
     
     menu3CrossMale.hidden = 0;
     menu3CrossFemale.hidden = 1;
-    
+    self.gender = NO;
     [self closekeyboard];
 }
 
@@ -275,7 +284,7 @@
     
     menu3CrossMale.hidden = 1;
     menu3CrossFemale.hidden = 0;
-    
+    self.gender = YES;
     [self closekeyboard];
     
 }

@@ -7,6 +7,7 @@
 // test
 
 #import <UIKit/UIKit.h>
+#import "DGController.h"
 
 @interface DGStartMenu :  UIViewController
 {
