@@ -11,6 +11,8 @@
 
 @implementation DGPlayer
 @synthesize image, isFemale, waterWeightGram, weight,gramAlcBody;
+@synthesize promille;
+@synthesize lastUpdate;
 
 - (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn 
 {
@@ -32,9 +34,10 @@
 //
 // For sorting players according to Drunkness
 //
-/*-(NSComparisonResult) comparePromille:(id)element{
+-(NSComparisonResult) comparePromille:(id)element{
     return [((DGPlayer*) element).promille compare:promille];
-}*/
+}
+
 - (NSNumber*) promilleForPlayer:(DGPlayer*)player newShot:(NSNumber*) gramAlc{
     NSNumber *kfb;
     lastUpdate = [NSDate date];
@@ -42,8 +45,8 @@
         
         double burn  =  ( [weight doubleValue] / [lastUpdate timeIntervalSinceNow] ) ;
         
-        if(player.isFemale == isFemale){
-            
+//        if(player.isFemale == isFemale){  WTF!!!!!11!!!!! xD
+        if(player.isFemale){
             kfb = [NSNumber numberWithDouble: (0.085 * [gramAlcBody doubleValue]) / burn];
         }else{
             kfb = [NSNumber numberWithFloat: (0.1 * [gramAlcBody floatValue]) / burn ];

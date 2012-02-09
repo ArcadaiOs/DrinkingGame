@@ -28,6 +28,8 @@
 @property (nonatomic) Boolean isFemale;
 @property (nonatomic, retain) NSNumber * waterWeightGram;
 @property (nonatomic, retain) NSNumber * weight;
+@property (nonatomic, retain) NSNumber * promille;
+
 
 - (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale;
 -(NSComparisonResult) comparePromille:(id) element; 
