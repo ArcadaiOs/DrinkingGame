@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-     
+    self.viewControllerPhoto = [[[PhotoCameraController alloc] initWithNibName:@"PhotoCameraController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewControllerPhoto;
     [self.window makeKeyAndVisible];
     return YES;
