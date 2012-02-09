@@ -36,5 +36,9 @@
 
 @property (nonatomic, retain) NSDate * lastUpdate;
 @property (nonatomic, retain) NSNumber * gramAlcBody;
-- (id)initWithimage:(UIImage*) playerImage weight:(int)playerWeight isFemale:(bool) isPlayerFemale;
+
+- (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
+-(NSComparisonResult) comparePromille:(id) element; 
+- (void) takeShot:(NSNumber*) gramAlc;
+-(NSNumber*) getPromille;
 @end

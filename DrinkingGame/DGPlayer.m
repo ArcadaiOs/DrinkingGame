@@ -41,7 +41,7 @@
 - (NSNumber*) promilleForPlayer:(DGPlayer*)player newShot:(NSNumber*) gramAlc{
     NSNumber *kfb;
     lastUpdate = [NSDate date];
-    if ([player.gramAlcBody intValue] > 0) {
+    if ([gramAlcBody intValue] > 0) {
         
         double burn  =  ( [weight doubleValue] / [lastUpdate timeIntervalSinceNow] ) ;
         
@@ -53,10 +53,10 @@
         }
     }
     int newGram = [kfb intValue] + [gramAlc intValue];
-    player.gramAlcBody = [NSNumber numberWithInt:newGram];
-    
-    
-    return kfb; 
+    gramAlcBody = [NSNumber numberWithInt:newGram];
+}
+-(NSNumber*) getPromille{
+    return [NSNumber numberWithFloat:([gramAlcBody floatValue]/[weight floatValue]/100)] ;
 }
 
 @end

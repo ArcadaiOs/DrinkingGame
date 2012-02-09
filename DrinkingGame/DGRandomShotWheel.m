@@ -99,7 +99,9 @@
         CGContextBeginPath(context);
         CGContextMoveToPoint(context, center.x, center.y); 
         CGContextAddLineToPoint(context, linePos.x, linePos.y);
-        CGContextAddLineToPoint(context, nextlinePos.x, nextlinePos.y);
+        //CGContextAddLineToPoint(context, nextlinePos.x, nextlinePos.y);
+        CGPoint curvePoint = [self getCirclePoint:size pos:center angle:angle+step];
+        CGContextAddCurveToPoint(context, curvePoint.x, curvePoint.y, curvePoint.x, curvePoint.y, nextlinePos.x, nextlinePos.y);
         CGContextClosePath(context);
         
         // Fill the path
