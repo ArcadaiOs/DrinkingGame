@@ -210,7 +210,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     playerAction = false;
-    NSLog(@"simon is loaded");
+    //NSLog(@"simon is loaded");
     [self.view setBackgroundColor: [UIColor colorWithRed:0.435 green:0.435 blue:0.435 alpha:1.0]];
 
     playList = [[NSMutableArray alloc] init];
@@ -221,9 +221,10 @@
     while (i--) {
         int rand = [self getRandomIntMin:1 max:4];
         [playList addObject:[[NSNumber alloc] initWithInt:rand]];
-        NSLog(@"added: %i",rand);
+        //NSLog(@"added: %i",rand);
     }
     
+    // Start Game
 
 
 }
