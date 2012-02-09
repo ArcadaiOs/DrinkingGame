@@ -35,25 +35,24 @@
 /*-(NSComparisonResult) comparePromille:(id)element{
     return [((DGPlayer*) element).promille compare:promille];
 }*/
-- (NSNumber*) promilleForPlayer:(DGPlayer*)player newShot:(NSNumber*) gramAlc{
+- (void) takeShot:(NSNumber*) gramAlc{
     NSNumber *kfb;
     lastUpdate = [NSDate date];
-    if ([player.gramAlcBody intValue] > 0) {
+    if ([gramAlcBody intValue] > 0) {
         
         double burn  =  ( [weight doubleValue] / [lastUpdate timeIntervalSinceNow] ) ;
         
-        if(player.isFemale == isFemale){
-            
+        if(isFemale){
             kfb = [NSNumber numberWithDouble: (0.085 * [gramAlcBody doubleValue]) / burn];
         }else{
             kfb = [NSNumber numberWithFloat: (0.1 * [gramAlcBody floatValue]) / burn ];
         }
     }
     int newGram = [kfb intValue] + [gramAlc intValue];
-    player.gramAlcBody = [NSNumber numberWithInt:newGram];
-    
-    
-    return kfb; 
+    gramAlcBody = [NSNumber numberWithInt:newGram];
+}
+-(NSNumber*) getPromille{
+    return [NSNumber numberWithFloat:([gramAlcBody floatValue]/[weight floatValue]/100)] ;
 }
 
 @end

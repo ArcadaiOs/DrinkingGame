@@ -28,11 +28,11 @@
 @property (nonatomic) Boolean isFemale;
 @property (nonatomic, retain) NSNumber * waterWeightGram;
 @property (nonatomic, retain) NSNumber * weight;
-
-- (id)initWithimage:(UIImage*) image weight:(int)weight isFemale:(bool) isFemale;
--(NSComparisonResult) comparePromille:(id) element; 
-
 @property (nonatomic, retain) NSDate * lastUpdate;
 @property (nonatomic, retain) NSNumber * gramAlcBody;
-- (id)initWithimage:(UIImage*) playerImage weight:(int)playerWeight isFemale:(bool) isPlayerFemale;
+
+- (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
+-(NSComparisonResult) comparePromille:(id) element; 
+- (void) takeShot:(NSNumber*) gramAlc;
+-(NSNumber*) getPromille;
 @end
