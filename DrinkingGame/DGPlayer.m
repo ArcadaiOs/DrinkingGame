@@ -41,20 +41,22 @@
 
 - (void) takeShot:(DGDrink*) shot{
     NSNumber *kfb;
-    //förbränning
-    if ([gramAlcBody intValue] > 0) {
-        
-        double burn  =  ( [weight floatValue] / [lastUpdate timeIntervalSinceNow] ) ;
-        
-        if(isFemale){
-            kfb = [NSNumber numberWithFloat: (0.085 * [gramAlcBody floatValue]) / burn];
-        }else{
-            kfb = [NSNumber numberWithFloat: (0.1 * [gramAlcBody floatValue]) / burn ];
-        }
+
+    double burn = [[self waterWeightGram] doubleValue];
+    if(lastUpdate != nil){
+        burn /= [lastUpdate timeIntervalSinceNow];
+
     }
-    lastUpdate = [NSDate date];
-    int newGram = [kfb intValue] + [gramAlc intValue];
-    gramAlcBody = [NSNumber numberWithInt:newGram];
+    if(isFemale){
+        kfb = [NSNumber numberWithDouble: (0.085 * [gramAlcBody doubleValue]) / burn];
+    }else{
+        kfb = [NSNumber numberWithFloat: (0.1 * [gramAlcBody floatValue]) / burn ];
+    }
+   lastUpdate = [NSDate date];
+   float n = [kfb floatValue] + [[shot alcCount]floatValue];
+    [self setGramAlcBody:[NSNumber numberWithFloat:n]];
+
+    NSLog(@"New promille: %f, alcFram: %f", [[self getPromille] floatValue], [[self gramAlcBody] floatValue]);
 }
 -(NSNumber*) getPromille{
     return [NSNumber numberWithFloat:([gramAlcBody floatValue]/[waterWeightGram floatValue])] ;
