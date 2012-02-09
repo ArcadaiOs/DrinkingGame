@@ -14,6 +14,7 @@
 #import "DGSteadyHands.h"
 #import "DGViewPlayer.h"
 #import "DGTestGameTwo.h"
+#import "DGStartMenu.h"
 
 typedef struct{
     NSString *playerName;
@@ -26,7 +27,9 @@ typedef struct{
     
     
 }
-@property (nonatomic, retain) DGController* controller;
+@property (readonly, nonatomic) DGController* controller;
+
+-(DGController *) controller;
 
 -(IBAction) showPlayer:(id)sender;
 -(void) gameEndedWithScores:(NSString*) scores;
@@ -34,4 +37,5 @@ typedef struct{
 -(IBAction) launchSimon:(id)sender;
 -(IBAction) launchSteadyHands:(id)sender;
 -(IBAction) launchWhackAMole:(id)sender;
+-(IBAction) launchMenu:(id)sender;
 @end

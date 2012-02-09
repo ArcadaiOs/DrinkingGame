@@ -52,7 +52,7 @@
                                    userInfo:playEnumerator
                                     repeats:true
      ];
-    currentPlayer = 0;
+    //currentPlayer = 0;
 }
 
 /*
@@ -113,6 +113,7 @@
                     if(currentPlayer == controller.players.count){
                         currentPlayer = 0;
                     }
+                    // nextplayer show
                     [self next:nil];
                     
                 }
@@ -122,13 +123,16 @@
                 NSLog(@"PLAYER FAIL");
                 playCount = 0;
                 playerAction = false;
+                [delegate GameEndedWithLooser:[[controller players] objectAtIndex:currentPlayer]];
+                
             }
             
             } else{
                 NSLog(@"PLAYER FAIL");
-            
                 playerAction = false;
                 playCount = 0;
+                [delegate GameEndedWithLooser:[[controller players] objectAtIndex:currentPlayer]];
+                
         }
         
         
@@ -193,7 +197,10 @@
     // Release any cached data, images, etc that aren't in use.
 }
 -(IBAction)next:(id)sender{
-
+    // add 2
+    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
+    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
+    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
     [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
     
 }
@@ -208,24 +215,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
     playerAction = false;
-    NSLog(@"simon is loaded");
-    [self.view setBackgroundColor: [UIColor colorWithRed:0.435 green:0.435 blue:0.435 alpha:1.0]];
-
     playList = [[NSMutableArray alloc] init];
-
 
     // create som starting point values
     int i=5;
     while (i--) {
         int rand = [self getRandomIntMin:1 max:4];
         [playList addObject:[[NSNumber alloc] initWithInt:rand]];
-        NSLog(@"added: %i",rand);
     }
+    currentPlayer = 0;
+    [self showPlayer:[controller.players objectAtIndex:0]];
     
-
-
+    
 }
 
 - (void)viewDidUnload

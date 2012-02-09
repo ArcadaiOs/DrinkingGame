@@ -10,6 +10,8 @@
 
 @implementation DGGame
 @synthesize controller;
+@synthesize delegate;
+
 - (id)initWithController: (DGController*) controllerIn
 {
     self = [super init];
@@ -18,6 +20,8 @@
         // Custom initialization
         playerView = [[DGViewPlayer alloc] init];
         [playerView setDelegate:self];
+        [self setDelegate:controller];
+        [[controller players]sortUsingSelector:@selector(comparePromille:)];
         
     }
     return self;
@@ -40,10 +44,15 @@
 
 -(void) playerReady{
     NSLog(@"PLAYER READU");
+    
 }
 
--(IBAction)endGame:(id)sender{
-    
+-(void) gameEndWithLooser:(DGPlayer*) lostPlayer{
+    [delegate GameEndedWithLooser:lostPlayer];
+    [self endGame:nil];
+}
+
+-(IBAction)endGame:(id)sender {
     
     // killmiself
     [self.view removeFromSuperview];

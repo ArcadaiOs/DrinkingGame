@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface DGDrink : NSObject{
-    NSNumber * volumeCl;
-    NSNumber * procent;
-    NSString * name;
+    NSNumber *volumeCl;
+    NSNumber *procent;
+    NSString *name;
+    NSNumber *alcCount;
 }
 @property (nonatomic, retain) NSNumber * volumeCl;
 @property (nonatomic, retain) NSNumber * procent;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * alcCount;
+
 - (id)initWithVolumeCl: (float) volumeCl procent: (float) procent andName:(NSString*) name;
 @end

@@ -25,6 +25,7 @@
             self.waterWeightGram = [NSNumber numberWithFloat:weightIn*0.71f];
         }
         self.gramAlcBody = [NSNumber numberWithFloat:0.0];
+        
     }
     
     return self;
@@ -33,10 +34,12 @@
 //
 // For sorting players according to Drunkness
 //
-/*-(NSComparisonResult) comparePromille:(id)element{
-    return [((DGPlayer*) element).promille compare:promille];
-}*/
-- (void) takeShot:(NSNumber*) gramAlc{
+-(NSComparisonResult) comparePromille:(id)element{
+    return [[((DGPlayer*) element) getPromille] compare:[self getPromille]];
+}
+
+
+- (void) takeShot:(DGDrink*) shot{
     NSNumber *kfb;
     //förbränning
     if ([gramAlcBody intValue] > 0) {
@@ -54,7 +57,7 @@
     gramAlcBody = [NSNumber numberWithInt:newGram];
 }
 -(NSNumber*) getPromille{
-    return [NSNumber numberWithFloat:([gramAlcBody floatValue]/[weight floatValue]/100)] ;
+    return [NSNumber numberWithFloat:([gramAlcBody floatValue]/[waterWeightGram floatValue])] ;
 }
 
 @end

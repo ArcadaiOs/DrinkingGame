@@ -10,6 +10,10 @@
 #import "DGController.h"
 #import "DGViewPlayer.h"
 
+@protocol GameEnded <NSObject>
+-(void) GameEndedWithLooser:(DGPlayer *)looser;
+@end
+
 typedef enum {
     turnBased,
     allAtOnce,
@@ -24,7 +28,12 @@ typedef enum {
     GameType gameType;
     DGController* controller;
     DGViewPlayer *playerView;
+    id < GameEnded > delegate;
+
 }
+
+@property(nonatomic,assign)id delegate;
+
 @property (nonatomic, retain) DGController* controller;
 - (id)initWithController: (DGController*) controller;
 -(IBAction) endGame:(id)sender;
