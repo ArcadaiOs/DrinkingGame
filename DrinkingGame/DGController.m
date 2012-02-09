@@ -34,5 +34,8 @@
     }
     
     return self;
-} 
+}
+- (id)addPlayerWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn{
+    [players addObject:[[DGPlayer alloc] initWithimage:imageIn weight:weightIn isFemale:isFemaleIn]];
+}
 @end

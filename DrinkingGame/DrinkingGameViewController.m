@@ -30,6 +30,12 @@
     currentCame = [[DGTestGameTwo alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
 }
+-(IBAction) launchMenu:(id)sender{
+    [currentCame.view removeFromSuperview];
+    [currentCame release];
+    currentCame = [[DGStartMenu alloc] init];
+    [self.view addSubview:currentCame.view];
+}
 -(IBAction)launchSimon:(id)sender{
     [currentCame.view removeFromSuperview];
     [currentCame release];
