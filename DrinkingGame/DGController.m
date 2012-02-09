@@ -28,15 +28,15 @@
         [[players objectAtIndex:0] takeShot:[drinks objectAtIndex:1]];
         [[players objectAtIndex:1] takeShot:[drinks objectAtIndex:0]];
         [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
+        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
         
-        //[[players objectAtIndex:0] setPromille:[NSNumber numberWithFloat:1.0]];
-        //[[players objectAtIndex:1] setPromille:[NSNumber numberWithFloat:2.0]];
-        //[[players objectAtIndex:2] setPromille:[NSNumber numberWithFloat:0.5]];
-        
-        
-        // Initialization code here.
     }
     
     return self;
 } 
+-(void) GameEndedWithLooser:(DGPlayer *)looser{
+    NSLog(@"GAME ENDED AND LOOSER IS FOUND");
+    
+    
+}
 @end

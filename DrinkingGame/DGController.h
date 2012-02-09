@@ -13,6 +13,9 @@
     NSMutableArray* drinks;
     NSMutableArray* players;
 }
+
+-(void) GameEndedWithLooser:(DGPlayer*) looser;
+
 @property (nonatomic, retain) NSMutableArray* drinks;
 @property (nonatomic, retain) NSMutableArray* players;
 @end
