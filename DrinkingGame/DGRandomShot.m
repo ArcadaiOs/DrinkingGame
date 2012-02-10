@@ -23,19 +23,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     int sel = arc4random() % [[controller players] count];
-    //img.contentMode = UIViewContentModeScaleAspectFill;
-    //[img  setImage:[[[controller players] objectAtIndex:i] image]];
     DGRandomShotWheel* d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(-320, 140, 640, 640) andController:controller andSelection:sel];
     [self.view insertSubview:d atIndex:0];
     [d spin];
-    /*CABasicAnimation* spinAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    float spin = ((arc4random() % 4) + 1)*2*M_PI;
-    spinAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-    spinAnimation.toValue = [NSNumber numberWithFloat:5*2*M_PI];
-    [spinAnimation setDuration:spin];
-    [d.layer addAnimation:spinAnimation forKey:@"spinAnimation"];*/
 }
 - (void)viewDidUnload
 {

@@ -10,13 +10,13 @@
 
 
 @implementation DGPlayer
-@synthesize image, isFemale, waterWeightGram, weight,gramAlcBody;
-@synthesize lastUpdate;
+@synthesize image, isFemale, waterWeightGram, weight,gramAlcBody,lastUpdate;
 
 - (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn 
 {
     self = [super init];
     if (self) {
+        lastUpdate = [NSDate date];
         self.image = imageIn;
         self.isFemale = isFemaleIn;
         if(isFemaleIn){
