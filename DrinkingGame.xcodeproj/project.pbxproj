@@ -56,6 +56,8 @@
 		3F52E2B314DAABD000ECA4BB /* DGTestGameTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F52E2B114DAABD000ECA4BB /* DGTestGameTwo.xib */; };
 		3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */; };
 		3F52E2B914DAAC1D00ECA4BB /* DGSteadyHands.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */; };
+		3FAC088E14E53A10006BB22D /* DGFillTheBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */; };
+		3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */; };
 		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
 		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
 		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
@@ -141,6 +143,9 @@
 		3F52E2B514DAAC1D00ECA4BB /* DGSteadyHands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGSteadyHands.h; sourceTree = "<group>"; };
 		3F52E2B614DAAC1D00ECA4BB /* DGSteadyHands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGSteadyHands.m; sourceTree = "<group>"; };
 		3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGSteadyHands.xib; sourceTree = "<group>"; };
+		3FAC088B14E53A10006BB22D /* DGFillTheBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGFillTheBottle.h; sourceTree = "<group>"; };
+		3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGFillTheBottle.m; sourceTree = "<group>"; };
+		3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGFillTheBottle.xib; sourceTree = "<group>"; };
 		3FB138BC14DAC15F00431078 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3FBCABE114C97F4E0032EBA1 /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3FBCABE214C97F4E0032EBA1 /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
@@ -285,6 +290,7 @@
 				3F52E2AD14DAAB9200ECA4BB /* DGTestGameTwo */,
 				3F1D4EE314D2C206006D5BE7 /* DGSimonSays */,
 				3FE08EF314C98A8F0010A03C /* DGRandomShot */,
+				3FAC088414E52DFE006BB22D /* DGFillTheBottle */,
 				3FBCABE114C97F4E0032EBA1 /* DGGame.h */,
 				3FBCABE214C97F4E0032EBA1 /* DGGame.m */,
 				3FCDE48614DAB7360087921F /* DGViewPlayer.h */,
@@ -383,6 +389,16 @@
 				3F52E2B714DAAC1D00ECA4BB /* DGSteadyHands.xib */,
 			);
 			name = DGSteadyHands;
+			sourceTree = "<group>";
+		};
+		3FAC088414E52DFE006BB22D /* DGFillTheBottle */ = {
+			isa = PBXGroup;
+			children = (
+				3FAC088B14E53A10006BB22D /* DGFillTheBottle.h */,
+				3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */,
+				3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */,
+			);
+			name = DGFillTheBottle;
 			sourceTree = "<group>";
 		};
 		3FE08EF314C98A8F0010A03C /* DGRandomShot */ = {
@@ -514,6 +530,7 @@
 				3F4B707114E3E57E00BAE149 /* DGmenuPointBackActive.png in Resources */,
 				3F4B707214E3E57E00BAE149 /* DGmenuPointNext.png in Resources */,
 				3F4B707314E3E57E00BAE149 /* DGmenuPointNextActive.png in Resources */,
+				3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +556,7 @@
 				3F52E2B214DAABD000ECA4BB /* DGTestGameTwo.m in Sources */,
 				3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */,
 				3F4B704A14E3E4ED00BAE149 /* DGStartMenu.m in Sources */,
+				3FAC088E14E53A10006BB22D /* DGFillTheBottle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
