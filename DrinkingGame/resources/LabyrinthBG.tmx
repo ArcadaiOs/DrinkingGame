@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="15" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
+  <image source="free.png" width="480" height="1216"/>
+ </tileset>
+ <layer name="bg" width="10" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzrZ2BgmADFE4GYlRE7nguUmwfE8/GoGcWjGIYBB2AHdQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="10" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzbysDAsI0BAnYw4AZHgPgolH0cj7rLQHwFiK8C8TWo2AskeQEm3HpfYBF7BcXfkNgvkeT/QelJaGaIMSIwDxDzAjEfEC/EY5cgEwLjcxM2971EYiNjmLsfAfFjIH4C1SeEFg4wez4C8Scg/ozDPrh7gH5hBGImIFZFw8S4G928PTjcjy3MiQEABXUvyw==
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="10" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4D6AAACWAAB
+  </data>
+ </layer>
+</map>
