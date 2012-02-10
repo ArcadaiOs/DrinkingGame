@@ -11,9 +11,9 @@
 @implementation DGTestGameTwo
 @synthesize speed;
 @synthesize mole1,mole2,mole3;
-@synthesize scoreLabel,scoreLabelText,playerNameText,playerName,timeLeftText,timeLeft;
+@synthesize scoreLabel,scoreLabelText,playerNameText,playerName,timeLeftText,timeLeft,playerScore;
 @synthesize zeroes;
-@synthesize score,seconds;
+@synthesize molesHit,molesShown,seconds;
 @synthesize timer1,timer2;
 - (void)didReceiveMemoryWarning
 {
@@ -29,7 +29,8 @@
 {
     [super viewDidLoad];
     speed= [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.4],[NSNumber numberWithFloat:0.6],[NSNumber numberWithFloat:0.8 ], nil];
-    score=0;
+    molesHit=0;
+    molesShown=0;
     seconds=45;
     zeroes = @"";
 	timer1=[NSTimer scheduledTimerWithTimeInterval:0.4f
@@ -51,19 +52,63 @@
     [timeLeftText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
     [timeLeft setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:36 ] ];
     
+    [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
     
     
 }
--(void)stopTimers{
-    if ((timer1 != nil) && ([timer1 isValid]))
-    {
-        [timer1 invalidate];     //Causes release
-        timer1 = NULL;
+-(void)stopTimers:(bool)endGame{
+    
+    [mole1 setHidden:true];
+    [mole2 setHidden:true];
+    [mole3 setHidden:true];
+    
+    [mole1 setEnabled:false];
+    [mole2 setEnabled:false];
+    [mole3 setEnabled:false];
+    
+    [scoreLabelText setHidden:true];
+    [scoreLabel setHidden:true];
+    
+    [timeLeftText setHidden:true];
+    [timeLeft setHidden:true];
+    
+    [playerScore setHidden:false];
+    
+    if(endGame==true){
+        if ((timer1 != nil) && ([timer1 isValid]))
+        {
+            [timer1 invalidate];     //Causes release
+            timer1 = NULL;
+        }
+        if ((timer2 != nil) && ([timer2 isValid]))
+        {
+            [timer2 invalidate];     //Causes release
+            timer2 = NULL;
+        }
     }
-    if ((timer2 != nil) && ([timer2 isValid]))
-    {
-        [timer2 invalidate];     //Causes release
-        timer2 = NULL;
+    else{
+        int score= molesShown - molesHit;
+        if(score<15){
+            
+                 self.playerScore.text=[[NSString alloc] initWithFormat:@"You suck!\n your score is:\n%i/%i",molesHit,molesShown];
+        
+        }
+        if(score>=15){
+            
+            self.playerScore.text=[[NSString alloc] initWithFormat:@"You're great!\n your score is:n%i/%i",molesHit,molesShown];
+            
+        }
+        if ((timer1 != nil) && ([timer1 isValid]))
+        {
+            [timer1 invalidate];     //Causes release
+            timer1 = NULL;
+        }
+        if ((timer2 != nil) && ([timer2 isValid]))
+        {
+            [timer2 invalidate];     //Causes release
+            timer2 = NULL;
+        }
+        
     }
 }
 -(IBAction)startRounds:(id)sender{
@@ -77,11 +122,11 @@
     }
     self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
     if(seconds==0){
-        [self stopTimers];
+        [self stopTimers:(bool)false];
     }
 }
 -(void)updateInterval:(NSTimer*)theTimer{
-   
+    molesShown = molesShown+1;
     [mole1 setHidden:true];
     [mole2 setHidden:true];
     [mole3 setHidden:true];
@@ -102,8 +147,8 @@
     
 } 
 -(IBAction)addScore:(id)sender{
-    score=score+1;
-    self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",score];
+    molesHit=molesHit+1;
+    self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",molesHit];
     [sender setHidden:true];
 }
 -(int) getRandomIntMin:(int)min max:(int)max{
@@ -113,7 +158,7 @@
         return (int) ((arc4random() % max) + min);
 }
 -(void)endGame:(id)sender{
-    [self stopTimers];
+    [self stopTimers:(bool)true];
     [super endGame:(id)sender];
 }
 - (void)viewDidUnload

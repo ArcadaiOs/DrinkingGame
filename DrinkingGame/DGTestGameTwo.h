@@ -22,8 +22,10 @@
     IBOutlet UILabel *playerName;
     IBOutlet UILabel *timeLeftText;
     IBOutlet UILabel *timeLeft;
+    IBOutlet UILabel *playerScore;
     NSString *zeroes;
-    int score;
+    int molesShown;
+    int molesHit;
     int seconds;
     
 }
@@ -37,7 +39,9 @@
 @property(nonatomic,retain) IBOutlet UILabel *playerName;
 @property(nonatomic,retain) IBOutlet UILabel *timeLeftText;
 @property(nonatomic,retain) IBOutlet UILabel *timeLeft;
-@property int score;
+@property(nonatomic,retain) IBOutlet UILabel *playerScore;
+@property int molesHit;
+@property int molesShown;
 @property int seconds;
 @property(nonatomic,retain) IBOutlet UIButton *mole1; 
 @property(nonatomic,retain) IBOutlet UIButton *mole2;
