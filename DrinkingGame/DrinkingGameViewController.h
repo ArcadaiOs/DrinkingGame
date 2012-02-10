@@ -15,10 +15,16 @@
     IBOutlet UIView *firstView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
+    IBOutlet UIView *endView;
     UIViewController *s;
+    int buttonpushed;
+    int count;
 }
+@property int count;
+@property int buttonpushed;
 @property(readwrite,retain) UIViewController* s;
 @property (nonatomic, retain) UILabel *myCounterLabel;
+-(IBAction)Q1:(id)sender;
 -(IBAction)Q2:(id) sender;
--(IBAction)Lose;
+-(IBAction)Lose:(id)sender;
 @end

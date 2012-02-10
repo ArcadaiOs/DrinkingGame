@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F08816B14E53EA500B5C891 /* DGmenubg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F08816A14E53EA500B5C891 /* DGmenubg.png */; };
+		3F08816D14E542A100B5C891 /* Welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F08816C14E542A100B5C891 /* Welcome.png */; };
 		3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFEC814C04EF300A992F7 /* UIKit.framework */; };
 		3F3AFECB14C04EF300A992F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECA14C04EF300A992F7 /* Foundation.framework */; };
 		3F3AFECD14C04EF300A992F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AFECC14C04EF300A992F7 /* CoreGraphics.framework */; };
@@ -19,16 +21,13 @@
 		3F41DEAA14C827A4004B63E9 /* q1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEA714C827A4004B63E9 /* q1.png */; };
 		3F41DEAC14C827A4004B63E9 /* q3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEA914C827A4004B63E9 /* q3.png */; };
 		3F41DEB114C828E9004B63E9 /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEAF14C828E9004B63E9 /* win.png */; };
-		3F41DEC414C82A58004B63E9 /* WinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41DEC214C82A58004B63E9 /* WinViewController.m */; };
-		3F41DEC514C82A58004B63E9 /* WinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEC314C82A58004B63E9 /* WinViewController.xib */; };
-		3F41DEC914C82A8E004B63E9 /* LoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41DEC714C82A8E004B63E9 /* LoseViewController.m */; };
-		3F41DECA14C82A8E004B63E9 /* LoseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DEC814C82A8E004B63E9 /* LoseViewController.xib */; };
 		3F41DED014C83EE6004B63E9 /* q2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F41DECF14C83EE6004B63E9 /* q2.png */; };
-		3F74E79014DC065300248BD2 /* welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F74E78F14DC065300248BD2 /* welcome.png */; };
 		3FB7549514DBFD5800AB87CB /* loose.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB7549414DBFD5800AB87CB /* loose.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F08816A14E53EA500B5C891 /* DGmenubg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenubg.png; sourceTree = "<group>"; };
+		3F08816C14E542A100B5C891 /* Welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Welcome.png; sourceTree = "<group>"; };
 		3F3AFEC414C04EF300A992F7 /* DrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3AFEC814C04EF300A992F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F3AFECA14C04EF300A992F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,14 +45,7 @@
 		3F41DEA714C827A4004B63E9 /* q1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q1.png; sourceTree = "<group>"; };
 		3F41DEA914C827A4004B63E9 /* q3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q3.png; sourceTree = "<group>"; };
 		3F41DEAF14C828E9004B63E9 /* win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win.png; sourceTree = "<group>"; };
-		3F41DEC114C82A57004B63E9 /* WinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinViewController.h; sourceTree = "<group>"; };
-		3F41DEC214C82A58004B63E9 /* WinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinViewController.m; sourceTree = "<group>"; };
-		3F41DEC314C82A58004B63E9 /* WinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WinViewController.xib; sourceTree = "<group>"; };
-		3F41DEC614C82A8E004B63E9 /* LoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoseViewController.h; sourceTree = "<group>"; };
-		3F41DEC714C82A8E004B63E9 /* LoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoseViewController.m; sourceTree = "<group>"; };
-		3F41DEC814C82A8E004B63E9 /* LoseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoseViewController.xib; sourceTree = "<group>"; };
 		3F41DECF14C83EE6004B63E9 /* q2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q2.png; sourceTree = "<group>"; };
-		3F74E78F14DC065300248BD2 /* welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome.png; sourceTree = "<group>"; };
 		3FB7549414DBFD5800AB87CB /* loose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loose.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,12 +99,6 @@
 				3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */,
 				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
 				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
-				3F41DEC114C82A57004B63E9 /* WinViewController.h */,
-				3F41DEC214C82A58004B63E9 /* WinViewController.m */,
-				3F41DEC314C82A58004B63E9 /* WinViewController.xib */,
-				3F41DEC614C82A8E004B63E9 /* LoseViewController.h */,
-				3F41DEC714C82A8E004B63E9 /* LoseViewController.m */,
-				3F41DEC814C82A8E004B63E9 /* LoseViewController.xib */,
 				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
 			);
 			path = DrinkingGame;
@@ -122,10 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				3FB7549414DBFD5800AB87CB /* loose.png */,
-				3F74E78F14DC065300248BD2 /* welcome.png */,
+				3F08816A14E53EA500B5C891 /* DGmenubg.png */,
 				3F41DEA714C827A4004B63E9 /* q1.png */,
 				3F41DEAF14C828E9004B63E9 /* win.png */,
 				3F41DECF14C83EE6004B63E9 /* q2.png */,
+				3F08816C14E542A100B5C891 /* Welcome.png */,
 				3F41DEA914C827A4004B63E9 /* q3.png */,
 				3F3AFED014C04EF300A992F7 /* DrinkingGame-Info.plist */,
 				3F3AFED114C04EF300A992F7 /* InfoPlist.strings */,
@@ -188,11 +175,10 @@
 				3F41DEAA14C827A4004B63E9 /* q1.png in Resources */,
 				3F41DEAC14C827A4004B63E9 /* q3.png in Resources */,
 				3F41DEB114C828E9004B63E9 /* win.png in Resources */,
-				3F41DEC514C82A58004B63E9 /* WinViewController.xib in Resources */,
-				3F41DECA14C82A8E004B63E9 /* LoseViewController.xib in Resources */,
 				3F41DED014C83EE6004B63E9 /* q2.png in Resources */,
 				3FB7549514DBFD5800AB87CB /* loose.png in Resources */,
-				3F74E79014DC065300248BD2 /* welcome.png in Resources */,
+				3F08816B14E53EA500B5C891 /* DGmenubg.png in Resources */,
+				3F08816D14E542A100B5C891 /* Welcome.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +192,6 @@
 				3F3AFED514C04EF300A992F7 /* main.m in Sources */,
 				3F3AFED914C04EF300A992F7 /* DrinkingGameAppDelegate.m in Sources */,
 				3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */,
-				3F41DEC414C82A58004B63E9 /* WinViewController.m in Sources */,
-				3F41DEC914C82A8E004B63E9 /* LoseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

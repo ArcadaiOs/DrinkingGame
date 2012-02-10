@@ -7,13 +7,23 @@
 //
 
 #import "DrinkingGameViewController.h"
-#import "LoseViewController.h"
 
 @implementation DrinkingGameViewController
 @synthesize myCounterLabel;
 @synthesize s;
+@synthesize buttonpushed;
+@synthesize count;
+- (void)updateCounter:(NSTimer *)theTimer {
+	count += 1;
+	NSString *a = [[NSString alloc] initWithFormat:@"%d", count];
+	self.myCounterLabel.text = a;
+	[a release];
+    if (buttonpushed == 4){
+        [timer invalidate];
+        timer = nil;
+    }}
 
-- (IBAction)Q2:(id) sender
+- (IBAction)Q1:(id) sender
 {
     [s dismissModalViewControllerAnimated:false];
     int i = arc4random() % 3;
@@ -31,20 +41,77 @@
     }
     
     //[s setView:firstView];
+    
+    [self presentModalViewController:s animated:NO ];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                             target:self
+                                           selector:@selector(updateCounter:)
+                                           userInfo:nil
+                                            repeats:YES];}
+
+- (IBAction)Q2:(id) sender
+{
+    [s dismissModalViewControllerAnimated:false];
+    int i = arc4random() % 3;
+    
+    if (buttonpushed == 4)
+    {
+        [s setView:endView];    }
+    
+    else if(i == 1)
+    {
+        [s setView:firstView];
+    }
+    else if(i == 2)
+    {
+        [s setView:secondView];
+    }
+    else
+    {
+        [s setView:thirdView];
+    }
+    
+    //[s setView:firstView];
 
     [self presentModalViewController:s animated:NO ];
+    
+    buttonpushed = buttonpushed +1;
+   
 }
 
-- (IBAction)Lose;
 
+
+
+- (IBAction)Lose:(id) sender
 {
+    [s dismissModalViewControllerAnimated:false];
+    int i = arc4random() % 3;
     
-    LoseViewController *Lose = [[LoseViewController alloc] initWithNibName:nil bundle:nil];
+    if (buttonpushed == 4)
+    {
+        [s setView:endView];    }
     
-    [self presentModalViewController:Lose animated:NO];
+    else if(i == 1)
+    {
+        [s setView:firstView];
+    }
+    else if(i == 2)
+    {
+        [s setView:secondView];
+    }
+    else
+    {
+        [s setView:thirdView];
+    }
+    
+    //[s setView:firstView];
+    
+    [self presentModalViewController:s animated:NO ];
+    
+    buttonpushed = buttonpushed +1;
+    count = count +5;
     
 }
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -55,22 +122,10 @@
 
 #pragma mark - View lifecycle
 
-- (void)updateCounter:(NSTimer *)theTimer {
-	static int count = 5;
-	count -= 1;
-	NSString *s = [[NSString alloc] initWithFormat:@"%d", count];
-	self.myCounterLabel.text = s;
-	[s release];
-    
-    if (count == 0) {
-        LoseViewController *Lose = [[LoseViewController alloc] initWithNibName:nil bundle:nil];
-        
-        [self presentModalViewController:Lose animated:NO];
-    }
-}
 
 - (void)viewDidLoad
 {
+    count = 0;
     [super viewDidLoad];
     s = [[UIViewController alloc] init];
 }
