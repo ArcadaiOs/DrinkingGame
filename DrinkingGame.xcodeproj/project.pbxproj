@@ -558,6 +558,10 @@
 				3F4B707114E3E57E00BAE149 /* DGmenuPointBackActive.png in Resources */,
 				3F4B707214E3E57E00BAE149 /* DGmenuPointNext.png in Resources */,
 				3F4B707314E3E57E00BAE149 /* DGmenuPointNextActive.png in Resources */,
+				3F408FE014E5357F0034856F /* DG_UI.psd in Resources */,
+				3F0BEFB014E538D800240775 /* Rockeb.TTF in Resources */,
+				3FFA5F4514E53FD80054078B /* bottles.png in Resources */,
+				3FFA5F4614E53FD80054078B /* kork.png in Resources */,
 				3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
