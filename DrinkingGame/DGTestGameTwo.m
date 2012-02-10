@@ -30,6 +30,7 @@
     speed= [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.4],[NSNumber numberWithFloat:0.6],[NSNumber numberWithFloat:0.8 ], nil];
     score=0;
     seconds=45;
+    [zeroes setString:@""];
 	[NSTimer scheduledTimerWithTimeInterval:0.5f
                                      target:self
                                    selector:@selector(updateInterval:)
@@ -58,9 +59,9 @@
 -(void)updateSeconds:(NSTimer*)theTimer{
     seconds = seconds-1;
     if(seconds<10){
-        [zeroes setString:<#(NSString *)#>]
+        [zeroes setString:@"0"];
     }
-    self.timeLeft.text = [[NSString alloc] initWithFormat:@"%@%i",zeroes,seconds];
+    self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
 }
 -(void)updateInterval:(NSTimer*)theTimer{
    
