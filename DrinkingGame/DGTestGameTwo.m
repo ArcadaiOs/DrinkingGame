@@ -13,7 +13,7 @@
 @synthesize mole1,mole2,mole3;
 @synthesize scoreLabel,scoreLabelText,playerNameText,playerName,timeLeftText,timeLeft,playerScore;
 @synthesize zeroes;
-@synthesize molesHit,molesShown,seconds;
+@synthesize molesHit,molesShown,seconds,maxMoles;
 @synthesize timer1,timer2;
 - (void)didReceiveMemoryWarning
 {
@@ -31,9 +31,10 @@
     speed= [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.4],[NSNumber numberWithFloat:0.6],[NSNumber numberWithFloat:0.8 ], nil];
     molesHit=0;
     molesShown=0;
-    seconds=40;
+    seconds=30;
+    maxMoles=(seconds/0.6);
     zeroes = @"";
-	timer1=[NSTimer scheduledTimerWithTimeInterval:0.4f
+	timer1=[NSTimer scheduledTimerWithTimeInterval:0.6f
                                      target:self
                                    selector:@selector(updateInterval:)
                                    userInfo:nil
@@ -43,6 +44,7 @@
                                    selector:@selector(updateSeconds:)
                                    userInfo:nil
                                     repeats:true];
+    
     [scoreLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [scoreLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     
@@ -88,7 +90,7 @@
         }
     }
     else{
-        if(molesHit<50){
+        if(molesHit<(maxMoles/2)){
             
                  self.playerScore.text=[[NSString alloc] initWithFormat:@"You suck!\n you hit:\n%i/%i corks",molesHit,molesShown];
         
