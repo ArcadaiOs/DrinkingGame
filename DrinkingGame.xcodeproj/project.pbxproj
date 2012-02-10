@@ -29,6 +29,7 @@
 		3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDA14C04EF300A992F7 /* MainWindow.xib */; };
 		3F3AFEDF14C04EF300A992F7 /* DrinkingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */; };
 		3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */; };
+		3F408FE014E5357F0034856F /* DG_UI.psd in Resources */ = {isa = PBXBuildFile; fileRef = 3F408FDF14E5357F0034856F /* DG_UI.psd */; };
 		3F40EB8F14C9A85D009B35A5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F40EB8E14C9A85D009B35A5 /* CoreData.framework */; };
 		3F4B704A14E3E4ED00BAE149 /* DGStartMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B704814E3E4ED00BAE149 /* DGStartMenu.m */; };
 		3F4B704B14E3E4ED00BAE149 /* DGStartMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B704914E3E4ED00BAE149 /* DGStartMenu.xib */; };
@@ -110,6 +111,7 @@
 		3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrinkingGameViewController.h; sourceTree = "<group>"; };
 		3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkingGameViewController.m; sourceTree = "<group>"; };
 		3F3AFEE114C04EF300A992F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DrinkingGameViewController.xib; sourceTree = "<group>"; };
+		3F408FDF14E5357F0034856F /* DG_UI.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = DG_UI.psd; sourceTree = "<group>"; };
 		3F40EB8E14C9A85D009B35A5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3F4B704714E3E4ED00BAE149 /* DGStartMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGStartMenu.h; sourceTree = "<group>"; };
 		3F4B704814E3E4ED00BAE149 /* DGStartMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGStartMenu.m; sourceTree = "<group>"; };
@@ -355,6 +357,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3F408FDD14E535440034856F /* GUI files psd */ = {
+			isa = PBXGroup;
+			children = (
+				3F408FDF14E5357F0034856F /* DG_UI.psd */,
+			);
+			name = "GUI files psd";
+			sourceTree = "<group>";
+		};
 		3F4B704514E3E42F00BAE149 /* startMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +412,7 @@
 			children = (
 				3F34863214E3EF0A009EEBAE /* menu images */,
 				3FD60C2E14DC1F9000DEAE7A /* haddock.jpg */,
+				3F408FDD14E535440034856F /* GUI files psd */,
 				3FD60C2F14DC1F9000DEAE7A /* hannibal.jpg */,
 				3FD60C3014DC1F9000DEAE7A /* naama.jpg */,
 				3FD60C3114DC1F9000DEAE7A /* naama2.jpg */,
@@ -514,6 +525,7 @@
 				3F4B707114E3E57E00BAE149 /* DGmenuPointBackActive.png in Resources */,
 				3F4B707214E3E57E00BAE149 /* DGmenuPointNext.png in Resources */,
 				3F4B707314E3E57E00BAE149 /* DGmenuPointNextActive.png in Resources */,
+				3F408FE014E5357F0034856F /* DG_UI.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
