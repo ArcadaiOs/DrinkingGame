@@ -52,13 +52,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void) viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    if (player_.image != nil) {
-        self.image.image = [UIImage imageWithData:player_.image];
-    }
-}
--(IBAction)takePictureButtonPressed{
+
+
+NSData * data;
+
+-(UIImage*)getPicture{
     NSLog(@"%@",@"Taking a picture...");
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         NSLog(@"%@", @"This decive has a camera. Asking user what they want to use.");
@@ -78,13 +76,51 @@
         [self presentModalViewController: picker animated:YES];
         
     }
+    return [UIImage imageWithData:data];
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+        if (self.image.image == nil) {
+            self.image.image = [self getPicture];
+        }
+    
 }
 
 -(void) imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    player_.image = UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage]);
+    data = UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage]);
     [self dismissModalViewControllerAnimated:YES];
     [picker release];
+//    return [UIImage  ;
 }
+
+-(IBAction)takePictureButtonPressed{
+    NSLog(@"%@",@"Taking a picture...");
+    self.image.image = [self getPicture];
+    [self.image setNeedsDisplay];
+    
+    //    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+    //        NSLog(@"%@", @"This decive has a camera. Asking user what they want to use.");
+    //        UIActionSheet *photoSourceSheet = [[UIActionSheet alloc] initWithTitle:@"Select  picture" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take new photo", @"Choose existing Photo", nil];
+    //        [photoSourceSheet showInView:self.view];
+    //        [photoSourceSheet release];
+    //        
+    //    }
+    //    else { // no camera just use the library
+    //        
+    //        
+    //        
+    //        UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+    //        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    //        picker.delegate = self;
+    //        picker.allowsEditing = YES;
+    //        [self presentModalViewController: picker animated:YES];
+    //        
+    //    }
+}
+
+
+
 -(void) imagePickerControllerDidCancel: (UIImagePickerController *)picker {
     [self dismissModalViewControllerAnimated:YES];
     [picker release];
