@@ -31,7 +31,7 @@
     speed= [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.4],[NSNumber numberWithFloat:0.6],[NSNumber numberWithFloat:0.8 ], nil];
     molesHit=0;
     molesShown=0;
-    seconds=45;
+    seconds=40;
     zeroes = @"";
 	timer1=[NSTimer scheduledTimerWithTimeInterval:0.4f
                                      target:self
@@ -52,7 +52,7 @@
     [timeLeftText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
     [timeLeft setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:36 ] ];
     
-    [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
+    [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
     
     
 }
@@ -75,6 +75,7 @@
     [playerScore setHidden:false];
     
     if(endGame==true){
+        NSLog(@"you quitthegame");
         if ((timer1 != nil) && ([timer1 isValid]))
         {
             [timer1 invalidate];     //Causes release
@@ -87,15 +88,14 @@
         }
     }
     else{
-        int score= molesShown - molesHit;
-        if(score<15){
+        if(molesHit<50){
             
-                 self.playerScore.text=[[NSString alloc] initWithFormat:@"You suck!\n your score is:\n%i/%i",molesHit,molesShown];
+                 self.playerScore.text=[[NSString alloc] initWithFormat:@"You suck!\n you hit:\n%i/%i corks",molesHit,molesShown];
         
         }
-        if(score>=15){
+        else{
             
-            self.playerScore.text=[[NSString alloc] initWithFormat:@"You're great!\n your score is:n%i/%i",molesHit,molesShown];
+            self.playerScore.text=[[NSString alloc] initWithFormat:@"You're great!\n you hit:\n%i/%i corks",molesHit,molesShown];
             
         }
         if ((timer1 != nil) && ([timer1 isValid]))
