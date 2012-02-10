@@ -11,15 +11,40 @@
 
 @interface DGTestGameTwo : DGGame{
     NSArray *speed;
+    NSTimer *timer1;
+    NSTimer *timer2;
     IBOutlet UIButton *mole1;
     IBOutlet UIButton *mole2;
     IBOutlet UIButton *mole3;
+    IBOutlet UILabel *scoreLabelText;
     IBOutlet UILabel *scoreLabel;
-    int score;
+    IBOutlet UILabel *playerNameText;
+    IBOutlet UILabel *playerName;
+    IBOutlet UILabel *timeLeftText;
+    IBOutlet UILabel *timeLeft;
+    IBOutlet UILabel *playerScore;
+    NSString *zeroes;
+    int molesShown;
+    int molesHit;
+    int seconds;
+    int maxMoles;
+    
 }
-@property(nonatomic,assign) NSArray *speed;
-@property(nonatomic,assign) IBOutlet UILabel *scoreLabel;
-@property int score;
+@property(nonatomic,retain) NSArray *speed;
+@property(nonatomic,retain) NSString *zeroes;
+@property(nonatomic,retain) NSTimer *timer1;
+@property(nonatomic,retain) NSTimer *timer2;
+@property(nonatomic,retain) IBOutlet UILabel *scoreLabelText;
+@property(nonatomic,retain) IBOutlet UILabel *scoreLabel;
+@property(nonatomic,retain) IBOutlet UILabel *playerNameText;
+@property(nonatomic,retain) IBOutlet UILabel *playerName;
+@property(nonatomic,retain) IBOutlet UILabel *timeLeftText;
+@property(nonatomic,retain) IBOutlet UILabel *timeLeft;
+@property(nonatomic,retain) IBOutlet UILabel *playerScore;
+@property int molesHit;
+@property int molesShown;
+@property int seconds;
+@property int maxMoles;
 @property(nonatomic,retain) IBOutlet UIButton *mole1; 
 @property(nonatomic,retain) IBOutlet UIButton *mole2;
 @property(nonatomic,retain) IBOutlet UIButton *mole3;
