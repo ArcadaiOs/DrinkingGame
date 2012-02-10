@@ -11,8 +11,9 @@
 @implementation DGTestGameTwo
 @synthesize speed;
 @synthesize mole1,mole2,mole3;
-@synthesize scoreLabel;
-@synthesize score;
+@synthesize scoreLabel,scoreLabelText,playerNameText,playerName,timeLeftText,timeLeft;
+@synthesize zeroes;
+@synthesize score,seconds;
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -28,17 +29,38 @@
     [super viewDidLoad];
     speed= [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.4],[NSNumber numberWithFloat:0.6],[NSNumber numberWithFloat:0.8 ], nil];
     score=0;
-	[NSTimer scheduledTimerWithTimeInterval:0.8f
+    seconds=45;
+	[NSTimer scheduledTimerWithTimeInterval:0.5f
                                      target:self
                                    selector:@selector(updateInterval:)
                                    userInfo:nil
                                     repeats:true];
-            
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                     target:self
+                                   selector:@selector(updateSeconds:)
+                                   userInfo:nil
+                                    repeats:true];
+    [scoreLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
+    [scoreLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
+    
+    [playerNameText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
+    [playerName setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
+    
+    [timeLeftText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:34 ] ];
+    [timeLeft setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:50 ] ];
+    
     
     
 }
 -(IBAction)startRounds:(id)sender{
 
+}
+-(void)updateSeconds:(NSTimer*)theTimer{
+    seconds = seconds-1;
+    if(seconds<10){
+        [zeroes setString:<#(NSString *)#>]
+    }
+    self.timeLeft.text = [[NSString alloc] initWithFormat:@"%@%i",zeroes,seconds];
 }
 -(void)updateInterval:(NSTimer*)theTimer{
    
