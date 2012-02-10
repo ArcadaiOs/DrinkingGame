@@ -11,10 +11,7 @@
 
 @interface DGStartMenu :  UIViewController
 {
-    
-    
-    
-    NSInteger amountOfPlayers;
+    int amountOfPlayers;
     
     
     //Menu 1

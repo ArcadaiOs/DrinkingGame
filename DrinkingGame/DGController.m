@@ -11,6 +11,8 @@
 @implementation DGController
 @synthesize drinks;
 @synthesize players;
+@synthesize gameLevel;
+
 //@synthesize controller;
 - (id)init
 {
@@ -38,6 +40,11 @@
 -(void) GameEndedWithLooser:(DGPlayer *)looser{
     NSLog(@"GAME ENDED AND LOOSER IS FOUND");
 }
+
+- (void) startRandomGame{
+    // TALK TO DrinkingGameViewController
+}
+
 
 - (void)addPlayerWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn{
     [players addObject:[[DGPlayer alloc] initWithimage:imageIn weight:weightIn isFemale:isFemaleIn]];
