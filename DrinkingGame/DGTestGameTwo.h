@@ -11,6 +11,8 @@
 
 @interface DGTestGameTwo : DGGame{
     NSArray *speed;
+    NSTimer *timer1;
+    NSTimer *timer2;
     IBOutlet UIButton *mole1;
     IBOutlet UIButton *mole2;
     IBOutlet UIButton *mole3;
@@ -20,13 +22,15 @@
     IBOutlet UILabel *playerName;
     IBOutlet UILabel *timeLeftText;
     IBOutlet UILabel *timeLeft;
-    NSMutableString *zeroes;
+    NSString *zeroes;
     int score;
     int seconds;
     
 }
 @property(nonatomic,retain) NSArray *speed;
-@property(nonatomic,retain) NSMutableString *zeroes;
+@property(nonatomic,retain) NSString *zeroes;
+@property(nonatomic,retain) NSTimer *timer1;
+@property(nonatomic,retain) NSTimer *timer2;
 @property(nonatomic,retain) IBOutlet UILabel *scoreLabelText;
 @property(nonatomic,retain) IBOutlet UILabel *scoreLabel;
 @property(nonatomic,retain) IBOutlet UILabel *playerNameText;

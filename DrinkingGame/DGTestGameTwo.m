@@ -14,6 +14,7 @@
 @synthesize scoreLabel,scoreLabelText,playerNameText,playerName,timeLeftText,timeLeft;
 @synthesize zeroes;
 @synthesize score,seconds;
+@synthesize timer1,timer2;
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -30,38 +31,54 @@
     speed= [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.4],[NSNumber numberWithFloat:0.6],[NSNumber numberWithFloat:0.8 ], nil];
     score=0;
     seconds=45;
-    [zeroes setString:@""];
-	[NSTimer scheduledTimerWithTimeInterval:0.5f
+    zeroes = @"";
+	timer1=[NSTimer scheduledTimerWithTimeInterval:0.4f
                                      target:self
                                    selector:@selector(updateInterval:)
                                    userInfo:nil
                                     repeats:true];
-    [NSTimer scheduledTimerWithTimeInterval:1.0f
+    timer2=[NSTimer scheduledTimerWithTimeInterval:1.0f
                                      target:self
                                    selector:@selector(updateSeconds:)
                                    userInfo:nil
                                     repeats:true];
-    [scoreLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
-    [scoreLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
+    [scoreLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
+    [scoreLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     
-    [playerNameText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
-    [playerName setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
+    [playerNameText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
+    [playerName setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     
-    [timeLeftText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:34 ] ];
-    [timeLeft setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:50 ] ];
+    [timeLeftText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
+    [timeLeft setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:36 ] ];
     
     
     
+}
+-(void)stopTimers{
+    if ((timer1 != nil) && ([timer1 isValid]))
+    {
+        [timer1 invalidate];     //Causes release
+        timer1 = NULL;
+    }
+    if ((timer2 != nil) && ([timer2 isValid]))
+    {
+        [timer2 invalidate];     //Causes release
+        timer2 = NULL;
+    }
 }
 -(IBAction)startRounds:(id)sender{
 
 }
 -(void)updateSeconds:(NSTimer*)theTimer{
     seconds = seconds-1;
+    NSLog(@"%i",seconds);
     if(seconds<10){
-        [zeroes setString:@"0"];
+        zeroes = @"0";
     }
     self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
+    if(seconds==0){
+        [self stopTimers];
+    }
 }
 -(void)updateInterval:(NSTimer*)theTimer{
    
@@ -95,11 +112,17 @@
     else
         return (int) ((arc4random() % max) + min);
 }
+-(void)endGame:(id)sender{
+    [self stopTimers];
+    [super endGame:(id)sender];
+}
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    [zeroes release];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
