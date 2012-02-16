@@ -10,14 +10,15 @@
 
 
 @implementation DGPlayer
-@synthesize image, isFemale, waterWeightGram, weight,gramAlcBody,lastUpdate;
+@synthesize image, name, isFemale, waterWeightGram, weight,gramAlcBody,lastUpdate;
 
-- (id)initWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn 
+- (id)initWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn 
 {
     self = [super init];
     if (self) {
-        lastUpdate = [NSDate date];
+        self.lastUpdate = [NSDate date];
         self.image = imageIn;
+        self.name = nameIn;
         self.isFemale = isFemaleIn;
         if(isFemaleIn){
             self.waterWeightGram = [NSNumber numberWithFloat:weightIn*0.63f];
@@ -52,7 +53,7 @@
     }else{
         kfb = [NSNumber numberWithFloat: (0.1 * [gramAlcBody floatValue]) / burn ];
     }
-   lastUpdate = [NSDate date];
+   self.lastUpdate = [NSDate date];
    float n = [kfb floatValue] + [[shot alcCount]floatValue];
     [self setGramAlcBody:[NSNumber numberWithFloat:n]];
 

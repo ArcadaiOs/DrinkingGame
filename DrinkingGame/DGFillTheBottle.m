@@ -15,34 +15,38 @@
 @synthesize moreButton;
 @synthesize pilar;
 @synthesize objectHeight;
+@synthesize countTimer;
 
 
 
 
 - (void)updateCounter:(NSTimer *)theTimer {
-	
-    if((int) self.pilar.frame.size.height > 10){
-        static int count = 0;
-        count -= 1;
-    int subtractor = 3;
-	NSString *s = [[NSString alloc]
-                   initWithFormat:@"%d", count];
-	self.countLabel.text = s;
-	[s release];
-    
-    CGRect old = self.pilar.frame;
-    objectHeight = (int) self.pilar.frame.size.height;
-    
-    objectHeight = objectHeight-subtractor;
-    self.pilar.frame = CGRectMake(old.origin.x, old.origin.y+subtractor, old.size.width, objectHeight);
-    //NSLog(@"New height:%i", objectHeight);
-    //NSLog(@"New y:%f", self.pilar.frame.origin.y);
-    }else{
-    
+	if(timeForGame == 0 || (int) self.pilar.frame.size.height < 5 ){
+        i = 0;
         self.countLabel.text = @"Game Over";
         [moreButton setHidden:YES];
         [moreButton2 setHidden:YES];
-    
+        
+    }
+    else{
+        static int count = 0;
+        count -= 1;
+        int subtractor = 3;
+        
+        CGRect old = self.pilar.frame;
+        objectHeight = (int) self.pilar.frame.size.height;
+        
+        objectHeight = objectHeight-subtractor;
+        self.pilar.frame = CGRectMake(old.origin.x, old.origin.y+subtractor, old.size.width, objectHeight);
+
+    }
+}
+- (void)timeCounter:(NSTimer *)theTimer {
+    NSString *t = [[NSString alloc]
+                   initWithFormat:@"%d", --timeForGame];
+    self.countLabel.text = t;
+    if(timeForGame <= 0){
+        [theTimer invalidate];
     }
 }
 -(IBAction)removeHeight:(id)sender{
@@ -61,12 +65,23 @@
     NSLog(@"Button is Clicked");
     click=click+1;
     [self addHeight:nil];
-    if ([moreButton isUserInteractionEnabled]){
-        self.moreButton.userInteractionEnabled=NO;
-        self.moreButton2.userInteractionEnabled=YES;
+    
+    if (self.moreButton.isUserInteractionEnabled && i == 0){
+        i = 1;
     }else{
-        self.moreButton2.userInteractionEnabled=NO;
-        self.moreButton.userInteractionEnabled=YES;
+        i = 0;
+        if ([moreButton isUserInteractionEnabled]){
+            self.moreButton.userInteractionEnabled=NO;
+            self.moreButton2.userInteractionEnabled=YES;
+            self.moreButton.backgroundColor = [UIColor redColor];
+            self.moreButton2.backgroundColor = [UIColor greenColor];
+//            [moreButton2 setImage:@"greenPlusButton.png" forState:UIControlStateNormal];
+        }else{
+            self.moreButton2.userInteractionEnabled=NO;
+            self.moreButton.userInteractionEnabled=YES;
+            self.moreButton2.backgroundColor = [UIColor redColor];
+            self.moreButton.backgroundColor = [UIColor greenColor];
+        }
     }
 }
 
@@ -93,10 +108,18 @@
 {
     [super viewDidLoad];
     click = 0;
-    self.countLabel.text = @"0";
+    i = 0;
+    timeForGame = 15;
+    self.countLabel.text = [NSString stringWithFormat:@"%i", timeForGame];
     [NSTimer scheduledTimerWithTimeInterval:0.2f
                                      target:self
                                    selector:@selector(updateCounter:)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                     target:self
+                                   selector:@selector(timeCounter:)
                                    userInfo:nil
                                     repeats:YES];
     // Do any additional setup after loading the view from its nib.
