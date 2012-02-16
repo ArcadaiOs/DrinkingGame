@@ -33,6 +33,7 @@
 //        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
 //        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
         
+        
     }
     
     return self;
