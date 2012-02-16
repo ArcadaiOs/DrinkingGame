@@ -579,6 +579,9 @@
 				3FFA5F4614E53FD80054078B /* kork.png in Resources */,
 				3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */,
 				14C0CA1114EC51D5007CDDFF /* camera-icon-md.png in Resources */,
+				3FB3706F14ED3C2500B0CED1 /* redPlusButton.png in Resources */,
+				3FB3707014ED3C2500B0CED1 /* greenPlusButton.png in Resources */,
+				3FB3707314ED3C3500B0CED1 /* beerMug.png in Resources */,
 				3FEA052114ED45080074D5F1 /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
