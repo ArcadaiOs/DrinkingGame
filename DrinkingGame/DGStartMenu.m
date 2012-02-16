@@ -148,8 +148,7 @@
     }
     
     else {
-        
-        
+        [self.view removeFromSuperview];
     }   
     
 }
