@@ -16,7 +16,7 @@
 {
     self = [super init];
     if (self) {
-        lastUpdate = [NSDate date];
+        self.lastUpdate = [NSDate date];
         self.image = imageIn;
         self.isFemale = isFemaleIn;
         if(isFemaleIn){
@@ -52,7 +52,7 @@
     }else{
         kfb = [NSNumber numberWithFloat: (0.1 * [gramAlcBody floatValue]) / burn ];
     }
-   lastUpdate = [NSDate date];
+   self.lastUpdate = [NSDate date];
    float n = [kfb floatValue] + [[shot alcCount]floatValue];
     [self setGramAlcBody:[NSNumber numberWithFloat:n]];
 

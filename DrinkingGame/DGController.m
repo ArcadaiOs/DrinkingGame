@@ -38,7 +38,7 @@
     return self;
 } 
 -(void) GameEndedWithLooser:(DGPlayer *)looser{
-    NSLog(@"GAME ENDED AND LOOSER IS FOUND");
+    NSLog(@"GAME ENDED AND LOSER IS FOUND");
 }
 
 - (void) startRandomGame{
