@@ -62,6 +62,9 @@
 		3FAC088E14E53A10006BB22D /* DGFillTheBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */; };
 		3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */; };
 		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
+		3FB3706F14ED3C2500B0CED1 /* redPlusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3706D14ED3C2300B0CED1 /* redPlusButton.png */; };
+		3FB3707014ED3C2500B0CED1 /* greenPlusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3706E14ED3C2400B0CED1 /* greenPlusButton.png */; };
+		3FB3707314ED3C3500B0CED1 /* beerMug.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3707214ED3C3400B0CED1 /* beerMug.png */; };
 		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
 		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
 		3FCDE48914DAB7370087921F /* DGViewPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDE48714DAB7360087921F /* DGViewPlayer.m */; };
@@ -155,6 +158,9 @@
 		3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGFillTheBottle.m; sourceTree = "<group>"; };
 		3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGFillTheBottle.xib; sourceTree = "<group>"; };
 		3FB138BC14DAC15F00431078 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3FB3706D14ED3C2300B0CED1 /* redPlusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redPlusButton.png; path = ../redPlusButton.png; sourceTree = "<group>"; };
+		3FB3706E14ED3C2400B0CED1 /* greenPlusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenPlusButton.png; path = ../greenPlusButton.png; sourceTree = "<group>"; };
+		3FB3707214ED3C3400B0CED1 /* beerMug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beerMug.png; sourceTree = "<group>"; };
 		3FBCABE114C97F4E0032EBA1 /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3FBCABE214C97F4E0032EBA1 /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
 		3FC9856D14DABDD80023BB05 /* DGRandomShotWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShotWheel.h; sourceTree = "<group>"; };
@@ -207,6 +213,9 @@
 		3F10BE2B14C9960800220F88 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3FB3707214ED3C3400B0CED1 /* beerMug.png */,
+				3FB3706D14ED3C2300B0CED1 /* redPlusButton.png */,
+				3FB3706E14ED3C2400B0CED1 /* greenPlusButton.png */,
 				14C0CA1014EC51D5007CDDFF /* camera-icon-md.png */,
 				3FFA5F4314E53FD80054078B /* bottles.png */,
 				3FFA5F4414E53FD80054078B /* kork.png */,
@@ -360,11 +369,11 @@
 				3F3AFEDD14C04EF300A992F7 /* DrinkingGameViewController.h */,
 				3F3AFEDE14C04EF300A992F7 /* DrinkingGameViewController.m */,
 				3F3AFEE014C04EF300A992F7 /* DrinkingGameViewController.xib */,
-				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
 				3F3A731C14D188D100ECD451 /* games */,
 				3F3A731B14D188BB00ECD451 /* models */,
 				3F3A730614D17F9D00ECD451 /* DGController.h */,
 				3F3A730714D17F9D00ECD451 /* DGController.m */,
+				3F3AFECF14C04EF300A992F7 /* Supporting Files */,
 				3FE08EFA14C992E00010A03C /* resources */,
 				3F34863314E3EF5A009EEBAE /* old files */,
 			);
@@ -567,6 +576,9 @@
 				3FFA5F4614E53FD80054078B /* kork.png in Resources */,
 				3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */,
 				14C0CA1114EC51D5007CDDFF /* camera-icon-md.png in Resources */,
+				3FB3706F14ED3C2500B0CED1 /* redPlusButton.png in Resources */,
+				3FB3707014ED3C2500B0CED1 /* greenPlusButton.png in Resources */,
+				3FB3707314ED3C3500B0CED1 /* beerMug.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
