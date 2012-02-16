@@ -60,23 +60,25 @@
 
 
 -(IBAction)startGame:(id)sender{
+    [self.view removeFromSuperview];
     [[DGController sharedInstance] startRandomGame];
 }
 
 -(IBAction)buttonClickedContinue {
-    firstView = self.view;
+//    firstView = self.view;
     if (self.view == secondView) {
-        
         self.view = thirdView;
-    }
-    else {
-        if (amountOfPlayers == 0) {
+    } else if (self.view == thirdView) {
+        if (amountOfPlayers <= 0) {
             [self startGame:nil];
-        } else {
-            self.view = thirdView;
-        }
-        return;
-    }    
+        } 
+//        else {
+//            self.view = thirdView;
+//        }
+    } else {
+        firstView = self.view;
+        self.view = secondView;
+    }
 }
 
 
@@ -110,18 +112,17 @@
 }
 
 -(IBAction)buttonGetNewPlayer {
-    
-    // save new player
-    int w = [self.weight.text integerValue];
-    BOOL genderOfPlayer = self.gender;
-    // should check if image is set : self.polariod.image
-    [[DGController sharedInstance] addPlayerWithimage:self.polaroid.image weight:w  isFemale:genderOfPlayer];
-    // minska amountOfPlayers by one 
-    amountOfPlayers--;
-    if (amountOfPlayers == 0) {
-        // go and play
-        [self startGame:nil];
-    } else {
+    // check if image is set (self.polariod.image) and there are still players to register
+    if (self.polaroid.image != nil && amountOfPlayers > 0) {
+        NSLog(@"getNewPlayer %i", amountOfPlayers);
+        // save new player
+        [[DGController sharedInstance] addPlayerWithimage:self.polaroid.image 
+                                                     name:self.name.text 
+                                                   weight:[self.weight.text integerValue]  
+                                                 isFemale:self.gender];
+        // minska amountOfPlayers by one 
+        amountOfPlayers--;
+        
         // clear view
         self.polaroid.image = nil;
         self.weight.text = [NSString stringWithString:@"***"];
@@ -131,6 +132,10 @@
         self.gender = NO;
         btnContinue3.hidden = 1;
         pointNextActive3.hidden = 1;
+    }
+    if (amountOfPlayers <= 0) {
+        // go and play
+        [self startGame:nil];
     }   
 }
 
@@ -140,11 +145,9 @@
 -(IBAction)buttonClickedBack {
     if (self.view == secondView) {
         self.view = firstView;
-    }
-    if (self.view == thirdView) {
+    } else if (self.view == thirdView) {
         self.view = secondView;
-    } 
-    if (self.view == firstView) {
+    } else if (self.view == firstView) {
         [self.view removeFromSuperview];
     }   
 }

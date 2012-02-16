@@ -48,6 +48,7 @@
 
 - (void)addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn{
     [players addObject:[[DGPlayer alloc] initWithimage:imageIn name:nameIn weight:weightIn isFemale:isFemaleIn]];
+    NSLog(@"Adding player %@", nameIn);
 }
 
 static id sharedController = nil;
