@@ -20,5 +20,5 @@
 - (id)initWithFrame:(CGRect)frame andController:(DGController*) controllerIn andSelection:(int) selIn;
 -(void) spin;
 - (CGPoint) getCirclePoint: (CGFloat) diam pos:(CGPoint) pos angle: (CGFloat) angle;
-
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag;
 @end
