@@ -97,6 +97,53 @@
         [imageView setTransform:rotate];
         
         
+        /*CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        UIBezierPath *roundedPath = [UIBezierPath bezierPathWithArcCenter:center radius:size/2 startAngle:startAngle endAngle:endAngle clockwise:true];    
+        maskLayer.fillColor = [[UIColor whiteColor] CGColor];
+        maskLayer.backgroundColor = [[UIColor clearColor] CGColor];
+        maskLayer.path = [roundedPath CGPath];*/
+        
+        
+        //UIColor* imgPattern = [UIColor colorWithPatternImage: [player image]];
+        //UIColor* imgPattern = [[UIColor alloc] initWithRed:20.0 / 255 green:59.0 / 255 blue:102.0 / 255 alpha:1.0];
+        /*CGPoint imgPos = [self getCirclePoint:size/2-imgSize/2-30 pos:center angle:angle];
+        if(i==0){
+            linePos = [self getCirclePoint:size/2 pos:center angle:angle+step/2];
+        }else{
+            linePos = nextlinePos;
+        }
+        nextlinePos = [self getCirclePoint:size/2 pos:center angle:angle+step/2+step];
+        CGContextMoveToPoint(context, rect.size.width/2, rect.size.height/2);
+        CGContextAddLineToPoint(context, linePos.x, linePos.y);
+        
+    
+        UIImageView *imageView = [ [ UIImageView alloc ] initWithFrame:CGRectMake(imgPos.x, imgPos.y, imgSize, imgSize) ];
+        imageView.image = [player image];
+        [imageView setCenter:CGPointMake(imgPos.x, imgPos.y)];
+        [self addSubview:imageView];
+        CGAffineTransform rotate = CGAffineTransformMakeRotation( angle+M_PI_2 );
+        [imageView setTransform:rotate];*/
+        
+        
+        
+        /*
+        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        UIBezierPath *roundedPath = [UIBezierPath bezierPathWithArcCenter:center radius:size/2 startAngle:<#(CGFloat)#> endAngle:<#(CGFloat)#> clockwise:<#(BOOL)#>];    
+        maskLayer.fillColor = [[UIColor whiteColor] CGColor];
+        maskLayer.backgroundColor = [[UIColor clearColor] CGColor];
+        maskLayer.path = [roundedPath CGPath];
+        
+        
+        UIImageView *imageView = [ [ UIImageView alloc ] initWithFrame:CGRectMake(imgPos.x, imgPos.y, imgSize, imgSize) ];
+         imageView.image = [player image];
+         [imageView setCenter:CGPointMake(imgPos.x, imgPos.y)];
+        imageView.layer.mask = maskLayer;
+         [self addSubview:imageView];
+         CGAffineTransform rotate = CGAffineTransformMakeRotation( angle+M_PI_2 );
+         [imageView setTransform:rotate];*/
+        
+        
+        
        /* 
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGMutablePathRef slice = CGPathCreateMutable();

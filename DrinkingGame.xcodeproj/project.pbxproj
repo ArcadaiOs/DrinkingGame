@@ -79,6 +79,7 @@
 		3FE08EFE14C992E00010A03C /* simon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFB14C992E00010A03C /* simon.png */; };
 		3FE08EFF14C992E00010A03C /* simon.psd in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFC14C992E00010A03C /* simon.psd */; };
 		3FE08F0014C992E00010A03C /* simon_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFD14C992E00010A03C /* simon_light.png */; };
+		3FEA052114ED45080074D5F1 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEA052014ED45080074D5F1 /* arrow.png */; };
 		3FFA5F4514E53FD80054078B /* bottles.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA5F4314E53FD80054078B /* bottles.png */; };
 		3FFA5F4614E53FD80054078B /* kork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA5F4414E53FD80054078B /* kork.png */; };
 /* End PBXBuildFile section */
@@ -176,6 +177,7 @@
 		3FE08EFB14C992E00010A03C /* simon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon.png; sourceTree = "<group>"; };
 		3FE08EFC14C992E00010A03C /* simon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = simon.psd; sourceTree = "<group>"; };
 		3FE08EFD14C992E00010A03C /* simon_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_light.png; sourceTree = "<group>"; };
+		3FEA052014ED45080074D5F1 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		3FFA5F4314E53FD80054078B /* bottles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottles.png; sourceTree = "<group>"; };
 		3FFA5F4414E53FD80054078B /* kork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kork.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -445,6 +447,7 @@
 		3FE08EFA14C992E00010A03C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				3FEA052014ED45080074D5F1 /* arrow.png */,
 				3F0BEFAD14E538B600240775 /* Fonts */,
 				3F34863214E3EF0A009EEBAE /* menu images */,
 				3FD60C2E14DC1F9000DEAE7A /* haddock.jpg */,
@@ -567,6 +570,7 @@
 				3FFA5F4614E53FD80054078B /* kork.png in Resources */,
 				3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */,
 				14C0CA1114EC51D5007CDDFF /* camera-icon-md.png in Resources */,
+				3FEA052114ED45080074D5F1 /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

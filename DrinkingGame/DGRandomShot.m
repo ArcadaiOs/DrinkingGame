@@ -23,9 +23,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DGmenubg.png"]];
+    UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]];
+    arrow.frame = CGRectMake(150, 150, 150, 150);
+    arrow.transform = CGAffineTransformMakeRotation(M_PI_2+M_PI_4); //rotation in radians
+    
+    UILabel* header = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 320, 200)];
+    [header setFont:[UIFont fontWithName:@"Rockeb.TTF" size:12]];
+    header.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    header.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     int sel = arc4random() % [[controller players] count];
     DGRandomShotWheel* d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(-320, 140, 640, 640) andController:controller andSelection:sel];
-    [self.view insertSubview:d atIndex:0];
+    [self.view insertSubview:d atIndex:2];
+    [self.view insertSubview:arrow atIndex:3];
+    [self.view insertSubview:header atIndex:3];
     [d spin];
 }
 - (void)viewDidUnload
