@@ -27,7 +27,7 @@
 @synthesize menu3CrossMale, menu3CrossFemale, menu3male, menu3female;
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasy, buttonHard, buttonCustom, buttonMedium;
-@synthesize weight, name, gender, polariod;
+@synthesize weight, name, gender, polaroid;
 
 
 
@@ -66,7 +66,9 @@
 }
 
 
-
+-(IBAction)startGame:(id)sender{
+    [[DGController sharedInstance] startRandomGame];
+}
 
 -(IBAction)buttonClickedContinue {
     firstView = self.view;
@@ -77,21 +79,24 @@
         self.view = thirdView;
     }
     else {
+        if (amountOfPlayers == 0) {
+            [self startGame:nil];
+        } else {
+            self.view = thirdView;
+        }
+        return;
         
-        self.view = secondView;
     }
     
     
     
 }
--(IBAction)startGame:(id)sender{
-    [[DGController sharedInstance] startRandomGame];
-}
 
-// Pyry should fix this
+
+
 -(UIImage*) getImage{
 //    return [UIImage imageNamed:@"Soini.jpeg"];
-    return self.polariod.image;
+   return self.polaroid.image;
 }
 
 -(IBAction)takePicture:(id)sender{
@@ -106,7 +111,7 @@
 }
 
 -(void) imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{    
-    self.polariod.image = [UIImage imageWithData:UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage])];
+    self.polaroid.image = [UIImage imageWithData:UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage])];
     [picker dismissModalViewControllerAnimated:YES];
     [picker release];
 }
@@ -122,14 +127,21 @@
     int w = 0; // number from self.weight
     BOOL genderOfPlayer = NO; // BOOL from self.gender
     // should check if image is set : self.polariod.image
-    [[DGController sharedInstance] addPlayerWithimage:self.polariod.image weight:w  isFemale:genderOfPlayer];
+    [[DGController sharedInstance] addPlayerWithimage:self.polaroid.image weight:w  isFemale:genderOfPlayer];
     // minska amountOfPlayers by one 
     amountOfPlayers--;
     if (amountOfPlayers == 0) {
         // go and play
         [self startGame:nil];
     } else {
-        // clear view 
+        // clear view
+        self.polaroid.image = nil;
+        self.weight.text = nil;//@"***";
+        menu3CrossFemale.hidden = 1;
+        menu3CrossMale.hidden = 1;
+        self.gender = NO;
+        // rekursiv anrop buttonGetNewPlayer
+        [self buttonGetNewPlayer];
     }   
 }
 
