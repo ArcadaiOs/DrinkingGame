@@ -133,7 +133,7 @@
         CGContextAddLineToPoint(context, linePos.x, linePos.y);
         
     
-        /*UIImageView *imageView = [ [ UIImageView alloc ] initWithFrame:CGRectMake(imgPos.x, imgPos.y, imgSize, imgSize) ];
+        UIImageView *imageView = [ [ UIImageView alloc ] initWithFrame:CGRectMake(imgPos.x, imgPos.y, imgSize, imgSize) ];
         imageView.image = [player image];
         [imageView setCenter:CGPointMake(imgPos.x, imgPos.y)];
         [self addSubview:imageView];

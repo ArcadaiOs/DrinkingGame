@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14C0CA1114EC51D5007CDDFF /* camera-icon-md.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C0CA1014EC51D5007CDDFF /* camera-icon-md.png */; };
 		3F0BEFB014E538D800240775 /* Rockeb.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BEFAF14E538D800240775 /* Rockeb.TTF */; };
 		3F10BE3414C9960800220F88 /* simon_blue_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F10BE2C14C9960800220F88 /* simon_blue_dwn.png */; };
 		3F10BE3514C9960800220F88 /* simon_blue_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F10BE2D14C9960800220F88 /* simon_blue_up.png */; };
@@ -81,6 +82,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14C0CA1014EC51D5007CDDFF /* camera-icon-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-icon-md.png"; sourceTree = "<group>"; };
 		3F0BEFAF14E538D800240775 /* Rockeb.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockeb.TTF; sourceTree = "<group>"; };
 		3F10BE2C14C9960800220F88 /* simon_blue_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_blue_dwn.png; sourceTree = "<group>"; };
 		3F10BE2D14C9960800220F88 /* simon_blue_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_blue_up.png; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		3F10BE2B14C9960800220F88 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				14C0CA1014EC51D5007CDDFF /* camera-icon-md.png */,
 				3FFA5F4314E53FD80054078B /* bottles.png */,
 				3FFA5F4414E53FD80054078B /* kork.png */,
 				3F10BE2C14C9960800220F88 /* simon_blue_dwn.png */,
@@ -546,6 +549,7 @@
 				3F0BEFB014E538D800240775 /* Rockeb.TTF in Resources */,
 				3FFA5F4514E53FD80054078B /* bottles.png in Resources */,
 				3FFA5F4614E53FD80054078B /* kork.png in Resources */,
+				14C0CA1114EC51D5007CDDFF /* camera-icon-md.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@
 @synthesize menu3CrossMale, menu3CrossFemale, menu3male, menu3female;
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasy, buttonHard, buttonCustom, buttonMedium;
-@synthesize weight, name, gender;
+@synthesize weight, name, gender, polariod;
 
 
 
@@ -90,7 +90,30 @@
 
 // Pyry should fix this
 -(UIImage*) getImage{
-    return [UIImage imageNamed:@"Soini.jpeg"];
+//    return [UIImage imageNamed:@"Soini.jpeg"];
+    return self.polariod.image;
+}
+
+-(IBAction)takePicture:(id)sender{
+    NSLog(@"TakePictureButton Pressed");
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        [self presentModalViewController: picker animated:YES];
+    }
+}
+
+-(void) imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{    
+    self.polariod.image = [UIImage imageWithData:UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage])];
+    [picker dismissModalViewControllerAnimated:YES];
+    [picker release];
+}
+
+-(void) imagePickerControllerDidCancel: (UIImagePickerController *)picker {
+    [picker dismissModalViewControllerAnimated:YES];
+    [picker release];
 }
 
 -(IBAction)buttonGetNewPlayer {
@@ -98,7 +121,8 @@
     // save new player
     int w = 0; // number from self.weight
     BOOL genderOfPlayer = NO; // BOOL from self.gender
-    [[DGController sharedInstance] addPlayerWithimage:[self getImage] weight:w  isFemale:genderOfPlayer];
+    // should check if image is set : self.polariod.image
+    [[DGController sharedInstance] addPlayerWithimage:self.polariod.image weight:w  isFemale:genderOfPlayer];
     // minska amountOfPlayers by one 
     amountOfPlayers--;
     if (amountOfPlayers == 0) {
