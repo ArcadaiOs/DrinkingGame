@@ -14,12 +14,14 @@
     UIImageView *pilar;
     int click;
     int objectHeight;
+    UIButton *moreButton2;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *countLabel;
 @property int click;
 @property int objectHeight;
 @property (nonatomic, retain) IBOutlet UIButton *moreButton;
+@property (nonatomic, retain) IBOutlet UIButton *moreButton2;
 @property (nonatomic, retain) IBOutlet UIImageView *pilar;
 
 @end
