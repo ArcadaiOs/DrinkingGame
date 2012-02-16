@@ -30,6 +30,7 @@ typedef enum {
     DGViewPlayer *playerView;
     id < GameEnded > delegate;
 
+
 }
 
 @property(nonatomic,assign)id delegate;
