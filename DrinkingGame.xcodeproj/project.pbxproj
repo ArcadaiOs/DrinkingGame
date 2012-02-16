@@ -62,6 +62,11 @@
 		3FAC088E14E53A10006BB22D /* DGFillTheBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */; };
 		3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */; };
 		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
+		3FB36CB714ED345A00B871C9 /* DGDrinkDispenser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB36CB514ED345A00B871C9 /* DGDrinkDispenser.m */; };
+		3FB36CB814ED345A00B871C9 /* DGDrinkDispenser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB36CB614ED345A00B871C9 /* DGDrinkDispenser.xib */; };
+		3FB36CBA14ED3C8B00B871C9 /* naamaRam.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB36CB914ED3C8B00B871C9 /* naamaRam.png */; };
+		3FB36CBC14ED413500B871C9 /* WhosNext.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB36CBB14ED413500B871C9 /* WhosNext.png */; };
+		3FB36CBE14ED463600B871C9 /* NextPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB36CBD14ED463600B871C9 /* NextPlayer.png */; };
 		3FBCABE414C97F4E0032EBA1 /* DGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCABE214C97F4E0032EBA1 /* DGGame.m */; };
 		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
 		3FCDE48914DAB7370087921F /* DGViewPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDE48714DAB7360087921F /* DGViewPlayer.m */; };
@@ -155,6 +160,12 @@
 		3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGFillTheBottle.m; sourceTree = "<group>"; };
 		3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGFillTheBottle.xib; sourceTree = "<group>"; };
 		3FB138BC14DAC15F00431078 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3FB36CB414ED345A00B871C9 /* DGDrinkDispenser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGDrinkDispenser.h; sourceTree = "<group>"; };
+		3FB36CB514ED345A00B871C9 /* DGDrinkDispenser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGDrinkDispenser.m; sourceTree = "<group>"; };
+		3FB36CB614ED345A00B871C9 /* DGDrinkDispenser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGDrinkDispenser.xib; sourceTree = "<group>"; };
+		3FB36CB914ED3C8B00B871C9 /* naamaRam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naamaRam.png; sourceTree = "<group>"; };
+		3FB36CBB14ED413500B871C9 /* WhosNext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhosNext.png; sourceTree = "<group>"; };
+		3FB36CBD14ED463600B871C9 /* NextPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NextPlayer.png; sourceTree = "<group>"; };
 		3FBCABE114C97F4E0032EBA1 /* DGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGame.h; sourceTree = "<group>"; };
 		3FBCABE214C97F4E0032EBA1 /* DGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGame.m; sourceTree = "<group>"; };
 		3FC9856D14DABDD80023BB05 /* DGRandomShotWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShotWheel.h; sourceTree = "<group>"; };
@@ -353,6 +364,9 @@
 		3F3AFECE14C04EF300A992F7 /* DrinkingGame */ = {
 			isa = PBXGroup;
 			children = (
+				3FB36CB414ED345A00B871C9 /* DGDrinkDispenser.h */,
+				3FB36CB514ED345A00B871C9 /* DGDrinkDispenser.m */,
+				3FB36CB614ED345A00B871C9 /* DGDrinkDispenser.xib */,
 				3F4B704514E3E42F00BAE149 /* startMenu */,
 				3F3AFED714C04EF300A992F7 /* DrinkingGameAppDelegate.h */,
 				3F3AFED814C04EF300A992F7 /* DrinkingGameAppDelegate.m */,
@@ -445,6 +459,9 @@
 		3FE08EFA14C992E00010A03C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				3FB36CBD14ED463600B871C9 /* NextPlayer.png */,
+				3FB36CBB14ED413500B871C9 /* WhosNext.png */,
+				3FB36CB914ED3C8B00B871C9 /* naamaRam.png */,
 				3F0BEFAD14E538B600240775 /* Fonts */,
 				3F34863214E3EF0A009EEBAE /* menu images */,
 				3FD60C2E14DC1F9000DEAE7A /* haddock.jpg */,
@@ -567,6 +584,10 @@
 				3FFA5F4614E53FD80054078B /* kork.png in Resources */,
 				3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */,
 				14C0CA1114EC51D5007CDDFF /* camera-icon-md.png in Resources */,
+				3FB36CB814ED345A00B871C9 /* DGDrinkDispenser.xib in Resources */,
+				3FB36CBA14ED3C8B00B871C9 /* naamaRam.png in Resources */,
+				3FB36CBC14ED413500B871C9 /* WhosNext.png in Resources */,
+				3FB36CBE14ED463600B871C9 /* NextPlayer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +614,7 @@
 				3F52E2B814DAAC1D00ECA4BB /* DGSteadyHands.m in Sources */,
 				3F4B704A14E3E4ED00BAE149 /* DGStartMenu.m in Sources */,
 				3FAC088E14E53A10006BB22D /* DGFillTheBottle.m in Sources */,
+				3FB36CB714ED345A00B871C9 /* DGDrinkDispenser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

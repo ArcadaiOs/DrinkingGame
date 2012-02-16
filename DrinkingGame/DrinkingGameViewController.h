@@ -16,28 +16,27 @@
 #import "DGTestGameTwo.h"
 #import "DGFillTheBottle.h"
 #import "DGStartMenu.h"
-
-typedef struct{
-    NSString *playerName;
-    int score;
-} score;
+#import "DGDrinkDispenser.h"
 
 @interface DrinkingGameViewController : UIViewController{
     DGGame *currentCame;
     DGController* controller;
-    
+    DGDrinkDispenser *dispenser;
     
 }
 @property (readonly, nonatomic) DGController* controller;
+@property (readwrite, nonatomic) DGDrinkDispenser *dispenser;
 
 -(DGController *) controller;
 
 -(IBAction) showPlayer:(id)sender;
--(void) gameEndedWithScores:(NSString*) scores;
 -(IBAction) launchTestGame:(id)sender;
 -(IBAction) launchSimon:(id)sender;
 -(IBAction) launchSteadyHands:(id)sender;
 -(IBAction) launchWhackAMole:(id)sender;
 -(IBAction) launchFillTheBottle:(id)sender;
 -(IBAction) launchMenu:(id)sender;
+
+
+
 @end

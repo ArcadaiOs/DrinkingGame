@@ -13,15 +13,15 @@
     NSMutableArray* drinks;
     NSMutableArray* players;
     int gameLevel;
-//    DGController * controller;
 }
 
 -(void) GameEndedWithLooser:(DGPlayer*) looser;
 
+
 @property (nonatomic, retain) NSMutableArray* drinks;
 @property (nonatomic, retain) NSMutableArray* players;
 @property int gameLevel;
-//@property (nonatomic, retain) DGController * controller;
+
 - (void)addPlayerWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
 + (id) sharedInstance;
 - (void) startRandomGame;

@@ -11,6 +11,7 @@
 
 @implementation DrinkingGameViewController
 @synthesize controller;
+@synthesize dispenser;
 
 -(DGController *) controller{
     return [DGController sharedInstance];
@@ -80,8 +81,10 @@
     
     [super viewDidLoad];
     controller = [[DGController alloc] init];
+    dispenser = [[DGDrinkDispenser alloc]init];
+    [self.view addSubview:dispenser.view];
+    [dispenser showLooser:[controller.players objectAtIndex:0]];
     //[ctrl fetchRecords];
-    
 }
 
 
