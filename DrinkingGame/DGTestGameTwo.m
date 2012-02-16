@@ -40,7 +40,11 @@
 
     playerCount = [controller playerCount];
     points = [[NSMutableDictionary alloc] init];
+    [self setFonts];
+
     
+}
+-(void)setFonts{
     [scoreLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [scoreLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     
@@ -55,7 +59,6 @@
     [resultTitle setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
     
     [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    
 }
 -(void)startTimers{
 
