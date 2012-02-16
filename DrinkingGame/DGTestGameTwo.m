@@ -83,7 +83,7 @@
     [timeLeft setHidden:NO];
     molesHit=0;
     molesShown=0;
-    seconds=2;
+    seconds=30;
     maxMoles=(seconds/0.6);
     zeroes = @"";
     self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
