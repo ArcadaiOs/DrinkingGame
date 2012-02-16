@@ -84,7 +84,7 @@
     UITextField *name;
     UITextField *weight;
     
-    IBOutlet UIImageView *polariod;
+    IBOutlet UIImageView *polaroid;
     
     BOOL gender;
 }
@@ -162,7 +162,7 @@
 
 @property BOOL gender;
 
-@property (nonatomic, retain) UIImageView *polariod;
+@property (nonatomic, retain) UIImageView *polaroid;
 
 
 -(IBAction)buttonClickedContinue;
