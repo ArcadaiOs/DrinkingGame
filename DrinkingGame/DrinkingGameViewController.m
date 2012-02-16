@@ -34,6 +34,12 @@
     currentCame = [[DGTestGameTwo alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
 }
+-(IBAction) launchFillTheBottle:(id)sender{
+    [currentCame.view removeFromSuperview];
+    [currentCame release];
+    currentCame = [[DGFillTheBottle alloc] initWithController:controller];
+    [self.view addSubview:currentCame.view];
+}
 -(IBAction) launchMenu:(id)sender{
     [currentCame.view removeFromSuperview];
     [currentCame release];

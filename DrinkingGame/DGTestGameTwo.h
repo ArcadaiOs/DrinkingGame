@@ -27,6 +27,7 @@
     int molesShown;
     int molesHit;
     int seconds;
+    int maxMoles;
     
 }
 @property(nonatomic,retain) NSArray *speed;
@@ -43,6 +44,7 @@
 @property int molesHit;
 @property int molesShown;
 @property int seconds;
+@property int maxMoles;
 @property(nonatomic,retain) IBOutlet UIButton *mole1; 
 @property(nonatomic,retain) IBOutlet UIButton *mole2;
 @property(nonatomic,retain) IBOutlet UIButton *mole3;
