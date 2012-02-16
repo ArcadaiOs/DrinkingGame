@@ -79,7 +79,7 @@
         }else{
             self.moreButton2.userInteractionEnabled=NO;
             self.moreButton.userInteractionEnabled=YES;
-            self.moreButtonbackgroundColor = [UIColor redColor];
+            self.moreButton2.backgroundColor = [UIColor redColor];
             self.moreButton.backgroundColor = [UIColor greenColor];
         }
     }
