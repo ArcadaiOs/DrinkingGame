@@ -24,7 +24,7 @@
     if((int) self.pilar.frame.size.height > 10){
         static int count = 0;
         count -= 1;
-    int subtractor = 5;
+    int subtractor = 3;
 	NSString *s = [[NSString alloc]
                    initWithFormat:@"%d", count];
 	self.countLabel.text = s;
@@ -40,7 +40,8 @@
     }else{
     
         self.countLabel.text = @"Game Over";
-        [moreButton setHidden:YES]; 
+        [moreButton setHidden:YES];
+        [moreButton2 setHidden:YES];
     
     }
 }
@@ -59,9 +60,14 @@
 - (IBAction)doMoreButton:(id)sender {
     NSLog(@"Button is Clicked");
     click=click+1;
-    NSString* title = [[NSString alloc] initWithFormat:@"%i", click];
-    [moreButton setTitle:title forState:UIControlStateNormal];
     [self addHeight:nil];
+    if ([moreButton isUserInteractionEnabled]){
+        self.moreButton.userInteractionEnabled=NO;
+        self.moreButton2.userInteractionEnabled=YES;
+    }else{
+        self.moreButton2.userInteractionEnabled=NO;
+        self.moreButton.userInteractionEnabled=YES;
+    }
 }
 
 
