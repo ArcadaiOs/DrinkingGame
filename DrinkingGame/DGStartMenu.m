@@ -35,13 +35,7 @@
 
 - (void)viewDidLoad
 {
-    
-    
-    
-    
-    
-    [super viewDidLoad];
-    
+    [super viewDidLoad];    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -61,7 +55,6 @@
 
 - (void)dealloc
 {
-    
     [super dealloc];
 }
 
@@ -72,8 +65,6 @@
 
 -(IBAction)buttonClickedContinue {
     firstView = self.view;
-    
-    
     if (self.view == secondView) {
         
         self.view = thirdView;
@@ -85,11 +76,7 @@
             self.view = thirdView;
         }
         return;
-        
-    }
-    
-    
-    
+    }    
 }
 
 
@@ -114,6 +101,7 @@
     self.polaroid.image = [UIImage imageWithData:UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage])];
     [picker dismissModalViewControllerAnimated:YES];
     [picker release];
+    [self closekeyboard];
 }
 
 -(void) imagePickerControllerDidCancel: (UIImagePickerController *)picker {
@@ -124,8 +112,8 @@
 -(IBAction)buttonGetNewPlayer {
     
     // save new player
-    int w = 0; // number from self.weight
-    BOOL genderOfPlayer = NO; // BOOL from self.gender
+    int w = [self.weight.text integerValue];
+    BOOL genderOfPlayer = self.gender;
     // should check if image is set : self.polariod.image
     [[DGController sharedInstance] addPlayerWithimage:self.polaroid.image weight:w  isFemale:genderOfPlayer];
     // minska amountOfPlayers by one 
@@ -136,12 +124,13 @@
     } else {
         // clear view
         self.polaroid.image = nil;
-        self.weight.text = nil;//@"***";
+        self.weight.text = [NSString stringWithString:@"***"];
+        self.name.text = [NSString stringWithString:@"NAME"];
         menu3CrossFemale.hidden = 1;
         menu3CrossMale.hidden = 1;
         self.gender = NO;
-        // rekursiv anrop buttonGetNewPlayer
-        [self buttonGetNewPlayer];
+        btnContinue3.hidden = 1;
+        pointNextActive3.hidden = 1;
     }   
 }
 
@@ -149,26 +138,20 @@
 
 
 -(IBAction)buttonClickedBack {
-    
     if (self.view == secondView) {
-        
         self.view = firstView;
     }
     if (self.view == thirdView) {
-        
         self.view = secondView;
-    }
-    
-    else {
+    } 
+    if (self.view == firstView) {
         [self.view removeFromSuperview];
     }   
-    
 }
 
 //Meny 1
 
 -(IBAction)buttonPlayers2 {
-    
     amountOfPlayers = 2;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
@@ -183,7 +166,6 @@
     
 }
 -(IBAction)buttonPlayers3 {
-    
     amountOfPlayers = 3;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
@@ -272,7 +254,6 @@
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 1;
-    
 }
 
 -(IBAction)buttonMediumPressed {
@@ -305,7 +286,6 @@
 //Meny 3
 
 -(IBAction)menu3malePressed {
-    
     menu3CrossMale.hidden = 0;
     menu3CrossFemale.hidden = 1;
     self.gender = NO;
@@ -313,43 +293,32 @@
 }
 
 -(IBAction)menu3femalePressed {
-    
     menu3CrossMale.hidden = 1;
     menu3CrossFemale.hidden = 0;
     self.gender = YES;
     [self closekeyboard];
-    
 }
 
 
 -(IBAction)openkeyboard {
-    
-    
     thirdView.superview.frame = CGRectMake(0,-200,320,480);
-    
-    
 }
 
 -(IBAction)closekeyboard {
-    
-    
-    
     thirdView.superview.frame = CGRectMake(0,0,320,480);
     [self.view endEditing:TRUE];
-    // 
-    if  ((![name.text isEqualToString:@"NAME"]) && (![weight.text isEqualToString:@"***"]) && ((menu3CrossMale.hidden == 0) ||
-                                                                                               (menu3CrossFemale.hidden == 0))) {
-        NSLog(@"lol");
+    if  (self.polaroid.image != nil 
+         && 
+         (![name.text isEqualToString:@"NAME"]) 
+         && 
+         (![weight.text isEqualToString:@"***"]) 
+         && 
+         ((menu3CrossMale.hidden == 0) || (menu3CrossFemale.hidden == 0))) {
+        NSLog(@"Player completed...");
         btnContinue3.hidden = 0;
         pointNextActive3.hidden = 0;
     }
     
 }
-
-//        if ((menu3CrossMale.hidden == 0) ||
-//            (menu3CrossFemale.hidden == 0)) {
-
-
-
 
 @end
