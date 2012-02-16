@@ -784,7 +784,7 @@
 						<string key="NSFrame">{{10, 340}, {85, 65}}</string>
 						<reference key="NSSuperview" ref="269409064"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="797454371"/>
+						<reference key="NSNextKeyView" ref="241915673"/>
 						<string key="NSReuseIdentifierKey">_NS:222</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -871,6 +871,51 @@
 							<string key="NSResourceName">DGmenu3polaroidbg.png</string>
 						</object>
 					</object>
+					<object class="IBUIButton" id="1004346292">
+						<reference key="NSNextResponder" ref="269409064"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{84, 122}, {159, 161}}</string>
+						<reference key="NSSuperview" ref="269409064"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="976800685"/>
+						<string key="NSReuseIdentifierKey">_NS:225</string>
+						<reference key="IBUIBackgroundColor" ref="758395070"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<float key="IBUIAlpha">0.89999997615814209</float>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<reference key="IBUIHighlightedTitleColor" ref="758395070"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="773379262"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">camera-icon-md.png</string>
+						</object>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<int key="type">2</int>
+							<int key="size">2</int>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica-Bold</string>
+							<double key="NSSize">18</double>
+							<int key="NSfFlags">16</int>
+						</object>
+					</object>
+					<object class="IBUIImageView" id="56860028">
+						<reference key="NSNextResponder" ref="269409064"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{79, 117}, {164, 166}}</string>
+						<reference key="NSSuperview" ref="269409064"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="1004346292"/>
+						<string key="NSReuseIdentifierKey">_NS:567</string>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
 					<object class="IBUIImageView" id="94258364">
 						<reference key="NSNextResponder" ref="269409064"/>
 						<int key="NSvFlags">292</int>
@@ -892,7 +937,7 @@
 						<string key="NSFrame">{{79, 291}, {164, 31}}</string>
 						<reference key="NSSuperview" ref="269409064"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="241915673"/>
+						<reference key="NSNextKeyView" ref="959276638"/>
 						<string key="NSReuseIdentifierKey">_NS:294</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -929,7 +974,7 @@
 						<string key="NSFrameSize">{320, 460}</string>
 						<reference key="NSSuperview" ref="269409064"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="959276638"/>
+						<reference key="NSNextKeyView" ref="797454371"/>
 						<string key="NSReuseIdentifierKey">_NS:541</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -944,7 +989,7 @@
 						<string key="NSFrame">{{52, 3}, {320, 460}}</string>
 						<reference key="NSSuperview" ref="269409064"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="976800685"/>
+						<reference key="NSNextKeyView" ref="56860028"/>
 						<string key="NSReuseIdentifierKey">_NS:541</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -1404,6 +1449,14 @@
 					<int key="connectionID">223</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">polariod</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="56860028"/>
+					</object>
+					<int key="connectionID">239</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">buttonPlayers2</string>
 						<reference key="source" ref="477212621"/>
@@ -1627,6 +1680,15 @@
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">234</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">takePicture:</string>
+						<reference key="source" ref="1004346292"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">237</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1936,7 +1998,6 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="975915870"/>
-							<reference ref="94258364"/>
 							<reference ref="991471457"/>
 							<reference ref="230874668"/>
 							<reference ref="1012879545"/>
@@ -1950,6 +2011,9 @@
 							<reference ref="164532201"/>
 							<reference ref="797454371"/>
 							<reference ref="976800685"/>
+							<reference ref="94258364"/>
+							<reference ref="1004346292"/>
+							<reference ref="56860028"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">View 3</string>
@@ -2040,6 +2104,18 @@
 						<reference key="parent" ref="269409064"/>
 						<string key="objectName">Image View - DGmenu3MaleCross.png</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">235</int>
+						<reference key="object" ref="1004346292"/>
+						<reference key="parent" ref="269409064"/>
+						<string key="objectName">Button polariod</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">238</int>
+						<reference key="object" ref="56860028"/>
+						<reference key="parent" ref="269409064"/>
+						<string key="objectName">PolariodView</string>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -2074,6 +2150,8 @@
 					<string>209.IBPluginDependency</string>
 					<string>210.IBPluginDependency</string>
 					<string>214.IBPluginDependency</string>
+					<string>235.IBPluginDependency</string>
+					<string>238.IBPluginDependency</string>
 					<string>31.IBPluginDependency</string>
 					<string>36.IBPluginDependency</string>
 					<string>38.IBPluginDependency</string>
@@ -2114,6 +2192,8 @@
 					<string>DGStartMenu</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>UIResponder</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -2187,7 +2267,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">234</int>
+			<int key="maxID">239</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2217,9 +2297,11 @@
 							<string>menu3femalePressed</string>
 							<string>menu3malePressed</string>
 							<string>openkeyboard</string>
+							<string>takePicture:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -2262,6 +2344,7 @@
 							<string>menu3femalePressed</string>
 							<string>menu3malePressed</string>
 							<string>openkeyboard</string>
+							<string>takePicture:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2337,6 +2420,10 @@
 								<string key="name">openkeyboard</string>
 								<string key="candidateClassName">id</string>
 							</object>
+							<object class="IBActionInfo">
+								<string key="name">takePicture:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -2383,6 +2470,7 @@
 							<string>pointNextActive1</string>
 							<string>pointNextActive2</string>
 							<string>pointNextActive3</string>
+							<string>polariod</string>
 							<string>secondView</string>
 							<string>selected2</string>
 							<string>selected3</string>
@@ -2427,6 +2515,7 @@
 							<string>UIImageView</string>
 							<string>UITextField</string>
 							<string>UIView</string>
+							<string>UIImageView</string>
 							<string>UIImageView</string>
 							<string>UIImageView</string>
 							<string>UIImageView</string>
@@ -2492,6 +2581,7 @@
 							<string>pointNextActive1</string>
 							<string>pointNextActive2</string>
 							<string>pointNextActive3</string>
+							<string>polariod</string>
 							<string>secondView</string>
 							<string>selected2</string>
 							<string>selected3</string>
@@ -2666,6 +2756,10 @@
 								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">polariod</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">secondView</string>
 								<string key="candidateClassName">UIView</string>
 							</object>
@@ -2743,6 +2837,7 @@
 				<string>DGmenuPointNext.png</string>
 				<string>DGmenuPointNextActive.png</string>
 				<string>DGmenubg.png</string>
+				<string>camera-icon-md.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2763,6 +2858,7 @@
 				<string>{768, 1024}</string>
 				<string>{768, 1024}</string>
 				<string>{768, 1024}</string>
+				<string>{300, 300}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">933</string>

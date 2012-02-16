@@ -9,12 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "DGController.h"
 
-@interface DGStartMenu :  UIViewController
+@interface DGStartMenu :  UIViewController 
+<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 {
-    
-    
-    
-    NSInteger amountOfPlayers;
+    int amountOfPlayers;
     
     
     //Menu 1
@@ -85,6 +83,8 @@
     
     UITextField *name;
     UITextField *weight;
+    
+    IBOutlet UIImageView *polariod;
     
     BOOL gender;
 }
@@ -162,6 +162,8 @@
 
 @property BOOL gender;
 
+@property (nonatomic, retain) UIImageView *polariod;
+
 
 -(IBAction)buttonClickedContinue;
 -(IBAction)buttonClickedBack;
@@ -188,5 +190,7 @@
 -(IBAction)openkeyboard;
 
 -(IBAction)buttonGetNewPlayer;
+
+-(IBAction)takePicture:(id)sender;
 @end
 

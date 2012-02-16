@@ -27,7 +27,7 @@
 @synthesize menu3CrossMale, menu3CrossFemale, menu3male, menu3female;
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasy, buttonHard, buttonCustom, buttonMedium;
-@synthesize weight, name, gender;
+@synthesize weight, name, gender, polariod;
 
 
 
@@ -84,10 +84,36 @@
     
     
 }
+-(IBAction)startGame:(id)sender{
+    [[DGController sharedInstance] startRandomGame];
+}
 
 // Pyry should fix this
 -(UIImage*) getImage{
-    return nil;
+//    return [UIImage imageNamed:@"Soini.jpeg"];
+    return self.polariod.image;
+}
+
+-(IBAction)takePicture:(id)sender{
+    NSLog(@"TakePictureButton Pressed");
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        [self presentModalViewController: picker animated:YES];
+    }
+}
+
+-(void) imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{    
+    self.polariod.image = [UIImage imageWithData:UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage])];
+    [picker dismissModalViewControllerAnimated:YES];
+    [picker release];
+}
+
+-(void) imagePickerControllerDidCancel: (UIImagePickerController *)picker {
+    [picker dismissModalViewControllerAnimated:YES];
+    [picker release];
 }
 
 -(IBAction)buttonGetNewPlayer {
@@ -95,20 +121,19 @@
     // save new player
     int w = 0; // number from self.weight
     BOOL genderOfPlayer = NO; // BOOL from self.gender
-    [[DGController sharedInstance] addPlayerWithimage:[self getImage] weight:w  isFemale:genderOfPlayer];
+    // should check if image is set : self.polariod.image
+    [[DGController sharedInstance] addPlayerWithimage:self.polariod.image weight:w  isFemale:genderOfPlayer];
+    // minska amountOfPlayers by one 
+    amountOfPlayers--;
     if (amountOfPlayers == 0) {
         // go and play
+        [self startGame:nil];
     } else {
         // clear view 
-        // minska amountOfPlayers by one 
-    }
-    
-    
-    
-    
-    
-    
+    }   
 }
+
+
 
 
 -(IBAction)buttonClickedBack {
@@ -125,10 +150,7 @@
     else {
         
         
-    }
-    
-    
-    
+    }   
     
 }
 
@@ -164,7 +186,7 @@
     
 }
 -(IBAction)buttonPlayers4 {
-    
+    amountOfPlayers = 4;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -177,7 +199,7 @@
     
 }
 -(IBAction)buttonPlayers5 {
-    
+    amountOfPlayers = 5;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -190,7 +212,7 @@
     
 }
 -(IBAction)buttonPlayers6 {
-    
+    amountOfPlayers = 6;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -203,7 +225,7 @@
     
 }
 -(IBAction)buttonPlayers7 {
-    
+    amountOfPlayers = 7;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -216,7 +238,7 @@
     
 }
 -(IBAction)buttonPlayers8 {
-    
+    amountOfPlayers = 8;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -233,7 +255,7 @@
 
 
 -(IBAction)buttonEasyPressed {
-    
+    ((DGController*)[DGController sharedInstance]).gameLevel = 0;
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 0;
     bottleMediumSelected.hidden = 1;
@@ -243,7 +265,7 @@
 }
 
 -(IBAction)buttonMediumPressed {
-    
+    ((DGController*)[DGController sharedInstance]).gameLevel = 1;
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 0;
@@ -252,7 +274,7 @@
 }
 
 -(IBAction)buttonHardPressed {
-    
+    ((DGController*)[DGController sharedInstance]).gameLevel = 2;
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 1;
@@ -261,7 +283,7 @@
 }
 
 -(IBAction)buttonCustomPressed {
-    
+    ((DGController*)[DGController sharedInstance]).gameLevel = 3;
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 1;
