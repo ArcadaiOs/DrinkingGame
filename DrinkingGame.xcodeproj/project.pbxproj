@@ -565,6 +565,7 @@
 				3F0BEFB014E538D800240775 /* Rockeb.TTF in Resources */,
 				3FFA5F4514E53FD80054078B /* bottles.png in Resources */,
 				3FFA5F4614E53FD80054078B /* kork.png in Resources */,
+				3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */,
 				14C0CA1114EC51D5007CDDFF /* camera-icon-md.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
