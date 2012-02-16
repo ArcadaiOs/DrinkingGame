@@ -25,6 +25,11 @@
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] weight:120 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] weight:80 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"haddock.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama2.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"norris.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"hannibal.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"poirot.jpg"] weight:80 isFemale:false]];
         
         [[players objectAtIndex:0] takeShot:[drinks objectAtIndex:1]];
         [[players objectAtIndex:1] takeShot:[drinks objectAtIndex:0]];
