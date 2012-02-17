@@ -32,7 +32,7 @@ typedef struct{
     DGController* controller;
     
     IBOutlet UIView *boozeChooserView;
-    IBOutlet UILabel *boozeChoose;
+    IBOutlet UIView*boo;
     IBOutlet UIView *playerImgFrame;    
     IBOutlet UIImageView *playerImg;
     IBOutlet UIView *nextPlayerView;
