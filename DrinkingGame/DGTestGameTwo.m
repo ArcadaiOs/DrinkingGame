@@ -40,39 +40,41 @@
 {
     [super viewDidLoad];
     self.view=startView;
+    points = [[NSMutableDictionary alloc] init];
     currentPlayer=0;
+    playerCount = [controller playerCount];
+    results = [[NSMutableString alloc] initWithString:@""];
+    
     pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    
     for (UILabel *nameLabel in nameCollection) {
         nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
     }
     
-    results = [[NSMutableString alloc] initWithString:@""];
-
-    playerCount = [controller playerCount];
-    points = [[NSMutableDictionary alloc] init];
     [self setFonts];
-
     
 }
--(void)setFonts{
+-(void)setFonts
+{
     for (UIButton *buttonF in buttonWithFonts) {
-        buttonF.titleLabel.font= [UIFont fontWithName:@"Rockwell Extra Bold" size:24 ];
+        buttonF.titleLabel.font= [UIFont fontWithName:@"Rockwell Extra Bold" size:26 ];
     }
-     quitPlayingBtn.titleLabel.font= [UIFont fontWithName:@"Rockwell Extra Bold" size:12 ];
+    quitPlayingBtn.titleLabel.font= [UIFont fontWithName:@"Rockwell Extra Bold" size:12 ];
     [scoreLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [scoreLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [playerNameText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
+    [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
     [playerName setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
-    [timeLeftText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
+    [timeLeftText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
     [timeLeft setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:36 ] ];
     [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
     [resultTitle setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
     [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
     [yourUpNext setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
 }
--(void)startTimers{    
+-(void)startTimers
+{    
 	timer1=[NSTimer scheduledTimerWithTimeInterval:0.6f
                                             target:self
                                           selector:@selector(updateIntervalForMoles:)
@@ -84,75 +86,84 @@
                                           userInfo:nil
                                            repeats:true];
 }
--(IBAction)startGame:(id)sender{
+-(IBAction)startGame:(id)sender
+{
     self.view = gameView;
     [mole1 setEnabled:true];
     [mole2 setEnabled:true];
     [mole3 setEnabled:true];
+    
     [scoreLabelText setHidden:NO];
     [scoreLabel setHidden:NO];
-    
+
     [timeLeftText setHidden:NO];
     [timeLeft setHidden:NO];
+    
     molesHit=0;
     molesShown=0;
-    seconds=1;
+    seconds=30;
     maxMoles=(seconds/0.6);
     zeroes = @"";
-    self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
     
+    self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
  
     self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",molesHit];
 
     self.view = gameView;
-    [self startTimers];
     
-   
+    [self startTimers];
 }
--(void)stopTimers:(bool)endGame{
+-(void)stopTimers:(bool)endGame
+{
+    [self endTimers];
     NSNumber *point = [[NSNumber alloc] initWithInt:molesHit];
     NSNumber *idp = [[NSNumber alloc] initWithInt:currentPlayer];
     [points setObject:point forKey:idp];
+    
     [mole1 setHidden:true];
     [mole2 setHidden:true];
     [mole3 setHidden:true];
+    
     [mole1 setEnabled:false];
     [mole2 setEnabled:false];
     [mole3 setEnabled:false];
+    
     [scoreLabelText setHidden:true];
     [scoreLabel setHidden:true];
+    
     [timeLeftText setHidden:true];
     [timeLeft setHidden:true];
-    
+
     [playerScore setHidden:false];
     
-    if(endGame==true){
-        [self endTimers];
+    if(endGame==true)
+    {
         NSLog(@"you quitthegame");
-            }
+    }
     else{
-        [self endTimers];
+         self.view=endView;
         
-         if(molesHit<(maxMoles/2)){
-            
+         if(molesHit<(maxMoles/2))
+         {
                  self.playerScore.text=[[NSString alloc] initWithFormat:@"You suck!\n you hit:\n%i/%i corks",molesHit,molesShown];
         
-        }
+         }
         else{
-            
             self.playerScore.text=[[NSString alloc] initWithFormat:@"You're great!\n you hit:\n%i/%i corks",molesHit,molesShown];
             
         }
         
-        self.view=endView;
-        if ((currentPlayer+1)>= playerCount) {
+        
+        if ((currentPlayer+1)>= playerCount)
+        {
             [nextPlayerBtn setHidden:YES];
             [playerScore setHidden:YES];
             [playerName2 setHidden:YES];
+            
             NSArray *keys = [points allKeys];
             
-            // values in foreach loop
-            for (NSNumber *key in keys) {
+            for (NSNumber *key in keys) 
+            {
                 int x =[key intValue];
                 int p =[[points objectForKey:key] intValue];
                 [results appendFormat:@"NAME: %@ , POINTS:%i \n",[[[controller players] objectAtIndex:x] name], p];
@@ -160,47 +171,45 @@
             }
             
            self.playerScores.text=[[NSString alloc] initWithFormat:@"%@",results];
+            
             [resultTitle setHidden:NO];
             [playerScores setHidden:NO];
         }
-        else if ((currentPlayer+1)< playerCount){
+        
+        else if ((currentPlayer+1)< playerCount)
+        {
             [nextPlayerBtn setHidden:NO];
         }
         
     }
 }
--(void)startNextPlayer:(id)sender{
+-(void)startNextPlayer:(id)sender
+{
     currentPlayer++;
     pName = [[[controller players] objectAtIndex:currentPlayer] name];
-    for (UILabel *nameLabel in nameCollection) {
+    for (UILabel *nameLabel in nameCollection) 
+    {
         nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
     }
     self.view=startView;
 }
--(void)endTimers{
-    if ((timer1 != nil) && ([timer1 isValid]))
-    {
-        [timer1 invalidate];     //Causes release
-        timer1 = NULL;
-    }
-    if ((timer2 != nil) && ([timer2 isValid]))
-    {
-        [timer2 invalidate];     //Causes release
-        timer2 = NULL;
-    }
-}
--(void)updateSeconds:(NSTimer*)theTimer{
+
+-(void)updateSeconds:(NSTimer*)theTimer
+{
     seconds = seconds-1;
     NSLog(@"%i",seconds);
-    if(seconds<10){
+    if(seconds<10)
+    {
         zeroes = @"0";
     }
     self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
-    if(seconds==0){
+    if(seconds==0)
+    {
         [self stopTimers:(bool)false];
     }
 }
--(void)updateIntervalForMoles:(NSTimer*)theTimer{
+-(void)updateIntervalForMoles:(NSTimer*)theTimer
+{
     molesShown = molesShown+1;
     [mole1 setHidden:true];
     [mole2 setHidden:true];
@@ -221,18 +230,34 @@
     }
     
 } 
--(IBAction)addScore:(id)sender{
+-(IBAction)addScore:(id)sender
+{
     molesHit=molesHit+1;
     self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",molesHit];
     [sender setHidden:true];
 }
--(int) getRandomIntMin:(int)min max:(int)max{
+-(void)endTimers
+{
+    if ((timer1 != nil) && ([timer1 isValid]))
+    {
+        [timer1 invalidate];     //Causes release
+        timer1 = NULL;
+    }
+    if ((timer2 != nil) && ([timer2 isValid]))
+    {
+        [timer2 invalidate];     //Causes release
+        timer2 = NULL;
+    }
+}
+-(int) getRandomIntMin:(int)min max:(int)max
+{
     if(min>max)
         return -1;
     else
         return (int) ((arc4random() % max) + min);
 }
--(void)endGame:(id)sender{
+-(void)endGame:(id)sender
+{
     [self stopTimers:(bool)true];
     [super endGame:(id)sender];
 }
