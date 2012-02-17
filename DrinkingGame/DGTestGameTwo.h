@@ -104,6 +104,8 @@
 -(IBAction)startGame:(id)sender;
 -(IBAction)startNextPlayer:(id)sender;
 -(void)endTimers;
--(void)updateInterval:(NSTimer*)theTimer;
+-(void)setFonts;
+-(void)updateIntervalForMoles:(NSTimer*)theTimer;
+-(void)updateSeconds:(NSTimer*)theTimer;
 -(int) getRandomIntMin:(int) min max:(int) max;
 @end
