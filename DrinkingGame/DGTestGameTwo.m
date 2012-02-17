@@ -96,7 +96,7 @@
     [timeLeft setHidden:NO];
     molesHit=0;
     molesShown=0;
-    seconds=30;
+    seconds=1;
     maxMoles=(seconds/0.6);
     zeroes = @"";
     self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
@@ -169,7 +169,7 @@
         
     }
 }
--(void)nextPlayer:(id)sender{
+-(void)startNextPlayer:(id)sender{
     currentPlayer++;
     pName = [[[controller players] objectAtIndex:currentPlayer] name];
     for (UILabel *nameLabel in nameCollection) {
@@ -240,38 +240,38 @@
 {
     
        
-//    nextPlayerBtn = nil;
-//    startPlayingBtn = nil;
-//    quitPlayingBtn = nil;
-//    mole3 = nil;
-//    mole2 = nil;
-//    mole1 = nil;
-//    
-//    zeroes=nil;
-//    pName=nil;
-//    results=nil;
-//    
-//    [self setButtonWithFonts:nil];
-//    [self setNameCollection:nil];
-//    [self setScoreLabel:nil];
-//    [self setScoreLabelText:nil];
-//    [self setPlayerNameText:nil];
-//    [self setPlayerName:nil];
-//    [self setPlayerName2:nil];
-//    [self setTimeLeftText:nil];
-//    [self setTimeLeft:nil];
-//    [self setPlayerScore:nil];
-//    [self setResultTitle:nil];
-//    [self setPlayerScores:nil];
-//    [self setPlayerName0:nil];
-//    [self setYourUpNext:nil];
-//     
-//    [self setStartPlayingBtn:nil];
-//    [self setNextPlayerBtn:nil];
-//    [self setQuitPlayingBtn:nil];
-//    [self setMole1:nil];
-//    [self setMole2:nil];
-//    [self setMole3:nil];
+    nextPlayerBtn = nil;
+    startPlayingBtn = nil;
+    quitPlayingBtn = nil;
+    mole3 = nil;
+    mole2 = nil;
+    mole1 = nil;
+    
+    zeroes=nil;
+    pName=nil;
+    results=nil;
+    
+    [self setButtonWithFonts:nil];
+    [self setNameCollection:nil];
+    [self setScoreLabel:nil];
+    [self setScoreLabelText:nil];
+    [self setPlayerNameText:nil];
+    [self setPlayerName:nil];
+    [self setPlayerName2:nil];
+    [self setTimeLeftText:nil];
+    [self setTimeLeft:nil];
+    [self setPlayerScore:nil];
+    [self setResultTitle:nil];
+    [self setPlayerScores:nil];
+    [self setPlayerName0:nil];
+    [self setYourUpNext:nil];
+     
+    [self setStartPlayingBtn:nil];
+    [self setNextPlayerBtn:nil];
+    [self setQuitPlayingBtn:nil];
+    [self setMole1:nil];
+    [self setMole2:nil];
+    [self setMole3:nil];
     
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -288,41 +288,41 @@
 
 - (void)dealloc {
     
-//    [mole3 release];
-//    [mole2 release];
-//    [mole1 release];
-//    [quitPlayingBtn release];
-//    [nextPlayerBtn release];
-//    [startPlayingBtn release];
-//    
-//    [scoreLabel release];
-//    [scoreLabelText release];
-//    [playerNameText release];
-//    [playerName release];
-//    [playerName2 release];
-//    [timeLeftText release];
-//    [timeLeft release];
-//    [playerScore release];
-//    [resultTitle release];
-//    [playerScores release];
-//    [playerName0 release];
-//    [yourUpNext release];
-//    
-//    [zeroes release];
-//    [pName release];
-//    [results release];
-//
-//    [buttonWithFonts release];
-//    [nameCollection release];
-//    
-//    [timer1 release];
-//    [timer2 release];
-//    
-//    [points release];
-//    
-//    [startView release];
-//    [gameView release];
-//    [endView release];
+    [mole3 release];
+    [mole2 release];
+    [mole1 release];
+    [quitPlayingBtn release];
+    [nextPlayerBtn release];
+    [startPlayingBtn release];
+    
+    [scoreLabel release];
+    [scoreLabelText release];
+    [playerNameText release];
+    [playerName release];
+    [playerName2 release];
+    [timeLeftText release];
+    [timeLeft release];
+    [playerScore release];
+    [resultTitle release];
+    [playerScores release];
+    [playerName0 release];
+    [yourUpNext release];
+    
+    [zeroes release];
+    [pName release];
+    [results release];
+
+    [buttonWithFonts release];
+    [nameCollection release];
+    
+    [timer1 release];
+    [timer2 release];
+    
+    [points release];
+    
+    [startView release];
+    [gameView release];
+    [endView release];
     
     [super dealloc];
 }

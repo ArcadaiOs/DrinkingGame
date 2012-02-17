@@ -102,7 +102,7 @@
 /*FUNCTIONS*/
 -(IBAction)addScore:(id)sender;
 -(IBAction)startGame:(id)sender;
--(IBAction)nextPlayer:(id)sender;
+-(IBAction)startNextPlayer:(id)sender;
 -(void)endTimers;
 -(void)setFonts;
 -(void)updateIntervalForMoles:(NSTimer*)theTimer;
