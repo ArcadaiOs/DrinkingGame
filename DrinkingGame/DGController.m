@@ -12,7 +12,7 @@
 @synthesize drinks;
 @synthesize players;
 @synthesize gameLevel,playerCount;
-
+@synthesize delegate;
 //@synthesize controller;
 - (id)init
 {
@@ -33,15 +33,22 @@
 //        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
 //        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
         
-        
     }
     
     return self;
 } 
--(void) GameEndedWithLooser:(DGPlayer *)looser{
-    NSLog(@"GAME ENDED AND LOSER IS FOUND");
+-(void) showPlayer:(DGPlayer*) player{
+    NSLog(@"DGController");
+    [delegate showPlayer:player];
 }
+-(void) GameEndedWithLooser:(DGPlayer *)looser{
+    [delegate showPlayer:looser];
+    NSLog(@"GAME ENDED AND LOSER IS FOUND");
 
+}
+-(void) playerReady{
+    NSLog(@"PLAYER READu CONTROLER");
+}
 - (void) startRandomGame{
     // TALK TO DrinkingGameViewController
 }

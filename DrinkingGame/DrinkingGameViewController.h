@@ -22,6 +22,11 @@ typedef struct{
     int score;
 } score;
 
+@protocol ViewControllerProto <NSObject>
+-(void) playerReady;
+@end
+
+
 @interface DrinkingGameViewController : UIViewController{
     DGGame *currentCame;
     DGController* controller;
@@ -30,7 +35,9 @@ typedef struct{
        
     IBOutlet UIButton *twitterButton;
 }
+
 @property (readonly, nonatomic) DGController* controller;
+@property(nonatomic,assign)id delegate;
 
     //twitter
 @property (retain) UIButton *twitterButton;
@@ -38,7 +45,12 @@ typedef struct{
 
 -(DGController *) controller;
 
--(IBAction) showPlayer:(id)sender;
+-(IBAction) showPunnishmentChooser:(id)sender;
+-(IBAction) punnishmentChosen:(id) sender;
+
+-(void) showPlayer:(DGPlayer*)player;
+-(void) playerReadyToPlay;
+-(IBAction) showNext:(id)sender;
 -(void) gameEndedWithScores:(NSString*) scores;
 -(IBAction) launchTestGame:(id)sender;
 -(IBAction) launchSimon:(id)sender;
