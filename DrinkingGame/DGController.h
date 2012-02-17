@@ -25,6 +25,7 @@
 @property int playerCount;
 //@property (nonatomic, retain) DGController * controller;
 - (void)addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
+
 + (id) sharedInstance;
 - (void) startRandomGame;
 @end
