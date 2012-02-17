@@ -10,22 +10,30 @@
 
 @implementation DGFillTheBottle
 @synthesize moreButton2;
-@synthesize countLabel;
+@synthesize timerLabel;
+@synthesize timeLabelText;
 @synthesize click;
 @synthesize moreButton;
 @synthesize pilar;
 @synthesize objectHeight;
 @synthesize countTimer;
+@synthesize btnGreen, btnRed;
 
 
 
 
 - (void)updateCounter:(NSTimer *)theTimer {
-	if(timeForGame == 0 || (int) self.pilar.frame.size.height < 5 ){
-        i = 0;
-        self.countLabel.text = @"Game Over";
+	if(timeForGame == 0 || (int) self.pilar.frame.size.height <= 3 ){
+//        i = 0;
+        int score = click*self.pilar.frame.size.height/(timeForGame+1);
         [moreButton setHidden:YES];
         [moreButton2 setHidden:YES];
+        [theTimer invalidate];
+//        self.countLabel.text = [NSString stringWithFormat:@"%i", score];
+        NSLog(@"Score:%i", score);
+        NSLog(@"End height:%i", (int) self.pilar.frame.size.height);
+        NSLog(@"End time:%i", timeForGame);
+        NSLog(@"Total clicks:%i", click);
         
     }
     else{
@@ -44,13 +52,10 @@
 - (void)timeCounter:(NSTimer *)theTimer {
     NSString *t = [[NSString alloc]
                    initWithFormat:@"%d", --timeForGame];
-    self.countLabel.text = t;
+    self.timerLabel.text = t;
     if(timeForGame <= 0){
         [theTimer invalidate];
     }
-}
--(IBAction)removeHeight:(id)sender{
-    
 }
 - (IBAction)addHeight:(id)sender{
     CGRect old = self.pilar.frame;
@@ -59,10 +64,8 @@
     objectHeight = objectHeight+incremator;
     self.pilar.frame = CGRectMake(old.origin.x, old.origin.y-incremator, old.size.width, objectHeight);
     NSLog(@"New height:%i", objectHeight);
-    NSLog(@"New y:%f", self.pilar.frame.origin.y);
 }
 - (IBAction)doMoreButton:(id)sender {
-    NSLog(@"Button is Clicked");
     click=click+1;
     [self addHeight:nil];
     
@@ -73,14 +76,13 @@
         if ([moreButton isUserInteractionEnabled]){
             self.moreButton.userInteractionEnabled=NO;
             self.moreButton2.userInteractionEnabled=YES;
-            self.moreButton.backgroundColor = [UIColor redColor];
-            self.moreButton2.backgroundColor = [UIColor greenColor];
-//            [moreButton2 setImage:@"greenPlusButton.png" forState:UIControlStateNormal];
+            [moreButton setImage:btnRed forState:UIControlStateNormal];
+            [moreButton2 setImage:btnGreen forState:UIControlStateNormal];
         }else{
             self.moreButton2.userInteractionEnabled=NO;
             self.moreButton.userInteractionEnabled=YES;
-            self.moreButton2.backgroundColor = [UIColor redColor];
-            self.moreButton.backgroundColor = [UIColor greenColor];
+            [moreButton2 setImage:btnRed forState:UIControlStateNormal];
+            [moreButton setImage:btnGreen forState:UIControlStateNormal];
         }
     }
 }
@@ -107,10 +109,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [timeLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
+    [timerLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    
+    btnGreen = [UIImage imageNamed:@"greenPlusButton.png"];
+    btnRed = [UIImage imageNamed:@"redPlusButton.png"];
+    [moreButton2 setImage:btnRed forState:UIControlStateNormal];
+    [moreButton setImage:btnGreen forState:UIControlStateNormal];
     click = 0;
     i = 0;
     timeForGame = 15;
-    self.countLabel.text = [NSString stringWithFormat:@"%i", timeForGame];
     [NSTimer scheduledTimerWithTimeInterval:0.2f
                                      target:self
                                    selector:@selector(updateCounter:)
@@ -127,10 +135,12 @@
 
 - (void)viewDidUnload
 {
-    [self setCountLabel:nil];
+
     [self setMoreButton:nil];
     [self setPilar:nil];
     [self setMoreButton2:nil];
+    [self setTimerLabel:nil];
+    [self setTimeLabelText:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -143,10 +153,11 @@
 }
 
 - (void)dealloc {
-    [countLabel release];
     [moreButton release];
     [pilar release];
     [moreButton2 release];
+    [timerLabel release];
+    [timeLabelText release];
     [super dealloc];
 }
 @end
