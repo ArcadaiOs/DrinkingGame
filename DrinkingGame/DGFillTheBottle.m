@@ -9,31 +9,94 @@
 #import "DGFillTheBottle.h"
 
 @implementation DGFillTheBottle
-@synthesize moreButton2;
-@synthesize timerLabel;
-@synthesize timeLabelText;
-@synthesize click;
-@synthesize moreButton;
-@synthesize pilar;
-@synthesize objectHeight;
-@synthesize countTimer;
-@synthesize btnGreen, btnRed;
+@synthesize startPlayingBtn, playerName0, playerName2, playerScore, resultTitle, playerScores, nextPlayerBtn,quitPlayingBtn, startView, gameView, endView, yourUpNext, btnGreen, btnRed, countTimer, objectHeight, pilar, click, timeLabelText, timerLabel, moreButton, moreButton2, currentPlayer, playerCount, points, nameCollection, pInfo, pName, results;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
 
-
+#pragma mark - View lifecycle
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view=startView;
+    
+    points = [[NSMutableDictionary alloc] init];
+    currentPlayer=0;
+    playerCount = [controller playerCount];
+    results = [[NSMutableString alloc] initWithString:@""];
+    
+    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    
+    for (UILabel *nameLabel in nameCollection) {
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+    }
+    
+    [timeLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
+    [timerLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [resultTitle setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
+    [yourUpNext setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
+    [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    
+    
+    
+    // Do any additional setup after loading the view from its nib.
+}
+-(void)startTimers
+{    
+	[NSTimer scheduledTimerWithTimeInterval:0.2f
+                                     target:self
+                                   selector:@selector(updateCounter:)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                     target:self
+                                   selector:@selector(timeCounter:)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+-(IBAction)startGame:(id)sender
+{
+    self.view = gameView;
+    btnGreen = [UIImage imageNamed:@"greenPlusButton.png"];
+    btnRed = [UIImage imageNamed:@"redPlusButton.png"];
+    [moreButton2 setImage:btnRed forState:UIControlStateNormal];
+    [moreButton setImage:btnGreen forState:UIControlStateNormal];
+    click = 0;
+    i = 0;
+    timeForGame = 15;
+    
+    
+    [self startTimers];
+}
 - (void)updateCounter:(NSTimer *)theTimer {
 	if(timeForGame == 0 || (int) self.pilar.frame.size.height <= 3 ){
-//        i = 0;
         int score = click*self.pilar.frame.size.height/(timeForGame+1);
         [moreButton setHidden:YES];
         [moreButton2 setHidden:YES];
         [theTimer invalidate];
-//        self.countLabel.text = [NSString stringWithFormat:@"%i", score];
         NSLog(@"Score:%i", score);
         NSLog(@"End height:%i", (int) self.pilar.frame.size.height);
         NSLog(@"End time:%i", timeForGame);
         NSLog(@"Total clicks:%i", click);
+        self.view = endView;
         
     }
     else{
@@ -46,7 +109,7 @@
         
         objectHeight = objectHeight-subtractor;
         self.pilar.frame = CGRectMake(old.origin.x, old.origin.y+subtractor, old.size.width, objectHeight);
-
+        
     }
 }
 - (void)timeCounter:(NSTimer *)theTimer {
@@ -86,53 +149,6 @@
         }
     }
 }
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [timeLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
-    [timerLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    
-    btnGreen = [UIImage imageNamed:@"greenPlusButton.png"];
-    btnRed = [UIImage imageNamed:@"redPlusButton.png"];
-    [moreButton2 setImage:btnRed forState:UIControlStateNormal];
-    [moreButton setImage:btnGreen forState:UIControlStateNormal];
-    click = 0;
-    i = 0;
-    timeForGame = 15;
-    [NSTimer scheduledTimerWithTimeInterval:0.2f
-                                     target:self
-                                   selector:@selector(updateCounter:)
-                                   userInfo:nil
-                                    repeats:YES];
-    
-    [NSTimer scheduledTimerWithTimeInterval:1.0f
-                                     target:self
-                                   selector:@selector(timeCounter:)
-                                   userInfo:nil
-                                    repeats:YES];
-    // Do any additional setup after loading the view from its nib.
-}
-
 - (void)viewDidUnload
 {
 
