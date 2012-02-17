@@ -109,7 +109,7 @@
  
     self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",molesHit];
 
-    self.view = gameView;
+  
     
     [self startTimers];
 }
