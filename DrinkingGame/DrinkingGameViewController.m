@@ -11,6 +11,15 @@
 
 @implementation DrinkingGameViewController
 @synthesize controller;
+@synthesize delegate;
+-(id)init{
+    self = [super init];
+    if (self) {
+        [controller setDelegate:self];
+    }
+    return self;
+    
+}
 
 -(DGController *) controller{
     return [DGController sharedInstance];
@@ -55,9 +64,27 @@
     currentCame = [[DGGameSimonSays alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
 }
--(IBAction) showPlayer:(id)sender{
-
+-(IBAction)showNext:(id)sender{
+    [self showPlayer:[controller.players objectAtIndex:0]];
 }
+-(void) showPlayer:(DGPlayer *)player{
+
+//    [self.view addSubview:nextPlayerView];
+    
+    [viewControl.view addSubview:nextPlayerView];
+    [nextPlayerView setCenter:CGPointMake(160, 210)];
+    [self presentModalViewController:viewControl animated:NO];
+    playerImg.image = player.image;
+}
+-(IBAction)playerReadyToPlay:(id)sender{
+    NSLog(@"player ready viewvontroller");
+    [nextPlayerView removeFromSuperview];
+    [viewControl dismissModalViewControllerAnimated:YES];
+    [currentCame playerReady];
+    //[delegate playerReady];
+}
+
+
 -(void) gameEndedWithScores:(NSString*) scores{
     NSLog(@"Game ended: %@", scores);
 }
@@ -80,9 +107,11 @@
     
     [super viewDidLoad];
     controller = [[DGController alloc] init];
+    [controller setDelegate:self];
     //[ctrl fetchRecords];
-    
-}
+    viewControl = [[UIViewController alloc] init];
+    [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];
+}   
 
 
 - (void)viewDidUnload
