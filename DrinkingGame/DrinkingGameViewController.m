@@ -11,6 +11,15 @@
 
 @implementation DrinkingGameViewController
 @synthesize controller;
+@synthesize delegate;
+-(id)init{
+    self = [super init];
+    if (self) {
+        [controller setDelegate:self];
+    }
+    return self;
+    
+}
 
 -(DGController *) controller{
     return [DGController sharedInstance];
@@ -46,7 +55,7 @@
 //    currentCame = [[DGStartMenu alloc] init];
 //    [self.view addSubview:currentCame.view];
 //    UIView * v = [[DGStartMenu alloc] init].view;
-   // [self.view addSubview:[[DGStartMenu alloc] init].view];
+//    [self.view addSubview:[[DGStartMenu alloc] init].view];
 }
 -(IBAction)launchSimon:(id)sender{
     [currentCame.view removeFromSuperview];
@@ -55,9 +64,28 @@
     currentCame = [[DGGameSimonSays alloc] initWithController:controller];
     [self.view addSubview:currentCame.view];
 }
--(IBAction) showPlayer:(id)sender{
-
+-(IBAction)showNext:(id)sender{
+    [self showPlayer:[controller.players objectAtIndex:0]];
 }
+-(void) showPlayer:(DGPlayer *)player{
+
+//    [self.view addSubview:nextPlayerView];
+    playerImgFrame.center = CGPointMake(150, 195);
+    //playerImgFrame.frame=CGRectMake(10, 50, 250, 300);
+    [viewControl.view addSubview:nextPlayerView];
+    [nextPlayerView setCenter:CGPointMake(160, 210)];
+    [self presentModalViewController:viewControl animated:NO];
+    playerImg.image = player.image;
+}
+-(IBAction)playerReadyToPlay:(id)sender{
+    NSLog(@"player ready viewvontroller");
+    [nextPlayerView removeFromSuperview];
+    [viewControl dismissModalViewControllerAnimated:YES];
+    [currentCame playerReady];
+    //[delegate playerReady];
+}
+
+
 -(void) gameEndedWithScores:(NSString*) scores{
     NSLog(@"Game ended: %@", scores);
 }
@@ -75,14 +103,50 @@
 //test1//
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+-(IBAction)showPunnishmentChooser:(id)sender{
+    [viewControl.view addSubview:boozeChooserView];
+    [self presentModalViewController:viewControl animated:NO];
+    
+}
+-(IBAction)punnishmentChosen:(id) sender{
+    [boozeChooserView removeFromSuperview];
+    [viewControl dismissModalViewControllerAnimated:YES];
+
+    UIButton *s = (UIButton*)sender;
+    
+    NSLog(@"%@",s.titleLabel.text);
+    
+}
+
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
     controller = [[DGController alloc] init];
+    [controller setDelegate:self];
     //[ctrl fetchRecords];
+    viewControl = [[UIViewController alloc] init];
+    [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];
+    [nextPlayerView addSubview:playerImgFrame];
+    UILabel *ch = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 320, 50)];
+    UILabel *bo = [[UILabel alloc] initWithFrame:CGRectMake(0, 85, 320, 50)];
+    [ch setTextAlignment:UITextAlignmentCenter];
+    [bo setTextAlignment:UITextAlignmentCenter];
+    [ch setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:35]];
+    [bo setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:40]];
+    [ch setTransform:CGAffineTransformMakeRotation(-0.1)];
+    [bo setTransform:CGAffineTransformMakeRotation(0.258658)];
+    ch.text = @"Choose Your";
+    bo.text = @"BOOOZZE";
+    UIColor *baaaa = [UIColor colorWithWhite:0 alpha:0.0];
+    ch.backgroundColor = baaaa;
+    bo.backgroundColor = baaaa;
     
-}
+    [boozeChooserView addSubview:ch];
+    [boozeChooserView addSubview:bo];
+    
+    
+}   
 
 
 - (void)viewDidUnload
