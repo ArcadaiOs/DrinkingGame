@@ -15,6 +15,15 @@
 @implementation DrinkingGameViewController
 @synthesize controller;
 @synthesize twitterButton;
+@synthesize delegate;
+-(id)init{
+    self = [super init];
+    if (self) {
+        [controller setDelegate:self];
+    }
+    return self;
+    
+}
 
 -(IBAction)twitterAction:(id)sender{
         NSString *player1 = [[[controller players]objectAtIndex:0] name];

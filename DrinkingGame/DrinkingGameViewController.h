@@ -34,6 +34,13 @@ typedef struct{
     //twitter
        
     IBOutlet UIButton *twitterButton;
+    IBOutlet UIView *boozeChooserView;
+    IBOutlet UIView*boo;
+    IBOutlet UIView *playerImgFrame;    
+    IBOutlet UIImageView *playerImg;
+    IBOutlet UIView *nextPlayerView;
+    id <ViewControllerProto> delegate;
+    UIViewController *viewControl;
 }
 
 @property (readonly, nonatomic) DGController* controller;

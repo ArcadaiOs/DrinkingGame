@@ -112,5 +112,9 @@
 -(IBAction)startNextPlayer:(id)sender;
 -(void)endTimers;
 -(void)updateInterval:(NSTimer*)theTimer;
+-(void)startTimers;
+-(void)setFonts;
+-(void)updateIntervalForMoles:(NSTimer*)theTimer;
+-(void)updateSeconds:(NSTimer*)theTimer;
 -(int) getRandomIntMin:(int) min max:(int) max;
 @end
