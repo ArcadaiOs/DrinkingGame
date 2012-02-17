@@ -26,9 +26,15 @@ typedef struct{
     DGGame *currentCame;
     DGController* controller;
     
-    
+    //twitter
+       
+    IBOutlet UIButton *twitterButton;
 }
 @property (readonly, nonatomic) DGController* controller;
+
+    //twitter
+@property (retain) UIButton *twitterButton;
+-(IBAction)twitterAction:(id)sender;
 
 -(DGController *) controller;
 

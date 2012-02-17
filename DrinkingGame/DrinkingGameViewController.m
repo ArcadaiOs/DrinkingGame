@@ -7,10 +7,30 @@
 //
 
 #import "DrinkingGameViewController.h"
+#import <Twitter/Twitter.h>
 
+#import "DGPlayer.h"
+#import "DGController.h"
 
 @implementation DrinkingGameViewController
 @synthesize controller;
+@synthesize twitterButton;
+
+-(IBAction)twitterAction:(id)sender{
+        NSString *player1 = [[[controller players]objectAtIndex:0] name];
+    TWTweetComposeViewController *twitt = [[TWTweetComposeViewController alloc] init];
+    [twitt setInitialText:[NSString stringWithFormat:@"%@ was playing #DrinkingGame with @pstrande",player1]];
+ //   [[twitt setInitialText:[NSString stringWithFormat:@"%.2f",[[ DGViewPlayer getPromille] floatValue]]];
+
+    //HÄR ÄR VÅR TWITTERJUTTU
+
+
+    
+    
+    NSLog(@"Hej på dig, %@", player1);
+    
+    [self presentModalViewController:twitt animated:YES];
+}
 
 -(DGController *) controller{
     return [DGController sharedInstance];
