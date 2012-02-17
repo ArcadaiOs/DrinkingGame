@@ -77,7 +77,7 @@
 -(IBAction)startGame:(id)sender;
 - (IBAction)nextPlayer:(id)sender;
 -(void)endTimers;
--(void)
+-(void)setFonts;
 -(void)updateInterval:(NSTimer*)theTimer;
 -(int) getRandomIntMin:(int) min max:(int) max;
 @end

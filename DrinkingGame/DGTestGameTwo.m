@@ -47,22 +47,16 @@
 -(void)setFonts{
     [scoreLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [scoreLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
-    
     [playerNameText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [playerName setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [timeLeftText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
     [timeLeft setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:36 ] ];
-    
     [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    
     [resultTitle setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    
     [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
 }
--(void)startTimers{
-
-    
+-(void)startTimers{    
 	timer1=[NSTimer scheduledTimerWithTimeInterval:0.6f
                                             target:self
                                           selector:@selector(updateInterval:)
@@ -100,8 +94,6 @@
         nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
     }
 }
-
-
 -(void)stopTimers:(bool)endGame{
     NSNumber *point = [[NSNumber alloc] initWithInt:molesHit];
     NSNumber *idp = [[NSNumber alloc ] initWithInt:currentPlayer];
@@ -109,15 +101,11 @@
     [mole1 setHidden:true];
     [mole2 setHidden:true];
     [mole3 setHidden:true];
-    
-    
     [mole1 setEnabled:false];
     [mole2 setEnabled:false];
     [mole3 setEnabled:false];
-    
     [scoreLabelText setHidden:true];
     [scoreLabel setHidden:true];
-    
     [timeLeftText setHidden:true];
     [timeLeft setHidden:true];
     
