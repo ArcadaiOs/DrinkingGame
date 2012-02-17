@@ -15,6 +15,15 @@
     IBOutlet UIView *firstView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
+    IBOutlet UIView *fourthView;
+    IBOutlet UIView *fifthView;
+    IBOutlet UIView *sixthView;
+    IBOutlet UIView *seventhView;
+    IBOutlet UIView *eightView;
+    IBOutlet UIView *ninthView;
+    IBOutlet UIView *tenthView;
+    IBOutlet UIView *eleventhView;
+    IBOutlet UIView *twelfthView;
     IBOutlet UIView *endView;
     UIViewController *s;
     int buttonpushed;

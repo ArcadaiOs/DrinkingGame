@@ -13,6 +13,7 @@
 @synthesize s;
 @synthesize buttonpushed;
 @synthesize count;
+
 - (void)updateCounter:(NSTimer *)theTimer {
 	count += 1;
 	NSString *a = [[NSString alloc] initWithFormat:@"%d", count];
@@ -26,7 +27,7 @@
 - (IBAction)Q1:(id) sender
 {
     [s dismissModalViewControllerAnimated:false];
-    int i = arc4random() % 3;
+    int i = arc4random() % 12;
     if(i == 1)
     {
         [s setView:firstView];
@@ -35,9 +36,45 @@
     {
         [s setView:secondView];
     }
-    else
+    else if(i == 3)
     {
         [s setView:thirdView];
+    }
+    else if(i == 4)
+    {
+        [s setView:fourthView];
+    }
+    else if(i == 5)
+    {
+        [s setView:fifthView];
+    }
+    else if(i == 6)
+    {
+        [s setView:sixthView];
+    }
+    else if(i == 7)
+    {
+        [s setView:seventhView];
+    }
+    else if(i == 8)
+    {
+        [s setView:eightView];
+    }
+    else if(i == 9)
+    {
+        [s setView:ninthView];
+    }
+    else if(i == 10)
+    {
+        [s setView:tenthView];
+    }
+    else if(i == 11)
+    {
+        [s setView:eleventhView];
+    }
+    else
+    {
+        [s setView:twelfthView];
     }
     
     //[s setView:firstView];
@@ -53,7 +90,6 @@
 {
     [s dismissModalViewControllerAnimated:false];
     int i = arc4random() % 3;
-    
     if (buttonpushed == 4)
     {
         [s setView:endView];    }
@@ -66,10 +102,47 @@
     {
         [s setView:secondView];
     }
-    else
+    else if(i == 3)
     {
         [s setView:thirdView];
     }
+    else if(i == 4)
+    {
+        [s setView:fourthView];
+    }
+    else if(i == 5)
+    {
+        [s setView:fifthView];
+    }
+    else if(i == 6)
+    {
+        [s setView:sixthView];
+    }
+    else if(i == 7)
+    {
+        [s setView:seventhView];
+    }
+    else if(i == 8)
+    {
+        [s setView:eightView];
+    }
+    else if(i == 9)
+    {
+        [s setView:ninthView];
+    }
+    else if(i == 10)
+    {
+        [s setView:tenthView];
+    }
+    else if(i == 11)
+    {
+        [s setView:eleventhView];
+    }
+    else
+    {
+        [s setView:twelfthView];
+    }
+
     
     //[s setView:firstView];
 
@@ -99,11 +172,46 @@
     {
         [s setView:secondView];
     }
-    else
+    else if(i == 3)
     {
         [s setView:thirdView];
     }
-    
+    else if(i == 4)
+    {
+        [s setView:fourthView];
+    }
+    else if(i == 5)
+    {
+        [s setView:fifthView];
+    }
+    else if(i == 6)
+    {
+        [s setView:sixthView];
+    }
+    else if(i == 7)
+    {
+        [s setView:seventhView];
+    }
+    else if(i == 8)
+    {
+        [s setView:eightView];
+    }
+    else if(i == 9)
+    {
+        [s setView:ninthView];
+    }
+    else if(i == 10)
+    {
+        [s setView:tenthView];
+    }
+    else if(i == 11)
+    {
+        [s setView:eleventhView];
+    }
+    else
+    {
+        [s setView:twelfthView];
+    }
     //[s setView:firstView];
     
     [self presentModalViewController:s animated:NO ];
