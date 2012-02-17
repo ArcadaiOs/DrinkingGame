@@ -9,16 +9,23 @@
 #import "DGTestGameTwo.h"
 
 @implementation DGTestGameTwo
-
-@synthesize mole1,mole2,mole3;
-@synthesize scoreLabel,scoreLabelText,playerNameText,playerName,playerName2, timeLeftText,timeLeft,playerScore,resultTitle,playerScores;
-
+/*BUTTONS*/
+@synthesize mole1,mole2,mole3,nextPlayerBtn,quitPlayingBtn,startPlayingBtn;
+/*LABELS*/
+@synthesize scoreLabel,scoreLabelText,playerNameText,playerName,playerName2, timeLeftText,timeLeft,playerScore,resultTitle,playerScores,yourUpNext,playerName0;
+/*STRINGS*/
 @synthesize zeroes,pName,results;
-@synthesize nameCollection;
+/*ARRAYS*/
+@synthesize buttonWithFonts,nameCollection;
+/*INT*/
 @synthesize molesHit,molesShown,seconds,maxMoles,playerCount,currentPlayer;
+/*TIMERS*/
 @synthesize timer1,timer2;
+/*DICTIONARIES*/
 @synthesize points;
+/*VIEWS*/
 @synthesize startView,gameView,endView;
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -34,7 +41,10 @@
     [super viewDidLoad];
     self.view=startView;
     currentPlayer=0;
-    
+    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    for (UILabel *nameLabel in nameCollection) {
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+    }
     
     results = [[NSMutableString alloc] initWithString:@""];
 
@@ -45,21 +55,27 @@
     
 }
 -(void)setFonts{
+    for (UIButton *buttonF in buttonWithFonts) {
+        buttonF.titleLabel.font= [UIFont fontWithName:@"Rockwell Extra Bold" size:24 ];
+    }
+     quitPlayingBtn.titleLabel.font= [UIFont fontWithName:@"Rockwell Extra Bold" size:12 ];
     [scoreLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [scoreLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [playerNameText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
     [playerName setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
-    [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:16 ] ];
+    [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
     [timeLeftText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:24 ] ];
     [timeLeft setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:36 ] ];
     [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
     [resultTitle setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
+    [yourUpNext setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
 }
 -(void)startTimers{    
 	timer1=[NSTimer scheduledTimerWithTimeInterval:0.6f
                                             target:self
-                                          selector:@selector(updateInterval:)
+                                          selector:@selector(updateIntervalForMoles:)
                                           userInfo:nil
                                            repeats:true];
     timer2=[NSTimer scheduledTimerWithTimeInterval:1.0f
@@ -84,19 +100,18 @@
     maxMoles=(seconds/0.6);
     zeroes = @"";
     self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
-    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    
  
     self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",molesHit];
-    NSLog(@"%i %@",currentPlayer,pName);
+
     self.view = gameView;
     [self startTimers];
-    for (UILabel *nameLabel in nameCollection) {
-        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
-    }
+    
+   
 }
 -(void)stopTimers:(bool)endGame{
     NSNumber *point = [[NSNumber alloc] initWithInt:molesHit];
-    NSNumber *idp = [[NSNumber alloc ] initWithInt:currentPlayer];
+    NSNumber *idp = [[NSNumber alloc] initWithInt:currentPlayer];
     [points setObject:point forKey:idp];
     [mole1 setHidden:true];
     [mole2 setHidden:true];
@@ -131,8 +146,9 @@
         
         self.view=endView;
         if ((currentPlayer+1)>= playerCount) {
-            [nextPlayer setHidden:YES];
+            [nextPlayerBtn setHidden:YES];
             [playerScore setHidden:YES];
+            [playerName2 setHidden:YES];
             NSArray *keys = [points allKeys];
             
             // values in foreach loop
@@ -148,13 +164,17 @@
             [playerScores setHidden:NO];
         }
         else if ((currentPlayer+1)< playerCount){
-            [nextPlayer setHidden:NO];
-            currentPlayer++;
+            [nextPlayerBtn setHidden:NO];
         }
         
     }
 }
 -(void)nextPlayer:(id)sender{
+    currentPlayer++;
+    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    for (UILabel *nameLabel in nameCollection) {
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+    }
     self.view=startView;
 }
 -(void)endTimers{
@@ -180,7 +200,7 @@
         [self stopTimers:(bool)false];
     }
 }
--(void)updateInterval:(NSTimer*)theTimer{
+-(void)updateIntervalForMoles:(NSTimer*)theTimer{
     molesShown = molesShown+1;
     [mole1 setHidden:true];
     [mole2 setHidden:true];
@@ -218,12 +238,45 @@
 }
 - (void)viewDidUnload
 {
-    [nextPlayer release];
-    nextPlayer = nil;
+    
+       
+//    nextPlayerBtn = nil;
+//    startPlayingBtn = nil;
+//    quitPlayingBtn = nil;
+//    mole3 = nil;
+//    mole2 = nil;
+//    mole1 = nil;
+//    
+//    zeroes=nil;
+//    pName=nil;
+//    results=nil;
+//    
+//    [self setButtonWithFonts:nil];
+//    [self setNameCollection:nil];
+//    [self setScoreLabel:nil];
+//    [self setScoreLabelText:nil];
+//    [self setPlayerNameText:nil];
+//    [self setPlayerName:nil];
+//    [self setPlayerName2:nil];
+//    [self setTimeLeftText:nil];
+//    [self setTimeLeft:nil];
+//    [self setPlayerScore:nil];
+//    [self setResultTitle:nil];
+//    [self setPlayerScores:nil];
+//    [self setPlayerName0:nil];
+//    [self setYourUpNext:nil];
+//     
+//    [self setStartPlayingBtn:nil];
+//    [self setNextPlayerBtn:nil];
+//    [self setQuitPlayingBtn:nil];
+//    [self setMole1:nil];
+//    [self setMole2:nil];
+//    [self setMole3:nil];
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    [zeroes release];
+    
     
 }
 
@@ -234,7 +287,43 @@
 }
 
 - (void)dealloc {
-    [nextPlayer release];
+    
+//    [mole3 release];
+//    [mole2 release];
+//    [mole1 release];
+//    [quitPlayingBtn release];
+//    [nextPlayerBtn release];
+//    [startPlayingBtn release];
+//    
+//    [scoreLabel release];
+//    [scoreLabelText release];
+//    [playerNameText release];
+//    [playerName release];
+//    [playerName2 release];
+//    [timeLeftText release];
+//    [timeLeft release];
+//    [playerScore release];
+//    [resultTitle release];
+//    [playerScores release];
+//    [playerName0 release];
+//    [yourUpNext release];
+//    
+//    [zeroes release];
+//    [pName release];
+//    [results release];
+//
+//    [buttonWithFonts release];
+//    [nameCollection release];
+//    
+//    [timer1 release];
+//    [timer2 release];
+//    
+//    [points release];
+//    
+//    [startView release];
+//    [gameView release];
+//    [endView release];
+    
     [super dealloc];
 }
 @end
