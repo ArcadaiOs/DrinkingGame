@@ -31,6 +31,9 @@ typedef struct{
     DGGame *currentCame;
     DGController* controller;
     
+    IBOutlet UIView *boozeChooserView;
+    IBOutlet UILabel *boozeChoose;
+    IBOutlet UIView *playerImgFrame;    
     IBOutlet UIImageView *playerImg;
     IBOutlet UIView *nextPlayerView;
     id <ViewControllerProto> delegate;
@@ -41,6 +44,9 @@ typedef struct{
 @property(nonatomic,assign)id delegate;
 
 -(DGController *) controller;
+
+-(IBAction) showPunnishmentChooser:(id)sender;
+-(IBAction) punnishmentChosen:(id) sender;
 
 -(void) showPlayer:(DGPlayer*)player;
 -(void) playerReadyToPlay;
