@@ -11,7 +11,7 @@
 @implementation DGController
 @synthesize drinks;
 @synthesize players;
-@synthesize gameLevel;
+@synthesize gameLevel,playerCount;
 
 //@synthesize controller;
 - (id)init
@@ -24,14 +24,15 @@
         [drinks addObject:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"]];
         
         players = [[NSMutableArray alloc] init];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] weight:120 isFemale:false]];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] weight:80 isFemale:false]];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] name:@"Soini" weight:120 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] name:@"Niini" weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] name:@"Naama" weight:80 isFemale:false]];
+        playerCount = [players count];
+//        [[players objectAtIndex:0] takeShot:[drinks objectAtIndex:1]];
+//        [[players objectAtIndex:1] takeShot:[drinks objectAtIndex:0]];
+//        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
+//        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
         
-        [[players objectAtIndex:0] takeShot:[drinks objectAtIndex:1]];
-        [[players objectAtIndex:1] takeShot:[drinks objectAtIndex:0]];
-        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
-        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
         
     }
     
@@ -46,8 +47,9 @@
 }
 
 
-- (void)addPlayerWithimage:(UIImage*) imageIn weight:(int)weightIn isFemale:(bool) isFemaleIn{
-    [players addObject:[[DGPlayer alloc] initWithimage:imageIn weight:weightIn isFemale:isFemaleIn]];
+- (void)addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn{
+    [players addObject:[[DGPlayer alloc] initWithimage:imageIn name:nameIn weight:weightIn isFemale:isFemaleIn]];
+    NSLog(@"Adding player %@", nameIn);
 }
 
 static id sharedController = nil;
