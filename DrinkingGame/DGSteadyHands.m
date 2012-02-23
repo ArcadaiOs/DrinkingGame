@@ -61,8 +61,20 @@
     
 }
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-
-    accelerattt=accelerattt+acceleration.x+acceleration.y+(acceleration.z+1);
+    float accX = acceleration.x;
+    float accY = acceleration.y;
+    float accZ = acceleration.z;
+    
+    if(accX<0){
+        accX = accX*-1;
+    }
+    if(accY<0){
+        accY = accY*-1;
+    }
+    if(accZ<0){
+        accZ = accZ*-1;
+    }
+    accelerattt=accelerattt+accX+accY+(accZ-1);
     self.scoreLabel.text = [NSString stringWithFormat:@"%@%f", @"X: ", accelerattt];
     accelvalue+=acceleration.x;
     accelvalue+=acceleration.y;
@@ -259,6 +271,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 -(void)dealloc{
-   [accelerometer release];
+
+    [accelerometer release];
 }
 @end
