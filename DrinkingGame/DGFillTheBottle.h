@@ -48,7 +48,7 @@
     
     
 }
-
+/*Game objects*/
 @property (nonatomic, retain) IBOutlet UILabel *timerLabel;
 @property (nonatomic, retain) IBOutlet UILabel *timeLabelText;
 @property int click;
@@ -66,6 +66,7 @@
 @property (nonatomic, retain) IBOutlet NSMutableArray *pInfo;
 @property (nonatomic, retain) IBOutlet NSString *pName;
 @property (nonatomic, retain) IBOutlet NSMutableString *results;
+
 /*VIEWS*/
 @property(nonatomic, retain) IBOutlet UIView *startView;
 @property(nonatomic, retain) IBOutlet UIView *gameView;
@@ -76,6 +77,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *playerName0;
 /*BUTTONS-STARTVIEW*/
 @property (nonatomic, retain) IBOutlet UIButton *startPlayingBtn;
+
 /*LABELS-ENDVIEW*/
 @property (nonatomic,retain) IBOutlet UILabel *playerName2;
 @property (nonatomic,retain) IBOutlet UILabel *playerScore;
