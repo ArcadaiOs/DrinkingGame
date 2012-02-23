@@ -7,7 +7,7 @@
 //
 
 #import "DrinkingGameViewController.h"
-#import <Twitter/Twitter.h>
+//#import <Twitter/Twitter.h>
 
 #import "DGPlayer.h"
 #import "DGController.h"
@@ -24,7 +24,7 @@
     return self;
     
 }
-
+/*
 -(IBAction)twitterAction:(id)sender{
         NSString *player1 = [[[controller players]objectAtIndex:0] name];
     TWTweetComposeViewController *twitt = [[TWTweetComposeViewController alloc] init];
@@ -39,7 +39,7 @@
     NSLog(@"Hej på dig, %@", player1);
     
     [self presentModalViewController:twitt animated:YES];
-}
+}*/
 
 -(DGController *) controller{
     return [DGController sharedInstance];
