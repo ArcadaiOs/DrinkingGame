@@ -12,17 +12,15 @@
 @synthesize myCounterLabel;
 @synthesize s;
 @synthesize buttonpushed;
-@synthesize count;
+@synthesize penalty;
 
 - (void)updateCounter:(NSTimer *)theTimer {
 	count += 1;
-	NSString *a = [[NSString alloc] initWithFormat:@"%d", count];
-	self.myCounterLabel.text = a;
-	[a release];
     if (buttonpushed == 4){
         [timer invalidate];
         timer = nil;
     }}
+
 
 - (IBAction)Q1:(id) sender
 {
@@ -89,10 +87,14 @@
 - (IBAction)Q2:(id) sender
 {
     [s dismissModalViewControllerAnimated:false];
-    int i = arc4random() % 3;
+    int i = arc4random() % 12;
     if (buttonpushed == 4)
     {
-        [s setView:endView];    }
+        [s setView:endView];
+        NSString *a = [[NSString alloc] initWithFormat:@"%i", (penalty+count)];
+        self.myCounterLabel.text = a;
+        [a release];
+    }
     
     else if(i == 1)
     {
@@ -152,17 +154,19 @@
    
 }
 
-
-
-
 - (IBAction)Lose:(id) sender
 {
     [s dismissModalViewControllerAnimated:false];
-    int i = arc4random() % 3;
-    
+    int i = arc4random() % 12;
+    penalty = penalty +20;
     if (buttonpushed == 4)
     {
-        [s setView:endView];    }
+        [s setView:endView];
+        NSString *a = [[NSString alloc] initWithFormat:@"%i", (penalty+count)];
+        self.myCounterLabel.text = a;
+        [a release];
+        NSLog(@"%i",(penalty+count));
+    }
     
     else if(i == 1)
     {
@@ -217,9 +221,14 @@
     [self presentModalViewController:s animated:NO ];
     
     buttonpushed = buttonpushed +1;
-    count = count +5;
     
 }
+
+-(void)nextPlayer:(id)sender
+{
+    self.view=startView;
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -234,6 +243,7 @@
 - (void)viewDidLoad
 {
     count = 0;
+    penalty = 0;
     [super viewDidLoad];
     s = [[UIViewController alloc] init];
 }

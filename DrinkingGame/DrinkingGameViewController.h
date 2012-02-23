@@ -12,6 +12,7 @@
     NSTimer *timer;
     IBOutlet UILabel *myCounterLabel;
     NSUInteger time;
+    IBOutlet UIView *startView;
     IBOutlet UIView *firstView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
@@ -29,11 +30,12 @@
     int buttonpushed;
     int count;
 }
-@property int count;
+@property int penalty;
 @property int buttonpushed;
 @property(readwrite,retain) UIViewController* s;
 @property (nonatomic, retain) UILabel *myCounterLabel;
 -(IBAction)Q1:(id)sender;
 -(IBAction)Q2:(id) sender;
 -(IBAction)Lose:(id)sender;
+-(IBAction)nextPlayer:(id)sender;
 @end
