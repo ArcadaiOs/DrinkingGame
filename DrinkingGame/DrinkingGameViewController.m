@@ -14,7 +14,7 @@
 
 @implementation DrinkingGameViewController
 @synthesize controller;
-@synthesize twitterButton;
+//@synthesize twitterButton;
 @synthesize delegate;
 -(id)init{
     self = [super init];
@@ -40,9 +40,13 @@
     
     [self presentModalViewController:twitt animated:YES];*/
 }
-
+*/
 -(DGController *) controller{
     return [DGController sharedInstance];
+}
+
+-(void) playerReadyToPlay{
+    
 }
 
 -(IBAction)launchTestGame:(id)sender{

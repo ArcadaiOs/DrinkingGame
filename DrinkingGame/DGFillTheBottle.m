@@ -9,7 +9,7 @@
 #import "DGFillTheBottle.h"
 
 @implementation DGFillTheBottle
-@synthesize startPlayingBtn, playerName0, playerName2, playerScore, resultTitle, playerScores, nextPlayerBtn,quitPlayingBtn, startView, gameView, endView, yourUpNext, btnGreen, btnRed, countTimer, objectHeight, pilar, click, timeLabelText, timerLabel, moreButton, moreButton2, currentPlayer, playerCount, points, nameCollection, pInfo, pName, results;
+@synthesize startPlayingBtn, playerName0, playerName2, playerScore, resultTitle, playerScores, nextPlayerBtn, quitPlayingBtn, startView, gameView, endView, yourUpNext, btnGreen, btnRed, countTimer, objectHeight, pilar, click, timeLabelText, timerLabel, moreButton, moreButton2, currentPlayer, playerCount, points, nameCollection, pInfo, pName, results;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,8 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view=startView;
-    
+    self.view=self.startView;
     points = [[NSMutableDictionary alloc] init];
     currentPlayer=0;
     playerCount = [controller playerCount];
@@ -54,9 +53,16 @@
     [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
     [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
     
-    
-    
-    // Do any additional setup after loading the view from its nib.
+}
+-(void)startNextPlayer:(id)sender
+{
+    currentPlayer++;
+    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    for (UILabel *nameLabel in nameCollection) 
+    {
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+    }
+    self.view=startView;
 }
 -(void)startTimers
 {    
@@ -72,6 +78,7 @@
                                    userInfo:nil
                                     repeats:YES];
 }
+
 -(IBAction)startGame:(id)sender
 {
     self.view = gameView;
@@ -82,7 +89,6 @@
     click = 0;
     i = 0;
     timeForGame = 15;
-    
     
     [self startTimers];
 }
@@ -149,9 +155,9 @@
         }
     }
 }
+
 - (void)viewDidUnload
 {
-
     [self setMoreButton:nil];
     [self setPilar:nil];
     [self setMoreButton2:nil];
