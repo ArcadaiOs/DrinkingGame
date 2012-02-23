@@ -42,21 +42,14 @@
     subHeader.text = @"Who has to drink?";
     subHeader.textAlignment = UITextAlignmentCenter;
     
-    UILabel* nameHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 320, 70)];
-    [nameHeader setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30]];
-    nameHeader.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
-    nameHeader.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-    nameHeader.text = @"Niini";
-    nameHeader.textAlignment = UITextAlignmentCenter;
-    
     
     int sel = arc4random() % [[controller players] count];
     DGRandomShotWheel* d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(-320, 140, 640, 640) andController:controller andSelection:sel];
+    //DGRandomShotWheel* d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(0, 100, 320, 320) andController:controller andSelection:sel];
     [self.view insertSubview:d atIndex:2];
     [self.view insertSubview:arrow atIndex:3];
     [self.view insertSubview:header atIndex:4];
     [self.view insertSubview:subHeader atIndex:4];
-    [self.view insertSubview:nameHeader atIndex:4];
     [d spin];
 }
 - (void)viewDidUnload
