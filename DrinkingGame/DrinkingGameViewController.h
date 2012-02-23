@@ -31,8 +31,11 @@ typedef struct{
     DGGame *currentCame;
     DGController* controller;
     
+    //twitter
+       
+    IBOutlet UIButton *twitterButton;
     IBOutlet UIView *boozeChooserView;
-    IBOutlet UILabel *boozeChoose;
+    IBOutlet UIView*boo;
     IBOutlet UIView *playerImgFrame;    
     IBOutlet UIImageView *playerImg;
     IBOutlet UIView *nextPlayerView;
@@ -42,6 +45,10 @@ typedef struct{
 
 @property (readonly, nonatomic) DGController* controller;
 @property(nonatomic,assign)id delegate;
+
+    //twitter
+@property (retain) UIButton *twitterButton;
+-(IBAction)twitterAction:(id)sender;
 
 -(DGController *) controller;
 

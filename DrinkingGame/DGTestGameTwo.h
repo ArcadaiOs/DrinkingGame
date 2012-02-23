@@ -10,45 +10,52 @@
 #import "DGController.h"
 
 @interface DGTestGameTwo : DGGame{
-    NSMutableArray *pPoints;
+   
     NSTimer *timer1;
     NSTimer *timer2;
     
     IBOutlet UIButton *mole1;
     IBOutlet UIButton *mole2;
     IBOutlet UIButton *mole3;
+    UIButton *startPlayingBtn;
+    UIButton *nextPlayerBtn;
+    UIButton *quitPlayingBtn;
+    
     IBOutlet UILabel *scoreLabelText;
     IBOutlet UILabel *scoreLabel;
     IBOutlet UILabel *playerNameText;
     IBOutlet UILabel *playerName;
-     IBOutlet UILabel *playerName2;
+    IBOutlet UILabel *playerName2;
     IBOutlet UILabel *timeLeftText;
     IBOutlet UILabel *timeLeft;
     IBOutlet UILabel *playerScore;
     IBOutlet UILabel *resultTitle;
     IBOutlet UILabel *playerScores;
+    UILabel *playerName0;
+    UILabel *yourUpNext;
+    
     IBOutlet UIView *gameView;
     IBOutlet UIView *startView;
     IBOutlet UIView *endView;
+    
     NSString *zeroes;
     NSString *pName;
     NSMutableString *results;
+    
     int molesShown;
     int molesHit;
     int seconds;
     int maxMoles;
     int playerCount;
     int currentPlayer;
+    
     NSMutableDictionary *points;
     NSArray *nameCollection;
-    NSMutableArray *pInfo;
-    
-    UILabel *playerName0;
-    UILabel *yourUpNext;
     NSArray *buttonWithFonts;
-    UIButton *startPlayingBtn;
-    UIButton *nextPlayerBtn;
-    UIButton *quitPlayingBtn;
+    
+
+   
+
 }
 /*ARRAYS&/DICTIONARIES*/
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *buttonWithFonts;
@@ -104,6 +111,8 @@
 -(IBAction)startGame:(id)sender;
 -(IBAction)startNextPlayer:(id)sender;
 -(void)endTimers;
+-(void)updateInterval:(NSTimer*)theTimer;
+-(void)startTimers;
 -(void)setFonts;
 -(void)updateIntervalForMoles:(NSTimer*)theTimer;
 -(void)updateSeconds:(NSTimer*)theTimer;
