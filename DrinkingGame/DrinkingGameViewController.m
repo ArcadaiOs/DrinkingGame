@@ -25,8 +25,8 @@
     
 }
 
--(IBAction)twitterAction:(id)sender{
-    /*    NSString *player1 = [[[controller players]objectAtIndex:0] name];
+/*-(IBAction)twitterAction:(id)sender{
+        NSString *player1 = [[[controller players]objectAtIndex:0] name];
     TWTweetComposeViewController *twitt = [[TWTweetComposeViewController alloc] init];
     [twitt setInitialText:[NSString stringWithFormat:@"%@ was playing #DrinkingGame with @pstrande",player1]];
  //   [[twitt setInitialText:[NSString stringWithFormat:@"%.2f",[[ DGViewPlayer getPromille] floatValue]]];
@@ -38,7 +38,7 @@
     
     NSLog(@"Hej på dig, %@", player1);
     
-    [self presentModalViewController:twitt animated:YES];*/
+    [self presentModalViewController:twitt animated:YES];
 }
 */
 -(DGController *) controller{
