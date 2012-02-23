@@ -16,6 +16,7 @@
 #import "DGTestGameTwo.h"
 #import "DGFillTheBottle.h"
 #import "DGStartMenu.h"
+#import "SimpleAudioEngine.h"
 
 typedef struct{
     NSString *playerName;
@@ -65,4 +66,6 @@ typedef struct{
 -(IBAction) launchWhackAMole:(id)sender;
 -(IBAction) launchFillTheBottle:(id)sender;
 -(IBAction) launchMenu:(id)sender;
+-(IBAction) stopMusic:(id)sender;
+-(void)handleTap:(UITapGestureRecognizer *)sender;
 @end

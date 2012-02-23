@@ -111,7 +111,7 @@
 -(IBAction)startGame:(id)sender;
 -(IBAction)startNextPlayer:(id)sender;
 -(void)endTimers;
--(void)updateInterval:(NSTimer*)theTimer;
+//-(void)updateInterval:(NSTimer*)theTimer;
 -(void)startTimers;
 -(void)setFonts;
 -(void)updateIntervalForMoles:(NSTimer*)theTimer;

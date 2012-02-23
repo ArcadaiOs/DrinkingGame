@@ -79,7 +79,7 @@
 //    currentCame = [[DGStartMenu alloc] init];
 //    [self.view addSubview:currentCame.view];
 //    UIView * v = [[DGStartMenu alloc] init].view;
-//    [self.view addSubview:[[DGStartMenu alloc] init].view];
+    [self.view addSubview:[[DGStartMenu alloc] init].view];
 }
 -(IBAction)launchSimon:(id)sender{
     [currentCame.view removeFromSuperview];
@@ -129,6 +129,11 @@
     
 }
 
+-(IBAction) stopMusic:(id)sender{
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+    NSLog(@"%@",sender);
+}
+
 
 -(void) gameEndedWithScores:(NSString*) scores{
     NSLog(@"Game ended: %@", scores);
@@ -175,7 +180,7 @@
     [boozeChooserView addSubview:ch];
     [boozeChooserView addSubview:bo];
 
-    
+    [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"song.mp3"];
     
 }   
 
