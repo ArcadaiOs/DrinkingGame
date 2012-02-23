@@ -639,6 +639,10 @@
 				3F8EB53B14EE965800412982 /* whiteArrowLeft.png in Resources */,
 				3F8EB53C14EE965800412982 /* whiteArrowRight.png in Resources */,
 				3F8EB53D14EE965800412982 /* whiteArrowUp.png in Resources */,
+				3F6205CC14F66CA4006034DB /* icon114.png in Resources */,
+				3F6205CF14F66CAF006034DB /* icon57.png in Resources */,
+				3F6205D114F66F02006034DB /* Default.png in Resources */,
+				3F6205D314F66F04006034DB /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
