@@ -7,14 +7,14 @@
 //
 
 #import "DrinkingGameViewController.h"
-#import <Twitter/Twitter.h>
+//#import <Twitter/Twitter.h>
 
 #import "DGPlayer.h"
 #import "DGController.h"
 
 @implementation DrinkingGameViewController
 @synthesize controller;
-@synthesize twitterButton;
+//@synthesize twitterButton;
 @synthesize delegate;
 -(id)init{
     self = [super init];
@@ -25,7 +25,7 @@
     
 }
 
--(IBAction)twitterAction:(id)sender{
+/*-(IBAction)twitterAction:(id)sender{
         NSString *player1 = [[[controller players]objectAtIndex:0] name];
     TWTweetComposeViewController *twitt = [[TWTweetComposeViewController alloc] init];
     [twitt setInitialText:[NSString stringWithFormat:@"%@ was playing #DrinkingGame with @pstrande",player1]];
@@ -40,9 +40,13 @@
     
     [self presentModalViewController:twitt animated:YES];
 }
-
+*/
 -(DGController *) controller{
     return [DGController sharedInstance];
+}
+
+-(void) playerReadyToPlay{
+    
 }
 
 -(IBAction)launchTestGame:(id)sender{

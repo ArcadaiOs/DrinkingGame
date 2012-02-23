@@ -24,6 +24,7 @@
     UILabel *playerScores;
     
     UIButton *startPlayingBtn;
+    UIButton *nextPlayerBtn;
     UIButton *moreButton;
     UIButton *moreButton2;
     
@@ -62,7 +63,7 @@
 @property int currentPlayer;
 @property int playerCount;
 @property (nonatomic, retain) IBOutlet NSMutableDictionary *points;
-@property (nonatomic, retain) IBOutlet NSArray *nameCollection;
+@property (nonatomic, retain) IBOutletCollection(UILabel) NSArray *nameCollection;
 @property (nonatomic, retain) IBOutlet NSMutableArray *pInfo;
 @property (nonatomic, retain) IBOutlet NSString *pName;
 @property (nonatomic, retain) IBOutlet NSMutableString *results;
@@ -86,4 +87,6 @@
 /*BUTTONS-ENDVIEW*/
 @property (nonatomic, retain) IBOutlet UIButton *nextPlayerBtn;
 @property (nonatomic, retain) IBOutlet UIButton *quitPlayingBtn;
+
+-(IBAction)startNextPlayer:(id)sender;
 @end

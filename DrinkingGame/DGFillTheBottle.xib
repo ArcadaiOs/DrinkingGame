@@ -117,6 +117,7 @@
 						<string key="NSFrame">{{27, 183}, {266, 79}}</string>
 						<reference key="NSSuperview" ref="391219288"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:222</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -241,6 +242,7 @@
 						<string key="NSFrame">{{209, 356}, {91, 84}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:222</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -414,7 +416,7 @@
 						<string key="NSFrame">{{68, 58}, {185, 78}}</string>
 						<reference key="NSSuperview" ref="776864590"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="915114547"/>
+						<reference key="NSNextKeyView" ref="466816859"/>
 						<string key="NSReuseIdentifierKey">_NS:311</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -437,6 +439,7 @@
 						<string key="NSFrame">{{63, 262}, {194, 68}}</string>
 						<reference key="NSSuperview" ref="776864590"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="915114547"/>
 						<string key="NSReuseIdentifierKey">_NS:222</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -454,7 +457,7 @@
 						<string key="NSFrame">{{8, 404}, {100, 49}}</string>
 						<reference key="NSSuperview" ref="776864590"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="466816859"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:222</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -483,14 +486,6 @@
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">view</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="191373211"/>
-					</object>
-					<int key="connectionID">3</int>
-				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">moreButton</string>
@@ -559,13 +554,137 @@
 					<int key="connectionID">24</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">startView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="391219288"/>
+					</object>
+					<int key="connectionID">53</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">startGame:</string>
 						<reference key="source" ref="983657013"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">52</int>
+					<int key="connectionID">54</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">gameView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="191373211"/>
+					</object>
+					<int key="connectionID">56</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">endView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="776864590"/>
+					</object>
+					<int key="connectionID">57</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="191373211"/>
+					</object>
+					<int key="connectionID">58</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">endGame:</string>
+						<reference key="source" ref="915114547"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">59</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">playerName0</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="679980981"/>
+					</object>
+					<int key="connectionID">60</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">nameCollection</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="679980981"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+					</object>
+					<int key="connectionID">61</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">startPlayingBtn</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="983657013"/>
+					</object>
+					<int key="connectionID">62</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">playerName2</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="939215367"/>
+					</object>
+					<int key="connectionID">63</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">nameCollection</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="939215367"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+					</object>
+					<int key="connectionID">64</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">playerScores</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="983333965"/>
+					</object>
+					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">playerScore</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="401123353"/>
+					</object>
+					<int key="connectionID">67</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">resultTitle</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="174611236"/>
+					</object>
+					<int key="connectionID">68</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">nextPlayerBtn</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="466816859"/>
+					</object>
+					<int key="connectionID">69</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">startNextPlayer:</string>
+						<reference key="source" ref="466816859"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">71</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -654,8 +773,8 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="896159230"/>
 							<reference ref="983657013"/>
-							<reference ref="679980981"/>
 							<reference ref="599025924"/>
+							<reference ref="679980981"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">startView</string>
@@ -687,11 +806,11 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="939215367"/>
 							<reference ref="915114547"/>
-							<reference ref="466816859"/>
 							<reference ref="174611236"/>
 							<reference ref="401123353"/>
 							<reference ref="983333965"/>
 							<reference ref="417726483"/>
+							<reference ref="466816859"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">endView</string>
@@ -810,7 +929,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">52</int>
+			<int key="maxID">71</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -818,6 +937,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DGFillTheBottle</string>
 					<string key="superclassName">DGGame</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">startNextPlayer:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">startNextPlayer:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">startNextPlayer:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
@@ -826,7 +956,6 @@
 							<string>gameView</string>
 							<string>moreButton</string>
 							<string>moreButton2</string>
-							<string>nameCollection</string>
 							<string>nextPlayerBtn</string>
 							<string>pInfo</string>
 							<string>pName</string>
@@ -851,7 +980,6 @@
 							<string>UIView</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
-							<string>NSArray</string>
 							<string>UIButton</string>
 							<string>NSMutableArray</string>
 							<string>NSString</string>
@@ -879,7 +1007,6 @@
 							<string>gameView</string>
 							<string>moreButton</string>
 							<string>moreButton2</string>
-							<string>nameCollection</string>
 							<string>nextPlayerBtn</string>
 							<string>pInfo</string>
 							<string>pName</string>
@@ -915,10 +1042,6 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">moreButton2</string>
 								<string key="candidateClassName">UIButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">nameCollection</string>
-								<string key="candidateClassName">NSArray</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">nextPlayerBtn</string>
@@ -988,6 +1111,14 @@
 								<string key="name">yourUpNext</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toManyOutletInfosByName">
+						<string key="NS.key.0">nameCollection</string>
+						<object class="IBToManyOutletInfo" key="NS.object.0">
+							<string key="name">nameCollection</string>
+							<string key="candidateClassName">UILabel</string>
+							<string key="collectionClassName">NSArray</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
