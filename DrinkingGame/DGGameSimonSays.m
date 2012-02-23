@@ -41,6 +41,8 @@
  Function that starts the gameLoop
 */
 -(IBAction) startGame:(id) sender{
+    [delegate GameEndedWithLooser:[[controller players] objectAtIndex:0]];
+
     
     [playerImage setImage:[[[controller players] objectAtIndex:currentPlayer] image]];
     
@@ -206,7 +208,7 @@
 }
 
 -(void) playerReady{
-    NSLog(@"NEXT PLAYER: READU");
+    NSLog(@"NEXT PLAYER: READU SIMON");
     [self startGame:nil];
 }
 

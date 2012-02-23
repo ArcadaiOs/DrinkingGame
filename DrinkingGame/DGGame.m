@@ -31,7 +31,7 @@
 // playerReady will execute when player presses Lets Play
 -(void) showPlayer:(DGPlayer *)player{
 
-    
+//    [delegate GameEndedWithLooser:player];
     playerView.view.alpha = 0.0;
     [self presentModalViewController:playerView animated:NO];
     [UIView animateWithDuration:1.0
@@ -48,6 +48,7 @@
 }
 
 -(void) gameEndWithLooser:(DGPlayer*) lostPlayer{
+    NSLog(@"GameEdned DGGame;");
     [delegate GameEndedWithLooser:lostPlayer];
     [self endGame:nil];
 }
