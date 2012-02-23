@@ -34,7 +34,7 @@
     spinAnimation.removedOnCompletion = NO;
     spinAnimation.fillMode = kCAFillModeForwards;
     [spinAnimation setDuration:spin*0.4f];
-    //[self.layer addAnimation:spinAnimation forKey:@"spinAnimation"];
+    [self.layer addAnimation:spinAnimation forKey:@"spinAnimation"];
 }
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag{
     NSLog(@"%@'s gotta drink (%i)",[[[controller players] objectAtIndex:sel] name],sel);
@@ -45,59 +45,54 @@
     float margin = 10.0f;
     CGRect rect2 = CGRectMake(rect.origin.x+margin/2,rect.origin.y+margin/2,rect.size.width-margin,rect.size.height-margin);
     int i;
-    float startAngle,endAngle = 0,middleAngle,lineWidth = 2.0f, size = (rect2.size.width/2);
+    float startAngle,endAngle = 0,middleAngle, size = (rect2.size.width/2);
     DGPlayer* player;
     CGPoint startLinePos,endLinePos;
-    CGPoint center = CGPointMake(rect.size.width/2, rect2.size.height/2);
-    //CGPoint center = CGPointMake(rect2.size.width/2+rect2.origin.x, rect2.size.height/2+rect2.origin.y);
+    CGPoint center = CGPointMake(rect.size.width/2, rect.size.height/2);
+    
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetLineWidth(context, lineWidth);
-    
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-    
-    CGFloat components[] = {0.0, 0.0, 1.0, 1.0};
-    
+    CGFloat components[] = {0.0, 0.0, 0.0, 1.0};
     CGColorRef color = CGColorCreate(colorspace, components);
-    
     CGContextSetStrokeColorWithColor(context, color);
-    //slicepath
-    CGMutablePathRef path = CGPathCreateMutable();
+    
     startAngle = -M_PI_2-step/2;
-    endAngle = -M_PI_2+step/2;
-    startLinePos = [self getCirclePoint:size pos:center angle:startAngle];
-    endLinePos = [self getCirclePoint:size pos:center angle:endAngle];
+    endAngle = startAngle+step;
     
-    CGPathAddArc(path, NULL, center.x, center.y, size, startAngle, endAngle, NO);
-    CGPathAddLineToPoint(path, NULL, center.x, center.y);
+    //create path
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddArc(path, NULL, center.x-margin/2, center.y, size, startAngle, endAngle, NO);
+    CGPathAddLineToPoint(path, NULL, center.x-margin/2, center.y);
     CGPathCloseSubpath(path);
-    //CGPathAddLineToPoint(path, NULL, startLinePos.x, startLinePos.y);
     
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.fillColor = [[UIColor whiteColor] CGColor];
-    maskLayer.backgroundColor = [[UIColor clearColor] CGColor];
-    maskLayer.path = path;
     endAngle = startAngle;
-    
     for(i=0;i<count;i++){
         player = [[controller players] objectAtIndex:i];
         startAngle = endAngle;
         endAngle = startAngle + step;
         middleAngle = (startAngle+endAngle)/2;
         CGPoint imgPos = [self getCirclePoint:size/2 pos:CGPointMake(center.x, center.y) angle:middleAngle];
-        
-        UIImageView *imageView = [ [ UIImageView alloc ] initWithFrame:CGRectMake(0, 0, size*2, size) ];
-        imageView.image = [player image];
+        startLinePos = [self getCirclePoint:size pos:center angle:startAngle];
+        endLinePos = [self getCirclePoint:size pos:center angle:endAngle];
+    
+        CGContextMoveToPoint(context, center.x, center.y);
+        CGContextAddLineToPoint(context, imgPos.x, imgPos.y);
+        //create mask
         CAShapeLayer *maskLayer = [CAShapeLayer layer];
         maskLayer.fillColor = [[UIColor whiteColor] CGColor];
         maskLayer.backgroundColor = [[UIColor clearColor] CGColor];
         maskLayer.path = path;
+        
+        //create imageview
+        UIImageView *imageView = [ [ UIImageView alloc ] initWithFrame:CGRectMake(0, center.y-size-margin/2, size*2, size+margin/2) ];
+        imageView.image = [player image];
         [imageView.layer setMask:maskLayer];
-        [imageView setCenter:CGPointMake(imgPos.x,imgPos.y)];
-        //[imageView setCenter:CGPointMake(imageView.frame.origin.x+imageView.frame.size.width/2, imageView.frame.origin.y+imageView.frame.size.height)];
+        [imageView.layer setPosition:CGPointMake(imgPos.x, imgPos.y)];
         [self addSubview:imageView];
         CGAffineTransform rotate = CGAffineTransformMakeRotation( middleAngle+M_PI_2);
         [imageView setTransform:rotate];
+        
+        
     }
     
     CGContextSetLineWidth(context, margin);

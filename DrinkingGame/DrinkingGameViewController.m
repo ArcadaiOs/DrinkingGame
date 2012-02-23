@@ -7,7 +7,7 @@
 //
 
 #import "DrinkingGameViewController.h"
-#import <Twitter/Twitter.h>
+//#import <Twitter/Twitter.h>
 
 #import "DGPlayer.h"
 #import "DGController.h"
@@ -26,7 +26,7 @@
 }
 
 -(IBAction)twitterAction:(id)sender{
-        NSString *player1 = [[[controller players]objectAtIndex:0] name];
+    /*    NSString *player1 = [[[controller players]objectAtIndex:0] name];
     TWTweetComposeViewController *twitt = [[TWTweetComposeViewController alloc] init];
     [twitt setInitialText:[NSString stringWithFormat:@"%@ was playing #DrinkingGame with @pstrande",player1]];
  //   [[twitt setInitialText:[NSString stringWithFormat:@"%.2f",[[ DGViewPlayer getPromille] floatValue]]];
@@ -38,7 +38,7 @@
     
     NSLog(@"Hej på dig, %@", player1);
     
-    [self presentModalViewController:twitt animated:YES];
+    [self presentModalViewController:twitt animated:YES];*/
 }
 
 -(DGController *) controller{
@@ -75,7 +75,7 @@
 //    currentCame = [[DGStartMenu alloc] init];
 //    [self.view addSubview:currentCame.view];
 //    UIView * v = [[DGStartMenu alloc] init].view;
-    [self.view addSubview:[[[DGStartMenu alloc] init] view]];
+//    [self.view addSubview:[[DGStartMenu alloc] init].view];
 }
 -(IBAction)launchSimon:(id)sender{
     [currentCame.view removeFromSuperview];
