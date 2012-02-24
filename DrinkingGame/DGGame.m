@@ -30,16 +30,17 @@
 // this will show a player with his promille and imgae
 // playerReady will execute when player presses Lets Play
 -(void) showPlayer:(DGPlayer *)player{
-
-//    [delegate GameEndedWithLooser:player];
-    playerView.view.alpha = 0.0;
-    [self presentModalViewController:playerView animated:NO];
-    [UIView animateWithDuration:1.0
-                    animations:^{playerView.view.alpha = 1.0;}];
-
-
     
-    [playerView setPlayer:player];
+    //    [delegate GameEndedWithLooser:player];
+    //playerView.view.alpha = 0.0;
+    //[self presentModalViewController:playerView animated:NO];
+    //[UIView animateWithDuration:1.0
+    //                animations:^{playerView.view.alpha = 1.0;}];
+    
+    
+    [controller showPlayer:player];
+    //[playerView setPlayer:player];
+    
 }
 
 -(void) playerReady{
@@ -54,9 +55,10 @@
 }
 
 -(IBAction)endGame:(id)sender {
-    
+    [delegate GameEndedWithLooser:nil];
+    //[self endGame:nil];
     // killmiself
-    [self.view removeFromSuperview];
+    //[self.view removeFromSuperview];
     //[self release];
 }
 
@@ -74,7 +76,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    
 }
 
 - (void)viewDidUnload

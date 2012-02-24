@@ -40,6 +40,7 @@ typedef struct{
     IBOutlet UIView *boozeChooserView;
     IBOutlet UIView*boo;
     
+    IBOutlet UILabel *lostLabel;
     IBOutlet UILabel *playerNameLabel;    
     IBOutlet UIView *playerImgFrame;    
     IBOutlet UIImageView *playerImg;
