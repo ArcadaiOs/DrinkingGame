@@ -47,11 +47,9 @@
     NSMutableArray *pInfo;
     NSString *pName;
     NSMutableString *results;
-    SystemSoundID *mySound;
    
 }
 /*Game objects*/
-@property (nonatomic) SystemSoundID *mySound;
 @property (nonatomic, retain) IBOutlet UILabel *timerLabel;
 @property (nonatomic, retain) IBOutlet UILabel *timeLabelText;
 @property int click;
