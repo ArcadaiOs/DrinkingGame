@@ -100,13 +100,13 @@
 
 - (void)viewDidLoad
 {
-    //views = [[NSMutableArray alloc] initWithObjects:firstView,secondView,thirdView,fourthView,fifthView,sixthView,seventhView,eightView,ninthView,tenthView,eleventhView,twelfthView,thirteenthView,fourteenthView,fifteenthView,sixteenthView,seventeenthView,eighteenthView,nineteenthView,twentiethView,twentyfirstView,twentysecondView,twentythirdView,twentyfourthView,twentyfifthView,twentysixthView,twentyseventhView,twentyeightView,twentyninthView,thirtiethView,thirtyfirstView, nil];
-    views = [[NSMutableArray alloc] initWithObjects:firstView,secondView,thirdView,fourthView,fifthView,sixthView,seventhView,eightView,ninthView,tenthView,eleventhView,twelfthView,thirteenthView,fourteenthView,fifteenthView,sixteenthView,seventeenthView,eighteenthView,nineteenthView,nil];
-    twentyfirstView = thirdView;
-    [views addObject:twentyfirstView];
-    [views addObject:twentysecondView];
-    [views addObject:twentythirdView];
-    [views addObject:twentyfourthView];
+    views = [[NSMutableArray alloc] initWithObjects:view_01,secondView,thirdView,fourthView,fifthView,sixthView,seventhView,eightView,ninthView,tenthView,eleventhView,twelfthView,thirteenthView,fourteenthView,fifteenthView,sixteenthView,seventeenthView,eighteenthView,nineteenthView,twentiethView,twentyfirstView,twentysecondView,twentythirdView,twentyfourthView,twentyfifthView,twentysixthView,twentyseventhView,twentyeightView,twentyninthView,thirtiethView,thirtyfirstView, nil];
+//    self.views = [[NSMutableArray alloc] initWithObjects:firstView,secondView,thirdView,fourthView,fifthView,sixthView,seventhView,eightView,ninthView,tenthView,eleventhView,twelfthView,thirteenthView,fourteenthView,fifteenthView,sixteenthView,seventeenthView,eighteenthView,nineteenthView,nil];
+//    twentyfirstView = thirdView;
+//    [views addObject:twentyfirstView];
+//    [views addObject:twentysecondView];
+//    [views addObject:twentythirdView];
+//    [views addObject:twentyfourthView];
     
     NSLog(@"SISE: %i", views.count);
     count = 0;

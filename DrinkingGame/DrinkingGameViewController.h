@@ -12,9 +12,9 @@
     NSTimer *timer;
     IBOutlet UILabel *myCounterLabel;
     NSUInteger time;
-    NSMutableArray*views;
+    NSMutableArray  *views;
     IBOutlet UIView *startView;
-    IBOutlet UIView *firstView;
+    IBOutlet UIView *view_01;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
     IBOutlet UIView *fourthView;
