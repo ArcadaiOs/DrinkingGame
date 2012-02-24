@@ -222,6 +222,11 @@
 		3FE08EFE14C992E00010A03C /* simon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFB14C992E00010A03C /* simon.png */; };
 		3FE08EFF14C992E00010A03C /* simon.psd in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFC14C992E00010A03C /* simon.psd */; };
 		3FE08F0014C992E00010A03C /* simon_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFD14C992E00010A03C /* simon_light.png */; };
+		3FEDBBA514F7BEE400F4FD37 /* ECCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBB9B14F7BEE400F4FD37 /* ECCommon.m */; };
+		3FEDBBA614F7BEE400F4FD37 /* ECGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBB9E14F7BEE400F4FD37 /* ECGraph.m */; };
+		3FEDBBA714F7BEE400F4FD37 /* ECGraphItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBBA014F7BEE400F4FD37 /* ECGraphItem.m */; };
+		3FEDBBA814F7BEE400F4FD37 /* ECGraphLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBBA214F7BEE400F4FD37 /* ECGraphLine.m */; };
+		3FEDBBA914F7BEE400F4FD37 /* ECGraphPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBBA414F7BEE400F4FD37 /* ECGraphPoint.m */; };
 		3FFA5F4514E53FD80054078B /* bottles.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA5F4314E53FD80054078B /* bottles.png */; };
 		3FFA5F4614E53FD80054078B /* kork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA5F4414E53FD80054078B /* kork.png */; };
 		3FFD199D14F7A27D00D04C20 /* ChooseText.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFD199C14F7A27D00D04C20 /* ChooseText.png */; };
@@ -592,6 +597,16 @@
 		3FE08EFB14C992E00010A03C /* simon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon.png; sourceTree = "<group>"; };
 		3FE08EFC14C992E00010A03C /* simon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = simon.psd; sourceTree = "<group>"; };
 		3FE08EFD14C992E00010A03C /* simon_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_light.png; sourceTree = "<group>"; };
+		3FEDBB9A14F7BEE400F4FD37 /* ECCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCommon.h; sourceTree = "<group>"; };
+		3FEDBB9B14F7BEE400F4FD37 /* ECCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCommon.m; sourceTree = "<group>"; };
+		3FEDBB9D14F7BEE400F4FD37 /* ECGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraph.h; sourceTree = "<group>"; };
+		3FEDBB9E14F7BEE400F4FD37 /* ECGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraph.m; sourceTree = "<group>"; };
+		3FEDBB9F14F7BEE400F4FD37 /* ECGraphItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphItem.h; sourceTree = "<group>"; };
+		3FEDBBA014F7BEE400F4FD37 /* ECGraphItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphItem.m; sourceTree = "<group>"; };
+		3FEDBBA114F7BEE400F4FD37 /* ECGraphLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphLine.h; sourceTree = "<group>"; };
+		3FEDBBA214F7BEE400F4FD37 /* ECGraphLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphLine.m; sourceTree = "<group>"; };
+		3FEDBBA314F7BEE400F4FD37 /* ECGraphPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphPoint.h; sourceTree = "<group>"; };
+		3FEDBBA414F7BEE400F4FD37 /* ECGraphPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphPoint.m; sourceTree = "<group>"; };
 		3FFA5F4314E53FD80054078B /* bottles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottles.png; sourceTree = "<group>"; };
 		3FFA5F4414E53FD80054078B /* kork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kork.png; sourceTree = "<group>"; };
 		3FFD199C14F7A27D00D04C20 /* ChooseText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChooseText.png; sourceTree = "<group>"; };
@@ -1128,6 +1143,7 @@
 		3F3AFECE14C04EF300A992F7 /* DrinkingGame */ = {
 			isa = PBXGroup;
 			children = (
+				3FEDBB9914F7BEBF00F4FD37 /* ECGraph */,
 				14FFF78B14F6B8DD00899870 /* Cocos2D */,
 				3F4B704514E3E42F00BAE149 /* startMenu */,
 				3F3AFED714C04EF300A992F7 /* DrinkingGameAppDelegate.h */,
@@ -1271,6 +1287,31 @@
 				3FE08EFD14C992E00010A03C /* simon_light.png */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		3FEDBB9914F7BEBF00F4FD37 /* ECGraph */ = {
+			isa = PBXGroup;
+			children = (
+				3FEDBB9A14F7BEE400F4FD37 /* ECCommon.h */,
+				3FEDBB9B14F7BEE400F4FD37 /* ECCommon.m */,
+				3FEDBB9C14F7BEE400F4FD37 /* ECGraph */,
+			);
+			name = ECGraph;
+			sourceTree = "<group>";
+		};
+		3FEDBB9C14F7BEE400F4FD37 /* ECGraph */ = {
+			isa = PBXGroup;
+			children = (
+				3FEDBB9D14F7BEE400F4FD37 /* ECGraph.h */,
+				3FEDBB9E14F7BEE400F4FD37 /* ECGraph.m */,
+				3FEDBB9F14F7BEE400F4FD37 /* ECGraphItem.h */,
+				3FEDBBA014F7BEE400F4FD37 /* ECGraphItem.m */,
+				3FEDBBA114F7BEE400F4FD37 /* ECGraphLine.h */,
+				3FEDBBA214F7BEE400F4FD37 /* ECGraphLine.m */,
+				3FEDBBA314F7BEE400F4FD37 /* ECGraphPoint.h */,
+				3FEDBBA414F7BEE400F4FD37 /* ECGraphPoint.m */,
+			);
+			path = ECGraph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1542,6 +1583,11 @@
 				14FFF78614F6B6AC00899870 /* cpSpaceQuery.c in Sources */,
 				14FFF78714F6B6AC00899870 /* cpSpaceStep.c in Sources */,
 				14FFF78814F6B6AC00899870 /* cpVect.c in Sources */,
+				3FEDBBA514F7BEE400F4FD37 /* ECCommon.m in Sources */,
+				3FEDBBA614F7BEE400F4FD37 /* ECGraph.m in Sources */,
+				3FEDBBA714F7BEE400F4FD37 /* ECGraphItem.m in Sources */,
+				3FEDBBA814F7BEE400F4FD37 /* ECGraphLine.m in Sources */,
+				3FEDBBA914F7BEE400F4FD37 /* ECGraphPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1624,9 +1670,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrinkingGame/DrinkingGame-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = corePlot;
 				INFOPLIST_FILE = "DrinkingGame/DrinkingGame-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REZ_SEARCH_PATHS = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1641,6 +1689,7 @@
 				INFOPLIST_FILE = "DrinkingGame/DrinkingGame-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REZ_SEARCH_PATHS = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
