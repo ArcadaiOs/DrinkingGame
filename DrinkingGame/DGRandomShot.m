@@ -44,13 +44,18 @@
     
     
     int sel = arc4random() % [[controller players] count];
-    DGRandomShotWheel* d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(-320, 140, 640, 640) andController:controller andSelection:sel];
+    d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(-320, 140, 640, 640) andController:controller andSelection:sel];
     //DGRandomShotWheel* d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(0, 100, 320, 320) andController:controller andSelection:sel];
     [self.view insertSubview:d atIndex:2];
     [self.view insertSubview:arrow atIndex:3];
     [self.view insertSubview:header atIndex:4];
     [self.view insertSubview:subHeader atIndex:4];
-    [d spin];
+    [d spin:self];
+    //[[d spinAnimation] setDelegate:self];
+}
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag{
+    DGPlayer* player = [controller.players objectAtIndex:d.sel];
+    [delegate GameEndedWithLooser:player];
 }
 - (void)viewDidUnload
 {
