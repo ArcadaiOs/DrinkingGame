@@ -27,6 +27,9 @@
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] name:@"Soini" weight:120 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] name:@"Niini" weight:80 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] name:@"Naama" weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"haddock.jpg"] name:@"Haddock" weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"poirot.jpg"] name:@"Poirot" weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"norris.jpg"] name:@"Norris" weight:80 isFemale:false]];
         playerCount = [players count];
 //        [[players objectAtIndex:0] takeShot:[drinks objectAtIndex:1]];
 //        [[players objectAtIndex:1] takeShot:[drinks objectAtIndex:0]];
@@ -42,9 +45,10 @@
     [delegate showPlayer:player];
 }
 -(void) GameEndedWithLooser:(DGPlayer *)looser{
-    [delegate showPlayer:looser];
-    NSLog(@"GAME ENDED AND LOSER IS FOUND");
+    //[delegate showPlayer:looser];
 
+    NSLog(@"GAME ENDED AND LOSER IS FOUND");
+    [delegate gameEndedWithLooser:looser];
 }
 -(void) playerReady{
     NSLog(@"PLAYER READu CONTROLER");

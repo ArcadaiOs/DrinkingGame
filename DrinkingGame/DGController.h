@@ -13,6 +13,7 @@
 @protocol ControllerProto <NSObject>
 -(void) playerReady;
 -(void) showPlayer:(DGPlayer*) player;
+-(void) gameEndedWithLooser:(DGPlayer*) looser;
 @end
 
 @interface DGController : NSObject{

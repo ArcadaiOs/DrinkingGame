@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DGController.h"
+#import "SimpleAudioEngine.h"
 
 @interface DGStartMenu :  UIViewController 
 <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
@@ -87,6 +88,8 @@
     IBOutlet UIImageView *polaroid;
     
     BOOL gender;
+    
+    
 }
 
 
@@ -95,7 +98,7 @@
 
 
 //Menu 1
-
+//@property (nonatomic, retain) SimpleAudioEngine *ae;
 @property (nonatomic, retain) IBOutlet UIButton *btn2;
 @property (nonatomic, retain) IBOutlet UIButton *btn3;
 @property (nonatomic, retain) IBOutlet UIButton *btn4;

@@ -9,7 +9,7 @@
 #import "DGGameSimonSays.h"
 
 @implementation DGGameSimonSays{
-   
+    
 }
 
 @synthesize playList;
@@ -23,15 +23,13 @@
     if(next == nil){
         NSLog(@"end of array, start player action");
         [timer invalidate];
-
-        //playEnumerator = [playList objectEnumerator];
         playerAction = true;
         playCount = 0;
         
     } else {
         NSNumber* num = (NSNumber*)next;
         NSLog(@"Timergot: %i", [num intValue]);
-        [self flashButton:[num intValue] duration:0.2];
+        [self flashButton:[num intValue] duration:0.5];
     }
     
 }
@@ -39,35 +37,31 @@
 
 /*
  Function that starts the gameLoop
-*/
+ */
 -(IBAction) startGame:(id) sender{
-    [delegate GameEndedWithLooser:[[controller players] objectAtIndex:0]];
-
-    
-    [playerImage setImage:[[[controller players] objectAtIndex:currentPlayer] image]];
     
     playEnumerator = [playList objectEnumerator];
     
-    [NSTimer scheduledTimerWithTimeInterval:0.5
+    [NSTimer scheduledTimerWithTimeInterval:1.5
                                      target:self
                                    selector:@selector(nextPlay:)
                                    userInfo:playEnumerator
                                     repeats:true
      ];
-    //currentPlayer = 0;
+    
 }
 
 /*
-    Resets button highligt state, Button should have reference in the Timer
-*/
+ Resets button highligt state, Button should have reference in the Timer
+ */
 -(void) timerFired:(NSTimer *)timer {
     UIButton *b = (UIButton*) [timer userInfo];
     b.highlighted = false;
 }
 
 /*
-    Get some amount of random numbers between min and max values
-*/
+ Get some amount of random numbers between min and max values
+ */
 -(int*) nrOfRands:(int)rands minimi:(int)min maximi:(int)max{
     int *ret;
     
@@ -85,8 +79,8 @@
     
 }
 /*
-    gets One random number
-*/
+ gets One random number
+ */
 -(int) getRandomIntMin:(int)min max:(int)max{
     if(min>max)
         return -1;
@@ -96,16 +90,14 @@
 
 -(IBAction)buttonPressed:(id)sender{
     UIButton *button = (UIButton*) sender;
-    //NSLog(@"BUttonPResed %@", button.titleLabel.text);
     if(playerAction){
-        
         if(playCount < ([playList count]) ){
-            NSLog(@"COMPARING: BUTTON: %i LIST: %i, COUNT %i", [self colorToIntId:button.titleLabel.text],
-                  [[playList objectAtIndex:playCount] intValue],playCount);
+    //        NSLog(@"COMPARING: BUTTON: %i LIST: %i, COUNT %i", [self colorToIntId:button.titleLabel.text],
+      //            [[playList objectAtIndex:playCount] intValue],playCount);
             
             if([[playList objectAtIndex:playCount] intValue] == [self colorToIntId:button.titleLabel.text] ){
                 if(playCount == [playList count]-1){
-                    NSLog(@"WIN");
+     //               NSLog(@"WIN");
                     [self flashButton:1 duration:2.0f];
                     [self flashButton:2 duration:2.0f];
                     [self flashButton:3 duration:2.0f];
@@ -122,24 +114,24 @@
                 
                 playCount++;        
             } else {
-                NSLog(@"PLAYER FAIL");
+                //NSLog(@"PLAYER FAIL");
                 playCount = 0;
                 playerAction = false;
                 [delegate GameEndedWithLooser:[[controller players] objectAtIndex:currentPlayer]];
                 
             }
             
-            } else{
-                NSLog(@"PLAYER FAIL");
-                playerAction = false;
-                playCount = 0;
-                [delegate GameEndedWithLooser:[[controller players] objectAtIndex:currentPlayer]];
-                
+        } else{
+            //NSLog(@"PLAYER FAIL");
+            playerAction = false;
+            playCount = 0;
+            [delegate GameEndedWithLooser:[[controller players] objectAtIndex:currentPlayer]];
+            
         }
         
         
     } else {
-        NSLog(@"should wait");
+        //NSLog(@"should wait");
     }
     
     
@@ -220,7 +212,7 @@
     
     playerAction = false;
     playList = [[NSMutableArray alloc] init];
-
+    
     // create som starting point values
     int i=5;
     while (i--) {
