@@ -101,23 +101,22 @@
     //[delegate playerReady];
 }
 -(void) gameEndedWithLooser:(DGPlayer *)player{
-    NSLog(@"game END ViewController");
+    
+    //NSLog(@"gamendeViewController");
     [debugView removeFromSuperview];
     playerImg.image = player.image;
     playerNameLabel.text = player.name;
     [currentGame.view removeFromSuperview];
     [playerImgFrame removeFromSuperview];
-    playerImgFrame.center = CGPointMake(160, 250);
-    [playerLostView addSubview:playerImgFrame];
-    //    [self.view addSubview:playerLostView];
-    [viewControl.view addSubview:playerLostView];
-    //    viewControl.view = playerLostView;
+    playerImgFrame.center = CGPointMake(160, 215);
+    [boozeChooserView addSubview:playerImgFrame];
+    
+    [viewControl.view addSubview:boozeChooserView];
     
     [self presentModalViewController:viewControl animated:NO];
-    //[[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
-              
-    
+    [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
 }
+
 -(IBAction)launchLOOSER:(id)sender{
     [self gameEndedWithLooser:[controller.players objectAtIndex:0]];
 }
@@ -132,13 +131,13 @@
 -(IBAction)punnishmentChosen:(id) sender{
     [boozeChooserView removeFromSuperview];
     [viewControl dismissModalViewControllerAnimated:YES];
+    [playerImgFrame removeFromSuperview];
     
     NSString *chosenPunnishment = ((UIButton*)sender).titleLabel.text;
     NSLog(@"%@",chosenPunnishment);
     
     [self.view addSubview:debugView ];    
 }
-
 
 -(IBAction) stopMusic:(id)sender{
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
@@ -170,8 +169,16 @@
     UIFont *rockwell = [UIFont fontWithName:@"Rockwell Extra Bold" size:35];
     [playerNameLabel setFont:rockwell];
     
-    UILabel *looserIs = [[UILabel alloc] initWithFrame:CGRectMake(160, 35, 160, 40)];
+    UIColor *red = [UIColor colorWithRed:0.8 green:0.1 blue:0.1 alpha:1.0];
+    UIColor *transparent = [UIColor colorWithWhite:0.0 alpha:0.0];
+    UILabel *looserIs = [[UILabel alloc] initWithFrame:CGRectMake(10, 35, 300, 40)];
+    [looserIs setText:@"The Looser IS"];
+    looserIs.textColor = red;
+    looserIs.backgroundColor = transparent;
+    looserIs.font = rockwell;
     
+    
+    [playerLostView addSubview:looserIs];
     
     [self.view addSubview:debugView ];
     

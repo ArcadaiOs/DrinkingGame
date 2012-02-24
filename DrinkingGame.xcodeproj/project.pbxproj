@@ -590,9 +590,9 @@
 		3FE08EF414C98B3F0010A03C /* DGRandomShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShot.h; sourceTree = "<group>"; };
 		3FE08EF514C98B3F0010A03C /* DGRandomShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShot.m; sourceTree = "<group>"; };
 		3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGRandomShot.xib; sourceTree = "<group>"; };
-		3FE08EFB14C992E00010A03C /* simon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon.png; sourceTree = "<group>"; };
-		3FE08EFC14C992E00010A03C /* simon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = simon.psd; sourceTree = "<group>"; };
-		3FE08EFD14C992E00010A03C /* simon_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_light.png; sourceTree = "<group>"; };
+		3FE08EFB14C992E00010A03C /* simon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simon.png; path = ../simon.png; sourceTree = "<group>"; };
+		3FE08EFC14C992E00010A03C /* simon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = simon.psd; path = ../simon.psd; sourceTree = "<group>"; };
+		3FE08EFD14C992E00010A03C /* simon_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simon_light.png; path = ../simon_light.png; sourceTree = "<group>"; };
 		3FFA5F4314E53FD80054078B /* bottles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottles.png; sourceTree = "<group>"; };
 		3FFA5F4414E53FD80054078B /* kork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kork.png; sourceTree = "<group>"; };
 		3FFD199C14F7A27D00D04C20 /* ChooseText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChooseText.png; sourceTree = "<group>"; };
@@ -981,14 +981,7 @@
 				14C0CA1014EC51D5007CDDFF /* camera-icon-md.png */,
 				3FFA5F4314E53FD80054078B /* bottles.png */,
 				3FFA5F4414E53FD80054078B /* kork.png */,
-				3F10BE2C14C9960800220F88 /* simon_blue_dwn.png */,
-				3F10BE2D14C9960800220F88 /* simon_blue_up.png */,
-				3F10BE2E14C9960800220F88 /* simon_green_dwn.png */,
-				3F10BE2F14C9960800220F88 /* simon_green_up.png */,
-				3F10BE3014C9960800220F88 /* simon_red_dwn.png */,
-				3F10BE3114C9960800220F88 /* simon_red_up.png */,
-				3F10BE3214C9960800220F88 /* simon_yel_dwn.png */,
-				3F10BE3314C9960800220F88 /* simon_yel_up.png */,
+				3FFD19AA14F7BBEC00D04C20 /* SimonSays */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -1235,12 +1228,26 @@
 		3FE08EFA14C992E00010A03C /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				3FFD199F14F7A28900D04C20 /* Polaroid.png */,
-				3FFD199C14F7A27D00D04C20 /* ChooseText.png */,
+				3FFD19A814F7BB9900D04C20 /* Faces */,
+				3FFD19A714F7BB5700D04C20 /* ViewController */,
 				14FFF69314F6A8A400899870 /* song.mp3 */,
 				3F6205E914F674DA006034DB /* Default@2x.png */,
 				3F6205E614F674D6006034DB /* Default.png */,
 				3F6205ED14F6757B006034DB /* Icons */,
+				3F0BEFAD14E538B600240775 /* Fonts */,
+				3F34863214E3EF0A009EEBAE /* menu images */,
+				3F408FDD14E535440034856F /* GUI files psd */,
+				3FFD19A914F7BBC500D04C20 /* Arrows */,
+				3F10BE2B14C9960800220F88 /* images */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		3FFD19A714F7BB5700D04C20 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FFD199F14F7A28900D04C20 /* Polaroid.png */,
+				3FFD199C14F7A27D00D04C20 /* ChooseText.png */,
 				3FDF90AF14EE8B0E001F26D5 /* beer.png */,
 				3FDF90B014EE8B0E001F26D5 /* shot.png */,
 				3FDF90B114EE8B0E001F26D5 /* wine.png */,
@@ -1248,12 +1255,28 @@
 				3FDF90A114EE70B8001F26D5 /* NextPlayer.png */,
 				3FDF90A214EE70B8001F26D5 /* WhosNext.png */,
 				3FDF90A314EE70B8001F26D5 /* naamaRam.png */,
-				3F0BEFAD14E538B600240775 /* Fonts */,
-				3F34863214E3EF0A009EEBAE /* menu images */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3FFD19A814F7BB9900D04C20 /* Faces */ = {
+			isa = PBXGroup;
+			children = (
 				3FD60C2E14DC1F9000DEAE7A /* haddock.jpg */,
-				3F408FDD14E535440034856F /* GUI files psd */,
 				3FD60C2F14DC1F9000DEAE7A /* hannibal.jpg */,
 				3FD60C3014DC1F9000DEAE7A /* naama.jpg */,
+				3FD60C3114DC1F9000DEAE7A /* naama2.jpg */,
+				3FD60C3214DC1F9000DEAE7A /* niini.png */,
+				3FD60C3314DC1F9000DEAE7A /* norris.jpg */,
+				3FD60C3414DC1F9000DEAE7A /* poirot.jpg */,
+				3FD60C3514DC1F9000DEAE7A /* Soini.jpeg */,
+			);
+			name = Faces;
+			sourceTree = "<group>";
+		};
+		3FFD19A914F7BBC500D04C20 /* Arrows */ = {
+			isa = PBXGroup;
+			children = (
 				3F8EB52E14EE965800412982 /* redArrowDown.png */,
 				3F8EB52F14EE965800412982 /* redArrowLeft.png */,
 				3F8EB53014EE965800412982 /* redArrowRight.png */,
@@ -1262,17 +1285,26 @@
 				3F8EB53314EE965800412982 /* whiteArrowLeft.png */,
 				3F8EB53414EE965800412982 /* whiteArrowRight.png */,
 				3F8EB53514EE965800412982 /* whiteArrowUp.png */,
-				3FD60C3114DC1F9000DEAE7A /* naama2.jpg */,
-				3FD60C3214DC1F9000DEAE7A /* niini.png */,
-				3FD60C3314DC1F9000DEAE7A /* norris.jpg */,
-				3FD60C3414DC1F9000DEAE7A /* poirot.jpg */,
-				3FD60C3514DC1F9000DEAE7A /* Soini.jpeg */,
-				3F10BE2B14C9960800220F88 /* images */,
+			);
+			name = Arrows;
+			sourceTree = "<group>";
+		};
+		3FFD19AA14F7BBEC00D04C20 /* SimonSays */ = {
+			isa = PBXGroup;
+			children = (
 				3FE08EFB14C992E00010A03C /* simon.png */,
 				3FE08EFC14C992E00010A03C /* simon.psd */,
 				3FE08EFD14C992E00010A03C /* simon_light.png */,
+				3F10BE2C14C9960800220F88 /* simon_blue_dwn.png */,
+				3F10BE2D14C9960800220F88 /* simon_blue_up.png */,
+				3F10BE2E14C9960800220F88 /* simon_green_dwn.png */,
+				3F10BE2F14C9960800220F88 /* simon_green_up.png */,
+				3F10BE3014C9960800220F88 /* simon_red_dwn.png */,
+				3F10BE3114C9960800220F88 /* simon_red_up.png */,
+				3F10BE3214C9960800220F88 /* simon_yel_dwn.png */,
+				3F10BE3314C9960800220F88 /* simon_yel_up.png */,
 			);
-			path = resources;
+			name = SimonSays;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
