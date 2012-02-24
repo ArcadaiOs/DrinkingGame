@@ -69,12 +69,12 @@
     [self launchGame:[[DGFillTheBottle alloc] initWithController:controller]];
 }
 -(IBAction) launchMenu:(id)sender{
-    [currentCame.view removeFromSuperview];
-    [currentCame release];
-//    currentCame = [[DGStartMenu alloc] init];
-//    [self.view addSubview:currentCame.view];
-//    UIView * v = [[DGStartMenu alloc] init].view;
-//    [self.view addSubview:[[DGStartMenu alloc] init].view];
+    [currentGame.view removeFromSuperview];
+    [currentGame release];
+    //    currentCame = [[DGStartMenu alloc] init];
+    //    [self.view addSubview:currentCame.view];
+    //    UIView * v = [[DGStartMenu alloc] init].view;
+    //    [self.view addSubview:[[DGStartMenu alloc] init].view];
 }
 -(IBAction)launchSimon:(id)sender{
     [self launchGame:[[DGGameSimonSays alloc] initWithController:controller]];
