@@ -8,6 +8,7 @@
 
 #import "DGGame.h"
 #import "DGController.h"
+#import "DrinkingGameViewController.h"
 
 @interface DGFillTheBottle : DGGame {
     UIView *gameView;
@@ -46,10 +47,11 @@
     NSMutableArray *pInfo;
     NSString *pName;
     NSMutableString *results;
-    
-    
+    SystemSoundID *mySound;
+   
 }
 /*Game objects*/
+@property (nonatomic) SystemSoundID *mySound;
 @property (nonatomic, retain) IBOutlet UILabel *timerLabel;
 @property (nonatomic, retain) IBOutlet UILabel *timeLabelText;
 @property int click;
@@ -89,4 +91,5 @@
 @property (nonatomic, retain) IBOutlet UIButton *quitPlayingBtn;
 
 -(IBAction)startNextPlayer:(id)sender;
+
 @end

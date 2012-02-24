@@ -73,6 +73,10 @@
 		3F8EB53B14EE965800412982 /* whiteArrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8EB53314EE965800412982 /* whiteArrowLeft.png */; };
 		3F8EB53C14EE965800412982 /* whiteArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8EB53414EE965800412982 /* whiteArrowRight.png */; };
 		3F8EB53D14EE965800412982 /* whiteArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8EB53514EE965800412982 /* whiteArrowUp.png */; };
+		3F95D6D214F7B0E7001A10C5 /* emptybeerglass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F95D6D114F7B0E7001A10C5 /* emptybeerglass.mp3 */; };
+		3F95D6D514F7B114001A10C5 /* cork2.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3F95D6D314F7B114001A10C5 /* cork2.aif */; };
+		3F95D6D614F7B114001A10C5 /* cork.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3F95D6D414F7B114001A10C5 /* cork.aif */; };
+		3F95D6D814F7BBB4001A10C5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F95D6D714F7BBB4001A10C5 /* AudioToolbox.framework */; };
 		3FAC088E14E53A10006BB22D /* DGFillTheBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */; };
 		3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */; };
 		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
@@ -189,6 +193,10 @@
 		3F8EB53314EE965800412982 /* whiteArrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrowLeft.png; sourceTree = "<group>"; };
 		3F8EB53414EE965800412982 /* whiteArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrowRight.png; sourceTree = "<group>"; };
 		3F8EB53514EE965800412982 /* whiteArrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrowUp.png; sourceTree = "<group>"; };
+		3F95D6D114F7B0E7001A10C5 /* emptybeerglass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = emptybeerglass.mp3; sourceTree = "<group>"; };
+		3F95D6D314F7B114001A10C5 /* cork2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = cork2.aif; sourceTree = "<group>"; };
+		3F95D6D414F7B114001A10C5 /* cork.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = cork.aif; path = DrinkingGame/resources/cork.aif; sourceTree = "<group>"; };
+		3F95D6D714F7BBB4001A10C5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3FAC088B14E53A10006BB22D /* DGFillTheBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGFillTheBottle.h; sourceTree = "<group>"; };
 		3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGFillTheBottle.m; sourceTree = "<group>"; };
 		3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGFillTheBottle.xib; sourceTree = "<group>"; };
@@ -233,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F95D6D814F7BBB4001A10C5 /* AudioToolbox.framework in Frameworks */,
 				3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */,
 				3F40EB8F14C9A85D009B35A5 /* CoreData.framework in Frameworks */,
 				3F3AFEC914C04EF300A992F7 /* UIKit.framework in Frameworks */,
@@ -375,8 +384,10 @@
 		3F3AFEB914C04EF300A992F7 = {
 			isa = PBXGroup;
 			children = (
+				3F95D6D714F7BBB4001A10C5 /* AudioToolbox.framework */,
 				3F6205E914F674DA006034DB /* Default@2x.png */,
 				3F6205E614F674D6006034DB /* Default.png */,
+				3F95D6D414F7B114001A10C5 /* cork.aif */,
 				3FB138BC14DAC15F00431078 /* QuartzCore.framework */,
 				3F40EB8E14C9A85D009B35A5 /* CoreData.framework */,
 				3F3AFECE14C04EF300A992F7 /* DrinkingGame */,
@@ -484,6 +495,15 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		3F95D6CF14F7B0BF001A10C5 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				3F95D6D314F7B114001A10C5 /* cork2.aif */,
+				3F95D6D114F7B0E7001A10C5 /* emptybeerglass.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		3FAC088414E52DFE006BB22D /* DGFillTheBottle */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +532,7 @@
 				3F6205ED14F6757B006034DB /* Icons */,
 				3FDF90AF14EE8B0E001F26D5 /* beer.png */,
 				3FDF90B014EE8B0E001F26D5 /* shot.png */,
+				3F95D6CF14F7B0BF001A10C5 /* Sounds */,
 				3FDF90B114EE8B0E001F26D5 /* wine.png */,
 				3FDF90AD14EE8A4E001F26D5 /* Choose-punishment.png */,
 				3FDF90A114EE70B8001F26D5 /* NextPlayer.png */,
@@ -671,6 +692,9 @@
 				3F6205F314F675A8006034DB /* icon114.png in Resources */,
 				3F6205F414F675A8006034DB /* startBig.png in Resources */,
 				3F6205F514F675A8006034DB /* startSmall.png in Resources */,
+				3F95D6D214F7B0E7001A10C5 /* emptybeerglass.mp3 in Resources */,
+				3F95D6D514F7B114001A10C5 /* cork2.aif in Resources */,
+				3F95D6D614F7B114001A10C5 /* cork.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

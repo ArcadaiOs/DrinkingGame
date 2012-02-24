@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "DGGame.h"
 #import "DGRandomShot.h"
 #import "DGController.h"
