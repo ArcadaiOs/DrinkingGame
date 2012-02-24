@@ -224,6 +224,8 @@
 		3FE08F0014C992E00010A03C /* simon_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFD14C992E00010A03C /* simon_light.png */; };
 		3FFA5F4514E53FD80054078B /* bottles.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA5F4314E53FD80054078B /* bottles.png */; };
 		3FFA5F4614E53FD80054078B /* kork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA5F4414E53FD80054078B /* kork.png */; };
+		3FFD199D14F7A27D00D04C20 /* ChooseText.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFD199C14F7A27D00D04C20 /* ChooseText.png */; };
+		3FFD19A014F7A28900D04C20 /* Polaroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFD199F14F7A28900D04C20 /* Polaroid.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -592,6 +594,8 @@
 		3FE08EFD14C992E00010A03C /* simon_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_light.png; sourceTree = "<group>"; };
 		3FFA5F4314E53FD80054078B /* bottles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottles.png; sourceTree = "<group>"; };
 		3FFA5F4414E53FD80054078B /* kork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kork.png; sourceTree = "<group>"; };
+		3FFD199C14F7A27D00D04C20 /* ChooseText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChooseText.png; sourceTree = "<group>"; };
+		3FFD199F14F7A28900D04C20 /* Polaroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Polaroid.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1229,6 +1233,8 @@
 		3FE08EFA14C992E00010A03C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				3FFD199F14F7A28900D04C20 /* Polaroid.png */,
+				3FFD199C14F7A27D00D04C20 /* ChooseText.png */,
 				14FFF69314F6A8A400899870 /* song.mp3 */,
 				3F6205E914F674DA006034DB /* Default@2x.png */,
 				3F6205E614F674D6006034DB /* Default.png */,
@@ -1397,6 +1403,8 @@
 				3F6205F714F67993006034DB /* icon.psd in Resources */,
 				14FFF69414F6A8A400899870 /* song.mp3 in Resources */,
 				14FFF76F14F6B6AC00899870 /* CMakeLists.txt in Resources */,
+				3FFD199D14F7A27D00D04C20 /* ChooseText.png in Resources */,
+				3FFD19A014F7A28900D04C20 /* Polaroid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

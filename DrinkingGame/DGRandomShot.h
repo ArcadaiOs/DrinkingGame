@@ -12,8 +12,8 @@
 #import <QuartzCore/QuartzCore.h>
 @interface DGRandomShot : DGGame{
     IBOutlet UIImageView* img;
-    IBOutlet DGRandomShotWheel* rotaView;
-    
+    DGRandomShotWheel* d;
 }
 
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag;
 @end
