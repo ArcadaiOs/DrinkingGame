@@ -79,7 +79,7 @@
 //    currentCame = [[DGStartMenu alloc] init];
 //    [self.view addSubview:currentCame.view];
 //    UIView * v = [[DGStartMenu alloc] init].view;
-    [self.view addSubview:[[DGStartMenu alloc] init].view];
+//    [self.view addSubview:[[DGStartMenu alloc] init].view];
 }
 -(IBAction)launchSimon:(id)sender{
     [currentCame.view removeFromSuperview];
