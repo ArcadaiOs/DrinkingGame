@@ -13,7 +13,7 @@
 @synthesize s;
 @synthesize buttonpushed;
 @synthesize penalty;
-
+@synthesize views;
 - (void)updateCounter:(NSTimer *)theTimer {
 	count += 1;
     if (buttonpushed == 4){
@@ -25,58 +25,8 @@
 - (IBAction)Q1:(id) sender
 {
     [s dismissModalViewControllerAnimated:false];
-    int i = arc4random() % 12;
-    if(i == 1)
-    {
-        [s setView:firstView];
-    }
-    else if(i == 2)
-    {
-        [s setView:secondView];
-    }
-    else if(i == 3)
-    {
-        [s setView:thirdView];
-    }
-    else if(i == 4)
-    {
-        [s setView:fourthView];
-    }
-    else if(i == 5)
-    {
-        [s setView:fifthView];
-    }
-    else if(i == 6)
-    {
-        [s setView:sixthView];
-    }
-    else if(i == 7)
-    {
-        [s setView:seventhView];
-    }
-    else if(i == 8)
-    {
-        [s setView:eightView];
-    }
-    else if(i == 9)
-    {
-        [s setView:ninthView];
-    }
-    else if(i == 10)
-    {
-        [s setView:tenthView];
-    }
-    else if(i == 11)
-    {
-        [s setView:eleventhView];
-    }
-    else
-    {
-        [s setView:twelfthView];
-    }
-    
-    //[s setView:firstView];
-    
+    int i = arc4random() % 31;
+    [s setView:[views objectAtIndex:i]];    
     [self presentModalViewController:s animated:NO ];
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                              target:self
@@ -84,10 +34,10 @@
                                            userInfo:nil
                                             repeats:YES];}
 
-- (IBAction)Q2:(id) sender
+- (IBAction)win:(id) sender
 {
     [s dismissModalViewControllerAnimated:false];
-    int i = arc4random() % 12;
+    int i = arc4random() % 31;
     if (buttonpushed == 4)
     {
         [s setView:endView];
@@ -95,58 +45,10 @@
         self.myCounterLabel.text = a;
         [a release];
     }
-    
-    else if(i == 1)
-    {
-        [s setView:firstView];
-    }
-    else if(i == 2)
-    {
-        [s setView:secondView];
-    }
-    else if(i == 3)
-    {
-        [s setView:thirdView];
-    }
-    else if(i == 4)
-    {
-        [s setView:fourthView];
-    }
-    else if(i == 5)
-    {
-        [s setView:fifthView];
-    }
-    else if(i == 6)
-    {
-        [s setView:sixthView];
-    }
-    else if(i == 7)
-    {
-        [s setView:seventhView];
-    }
-    else if(i == 8)
-    {
-        [s setView:eightView];
-    }
-    else if(i == 9)
-    {
-        [s setView:ninthView];
-    }
-    else if(i == 10)
-    {
-        [s setView:tenthView];
-    }
-    else if(i == 11)
-    {
-        [s setView:eleventhView];
-    }
     else
     {
-        [s setView:twelfthView];
+        [s setView:[views objectAtIndex:i]];    
     }
-
-    
-    //[s setView:firstView];
 
     [self presentModalViewController:s animated:NO ];
     
@@ -157,7 +59,7 @@
 - (IBAction)Lose:(id) sender
 {
     [s dismissModalViewControllerAnimated:false];
-    int i = arc4random() % 12;
+    int i = arc4random() % 31;
     penalty = penalty +20;
     if (buttonpushed == 4)
     {
@@ -165,68 +67,24 @@
         NSString *a = [[NSString alloc] initWithFormat:@"%i", (penalty+count)];
         self.myCounterLabel.text = a;
         [a release];
-        NSLog(@"%i",(penalty+count));
     }
-    
-    else if(i == 1)
-    {
-        [s setView:firstView];
+    else{
+    [s setView:[views objectAtIndex:i]];    
     }
-    else if(i == 2)
-    {
-        [s setView:secondView];
-    }
-    else if(i == 3)
-    {
-        [s setView:thirdView];
-    }
-    else if(i == 4)
-    {
-        [s setView:fourthView];
-    }
-    else if(i == 5)
-    {
-        [s setView:fifthView];
-    }
-    else if(i == 6)
-    {
-        [s setView:sixthView];
-    }
-    else if(i == 7)
-    {
-        [s setView:seventhView];
-    }
-    else if(i == 8)
-    {
-        [s setView:eightView];
-    }
-    else if(i == 9)
-    {
-        [s setView:ninthView];
-    }
-    else if(i == 10)
-    {
-        [s setView:tenthView];
-    }
-    else if(i == 11)
-    {
-        [s setView:eleventhView];
-    }
-    else
-    {
-        [s setView:twelfthView];
-    }
-    //[s setView:firstView];
-    
     [self presentModalViewController:s animated:NO ];
     
     buttonpushed = buttonpushed +1;
     
 }
 
--(void)nextPlayer:(id)sender
+-(void)nextPlayer:(id) sender
 {
-    self.view=startView;
+    [s dismissModalViewControllerAnimated:false];
+    [s setView:startView];
+    [self presentModalViewController:s animated:NO ];
+    buttonpushed = 0;
+    penalty = 0;
+    count = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -242,6 +100,15 @@
 
 - (void)viewDidLoad
 {
+    //views = [[NSMutableArray alloc] initWithObjects:firstView,secondView,thirdView,fourthView,fifthView,sixthView,seventhView,eightView,ninthView,tenthView,eleventhView,twelfthView,thirteenthView,fourteenthView,fifteenthView,sixteenthView,seventeenthView,eighteenthView,nineteenthView,twentiethView,twentyfirstView,twentysecondView,twentythirdView,twentyfourthView,twentyfifthView,twentysixthView,twentyseventhView,twentyeightView,twentyninthView,thirtiethView,thirtyfirstView, nil];
+    views = [[NSMutableArray alloc] initWithObjects:firstView,secondView,thirdView,fourthView,fifthView,sixthView,seventhView,eightView,ninthView,tenthView,eleventhView,twelfthView,thirteenthView,fourteenthView,fifteenthView,sixteenthView,seventeenthView,eighteenthView,nineteenthView,nil];
+    twentyfirstView = thirdView;
+    [views addObject:twentyfirstView];
+    [views addObject:twentysecondView];
+    [views addObject:twentythirdView];
+    [views addObject:twentyfourthView];
+    
+    NSLog(@"SISE: %i", views.count);
     count = 0;
     penalty = 0;
     [super viewDidLoad];
