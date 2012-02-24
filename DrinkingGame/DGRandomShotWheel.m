@@ -96,7 +96,7 @@
     }
     
     CGContextSetLineWidth(context, margin);
-    CGFloat strokeColor[4]    = {1.0f,0,0,1.0};
+    CGFloat strokeColor[4]    = {0.0f,0,0,1.0};
     CGContextSetStrokeColor(context, strokeColor);
     
     CGContextAddEllipseInRect(context, rect2);
