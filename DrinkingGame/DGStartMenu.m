@@ -9,12 +9,15 @@
 #import "DGStartMenu.h"
 
 
+
 #define twoPlayers 2
 
 
 
 @implementation DGStartMenu
 
+
+//@synthesize  ae;
 
 //@synthesize gameState, previousState;
 //menu 1
@@ -36,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"song.mp3"];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -50,6 +54,8 @@
 
 - (void)viewDidUnload
 {
+//    self.ae = [[SimpleAudioEngine alloc] init];
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     
 }
 
