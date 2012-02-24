@@ -45,9 +45,10 @@
     [delegate showPlayer:player];
 }
 -(void) GameEndedWithLooser:(DGPlayer *)looser{
-    [delegate showPlayer:looser];
-    NSLog(@"GAME ENDED AND LOSER IS FOUND");
+    //[delegate showPlayer:looser];
 
+    NSLog(@"GAME ENDED AND LOSER IS FOUND");
+    [delegate gameEndedWithLooser:looser];
 }
 -(void) playerReady{
     NSLog(@"PLAYER READu CONTROLER");

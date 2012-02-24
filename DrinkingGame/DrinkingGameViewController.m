@@ -101,7 +101,7 @@
     //[delegate playerReady];
 }
 -(void) gameEndedWithLooser:(DGPlayer *)player{
-    NSLog(@"gamendeViewController");
+    NSLog(@"game END ViewController");
     [debugView removeFromSuperview];
     playerImg.image = player.image;
     playerNameLabel.text = player.name;
@@ -167,8 +167,14 @@
     [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];
 
     
-    [playerNameLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:35]];
+    UIFont *rockwell = [UIFont fontWithName:@"Rockwell Extra Bold" size:35];
+    [playerNameLabel setFont:rockwell];
+    
+    UILabel *looserIs = [[UILabel alloc] initWithFrame:CGRectMake(160, 35, 160, 40)];
+    
+    
     [self.view addSubview:debugView ];
+    
     
     
     [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"song.mp3"];
