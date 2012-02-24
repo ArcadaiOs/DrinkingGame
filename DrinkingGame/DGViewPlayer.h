@@ -17,7 +17,6 @@
 @interface DGViewPlayer : UIViewController{
     IBOutlet UIImageView *playerImage; 
     IBOutlet UILabel *promilLabel;
-    
     id < PlayerAcknowledged > delegate;
 }
 

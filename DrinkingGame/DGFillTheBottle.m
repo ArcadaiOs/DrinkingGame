@@ -8,6 +8,7 @@
 
 #import "DGFillTheBottle.h"
 
+
 @implementation DGFillTheBottle
 @synthesize startPlayingBtn, playerName0, playerName2, playerScore, resultTitle, playerScores, nextPlayerBtn, quitPlayingBtn, startView, gameView, endView, yourUpNext, btnGreen, btnRed, countTimer, objectHeight, pilar, click, timeLabelText, timerLabel, moreButton, moreButton2, currentPlayer, playerCount, points, nameCollection, pInfo, pName, results;
 
@@ -34,7 +35,7 @@
     [super viewDidLoad];
     self.view=self.startView;
     points = [[NSMutableDictionary alloc] init];
-    currentPlayer=0;
+    currentPlayer = 0;
     playerCount = [controller playerCount];
     results = [[NSMutableString alloc] initWithString:@""];
     
@@ -52,8 +53,12 @@
     [yourUpNext setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
     [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
     [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    
+     
 }
+
+    
+
+
 -(void)startNextPlayer:(id)sender
 {
     currentPlayer++;
@@ -89,7 +94,7 @@
     click = 0;
     i = 0;
     timeForGame = 15;
-    
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"emptybeerglass.mp3"];
     [self startTimers];
 }
 - (void)updateCounter:(NSTimer *)theTimer {
@@ -103,6 +108,7 @@
         NSLog(@"End time:%i", timeForGame);
         NSLog(@"Total clicks:%i", click);
         self.view = endView;
+        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
         
     }
     else{
@@ -136,8 +142,8 @@
 }
 - (IBAction)doMoreButton:(id)sender {
     click=click+1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"cork.aif"];
     [self addHeight:nil];
-    
     if (self.moreButton.isUserInteractionEnabled && i == 0){
         i = 1;
     }else{
