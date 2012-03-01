@@ -41,6 +41,7 @@
 
 
 - (void) takeShot:(DGDrink*) shot{
+    NSLog(@"%@ drank %@",name, shot.name);
     NSNumber *kfb;
 
     double burn = [[self waterWeightGram] doubleValue];

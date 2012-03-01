@@ -984,7 +984,6 @@
 				14C0CA1014EC51D5007CDDFF /* camera-icon-md.png */,
 				3FFA5F4314E53FD80054078B /* bottles.png */,
 				3FFA5F4414E53FD80054078B /* kork.png */,
-				3FFD19AA14F7BBEC00D04C20 /* SimonSays */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -1242,24 +1241,25 @@
 		3FE08EFA14C992E00010A03C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				3FFD19AA14F7BBEC00D04C20 /* SimonSays */,
 				3FFD19A814F7BB9900D04C20 /* Faces */,
-				3FFD19A714F7BB5700D04C20 /* ViewController */,
+				3FFD19A714F7BB5700D04C20 /* GUI */,
 				14FFF69314F6A8A400899870 /* song.mp3 */,
 				3F6205E914F674DA006034DB /* Default@2x.png */,
 				3F6205E614F674D6006034DB /* Default.png */,
 				3F6205ED14F6757B006034DB /* Icons */,
 				3F0BEFAD14E538B600240775 /* Fonts */,
 				3F34863214E3EF0A009EEBAE /* menu images */,
-				3F408FDD14E535440034856F /* GUI files psd */,
 				3FFD19A914F7BBC500D04C20 /* Arrows */,
 				3F10BE2B14C9960800220F88 /* images */,
 			);
 			path = resources;
 			sourceTree = "<group>";
 		};
-		3FFD19A714F7BB5700D04C20 /* ViewController */ = {
+		3FFD19A714F7BB5700D04C20 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				3F408FDD14E535440034856F /* GUI files psd */,
 				3FFD199F14F7A28900D04C20 /* Polaroid.png */,
 				3FFD199C14F7A27D00D04C20 /* ChooseText.png */,
 				3FDF90AF14EE8B0E001F26D5 /* beer.png */,
@@ -1271,7 +1271,7 @@
 				3FDF90A214EE70B8001F26D5 /* WhosNext.png */,
 				3FDF90A314EE70B8001F26D5 /* naamaRam.png */,
 			);
-			name = ViewController;
+			name = GUI;
 			sourceTree = "<group>";
 		};
 		3FFD19A814F7BB9900D04C20 /* Faces */ = {
@@ -1320,6 +1320,7 @@
 				3F10BE3314C9960800220F88 /* simon_yel_up.png */,
 			);
 			name = SimonSays;
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

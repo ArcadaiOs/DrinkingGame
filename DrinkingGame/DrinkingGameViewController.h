@@ -51,6 +51,8 @@ typedef struct{
     UIViewController *viewControl;
     
     IBOutlet UIView *debugView;
+
+    DGPlayer *loosingPlayer;
 }
 
 @property (readonly, nonatomic) DGController* controller;

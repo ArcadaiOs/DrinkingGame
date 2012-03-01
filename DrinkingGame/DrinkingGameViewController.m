@@ -101,7 +101,7 @@
     //[delegate playerReady];
 }
 -(void) gameEndedWithLooser:(DGPlayer *)player{
-    
+    loosingPlayer = player;
     //NSLog(@"gamendeViewController");
     [debugView removeFromSuperview];
     playerImg.image = player.image;
@@ -132,10 +132,12 @@
     [boozeChooserView removeFromSuperview];
     [viewControl dismissModalViewControllerAnimated:YES];
     [playerImgFrame removeFromSuperview];
+    //NSLog(@"drink: %i",controller.drinkar.count);
+    //NSString *chosenPunnishment = (NSString*) ((UIButton*)sender).titleLabel.text;
+    //DGDrink *d = (DGDrink*)[controller.drinkar valueForKey:@"Shot"];
+    NSLog(@"Looser: %@", loosingPlayer.name);
     
-    NSString *chosenPunnishment = ((UIButton*)sender).titleLabel.text;
-    NSLog(@"%@",chosenPunnishment);
-    
+    //[loosingPlayer takeShot:[controller.drinkar valueForKey:chosenPunnishment]];
     [self.view addSubview:debugView ];    
 }
 

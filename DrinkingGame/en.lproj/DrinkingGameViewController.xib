@@ -305,7 +305,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="1015736350"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">beer</string>
+						<string key="IBUINormalTitle">Beer</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1032105015"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -330,7 +330,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="1015736350"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">wine</string>
+						<string key="IBUINormalTitle">Wine</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1032105015"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -356,7 +356,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="1015736350"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">shot</string>
+						<string key="IBUINormalTitle">Shot</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1032105015"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
