@@ -9,39 +9,30 @@
 #import "DGController.h"
 
 @implementation DGController
-@synthesize drinks;
+//@synthesize drinks;
 @synthesize players;
+@synthesize drinkar;
+
 @synthesize gameLevel,playerCount;
 @synthesize delegate;
-@synthesize drinkar;
+
 
 //@synthesize controller;
 - (id)init
 {
     self = [super init];
     if (self) {
-        drinks = [[NSMutableArray alloc] init];
-        [drinks addObject:[[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"]];
-        [drinks addObject:[[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"]];
-        [drinks addObject:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"]];
+      //  drinks = [[NSMutableArray alloc] init];
+      //  [drinks addObject:[[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"]];
+      //  [drinks addObject:[[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"]];
+      //  [drinks addObject:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"]];
         
         
-        //drinkar = [[NSDictionary alloc] init];
+        drinkar = [[NSMutableDictionary alloc] init];
+        [drinkar setValue:[[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"] forKey:@"Shot"];
+        [drinkar setValue:[[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"] forKey:@"Wine"];
+        [drinkar setValue:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"] forKey:@"Beer"];
 
-//        [drinkar setValue:[[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"] forKey:@"Shot"];
-//        [drinkar setValue:[[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"] forKey:@"Wine"];
-//        [drinkar setValue:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"] forKey:@"Beer"];
- 
-        drinkar = [NSDictionary dictionaryWithObjectsAndKeys:
-                   [[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"],
-                   @"Shot", 
-                   [[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"],
-                   @"Wine", 
-                   [[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"],
-                   @"Beer", 
-                   nil];
-        
-        NSLog(@"ASD: %@", ((DGDrink*)[drinkar valueForKey:@"Beer"]).name);
         
         players = [[NSMutableArray alloc] init];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] name:@"Soini" weight:120 isFemale:false]];
@@ -54,15 +45,25 @@
 
         
         
-        //        [[players objectAtIndex:0] takeShot:[drinks objectAtIndex:1]];
-        //        [[players objectAtIndex:1] takeShot:[drinks objectAtIndex:0]];
-        //        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
-        //        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
-        
+        //[[players objectAtIndex:0] takeShot:[drinkar valueForKey:@"Shot"]];
+        currentPlayer = 0;
+                
     }
     
     return self;
 } 
+
+-(DGPlayer*)NextPlayerRepeatPlayers:(_Bool)PlayerRepeat{
+    DGPlayer *next = nil;
+    if(currentPlayer < playerCount-1){
+        currentPlayer++;
+        next =  [players objectAtIndex:currentPlayer];  
+    } else if(PlayerRepeat){
+        next = [players objectAtIndex:0];
+    }
+
+    return next;
+}
 -(void) showPlayer:(DGPlayer*) player{
     NSLog(@"DGController");
     [delegate showPlayer:player];
@@ -72,12 +73,6 @@
 
     NSLog(@"GAME ENDED AND LOSER IS FOUND");
     [delegate gameEndedWithLooser:looser];
-}
--(void) playerReady{
-    NSLog(@"PLAYER READu CONTROLER");
-}
-- (void) startRandomGame{
-    // TALK TO DrinkingGameViewController
 }
 
 
