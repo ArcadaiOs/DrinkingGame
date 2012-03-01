@@ -17,7 +17,7 @@
 #import "DGFillTheBottle.h"
 #import "DGStartMenu.h"
 #import "SimpleAudioEngine.h"
-
+#import "DGPlayerStatView.h"
 typedef struct{
     NSString *playerName;
     int score;
@@ -45,6 +45,8 @@ typedef struct{
     IBOutlet UIView *playerImgFrame;    
     IBOutlet UIImageView *playerImg;
     IBOutlet UIView *nextPlayerView;
+    
+    IBOutlet UITableView* statView;
 
     id <ViewControllerProto> delegate;
     UIViewController *viewControl;
@@ -62,6 +64,7 @@ typedef struct{
 -(IBAction)twitterAction:(id)sender;
 */
 
+-(IBAction) showPlayerStats:(id)sender;
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;

@@ -192,6 +192,10 @@
 		3F8EB53B14EE965800412982 /* whiteArrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8EB53314EE965800412982 /* whiteArrowLeft.png */; };
 		3F8EB53C14EE965800412982 /* whiteArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8EB53414EE965800412982 /* whiteArrowRight.png */; };
 		3F8EB53D14EE965800412982 /* whiteArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8EB53514EE965800412982 /* whiteArrowUp.png */; };
+		3F944A0F14FF92F10062F834 /* DGPlayerStatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F944A0D14FF92F10062F834 /* DGPlayerStatView.m */; };
+		3F944A1014FF92F10062F834 /* DGPlayerStatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F944A0E14FF92F10062F834 /* DGPlayerStatView.xib */; };
+		3F944A1314FF9E730062F834 /* DGPlayerStatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F944A1214FF9E730062F834 /* DGPlayerStatCell.m */; };
+		3F944A1514FF9EDD0062F834 /* DGPlayerStatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F944A1414FF9EDD0062F834 /* DGPlayerStatCell.xib */; };
 		3FAC088E14E53A10006BB22D /* DGFillTheBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */; };
 		3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */; };
 		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
@@ -219,14 +223,6 @@
 		3FDF90B414EE8B0E001F26D5 /* wine.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDF90B114EE8B0E001F26D5 /* wine.png */; };
 		3FE08EF714C98B3F0010A03C /* DGRandomShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08EF514C98B3F0010A03C /* DGRandomShot.m */; };
 		3FE08EF814C98B3F0010A03C /* DGRandomShot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */; };
-		3FE08EFE14C992E00010A03C /* simon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFB14C992E00010A03C /* simon.png */; };
-		3FE08EFF14C992E00010A03C /* simon.psd in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFC14C992E00010A03C /* simon.psd */; };
-		3FE08F0014C992E00010A03C /* simon_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE08EFD14C992E00010A03C /* simon_light.png */; };
-		3FEDBBA514F7BEE400F4FD37 /* ECCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBB9B14F7BEE400F4FD37 /* ECCommon.m */; };
-		3FEDBBA614F7BEE400F4FD37 /* ECGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBB9E14F7BEE400F4FD37 /* ECGraph.m */; };
-		3FEDBBA714F7BEE400F4FD37 /* ECGraphItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBBA014F7BEE400F4FD37 /* ECGraphItem.m */; };
-		3FEDBBA814F7BEE400F4FD37 /* ECGraphLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBBA214F7BEE400F4FD37 /* ECGraphLine.m */; };
-		3FEDBBA914F7BEE400F4FD37 /* ECGraphPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDBBA414F7BEE400F4FD37 /* ECGraphPoint.m */; };
 		3FFA5F4514E53FD80054078B /* bottles.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA5F4314E53FD80054078B /* bottles.png */; };
 		3FFA5F4614E53FD80054078B /* kork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA5F4414E53FD80054078B /* kork.png */; };
 		3FFD199D14F7A27D00D04C20 /* ChooseText.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFD199C14F7A27D00D04C20 /* ChooseText.png */; };
@@ -562,6 +558,12 @@
 		3F8EB53314EE965800412982 /* whiteArrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrowLeft.png; sourceTree = "<group>"; };
 		3F8EB53414EE965800412982 /* whiteArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrowRight.png; sourceTree = "<group>"; };
 		3F8EB53514EE965800412982 /* whiteArrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrowUp.png; sourceTree = "<group>"; };
+		3F944A0C14FF92F10062F834 /* DGPlayerStatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayerStatView.h; sourceTree = "<group>"; };
+		3F944A0D14FF92F10062F834 /* DGPlayerStatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayerStatView.m; sourceTree = "<group>"; };
+		3F944A0E14FF92F10062F834 /* DGPlayerStatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGPlayerStatView.xib; sourceTree = "<group>"; };
+		3F944A1114FF9E730062F834 /* DGPlayerStatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGPlayerStatCell.h; sourceTree = "<group>"; };
+		3F944A1214FF9E730062F834 /* DGPlayerStatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGPlayerStatCell.m; sourceTree = "<group>"; };
+		3F944A1414FF9EDD0062F834 /* DGPlayerStatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGPlayerStatCell.xib; sourceTree = "<group>"; };
 		3FAC088B14E53A10006BB22D /* DGFillTheBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGFillTheBottle.h; sourceTree = "<group>"; };
 		3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGFillTheBottle.m; sourceTree = "<group>"; };
 		3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGFillTheBottle.xib; sourceTree = "<group>"; };
@@ -594,19 +596,6 @@
 		3FE08EF414C98B3F0010A03C /* DGRandomShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShot.h; sourceTree = "<group>"; };
 		3FE08EF514C98B3F0010A03C /* DGRandomShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShot.m; sourceTree = "<group>"; };
 		3FE08EF614C98B3F0010A03C /* DGRandomShot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGRandomShot.xib; sourceTree = "<group>"; };
-		3FE08EFB14C992E00010A03C /* simon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon.png; sourceTree = "<group>"; };
-		3FE08EFC14C992E00010A03C /* simon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = simon.psd; sourceTree = "<group>"; };
-		3FE08EFD14C992E00010A03C /* simon_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_light.png; sourceTree = "<group>"; };
-		3FEDBB9A14F7BEE400F4FD37 /* ECCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCommon.h; sourceTree = "<group>"; };
-		3FEDBB9B14F7BEE400F4FD37 /* ECCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCommon.m; sourceTree = "<group>"; };
-		3FEDBB9D14F7BEE400F4FD37 /* ECGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraph.h; sourceTree = "<group>"; };
-		3FEDBB9E14F7BEE400F4FD37 /* ECGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraph.m; sourceTree = "<group>"; };
-		3FEDBB9F14F7BEE400F4FD37 /* ECGraphItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphItem.h; sourceTree = "<group>"; };
-		3FEDBBA014F7BEE400F4FD37 /* ECGraphItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphItem.m; sourceTree = "<group>"; };
-		3FEDBBA114F7BEE400F4FD37 /* ECGraphLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphLine.h; sourceTree = "<group>"; };
-		3FEDBBA214F7BEE400F4FD37 /* ECGraphLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphLine.m; sourceTree = "<group>"; };
-		3FEDBBA314F7BEE400F4FD37 /* ECGraphPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphPoint.h; sourceTree = "<group>"; };
-		3FEDBBA414F7BEE400F4FD37 /* ECGraphPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphPoint.m; sourceTree = "<group>"; };
 		3FFA5F4314E53FD80054078B /* bottles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottles.png; sourceTree = "<group>"; };
 		3FFA5F4414E53FD80054078B /* kork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kork.png; sourceTree = "<group>"; };
 		3FFD199C14F7A27D00D04C20 /* ChooseText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChooseText.png; sourceTree = "<group>"; };
@@ -1136,7 +1125,7 @@
 		3F3AFECE14C04EF300A992F7 /* DrinkingGame */ = {
 			isa = PBXGroup;
 			children = (
-				3FEDBB9914F7BEBF00F4FD37 /* ECGraph */,
+				3FEDBBB414F7C2B100F4FD37 /* playerStats */,
 				14FFF78B14F6B8DD00899870 /* Cocos2D */,
 				3F4B704514E3E42F00BAE149 /* startMenu */,
 				3F3AFED714C04EF300A992F7 /* DrinkingGameAppDelegate.h */,
@@ -1257,6 +1246,19 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		3FEDBBB414F7C2B100F4FD37 /* playerStats */ = {
+			isa = PBXGroup;
+			children = (
+				3F944A0C14FF92F10062F834 /* DGPlayerStatView.h */,
+				3F944A0D14FF92F10062F834 /* DGPlayerStatView.m */,
+				3F944A0E14FF92F10062F834 /* DGPlayerStatView.xib */,
+				3F944A1114FF9E730062F834 /* DGPlayerStatCell.h */,
+				3F944A1214FF9E730062F834 /* DGPlayerStatCell.m */,
+				3F944A1414FF9EDD0062F834 /* DGPlayerStatCell.xib */,
+			);
+			name = playerStats;
+			sourceTree = "<group>";
+		};
 		3FFD19A714F7BB5700D04C20 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1306,9 +1308,6 @@
 		3FFD19AA14F7BBEC00D04C20 /* SimonSays */ = {
 			isa = PBXGroup;
 			children = (
-				3FE08EFB14C992E00010A03C /* simon.png */,
-				3FE08EFC14C992E00010A03C /* simon.psd */,
-				3FE08EFD14C992E00010A03C /* simon_light.png */,
 				3F10BE2C14C9960800220F88 /* simon_blue_dwn.png */,
 				3F10BE2D14C9960800220F88 /* simon_blue_up.png */,
 				3F10BE2E14C9960800220F88 /* simon_green_dwn.png */,
@@ -1319,31 +1318,6 @@
 				3F10BE3314C9960800220F88 /* simon_yel_up.png */,
 			);
 			name = SimonSays;
-			sourceTree = "<group>";
-		};
-		3FEDBB9914F7BEBF00F4FD37 /* ECGraph */ = {
-			isa = PBXGroup;
-			children = (
-				3FEDBB9A14F7BEE400F4FD37 /* ECCommon.h */,
-				3FEDBB9B14F7BEE400F4FD37 /* ECCommon.m */,
-				3FEDBB9C14F7BEE400F4FD37 /* ECGraph */,
-			);
-			name = ECGraph;
-			sourceTree = "<group>";
-		};
-		3FEDBB9C14F7BEE400F4FD37 /* ECGraph */ = {
-			isa = PBXGroup;
-			children = (
-				3FEDBB9D14F7BEE400F4FD37 /* ECGraph.h */,
-				3FEDBB9E14F7BEE400F4FD37 /* ECGraph.m */,
-				3FEDBB9F14F7BEE400F4FD37 /* ECGraphItem.h */,
-				3FEDBBA014F7BEE400F4FD37 /* ECGraphItem.m */,
-				3FEDBBA114F7BEE400F4FD37 /* ECGraphLine.h */,
-				3FEDBBA214F7BEE400F4FD37 /* ECGraphLine.m */,
-				3FEDBBA314F7BEE400F4FD37 /* ECGraphPoint.h */,
-				3FEDBBA414F7BEE400F4FD37 /* ECGraphPoint.m */,
-			);
-			path = ECGraph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1400,9 +1374,6 @@
 				3F3AFEDC14C04EF300A992F7 /* MainWindow.xib in Resources */,
 				3F3AFEE214C04EF300A992F7 /* DrinkingGameViewController.xib in Resources */,
 				3FE08EF814C98B3F0010A03C /* DGRandomShot.xib in Resources */,
-				3FE08EFE14C992E00010A03C /* simon.png in Resources */,
-				3FE08EFF14C992E00010A03C /* simon.psd in Resources */,
-				3FE08F0014C992E00010A03C /* simon_light.png in Resources */,
 				3F10BE3414C9960800220F88 /* simon_blue_dwn.png in Resources */,
 				3F10BE3514C9960800220F88 /* simon_blue_up.png in Resources */,
 				3F10BE3614C9960800220F88 /* simon_green_dwn.png in Resources */,
@@ -1478,6 +1449,8 @@
 				14FFF76F14F6B6AC00899870 /* CMakeLists.txt in Resources */,
 				3FFD199D14F7A27D00D04C20 /* ChooseText.png in Resources */,
 				3FFD19A014F7A28900D04C20 /* Polaroid.png in Resources */,
+				3F944A1014FF92F10062F834 /* DGPlayerStatView.xib in Resources */,
+				3F944A1514FF9EDD0062F834 /* DGPlayerStatCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1615,11 +1588,8 @@
 				14FFF78614F6B6AC00899870 /* cpSpaceQuery.c in Sources */,
 				14FFF78714F6B6AC00899870 /* cpSpaceStep.c in Sources */,
 				14FFF78814F6B6AC00899870 /* cpVect.c in Sources */,
-				3FEDBBA514F7BEE400F4FD37 /* ECCommon.m in Sources */,
-				3FEDBBA614F7BEE400F4FD37 /* ECGraph.m in Sources */,
-				3FEDBBA714F7BEE400F4FD37 /* ECGraphItem.m in Sources */,
-				3FEDBBA814F7BEE400F4FD37 /* ECGraphLine.m in Sources */,
-				3FEDBBA914F7BEE400F4FD37 /* ECGraphPoint.m in Sources */,
+				3F944A0F14FF92F10062F834 /* DGPlayerStatView.m in Sources */,
+				3F944A1314FF9E730062F834 /* DGPlayerStatCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
