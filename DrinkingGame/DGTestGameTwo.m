@@ -45,7 +45,7 @@
     currentPlayer=0;
     [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
 //    playerCount = [controller playerCount];
-    playerCount = 2;
+    playerCount = 3;
 
     results = [[NSMutableString alloc] initWithString:@""];
     
@@ -104,7 +104,7 @@
     
     molesHit=0;
     molesShown=0;
-    seconds=5;
+    seconds=30;
     maxMoles=(seconds/0.6);
     zeroes = @"";
     
@@ -191,21 +191,24 @@
             [playerScore setHidden:YES];
             [playerName2 setHidden:YES];
             int minId=0;
-            int i=0;
-            int min=[[points objectForKey:0] intValue];
+            int min=10000;
             NSArray *keys = [points allKeys];
             for (NSNumber *key in keys) 
             {   
+                
                 int x =[key intValue];
+                 
                 int p =[[points objectForKey:key] intValue];
-                if(p<=min){
+                
+                if(p<min){
                     min=p;
-                     minId = i;
+                    minId = [key intValue];
                 }
                 [results appendFormat:@"NAME: %@ , POINTS:%i \n",[[[controller players] objectAtIndex:x] name], p];
-                i++;
+                
                 
             }
+            NSLog(@"%i",minId);
             [delegate GameEndedWithLooser:[[controller players] objectAtIndex:minId]];
            self.playerScores.text=[[NSString alloc] initWithFormat:@"%@",results];
             
