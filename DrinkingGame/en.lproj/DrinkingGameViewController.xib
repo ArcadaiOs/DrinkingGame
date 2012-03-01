@@ -307,7 +307,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="1015736350"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">beer</string>
+						<string key="IBUINormalTitle">Beer</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1032105015"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -316,7 +316,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="367502635"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">beer.png</string>
+							<string key="NSResourceName">beer2.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="951072022">
@@ -333,7 +333,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="1015736350"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">wine</string>
+						<string key="IBUINormalTitle">Wine</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1032105015"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -342,7 +342,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="367502635"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">wine.png</string>
+							<string key="NSResourceName">shot2.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="426410617">
@@ -359,7 +359,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="1015736350"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">shot</string>
+						<string key="IBUINormalTitle">Shot</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1032105015"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -368,7 +368,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="367502635"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">shot.png</string>
+							<string key="NSResourceName">wine2.png</string>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="991981559">
@@ -471,6 +471,7 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUITextAlignment">1</int>
 					</object>
 				</object>
 				<string key="NSFrameSize">{233, 297}</string>
@@ -493,12 +494,11 @@
 					<object class="IBUIImageView" id="996348249">
 						<reference key="NSNextResponder" ref="564098789"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, -26}, {303, 291}}</string>
+						<string key="NSFrameSize">{303, 374}</string>
 						<reference key="NSSuperview" ref="564098789"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="498226391"/>
 						<string key="NSReuseIdentifierKey">_NS:541</string>
-						<int key="IBUIContentMode">1</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
@@ -509,7 +509,7 @@
 					<object class="IBUIButton" id="498226391">
 						<reference key="NSNextResponder" ref="564098789"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{210, 337}, {93, 37}}</string>
+						<string key="NSFrame">{{105, 337}, {93, 37}}</string>
 						<reference key="NSSuperview" ref="564098789"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -896,8 +896,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="8551121"/>
-							<reference ref="373670646"/>
 							<reference ref="147415343"/>
+							<reference ref="373670646"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">playerImageView</string>
@@ -907,8 +907,8 @@
 						<reference key="object" ref="564098789"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="996348249"/>
 							<reference ref="498226391"/>
+							<reference ref="996348249"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">NextPlayerView</string>
@@ -1356,9 +1356,9 @@
 				<string>DGmenubg.png</string>
 				<string>NextPlayer.png</string>
 				<string>Polaroid.png</string>
-				<string>beer.png</string>
-				<string>shot.png</string>
-				<string>wine.png</string>
+				<string>beer2.png</string>
+				<string>shot2.png</string>
+				<string>wine2.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1366,9 +1366,9 @@
 				<string>{768, 1024}</string>
 				<string>{704, 563}</string>
 				<string>{451, 540}</string>
-				<string>{246, 245}</string>
-				<string>{246, 239}</string>
-				<string>{246, 245}</string>
+				<string>{241, 241}</string>
+				<string>{241, 241}</string>
+				<string>{241, 241}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">534</string>

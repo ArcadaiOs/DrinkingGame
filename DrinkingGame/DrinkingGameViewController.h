@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "DGGame.h"
 #import "DGRandomShot.h"
 #import "DGController.h"
@@ -52,6 +53,8 @@ typedef struct{
     UIViewController *viewControl;
     
     IBOutlet UIView *debugView;
+
+    DGPlayer *loosingPlayer;
 }
 
 @property (readonly, nonatomic) DGController* controller;

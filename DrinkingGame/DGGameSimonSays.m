@@ -97,35 +97,20 @@
             
             if([[playList objectAtIndex:playCount] intValue] == [self colorToIntId:button.titleLabel.text] ){
                 if(playCount == [playList count]-1){
-     //               NSLog(@"WIN");
-                    [self flashButton:1 duration:2.0f];
-                    [self flashButton:2 duration:2.0f];
-                    [self flashButton:3 duration:2.0f];
-                    [self flashButton:4 duration:2.0f];
-                    
-                    currentPlayer++;
-                    if(currentPlayer == controller.players.count){
-                        currentPlayer = 0;
-                    }
-                    // nextplayer show
-                    [self next:nil];
-                    
+                    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
+                    [self NextPlayer];
                 }
-                
                 playCount++;        
             } else {
-                //NSLog(@"PLAYER FAIL");
                 playCount = 0;
                 playerAction = false;
-                [delegate GameEndedWithLooser:[[controller players] objectAtIndex:currentPlayer]];
-                
+                [delegate GameEndedWithLooser:CurrentPlayer];
             }
             
         } else{
-            //NSLog(@"PLAYER FAIL");
             playerAction = false;
             playCount = 0;
-            [delegate GameEndedWithLooser:[[controller players] objectAtIndex:currentPlayer]];
+           [delegate GameEndedWithLooser:CurrentPlayer];
             
         }
         
@@ -191,10 +176,9 @@
     // Release any cached data, images, etc that aren't in use.
 }
 -(IBAction)next:(id)sender{
-    // add 2
+
     [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
-    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
-    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
+//    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
     [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
     
 }
@@ -214,13 +198,14 @@
     playList = [[NSMutableArray alloc] init];
     
     // create som starting point values
-    int i=5;
+    int i=4;
     while (i--) {
         int rand = [self getRandomIntMin:1 max:4];
         [playList addObject:[[NSNumber alloc] initWithInt:rand]];
     }
-    currentPlayer = 0;
-    [self showPlayer:[controller.players objectAtIndex:0]];
+//    [self showPlayer:[controller.players objectAtIndex:0]];
+
+    [self NextPlayer];
     
     
 }
