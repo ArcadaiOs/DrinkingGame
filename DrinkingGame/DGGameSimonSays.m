@@ -191,10 +191,9 @@
     // Release any cached data, images, etc that aren't in use.
 }
 -(IBAction)next:(id)sender{
-    // add 2
+
     [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
-    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
-    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
+//    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
     [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
     
 }
@@ -214,7 +213,7 @@
     playList = [[NSMutableArray alloc] init];
     
     // create som starting point values
-    int i=5;
+    int i=4;
     while (i--) {
         int rand = [self getRandomIntMin:1 max:4];
         [playList addObject:[[NSNumber alloc] initWithInt:rand]];
