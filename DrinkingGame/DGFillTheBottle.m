@@ -94,6 +94,7 @@
     click = 0;
     i = 0;
     timeForGame = 15;
+    [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume :0.2f];
     [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"emptybeerglass.mp3"];
     [self startTimers];
 }
@@ -109,7 +110,6 @@
         NSLog(@"Total clicks:%i", click);
         self.view = endView;
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-        
     }
     else{
         static int count = 0;
