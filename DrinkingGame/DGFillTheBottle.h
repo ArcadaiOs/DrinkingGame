@@ -8,6 +8,7 @@
 
 #import "DGGame.h"
 #import "DGController.h"
+#import "DrinkingGameViewController.h"
 
 @interface DGFillTheBottle : DGGame {
     UIView *gameView;
@@ -46,8 +47,7 @@
     NSMutableArray *pInfo;
     NSString *pName;
     NSMutableString *results;
-    
-    
+   
 }
 /*Game objects*/
 @property (nonatomic, retain) IBOutlet UILabel *timerLabel;
@@ -89,4 +89,5 @@
 @property (nonatomic, retain) IBOutlet UIButton *quitPlayingBtn;
 
 -(IBAction)startNextPlayer:(id)sender;
+
 @end

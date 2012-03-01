@@ -19,6 +19,7 @@
 @interface DGController : NSObject{
     NSMutableArray* drinks;
     NSMutableArray* players;
+    NSDictionary *drinkar;
     int gameLevel;
     int playerCount;
 //    DGController * controller;
@@ -31,6 +32,8 @@
 -(void) playerReady;
 @property (nonatomic, retain) NSMutableArray* drinks;
 @property (nonatomic, retain) NSMutableArray* players;
+@property (nonatomic, retain) NSDictionary *drinkar;;
+
 @property int gameLevel;
 @property int playerCount;
 //@property (nonatomic, retain) DGController * controller;
