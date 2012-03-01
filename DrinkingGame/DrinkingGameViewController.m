@@ -12,7 +12,6 @@
 #import "DGPlayer.h"
 #import "DGController.h"
 
-
 @implementation DrinkingGameViewController
 @synthesize controller;
 //@synthesize twitterButton;
