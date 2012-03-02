@@ -213,6 +213,9 @@
 		3FBF660D1500F8F400934C88 /* iconPlayers.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF660C1500F8F400934C88 /* iconPlayers.png */; };
 		3FBF660F1500F90200934C88 /* iconGames.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF660E1500F90200934C88 /* iconGames.png */; };
 		3FBF66111500F90E00934C88 /* iconSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66101500F90E00934C88 /* iconSettings.png */; };
+		3FBF66151500FC2500934C88 /* iconPlayerA.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66121500FC2500934C88 /* iconPlayerA.png */; };
+		3FBF66161500FC2500934C88 /* iconSettingsA.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66131500FC2500934C88 /* iconSettingsA.png */; };
+		3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66141500FC2500934C88 /* iconGamesA.png */; };
 		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
 		3FCDE48914DAB7370087921F /* DGViewPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDE48714DAB7360087921F /* DGViewPlayer.m */; };
 		3FCDE48A14DAB7370087921F /* DGViewPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDE48814DAB7360087921F /* DGViewPlayer.xib */; };
@@ -595,6 +598,9 @@
 		3FBF660C1500F8F400934C88 /* iconPlayers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconPlayers.png; sourceTree = "<group>"; };
 		3FBF660E1500F90200934C88 /* iconGames.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGames.png; sourceTree = "<group>"; };
 		3FBF66101500F90E00934C88 /* iconSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconSettings.png; sourceTree = "<group>"; };
+		3FBF66121500FC2500934C88 /* iconPlayerA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconPlayerA.png; sourceTree = "<group>"; };
+		3FBF66131500FC2500934C88 /* iconSettingsA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconSettingsA.png; sourceTree = "<group>"; };
+		3FBF66141500FC2500934C88 /* iconGamesA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGamesA.png; sourceTree = "<group>"; };
 		3FC9856D14DABDD80023BB05 /* DGRandomShotWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShotWheel.h; sourceTree = "<group>"; };
 		3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShotWheel.m; sourceTree = "<group>"; };
 		3FCDE48614DAB7360087921F /* DGViewPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGViewPlayer.h; sourceTree = "<group>"; };
@@ -1304,6 +1310,9 @@
 				3F408FDD14E535440034856F /* GUI files psd */,
 				3FFD199F14F7A28900D04C20 /* Polaroid.png */,
 				3FBF660C1500F8F400934C88 /* iconPlayers.png */,
+				3FBF66121500FC2500934C88 /* iconPlayerA.png */,
+				3FBF66131500FC2500934C88 /* iconSettingsA.png */,
+				3FBF66141500FC2500934C88 /* iconGamesA.png */,
 				3FBF66101500F90E00934C88 /* iconSettings.png */,
 				3FBF660E1500F90200934C88 /* iconGames.png */,
 				3FE695BE14FF8C1A004C7A05 /* shot2.png */,
@@ -1506,6 +1515,9 @@
 				3FBF660D1500F8F400934C88 /* iconPlayers.png in Resources */,
 				3FBF660F1500F90200934C88 /* iconGames.png in Resources */,
 				3FBF66111500F90E00934C88 /* iconSettings.png in Resources */,
+				3FBF66151500FC2500934C88 /* iconPlayerA.png in Resources */,
+				3FBF66161500FC2500934C88 /* iconSettingsA.png in Resources */,
+				3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
