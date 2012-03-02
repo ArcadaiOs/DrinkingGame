@@ -21,6 +21,6 @@
     id < CloseScreen > delegate;
 }
 @property(nonatomic, retain) DGController* controller;
-- (id)initWithPlayers: (NSMutableArray*) playersIn;
+- (id)initWithController: (DGController*) controllerIn;
 -(IBAction) back:(id)sender;
 @end

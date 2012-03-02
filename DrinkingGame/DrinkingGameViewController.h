@@ -60,6 +60,7 @@ typedef struct{
 @property (readonly, nonatomic) DGController* controller;
 @property(nonatomic,assign)id delegate;
 -(DGController *) controller;
+-(id)initWithController: (DGController*) controllerIn;
 
 //twitter
 /*

@@ -11,7 +11,7 @@
 @synthesize controller;
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-- (id)initWithPlayers: (DGController*) controllerIn
+- (id)initWithController: (DGController*) controllerIn
 {
     //self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     self = [super init];

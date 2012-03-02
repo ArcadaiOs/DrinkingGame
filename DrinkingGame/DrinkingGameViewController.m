@@ -16,9 +16,10 @@
 @synthesize controller;
 //@synthesize twitterButton;
 @synthesize delegate;
--(id)init{
+-(id)initWithController: (DGController*) controllerIn{
     self = [super init];
     if (self) {
+        controller = controllerIn;
         [controller setDelegate:self];
 
     }
@@ -174,8 +175,8 @@
 {
     NSLog(@"START");
     [super viewDidLoad];
-    controller = [[DGController alloc] init] ;
-    [controller setDelegate:self];
+    //controller = [[DGController alloc] init] ;
+    //[controller setDelegate:self];
     //[ctrl fetchRecords];
     viewControl = [[UIViewController alloc] init];
     [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];

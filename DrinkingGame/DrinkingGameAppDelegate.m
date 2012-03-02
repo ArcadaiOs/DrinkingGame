@@ -14,12 +14,30 @@
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
+@synthesize controller;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
-    self.window.rootViewController = self.tabBarController;
+    controller = [[DGController alloc] init] ;
+    
+    tabBarController = [[UITabBarController alloc] init];
+    
+    DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithController:controller];
+    DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
+    
+    UITabBarItem* gameTab = [[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1];
+    UITabBarItem* statTab = [UITabBarItem alloc];
+    
+    NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
+    NSArray* tabs = [NSArray arrayWithObjects:gameTab,statTab,nil];
+    tabBarController.toolbarItems = tabs;
+    tabBarController.viewControllers = controllers;
+    
+    self.window.rootViewController = tabBarController;
+    
+    //self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
