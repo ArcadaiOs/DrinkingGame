@@ -1,43 +1,23 @@
 //
-//  DrinkingGameAppDelegate.m
-//  DrinkingGame
+//  testAppDelegate.m
+//  test
 //
-//  Created by student don 1/13/12.
+//  Created by student on 3/2/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
-// hello woerld
-#import "DrinkingGameAppDelegate.h"
 
-#import "DrinkingGameViewController.h"
+#import "testAppDelegate.h"
 
-@implementation DrinkingGameAppDelegate
+@implementation testAppDelegate
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
-@synthesize controller;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-    controller = [[DGController alloc] init] ;
-    
-    tabBarController = [[UITabBarController alloc] init];
-    
-    DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithController:controller];
-    DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
-    
-    UITabBarItem* gameTab = [[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1];
-    UITabBarItem* statTab = [UITabBarItem alloc];
-    
-    NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
-    NSArray* tabs = [NSArray arrayWithObjects:gameTab,statTab,nil];
-    tabBarController.toolbarItems = tabs;
-    tabBarController.viewControllers = controllers;
-    
-    self.window.rootViewController = tabBarController;
-    
-    //self.window.rootViewController = self.tabBarController;
+    // Add the tab bar controller's current view as a subview of the window
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -87,5 +67,19 @@
     [_tabBarController release];
     [super dealloc];
 }
+
+/*
+// Optional UITabBarControllerDelegate method.
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+}
+*/
+
+/*
+// Optional UITabBarControllerDelegate method.
+- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
+{
+}
+*/
 
 @end
