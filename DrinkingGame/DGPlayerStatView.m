@@ -8,16 +8,16 @@
 
 #import "DGPlayerStatView.h"
 @implementation DGPlayerStatView
-@synthesize players;
+@synthesize controller;
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-- (id)initWithPlayers: (NSMutableArray*) playersIn
+- (id)initWithPlayers: (DGController*) controllerIn
 {
     //self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     self = [super init];
     
     if (self) {
-        players = playersIn;
+        controller = controllerIn;
         // Custom initialization
     }
     return self;
@@ -58,7 +58,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.players count];
+    return [controller.players count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -78,7 +78,7 @@
     }
     
     NSUInteger row = [indexPath row];
-    [cell setPlayer:[players objectAtIndex:row]];
+    [cell setPlayer:[controller.players objectAtIndex:row]];
     return cell;
     
 }

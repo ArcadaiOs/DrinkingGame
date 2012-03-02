@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DGTabBarController.h"
 @class DrinkingGameViewController;
 
 @interface DrinkingGameAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet DrinkingGameViewController *viewController;
+@property (nonatomic, retain) IBOutlet DGTabBarController *viewController;
+@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
 @end

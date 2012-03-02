@@ -8,11 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "DGPlayerStatCell.h"
+#import "DGPlayer.h"
+#import "DGController.h"
+@protocol CloseScreen <NSObject>
+-(void) closeScreen;
+@end
+
 @interface DGPlayerStatView : UIViewController
 <UITableViewDelegate,UITableViewDataSource>{
     IBOutlet UITableView* table;
-    NSMutableArray* players;
+    DGController* controller;
+    id < CloseScreen > delegate;
 }
-@property(nonatomic, retain) NSMutableArray* players;
+@property(nonatomic, retain) DGController* controller;
 - (id)initWithPlayers: (NSMutableArray*) playersIn;
+-(IBAction) back:(id)sender;
 @end
