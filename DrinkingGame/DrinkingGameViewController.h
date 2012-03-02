@@ -13,7 +13,6 @@
 #import "DGController.h"
 #import "DGGameSimonSays.h"
 #import "DGSteadyHands.h"
-#import "DGViewPlayer.h"
 #import "DGTestGameTwo.h"
 #import "DGFillTheBottle.h"
 #import "DGStartMenu.h"
@@ -64,7 +63,7 @@ typedef struct{
 @property (retain) UIButton *twitterButton;
 -(IBAction)twitterAction:(id)sender;
 */
-
+-(IBAction) testDrink:(id)sender;
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;

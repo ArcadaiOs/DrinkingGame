@@ -11,7 +11,7 @@
 @implementation DGController
 //@synthesize drinks;
 @synthesize players;
-@synthesize drinkar;
+@synthesize drinks;
 
 @synthesize gameLevel,playerCount;
 @synthesize delegate;
@@ -22,20 +22,20 @@
 {
     self = [super init];
     if (self) {
-      //  drinks = [[NSMutableArray alloc] init];
-      //  [drinks addObject:[[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"]];
-      //  [drinks addObject:[[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"]];
-      //  [drinks addObject:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"]];
-        
-        
-        drinkar = [[NSMutableDictionary alloc] init];
-        [drinkar setValue:[[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"] forKey:@"Shot"];
-        [drinkar setValue:[[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"] forKey:@"Wine"];
-        [drinkar setValue:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"] forKey:@"Beer"];
 
         
+        drinks = [[NSMutableDictionary alloc] init];
+        [drinks setValue:[[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"] forKey:@"Shot"];
+        [drinks setValue:[[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"] forKey:@"Wine"];
+        [drinks setValue:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"] forKey:@"Beer"];
+
+        
+        // has 17.5mg alcohole
+        [drinks setValue:[[DGDrink alloc] initWithVolumeCl:30 procent:5 andName:@"TESTDRINK"] forKey:@"TEST"];
+        
+        
         players = [[NSMutableArray alloc] init];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] name:@"Soini" weight:120 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] name:@"Soini" weight:100 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] name:@"Niini" weight:80 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] name:@"Naama" weight:80 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"haddock.jpg"] name:@"Haddock" weight:80 isFemale:false]];
@@ -43,9 +43,6 @@
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"norris.jpg"] name:@"Norris" weight:80 isFemale:false]];
         playerCount = [players count];
 
-        
-        
-        //[[players objectAtIndex:0] takeShot:[drinkar valueForKey:@"Shot"]];
         currentPlayer = 0;
                 
     }

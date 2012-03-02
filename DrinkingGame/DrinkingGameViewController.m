@@ -45,7 +45,10 @@
 -(DGController *) controller{
     return [DGController sharedInstance];
 }
-
+-(IBAction) testDrink:(id)sender{
+    [[controller.players objectAtIndex:0] takeShot:[controller.drinks objectForKey:@"TEST"]];
+    
+}
 -(void) launchGame:(DGGame*)game{
     [currentGame.view removeFromSuperview];
     [currentGame release];
@@ -80,6 +83,8 @@
 -(IBAction)launchSimon:(id)sender{
     [self launchGame:[[DGGameSimonSays alloc] initWithController:controller]];
 }
+
+
 -(void) showPlayer:(DGPlayer *)player{
     [playerImgFrame removeFromSuperview];
     playerImgFrame.center = CGPointMake(150, 195);
@@ -140,7 +145,7 @@
 
     
     NSString *chosenPunnishment = (NSString*) ((UIButton*)sender).titleLabel.text;
-    [loosingPlayer takeShot:[controller.drinkar valueForKey:chosenPunnishment]];
+    [loosingPlayer takeShot:[controller.drinks valueForKey:chosenPunnishment]];
     
     [self.view addSubview:debugView ];    
 }
@@ -188,7 +193,7 @@
     
     [self.view addSubview:debugView ];
     
-    NSLog(@"drinakr: %i", controller.drinkar.count);
+    NSLog(@"drinakr: %i", controller.drinks.count);
     
     [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"song.mp3"];
     

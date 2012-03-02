@@ -265,7 +265,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="1015736350"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">PunnishmentChooser</string>
+						<string key="IBUINormalTitle">TestDrink</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1032105015"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -792,15 +792,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">launchLOOSER:</string>
-						<reference key="source" ref="408356707"/>
-						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<int key="connectionID">114</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">launchMenu:</string>
 						<reference key="source" ref="695652461"/>
 						<reference key="destination" ref="372490531"/>
@@ -825,6 +816,15 @@
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">117</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">testDrink:</string>
+						<reference key="source" ref="408356707"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">119</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1132,7 +1132,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">117</int>
+			<int key="maxID">119</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1154,9 +1154,11 @@
 							<string>punnishmentChosen:</string>
 							<string>showPunnishmentChooser:</string>
 							<string>stopMusic:</string>
+							<string>testDrink:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -1183,6 +1185,7 @@
 							<string>punnishmentChosen:</string>
 							<string>showPunnishmentChooser:</string>
 							<string>stopMusic:</string>
+							<string>testDrink:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1224,6 +1227,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">stopMusic:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">testDrink:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>

@@ -21,6 +21,7 @@
         self.procent = [NSNumber numberWithFloat:procentIn];
         self.name = nameIn;
         self.alcCount = [NSNumber numberWithFloat:(volumeClIn * 10 * procentIn / 100)];
+        NSLog(@"alcContent: %f", [self.alcCount floatValue]);
     }
     
     return self;
