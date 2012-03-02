@@ -45,10 +45,7 @@
 -(DGController *) controller{
     return [DGController sharedInstance];
 }
--(IBAction) testDrink:(id)sender{
-    [[controller.players objectAtIndex:0] takeShot:[controller.drinks objectForKey:@"TEST"]];
-    
-}
+
 -(void) launchGame:(DGGame*)game{
     [currentGame.view removeFromSuperview];
     [currentGame release];
@@ -125,8 +122,8 @@
     [playerImgFrame removeFromSuperview];
     playerImgFrame.center = CGPointMake(160, 215);
     [boozeChooserView addSubview:playerImgFrame];
-    
     [viewControl.view addSubview:boozeChooserView];
+    
     
     [self presentModalViewController:viewControl animated:NO];
     [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];

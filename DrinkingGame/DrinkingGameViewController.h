@@ -52,8 +52,8 @@ typedef struct{
     UIViewController *viewControl;
     
     IBOutlet UIView *debugView;
-
     DGPlayer *loosingPlayer;
+
 }
 
 @property (readonly, nonatomic) DGController* controller;
@@ -65,7 +65,6 @@ typedef struct{
 @property (retain) UIButton *twitterButton;
 -(IBAction)twitterAction:(id)sender;
 */
--(IBAction) testDrink:(id)sender;
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;
