@@ -94,7 +94,24 @@
         if(playCount < ([playList count]) ){
     //        NSLog(@"COMPARING: BUTTON: %i LIST: %i, COUNT %i", [self colorToIntId:button.titleLabel.text],
       //            [[playList objectAtIndex:playCount] intValue],playCount);
-            
+            switch (button.tag) {
+                case 1:
+                    //BLUE Button press
+                    [[SimpleAudioEngine sharedEngine] playEffect:@"cork.aif"];
+                    break;
+                case 2:
+                    //TELL
+                    [[SimpleAudioEngine sharedEngine] playEffect:@"cork.aif"];
+                    break;
+                case 3:
+                    //
+                    [[SimpleAudioEngine sharedEngine] playEffect:@"cork.aif"];
+                    break;
+                case 4:
+                    //
+                    [[SimpleAudioEngine sharedEngine] playEffect:@"cork.aif"];
+                    break;
+            }
             if([[playList objectAtIndex:playCount] intValue] == [self colorToIntId:button.titleLabel.text] ){
                 if(playCount == [playList count]-1){
                     [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
