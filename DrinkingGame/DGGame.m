@@ -22,10 +22,19 @@
         [playerView setDelegate:self];
         [self setDelegate:controller];
         [[controller players]sortUsingSelector:@selector(comparePromille:)];
+
         
+        // Set this to True if one player should only play once
+        OnePlayerOnce = false;
     }
     return self;
 }
+
+// implement this function in your game for returning the scores
+-(void) GameEndedCalculateScores{
+    
+}
+
 
 // this will show a player with his promille and imgae
 // playerReady will execute when player presses Lets Play
@@ -41,6 +50,16 @@
     [controller showPlayer:player];
     //[playerView setPlayer:player];
     
+}
+-(void) NextPlayer{
+    CurrentPlayer = [controller NextPlayerRepeatPlayers:OnePlayerOnce];
+    if(CurrentPlayer == nil){
+        // All Player has played once
+        [self GameEndedCalculateScores];
+            
+    } else {
+        [controller showPlayer:CurrentPlayer];
+    }
 }
 
 -(void) playerReady{

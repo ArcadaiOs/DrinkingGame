@@ -20,6 +20,7 @@
     self = [super init];
     if (self) {
         [controller setDelegate:self];
+
     }
     return self;
     
@@ -81,13 +82,14 @@
 }
 -(void) showPlayer:(DGPlayer *)player{
     [playerImgFrame removeFromSuperview];
-    [nextPlayerView addSubview:playerImgFrame];
-    
     playerImgFrame.center = CGPointMake(150, 195);
-    //playerImgFrame.frame=CGRectMake(10, 50, 250, 300);
-    [viewControl.view addSubview:nextPlayerView];
+    
+    [nextPlayerView addSubview:playerImgFrame];
     [nextPlayerView setCenter:CGPointMake(160, 210)];
+    [viewControl.view addSubview:nextPlayerView];
+    
     [self presentModalViewController:viewControl animated:NO];
+    
     playerImg.image = player.image;
     playerNameLabel.text = player.name;
 }
@@ -99,6 +101,14 @@
     [viewControl dismissModalViewControllerAnimated:YES];
     [currentGame playerReady];
     //[delegate playerReady];
+}
+
+-(IBAction)showPlayerStats:(id)sender{
+    
+    [debugView removeFromSuperview];
+    DGPlayerStatView* stat = [[DGPlayerStatView alloc] initWithPlayers:controller.players];
+    //[viewControl.view addSubview:stat];
+    [self presentModalViewController:stat animated:NO];
 }
 -(void) gameEndedWithLooser:(DGPlayer *)player{
     loosingPlayer = player;
@@ -123,8 +133,10 @@
 
 -(IBAction)showPunnishmentChooser:(id)sender{
     [self dismissModalViewControllerAnimated:NO];
+    
     [playerLostView removeFromSuperview];
     [viewControl.view addSubview:boozeChooserView];
+    
     [self presentModalViewController:viewControl animated:NO];
     
 }
@@ -132,12 +144,12 @@
     [boozeChooserView removeFromSuperview];
     [viewControl dismissModalViewControllerAnimated:YES];
     [playerImgFrame removeFromSuperview];
-    //NSLog(@"drink: %i",controller.drinkar.count);
-    //NSString *chosenPunnishment = (NSString*) ((UIButton*)sender).titleLabel.text;
-    //DGDrink *d = (DGDrink*)[controller.drinkar valueForKey:@"Shot"];
-    NSLog(@"Looser: %@", loosingPlayer.name);
     
-    //[loosingPlayer takeShot:[controller.drinkar valueForKey:chosenPunnishment]];
+
+    
+    NSString *chosenPunnishment = (NSString*) ((UIButton*)sender).titleLabel.text;
+    [loosingPlayer takeShot:[controller.drinkar valueForKey:chosenPunnishment]];
+    
     [self.view addSubview:debugView ];    
 }
 
@@ -160,8 +172,9 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"START");
     [super viewDidLoad];
-    controller = [[DGController alloc] init];
+    controller = [[DGController alloc] init] ;
     [controller setDelegate:self];
     //[ctrl fetchRecords];
     viewControl = [[UIViewController alloc] init];
@@ -184,7 +197,7 @@
     
     [self.view addSubview:debugView ];
     
-    
+    NSLog(@"drinakr: %i", controller.drinkar.count);
     
     [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"song.mp3"];
     
