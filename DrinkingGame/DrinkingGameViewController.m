@@ -19,6 +19,7 @@
 -(id)initWithController: (DGController*) controllerIn{
     self = [super init];
     if (self) {
+        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1]];
         controller = controllerIn;
         [controller setDelegate:self];
 
