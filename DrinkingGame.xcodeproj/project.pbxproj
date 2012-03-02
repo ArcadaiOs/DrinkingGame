@@ -208,6 +208,9 @@
 		3FBF66081500E7F600934C88 /* e1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66041500E7F600934C88 /* e1.mp3 */; };
 		3FBF66091500E7F600934C88 /* c1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66051500E7F600934C88 /* c1.mp3 */; };
 		3FBF660A1500E7F600934C88 /* c2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66061500E7F600934C88 /* c2.mp3 */; };
+		3FBF660D1500F8F400934C88 /* iconPlayers.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF660C1500F8F400934C88 /* iconPlayers.png */; };
+		3FBF660F1500F90200934C88 /* iconGames.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF660E1500F90200934C88 /* iconGames.png */; };
+		3FBF66111500F90E00934C88 /* iconSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66101500F90E00934C88 /* iconSettings.png */; };
 		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
 		3FCDE48914DAB7370087921F /* DGViewPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDE48714DAB7360087921F /* DGViewPlayer.m */; };
 		3FCDE48A14DAB7370087921F /* DGViewPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDE48814DAB7360087921F /* DGViewPlayer.xib */; };
@@ -585,6 +588,9 @@
 		3FBF66041500E7F600934C88 /* e1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = e1.mp3; sourceTree = "<group>"; };
 		3FBF66051500E7F600934C88 /* c1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c1.mp3; sourceTree = "<group>"; };
 		3FBF66061500E7F600934C88 /* c2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c2.mp3; sourceTree = "<group>"; };
+		3FBF660C1500F8F400934C88 /* iconPlayers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconPlayers.png; sourceTree = "<group>"; };
+		3FBF660E1500F90200934C88 /* iconGames.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGames.png; sourceTree = "<group>"; };
+		3FBF66101500F90E00934C88 /* iconSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconSettings.png; sourceTree = "<group>"; };
 		3FC9856D14DABDD80023BB05 /* DGRandomShotWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShotWheel.h; sourceTree = "<group>"; };
 		3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShotWheel.m; sourceTree = "<group>"; };
 		3FCDE48614DAB7360087921F /* DGViewPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGViewPlayer.h; sourceTree = "<group>"; };
@@ -1291,6 +1297,9 @@
 			children = (
 				3F408FDD14E535440034856F /* GUI files psd */,
 				3FFD199F14F7A28900D04C20 /* Polaroid.png */,
+				3FBF660C1500F8F400934C88 /* iconPlayers.png */,
+				3FBF66101500F90E00934C88 /* iconSettings.png */,
+				3FBF660E1500F90200934C88 /* iconGames.png */,
 				3FE695BE14FF8C1A004C7A05 /* shot2.png */,
 				3FE695BF14FF8C1A004C7A05 /* wine2.png */,
 				3FE695C014FF8C1A004C7A05 /* beer2.png */,
@@ -1486,6 +1495,9 @@
 				3FBF66081500E7F600934C88 /* e1.mp3 in Resources */,
 				3FBF66091500E7F600934C88 /* c1.mp3 in Resources */,
 				3FBF660A1500E7F600934C88 /* c2.mp3 in Resources */,
+				3FBF660D1500F8F400934C88 /* iconPlayers.png in Resources */,
+				3FBF660F1500F90200934C88 /* iconGames.png in Resources */,
+				3FBF66111500F90E00934C88 /* iconSettings.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
