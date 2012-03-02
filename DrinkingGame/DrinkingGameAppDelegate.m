@@ -14,7 +14,6 @@
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
-@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -1499,6 +1499,13 @@
 				3FE695C314FF8C1A004C7A05 /* beer2.png in Resources */,
 				3F00B7C61500DDC60085D992 /* DGmenuPoint_dwn.png in Resources */,
 				3F00B7C71500DDC60085D992 /* DGmenuPoint_up.png in Resources */,
+				3FBF66071500E7F600934C88 /* g1.mp3 in Resources */,
+				3FBF66081500E7F600934C88 /* e1.mp3 in Resources */,
+				3FBF66091500E7F600934C88 /* c1.mp3 in Resources */,
+				3FBF660A1500E7F600934C88 /* c2.mp3 in Resources */,
+				3FBF660D1500F8F400934C88 /* iconPlayers.png in Resources */,
+				3FBF660F1500F90200934C88 /* iconGames.png in Resources */,
+				3FBF66111500F90E00934C88 /* iconSettings.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
