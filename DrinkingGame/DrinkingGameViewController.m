@@ -107,6 +107,14 @@
     [currentGame playerReady];
     //[delegate playerReady];
 }
+
+-(IBAction)showPlayerStats:(id)sender{
+    
+    [debugView removeFromSuperview];
+    DGPlayerStatView* stat = [[DGPlayerStatView alloc] initWithPlayers:controller.players];
+    //[viewControl.view addSubview:stat];
+    [self presentModalViewController:stat animated:NO];
+}
 -(void) gameEndedWithLooser:(DGPlayer *)player{
     loosingPlayer = player;
     //NSLog(@"gamendeViewController");
@@ -169,6 +177,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"START");
     [super viewDidLoad];
     controller = [[DGController alloc] init] ;
     [controller setDelegate:self];
