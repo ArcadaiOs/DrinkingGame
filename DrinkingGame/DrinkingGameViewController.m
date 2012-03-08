@@ -109,7 +109,7 @@
 -(IBAction)showPlayerStats:(id)sender{
     
     [debugView removeFromSuperview];
-    DGPlayerStatView* stat = [[DGPlayerStatView alloc] initWithPlayers:controller.players];
+    DGPlayerStatView* stat = [[DGPlayerStatView alloc] initWithController:controller];
     //[viewControl.view addSubview:stat];
     [self presentModalViewController:stat animated:NO];
 }
