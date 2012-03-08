@@ -125,7 +125,7 @@
 
 -(IBAction)buttonGetNewPlayer {
     // check if image is set (self.polariod.image) and there are still players to register
-  //  if (self.polaroid.image != nil && amountOfPlayers > 0) {
+    if (self.polaroid.image != nil && amountOfPlayers > 0) {
         NSLog(@"getNewPlayer %i", amountOfPlayers);
         // save new player
         [[DGController sharedInstance] addPlayerWithimage:self.polaroid.image 
@@ -144,7 +144,7 @@
         self.gender = NO;
         btnContinue3.hidden = 1;
         pointNextActive3.hidden = 1;
- //   }
+    }
     if (amountOfPlayers <= 0) {
         // go and play
         [self startGame:nil];
@@ -335,9 +335,9 @@
     [self.view endEditing:TRUE];
         btnBack3.hidden = 0;
     NSLog(@"gaygay");
-    if // (self.polaroid.image != nil 
-         // && 
-         ((![name.text isEqualToString:@"NAME"]) 
+    if  (self.polaroid.image != nil
+          && 
+         (![name.text isEqualToString:@"NAME"]) 
          && 
          (![weight.text isEqualToString:@"***"]) 
          && 
