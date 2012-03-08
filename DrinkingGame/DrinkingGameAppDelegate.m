@@ -25,14 +25,15 @@
     tabBarController = [[UITabBarController alloc] init];
     
     DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithController:controller];
+    
     DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
     
-    UITabBarItem* statTab = [[UITabBarItem alloc] initWithTitle:@"Players" image:[UIImage imageNamed:@"iconGamesA.png"] tag:2];
+   
+    //NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
+    //tabBarController.viewControllers = controllers;
     
-    NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
-    tabBarController.viewControllers = controllers;
-    
-    self.window.rootViewController = tabBarController;
+    //self.window.rootViewController = tabBarController;
+    self.window.rootViewController =gameView;
     
     //self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

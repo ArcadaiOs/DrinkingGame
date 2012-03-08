@@ -28,7 +28,7 @@ typedef struct{
 @end
 
 
-@interface DrinkingGameViewController : UIViewController{
+@interface DrinkingGameViewController : UIViewController<UITabBarDelegate>{
     DGGame *currentGame;
     DGController* controller;
     

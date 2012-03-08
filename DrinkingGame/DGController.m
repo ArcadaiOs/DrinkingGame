@@ -63,7 +63,7 @@
     return next;
 }
 -(void) showPlayer:(DGPlayer*) player{
-    NSLog(@"DGController");
+    NSLog(@"DGController ShowPlayer");
     [delegate showPlayer:player];
 }
 -(void) GameEndedWithLooser:(DGPlayer *)looser{

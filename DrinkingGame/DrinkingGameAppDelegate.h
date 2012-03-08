@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "DGController.h"
 @class DrinkingGameViewController;
+@protocol TabBarHidder <NSObject>
+    -(void) ViewTabBar:(BOOL) Visible;
+@end
 
 @interface DrinkingGameAppDelegate : NSObject <UIApplicationDelegate>{
     DGController* controller;
     UITabBarController *tabBarController;
+    id <TabBarHidder> delegate;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

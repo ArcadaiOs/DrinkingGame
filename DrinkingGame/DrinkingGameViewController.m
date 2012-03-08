@@ -49,16 +49,14 @@
 }
 
 -(void) launchGame:(DGGame*)game{
+    
     [currentGame.view removeFromSuperview];
     [currentGame release];
     [debugView removeFromSuperview];
-    
     currentGame = game;
+    [self dismissModalViewControllerAnimated:NO];
     [self.view addSubview:currentGame.view];
-    
-    //[viewControl.view addSubview: currentGame.view];
-    
-    //[self presentModalViewController:currentGame animated:NO];
+
 }
 
 -(IBAction)launchRandomShot:(id)sender{
@@ -81,7 +79,10 @@
     //    currentCame = [[DGStartMenu alloc] init];
     //    [self.view addSubview:currentCame.view];
     //    UIView * v = [[DGStartMenu alloc] init].view;
-    //    [self.view addSubview:[[DGStartMenu alloc] init].view];
+
+//    [self.view addSubview:[[DGStartMenu alloc] init] view];
+    [self presentModalViewController:[[DGStartMenu alloc] init] animated:NO];
+    
 }
 -(IBAction)launchSimon:(id)sender{
     [self launchGame:[[DGGameSimonSays alloc] initWithController:controller]];
@@ -89,13 +90,20 @@
 
 
 -(void) showPlayer:(DGPlayer *)player{
+    NSLog(@"GDViewController ShowPlayer");
+    
+    //[currentGame.view removeFromSuperview];
     [playerImgFrame removeFromSuperview];
     playerImgFrame.center = CGPointMake(150, 195);
     
+    [nextPlayerView removeFromSuperview];
     [nextPlayerView addSubview:playerImgFrame];
     [nextPlayerView setCenter:CGPointMake(160, 210)];
     [viewControl.view addSubview:nextPlayerView];
     
+//    [self.view addSubview:nextPlayerView];
+    
+//    [viewControl presentModalViewController:viewControl animated:NO];
     [self presentModalViewController:viewControl animated:NO];
     
     playerImg.image = player.image;
@@ -106,7 +114,10 @@
 -(IBAction)playerReadyToPlay:(id)sender{
     NSLog(@"player ready viewvontroller");
     [nextPlayerView removeFromSuperview];
-    [viewControl dismissModalViewControllerAnimated:YES];
+    [viewControl dismissModalViewControllerAnimated:NO];
+    //[viewControl.view addSubview:currentGame.view];
+    
+    //[viewControl presentModalViewController:viewControl animated:NO];
     [currentGame playerReady];
     //[delegate playerReady];
 }
