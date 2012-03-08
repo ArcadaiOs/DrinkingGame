@@ -11,6 +11,7 @@
 
 @implementation DGPlayer
 @synthesize image, name, isFemale, waterWeightGram, weight,gramAlcBody,lastUpdate;
+@synthesize firstDrink;
 
 - (id)initWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn 
 {
@@ -54,12 +55,14 @@
     }else{
         kfb = [NSNumber numberWithFloat: (0.1 * [gramAlcBody floatValue]) / burn ];
     }
-   self.lastUpdate = [NSDate date];
-   float n = [kfb floatValue] + [[shot alcCount]floatValue];
+
+    self.lastUpdate = [NSDate date];
+    float n = [kfb floatValue] + [[shot alcCount]floatValue] + [gramAlcBody floatValue];
     [self setGramAlcBody:[NSNumber numberWithFloat:n]];
 
-    NSLog(@"New promille: %f, alcFram: %f", [[self getPromille] floatValue], [[self gramAlcBody] floatValue]);
+    NSLog(@"%@ %f %% grams: %f",[self name], [[self getPromille] floatValue], [[self gramAlcBody] floatValue]);
 }
+
 -(NSNumber*) getPromille{
     return [NSNumber numberWithFloat:([gramAlcBody floatValue]/[waterWeightGram floatValue])] ;
 }

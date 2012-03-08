@@ -18,8 +18,6 @@
     if (self) {
         self.controller = controllerIn;
         // Custom initialization
-        playerView = [[DGViewPlayer alloc] init];
-        [playerView setDelegate:self];
         [self setDelegate:controller];
         [[controller players]sortUsingSelector:@selector(comparePromille:)];
 

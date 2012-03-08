@@ -13,7 +13,6 @@
 #import "DGController.h"
 #import "DGGameSimonSays.h"
 #import "DGSteadyHands.h"
-#import "DGViewPlayer.h"
 #import "DGTestGameTwo.h"
 #import "DGFillTheBottle.h"
 #import "DGStartMenu.h"
@@ -29,7 +28,7 @@ typedef struct{
 @end
 
 
-@interface DrinkingGameViewController : UIViewController{
+@interface DrinkingGameViewController : UIViewController<UITabBarDelegate>{
     DGGame *currentGame;
     DGController* controller;
     
@@ -53,8 +52,8 @@ typedef struct{
     UIViewController *viewControl;
     
     IBOutlet UIView *debugView;
-
     DGPlayer *loosingPlayer;
+
 }
 
 @property (readonly, nonatomic) DGController* controller;
@@ -67,8 +66,6 @@ typedef struct{
 @property (retain) UIButton *twitterButton;
 -(IBAction)twitterAction:(id)sender;
 */
-
--(IBAction) showPlayerStats:(id)sender;
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;

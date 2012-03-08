@@ -14,8 +14,7 @@
 -(void) closeScreen;
 @end
 
-@interface DGPlayerStatView : UIViewController
-<UITableViewDelegate,UITableViewDataSource>{
+@interface DGPlayerStatView : UIViewController <UITableViewDelegate,UITableViewDataSource>{
     IBOutlet UITableView* table;
     DGController* controller;
     id < CloseScreen > delegate;
