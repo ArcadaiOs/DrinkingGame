@@ -12,6 +12,7 @@
 
 @interface DGGamesListView : UITableViewController<UITableViewDelegate,UITableViewDataSource>{
     DGController * controller;
+    IBOutlet UITableView *table;
 }
 @property(nonatomic, retain) DGController* controller;
 - (id)initWithController: (DGController*) controllerIn;
