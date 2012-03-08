@@ -194,20 +194,24 @@
 {
     [super viewDidLoad];
     
+        
+    
+}
+
+-(void) StartGame{
     playerAction = false;
     playList = [[NSMutableArray alloc] init];
-    
+    [[controller players]sortUsingSelector:@selector(comparePromille:)];
+
     // create som starting point values
     int i=4;
     while (i--) {
         int rand = [self getRandomIntMin:1 max:4];
         [playList addObject:[[NSNumber alloc] initWithInt:rand]];
     }
-//    [self showPlayer:[controller.players objectAtIndex:0]];
 
     [self NextPlayer];
-    
-    
+
 }
 
 - (void)viewDidUnload

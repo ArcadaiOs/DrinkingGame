@@ -26,10 +26,10 @@
     
     DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithController:controller];
     
+   
     DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
     
-   
-    //NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
+   //NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
     //tabBarController.viewControllers = controllers;
     
     //self.window.rootViewController = tabBarController;

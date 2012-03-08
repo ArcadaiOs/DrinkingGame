@@ -199,6 +199,7 @@
 		3F95D6D214F7B0E7001A10C5 /* emptybeerglass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F95D6D114F7B0E7001A10C5 /* emptybeerglass.mp3 */; };
 		3F95D6D514F7B114001A10C5 /* cork2.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3F95D6D314F7B114001A10C5 /* cork2.aif */; };
 		3F95D6D614F7B114001A10C5 /* cork.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3F95D6D414F7B114001A10C5 /* cork.aif */; };
+		3FA1ED711508EBA400B221AC /* DGGameListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA1ED701508EBA300B221AC /* DGGameListCell.xib */; };
 		3FAC088E14E53A10006BB22D /* DGFillTheBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */; };
 		3FAC088F14E53A10006BB22D /* DGFillTheBottle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */; };
 		3FB138BD14DAC15F00431078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB138BC14DAC15F00431078 /* QuartzCore.framework */; };
@@ -583,6 +584,7 @@
 		3F95D6D114F7B0E7001A10C5 /* emptybeerglass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = emptybeerglass.mp3; sourceTree = "<group>"; };
 		3F95D6D314F7B114001A10C5 /* cork2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = cork2.aif; sourceTree = "<group>"; };
 		3F95D6D414F7B114001A10C5 /* cork.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = cork.aif; path = DrinkingGame/resources/cork.aif; sourceTree = "<group>"; };
+		3FA1ED701508EBA300B221AC /* DGGameListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGGameListCell.xib; sourceTree = "<group>"; };
 		3FAC088B14E53A10006BB22D /* DGFillTheBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGFillTheBottle.h; sourceTree = "<group>"; };
 		3FAC088C14E53A10006BB22D /* DGFillTheBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGFillTheBottle.m; sourceTree = "<group>"; };
 		3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGFillTheBottle.xib; sourceTree = "<group>"; };
@@ -1269,6 +1271,7 @@
 				3FD25ACC1508C744000D96AF /* DGGamesListView.m */,
 				3FD25ACD1508C744000D96AF /* DGGamesListView.xib */,
 				3FD25AD01508C7D5000D96AF /* DGGameListCell.h */,
+				3FA1ED701508EBA300B221AC /* DGGameListCell.xib */,
 				3FD25AD11508C7D5000D96AF /* DGGameListCell.m */,
 			);
 			name = GamesList;
@@ -1531,6 +1534,7 @@
 				3FBF66161500FC2500934C88 /* iconSettingsA.png in Resources */,
 				3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */,
 				3FD25ACF1508C744000D96AF /* DGGamesListView.xib in Resources */,
+				3FA1ED711508EBA400B221AC /* DGGameListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

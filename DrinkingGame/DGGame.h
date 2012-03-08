@@ -29,7 +29,10 @@ typedef enum {
     id < GameEnded > delegate;
     DGPlayer *CurrentPlayer;
     bool OnePlayerOnce;
+    NSString *name;
 }
+
+@property(nonatomic, retain) NSString *name;
 
 @property(nonatomic,assign)id delegate;
 
@@ -40,4 +43,7 @@ typedef enum {
 -(void) showPlayer:(DGPlayer*) player;
 -(void) playerReady;
 -(void) NextPlayer;
+
+-(void) StartGame;
+
 @end

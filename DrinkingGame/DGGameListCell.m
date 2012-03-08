@@ -17,6 +17,23 @@
         // Initialization code
     }
     return self;
+
+}
+-(void) setGame:(DGGame *)Game{
+    _Game = Game;
+    GameName.text = [_Game name];
+}
+
+-(id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier Game:(DGGame *)Game{
+
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        _Game = Game;
+        GameName.text = [_Game name];
+    }
+    return self;
+
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

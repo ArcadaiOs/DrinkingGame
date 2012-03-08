@@ -18,6 +18,8 @@
 #import "DGStartMenu.h"
 #import "SimpleAudioEngine.h"
 #import "DGPlayerStatView.h"
+#import "DGGamesListView.h"
+
 typedef struct{
     NSString *playerName;
     int score;
@@ -28,7 +30,7 @@ typedef struct{
 @end
 
 
-@interface DrinkingGameViewController : UIViewController<UITabBarDelegate>{
+@interface DrinkingGameViewController : UIViewController<UITabBarControllerDelegate>{
     DGGame *currentGame;
     DGController* controller;
     
@@ -53,8 +55,11 @@ typedef struct{
     
     IBOutlet UIView *debugView;
     DGPlayer *loosingPlayer;
-
+    UITabBarController *tabBarController;
 }
+
+@property (nonatomic, retain) UITabBarController *tabBarController;
+
 
 @property (readonly, nonatomic) DGController* controller;
 @property(nonatomic,assign)id delegate;

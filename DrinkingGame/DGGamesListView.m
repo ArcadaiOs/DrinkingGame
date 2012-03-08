@@ -9,6 +9,7 @@
 #import "DGGamesListView.h"
 
 @implementation DGGamesListView
+@synthesize controller;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -19,6 +20,18 @@
     return self;
 }
 
+- (id)initWithController: (DGController*) controllerIn
+{
+    //self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
+    
+    if (self) {
+        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconPlayerA.png"] tag:1]];
+        controller = controllerIn;
+        // Custom initialization
+    }
+    return self;
+}
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -91,7 +104,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    /*
+     static NSString *CellIdentifier = @"Cell";
     DGGameListCell *cell2 = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -105,6 +119,27 @@
     // Configure the cell...
     
     return cell2;
+    */
+    DGGameListCell *cell = (DGGameListCell*)[tableView dequeueReusableCellWithIdentifier:@"SimpleTableIdentifier"];
+    if (cell == nil) {
+        
+        NSBundle*b = [NSBundle mainBundle];
+        NSArray* nibObjects = [b loadNibNamed:@"DGGameListCell" owner:self options:nil];
+        for(id curObj in nibObjects){
+            if([curObj isKindOfClass:[DGGameListCell class]]){
+                cell = (DGGameListCell*)curObj;
+            }
+        }
+         
+
+    }
+    
+    NSUInteger row = [indexPath row];
+    [cell setGame:[controller.games objectAtIndex:row]];
+    
+    
+    return cell;
+
 }
 
 /*

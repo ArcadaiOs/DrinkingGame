@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DGGameListCell.h"
+#import "DGController.h"
 
-
-@interface DGGamesListView : UITableViewController
+@interface DGGamesListView : UITableViewController<UITableViewDelegate,UITableViewDataSource>{
+    DGController * controller;
+}
+@property(nonatomic, retain) DGController* controller;
+- (id)initWithController: (DGController*) controllerIn;
 
 @end

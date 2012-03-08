@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DGGame.h"
 
-@interface DGGameListCell : UITableViewCell
+@interface DGGameListCell : UITableViewCell{
+    IBOutlet UILabel *GameName;
+    DGGame *_Game;
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier Game:(DGGame*) Game;
+
+-(void) setGame:(DGGame*) Game;
 
 @end

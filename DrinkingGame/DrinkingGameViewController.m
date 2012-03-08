@@ -16,13 +16,28 @@
 @synthesize controller;
 //@synthesize twitterButton;
 @synthesize delegate;
+
+@synthesize tabBarController = _tabBarController;
+
+
 -(id)initWithController: (DGController*) controllerIn{
     self = [super init];
     if (self) {
         [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1]];
         controller = controllerIn;
         [controller setDelegate:self];
-
+        
+        tabBarController = [[UITabBarController alloc] init];
+        tabBarController.delegate = self;
+        DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
+        DGGamesListView* gameList = [[DGGamesListView alloc] initWithController:controller];
+        
+        
+        
+        NSArray* controllers = [NSArray arrayWithObjects:statView, gameList, nil];
+        tabBarController.viewControllers = controllers;
+        //[self presentModalViewController:tabBarController animated:NO];
+        
     }
     return self;
     
@@ -214,12 +229,18 @@
     
     [playerLostView addSubview:looserIs];
     
-    [self.view addSubview:debugView ];
+    //[self.view addSubview:debugView ];
     
     NSLog(@"drinakr: %i", controller.drinks.count);
     
     [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"song.mp3"];
     
+    tabBarController.view.center=CGPointMake(160, 220);
+//    tabBarController.view.frame = CGRectMake(160, 240, 320, 480);
+    
+    [self.view addSubview:tabBarController.view];
+
+
 }   
 
 

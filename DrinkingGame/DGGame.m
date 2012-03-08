@@ -11,6 +11,7 @@
 @implementation DGGame
 @synthesize controller;
 @synthesize delegate;
+@synthesize name;
 
 - (id)initWithController: (DGController*) controllerIn
 {
@@ -19,8 +20,7 @@
         self.controller = controllerIn;
         // Custom initialization
         [self setDelegate:controller];
-        [[controller players]sortUsingSelector:@selector(comparePromille:)];
-
+      
         
         // Set this to True if one player should only play once
         OnePlayerOnce = false;
@@ -33,7 +33,11 @@
     
 }
 
-
+// You should implement this function to start your game, and reset
+-(void) StartGame{
+    
+    
+}
 // this will show a player with his promille and imgae
 // playerReady will execute when player presses Lets Play
 -(void) showPlayer:(DGPlayer *)player{
