@@ -1533,6 +1533,7 @@
 				3FBF66151500FC2500934C88 /* iconPlayerA.png in Resources */,
 				3FBF66161500FC2500934C88 /* iconSettingsA.png in Resources */,
 				3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */,
+				3FD25ACF1508C744000D96AF /* DGGamesListView.xib in Resources */,
 				3F68D25E1508D673007D802F /* boo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
