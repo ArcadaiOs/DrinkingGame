@@ -217,6 +217,9 @@
 		3FBF66161500FC2500934C88 /* iconSettingsA.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66131500FC2500934C88 /* iconSettingsA.png */; };
 		3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66141500FC2500934C88 /* iconGamesA.png */; };
 		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
+		3FD25ACE1508C744000D96AF /* DGGamesListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD25ACC1508C744000D96AF /* DGGamesListView.m */; };
+		3FD25ACF1508C744000D96AF /* DGGamesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD25ACD1508C744000D96AF /* DGGamesListView.xib */; };
+		3FD25AD21508C7D5000D96AF /* DGGameListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD25AD11508C7D5000D96AF /* DGGameListCell.m */; };
 		3FD60C3614DC1F9000DEAE7A /* haddock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C2E14DC1F9000DEAE7A /* haddock.jpg */; };
 		3FD60C3714DC1F9000DEAE7A /* hannibal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C2F14DC1F9000DEAE7A /* hannibal.jpg */; };
 		3FD60C3814DC1F9000DEAE7A /* naama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C3014DC1F9000DEAE7A /* naama.jpg */; };
@@ -601,6 +604,11 @@
 		3FBF66141500FC2500934C88 /* iconGamesA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGamesA.png; sourceTree = "<group>"; };
 		3FC9856D14DABDD80023BB05 /* DGRandomShotWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShotWheel.h; sourceTree = "<group>"; };
 		3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShotWheel.m; sourceTree = "<group>"; };
+		3FD25ACB1508C744000D96AF /* DGGamesListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGamesListView.h; sourceTree = "<group>"; };
+		3FD25ACC1508C744000D96AF /* DGGamesListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGamesListView.m; sourceTree = "<group>"; };
+		3FD25ACD1508C744000D96AF /* DGGamesListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGGamesListView.xib; sourceTree = "<group>"; };
+		3FD25AD01508C7D5000D96AF /* DGGameListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGameListCell.h; sourceTree = "<group>"; };
+		3FD25AD11508C7D5000D96AF /* DGGameListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGameListCell.m; sourceTree = "<group>"; };
 		3FD60C2E14DC1F9000DEAE7A /* haddock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = haddock.jpg; sourceTree = "<group>"; };
 		3FD60C2F14DC1F9000DEAE7A /* hannibal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hannibal.jpg; sourceTree = "<group>"; };
 		3FD60C3014DC1F9000DEAE7A /* naama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = naama.jpg; sourceTree = "<group>"; };
@@ -1149,6 +1157,7 @@
 		3F3AFECE14C04EF300A992F7 /* DrinkingGame */ = {
 			isa = PBXGroup;
 			children = (
+				3FD25AC91508C5F1000D96AF /* GamesList */,
 				3FEDBBB414F7C2B100F4FD37 /* playerStats */,
 				14FFF78B14F6B8DD00899870 /* Cocos2D */,
 				3F4B704514E3E42F00BAE149 /* startMenu */,
@@ -1251,6 +1260,18 @@
 				3FAC088D14E53A10006BB22D /* DGFillTheBottle.xib */,
 			);
 			name = DGFillTheBottle;
+			sourceTree = "<group>";
+		};
+		3FD25AC91508C5F1000D96AF /* GamesList */ = {
+			isa = PBXGroup;
+			children = (
+				3FD25ACB1508C744000D96AF /* DGGamesListView.h */,
+				3FD25ACC1508C744000D96AF /* DGGamesListView.m */,
+				3FD25ACD1508C744000D96AF /* DGGamesListView.xib */,
+				3FD25AD01508C7D5000D96AF /* DGGameListCell.h */,
+				3FD25AD11508C7D5000D96AF /* DGGameListCell.m */,
+			);
+			name = GamesList;
 			sourceTree = "<group>";
 		};
 		3FE08EF314C98A8F0010A03C /* DGRandomShot */ = {
@@ -1509,6 +1530,7 @@
 				3FBF66151500FC2500934C88 /* iconPlayerA.png in Resources */,
 				3FBF66161500FC2500934C88 /* iconSettingsA.png in Resources */,
 				3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */,
+				3FD25ACF1508C744000D96AF /* DGGamesListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1647,6 +1669,8 @@
 				14FFF78814F6B6AC00899870 /* cpVect.c in Sources */,
 				3F944A0F14FF92F10062F834 /* DGPlayerStatView.m in Sources */,
 				3F944A1314FF9E730062F834 /* DGPlayerStatCell.m in Sources */,
+				3FD25ACE1508C744000D96AF /* DGGamesListView.m in Sources */,
+				3FD25AD21508C7D5000D96AF /* DGGameListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

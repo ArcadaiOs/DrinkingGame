@@ -15,6 +15,7 @@
 
 @synthesize gameLevel,playerCount;
 @synthesize delegate;
+@synthesize games;
 
 
 //@synthesize controller;

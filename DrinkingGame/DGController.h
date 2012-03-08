@@ -19,6 +19,8 @@
 @interface DGController : NSObject{
     NSMutableArray* players;
     NSMutableDictionary *drinks;
+    NSMutableArray *games;
+
     int gameLevel;
     int playerCount;
     int currentPlayer;
@@ -27,6 +29,8 @@
 @property(nonatomic,assign)id delegate;
 @property (nonatomic, retain) NSMutableArray* players;
 @property (nonatomic, retain) NSMutableDictionary *drinks;
+@property (nonatomic, retain) NSMutableArray* games;
+
 
 @property int gameLevel;
 @property int playerCount;

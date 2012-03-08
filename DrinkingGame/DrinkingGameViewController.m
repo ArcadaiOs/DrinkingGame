@@ -56,7 +56,11 @@
     currentGame = game;
     [self.view addSubview:currentGame.view];
     
+    //[viewControl.view addSubview: currentGame.view];
+    
+    //[self presentModalViewController:currentGame animated:NO];
 }
+
 -(IBAction)launchRandomShot:(id)sender{
     [self launchGame:[[DGRandomShot alloc] initWithController:controller]];
     
@@ -125,8 +129,8 @@
     playerImgFrame.center = CGPointMake(160, 215);
     [boozeChooserView addSubview:playerImgFrame];
     [viewControl.view addSubview:boozeChooserView];
-    
-    
+        
+
     [self presentModalViewController:viewControl animated:NO];
     [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
 }
