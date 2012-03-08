@@ -10,9 +10,6 @@
 
 
 
-#define twoPlayers 2
-
-
 
 @implementation DGStartMenu
 
