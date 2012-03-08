@@ -7,14 +7,14 @@
 //
 
 #import "DrinkingGameViewController.h"
-//#import <Twitter/Twitter.h>
+#import <Twitter/Twitter.h>
 
 #import "DGPlayer.h"
 #import "DGController.h"
 
 @implementation DrinkingGameViewController
 @synthesize controller;
-//@synthesize twitterButton;
+@synthesize twitterButton;
 @synthesize delegate;
 -(id)init{
     self = [super init];
@@ -25,22 +25,47 @@
     
 }
 
-/*-(IBAction)twitterAction:(id)sender{
-        NSString *player1 = [[[controller players]objectAtIndex:0] name];
+-(IBAction)twitterAction:(id)sender{       //TWITTER BEGINS
+    
+    int amountOfPlayers = [[controller players]count];
+//        NSString *player1 = [[[controller players]objectAtIndex:1] name];
+  
+    
+    NSString *names = @""; 
+    NSMutableString *namelist;
+    namelist = [NSMutableString stringWithString: names];
+    
+    for (int i = 0; i < amountOfPlayers; i++) {
+        
+        [namelist appendString:[[[controller players]objectAtIndex:i]name]];
+        
+        if(i+1 < amountOfPlayers-1 ){
+        [namelist appendString:[NSString stringWithFormat: @", "]];
+        }
+        
+        if(i == amountOfPlayers-2 ){
+            [namelist appendString:[NSString stringWithFormat: @" and "]]; //Amazing.
+        }
+
+    }
+    NSLog(@"Moro %@" , namelist);
+    
     TWTweetComposeViewController *twitt = [[TWTweetComposeViewController alloc] init];
-    [twitt setInitialText:[NSString stringWithFormat:@"%@ was playing #DrinkingGame with @pstrande",player1]];
+    [twitt setInitialText:[NSString stringWithFormat:@"%@ played #DrinkingGame and got drunk",namelist]];
+
+ //   [twitt setInitialText:[NSString stringWithFormat:@"%i players played #DrinkingGame with @pstrande",amountOfPlayers]];
  //   [[twitt setInitialText:[NSString stringWithFormat:@"%.2f",[[ DGViewPlayer getPromille] floatValue]]];
 
-    //HÄR ÄR VÅR TWITTERJUTTU
+for (int i = 0; i < amountOfPlayers; i++) {
+    NSLog(@"hej spelare, %@", [[[controller players]objectAtIndex:i]name]); 
+    
+}    
+    
+//    NSLog(@"Hej på dig, %@", names);
 
-
-    
-    
-    NSLog(@"Hej på dig, %@", player1);
-    
     [self presentModalViewController:twitt animated:YES];
 }
-*/
+
 -(DGController *) controller{
     return [DGController sharedInstance];
 }
