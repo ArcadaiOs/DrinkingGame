@@ -17,6 +17,7 @@
     self = [super init];
     
     if (self) {
+        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Players" image:[UIImage imageNamed:@"iconPlayerA.png"] tag:1]];
         controller = controllerIn;
         // Custom initialization
     }

@@ -27,12 +27,9 @@
     DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithController:controller];
     DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
     
-    UITabBarItem* gameTab = [[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1];
-    UITabBarItem* statTab = [UITabBarItem alloc];
+    UITabBarItem* statTab = [[UITabBarItem alloc] initWithTitle:@"Players" image:[UIImage imageNamed:@"iconGamesA.png"] tag:2];
     
     NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
-    NSArray* tabs = [NSArray arrayWithObjects:gameTab,statTab,nil];
-    tabBarController.toolbarItems = tabs;
     tabBarController.viewControllers = controllers;
     
     self.window.rootViewController = tabBarController;
