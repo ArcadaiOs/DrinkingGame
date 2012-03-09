@@ -36,6 +36,7 @@ typedef struct{
     DGController* controller;
     
     //twitter
+    IBOutlet UIButton *twitterButton;
     //IBOutlet UIButton *twitterButton;
     
     
@@ -66,11 +67,10 @@ typedef struct{
 -(id)initWithController: (DGController*) controllerIn;
 
 //twitter
-/*
+
 @property (retain) UIButton *twitterButton;
 -(IBAction)twitterAction:(id)sender;
-*/
--(void) setupDone;
+
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;
