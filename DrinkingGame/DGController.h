@@ -47,6 +47,7 @@
 
 + (id) sharedInstance;
 
+
 -(DGPlayer*) NextPlayerRepeatPlayers:(bool) PlayerRepeat;
 - (void)addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
 

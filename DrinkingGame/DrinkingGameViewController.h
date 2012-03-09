@@ -27,6 +27,7 @@ typedef struct{
 
 @protocol ViewControllerProto <NSObject>
 -(void) playerReady;
+
 @end
 
 

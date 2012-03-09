@@ -59,6 +59,11 @@
     return self;
 } 
 
+-(DGPlayer*) getMostDrunkPlayer{
+    [[[DGController sharedInstance] players]sortUsingSelector:@selector(comparePromille:)];
+    return [players objectAtIndex:0];
+}
+
 -(DGPlayer*)NextPlayerRepeatPlayers:(_Bool)PlayerRepeat{
     DGPlayer *next = nil;
     if(currentPlayer < playerCount-1){
@@ -77,7 +82,6 @@
 }
 -(void) GameEndedWithLooser:(DGPlayer *)looser{
     //[delegate showPlayer:looser];
-
     NSLog(@"GAME ENDED AND LOSER IS FOUND");
     [delegate gameEndedWithLooser:looser];
 }
