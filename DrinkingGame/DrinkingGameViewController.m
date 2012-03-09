@@ -48,21 +48,19 @@
         }
 
     }
-    NSLog(@"Moro %@" , namelist);
+ //   NSLog(@"Moro %@" , namelist);
     
     TWTweetComposeViewController *twitt = [[TWTweetComposeViewController alloc] init];
     [twitt setInitialText:[NSString stringWithFormat:@"%@ played #DrinkingGame and got drunk",namelist]];
-
- //   [twitt setInitialText:[NSString stringWithFormat:@"%i players played #DrinkingGame with @pstrande",amountOfPlayers]];
- //   [[twitt setInitialText:[NSString stringWithFormat:@"%.2f",[[ DGViewPlayer getPromille] floatValue]]];
+/*
+  [[twitt setInitialText:[NSString stringWithFormat:@"%i players played #DrinkingGame with @pstrande",amountOfPlayers]];
+  [[twitt setInitialText:[NSString stringWithFormat:@"%.2f",[[ DGViewPlayer getPromille] floatValue]]];
 
 for (int i = 0; i < amountOfPlayers; i++) {
     NSLog(@"hej spelare, %@", [[[controller players]objectAtIndex:i]name]); 
-    
 }    
-    
-//    NSLog(@"Hej på dig, %@", names);
-
+    NSLog(@"Hej på dig, %@", names);
+*/
     [self presentModalViewController:twitt animated:YES];
 }
 
