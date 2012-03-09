@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "DGDrink.h"
 #import "DGPlayer.h"
+#import "DGGame.h"
+//#import "DGGameSimonSays.h"
+
 
 @protocol ControllerProto <NSObject>
 -(void) playerReady;

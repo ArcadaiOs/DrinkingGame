@@ -25,7 +25,7 @@ typedef enum {
 
 @interface DGGame : UIViewController{
     GameType gameType;
-    DGController* controller;
+    DGController *controller;
     id < GameEnded > delegate;
     DGPlayer *CurrentPlayer;
     bool OnePlayerOnce;
@@ -36,7 +36,8 @@ typedef enum {
 
 @property(nonatomic,assign)id delegate;
 
-@property (nonatomic, retain) DGController* controller;
+@property (nonatomic, retain) DGController *controller;
+
 - (id)initWithController: (DGController*) controller;
 -(IBAction) endGame:(id)sender;
 -(void) GameEndedCalculateScores;

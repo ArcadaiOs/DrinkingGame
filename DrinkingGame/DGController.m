@@ -46,6 +46,9 @@
 
         currentPlayer = 0;
                 
+        games = [[NSMutableArray alloc]init];
+        //[games addObject: [[DGGameSimonSays alloc] init]];
+        
     }
     
     return self;

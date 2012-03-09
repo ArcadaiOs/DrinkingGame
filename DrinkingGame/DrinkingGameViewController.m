@@ -30,7 +30,7 @@
         tabBarController = [[UITabBarController alloc] init];
         tabBarController.delegate = self;
         DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
-        DGGamesListView* gameList = [[DGGamesListView alloc] initWithController:controller];
+        DGGameListView* gameList = [[DGGameListView alloc] initWithController:controller];
         
         
         

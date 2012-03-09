@@ -18,7 +18,7 @@
 #import "DGStartMenu.h"
 #import "SimpleAudioEngine.h"
 #import "DGPlayerStatView.h"
-#import "DGGamesListView.h"
+#import "DGGameListView.h"
 
 typedef struct{
     NSString *playerName;

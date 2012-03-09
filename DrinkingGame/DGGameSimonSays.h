@@ -7,8 +7,7 @@
 //
 
 #import "DGGame.h"
-#import <stdlib.h>
-#import <time.h>
+
 
 @interface DGGameSimonSays : DGGame{
     IBOutlet UIButton* blueButton;
