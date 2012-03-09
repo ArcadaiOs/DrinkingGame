@@ -10,15 +10,12 @@
 
 
 
-#define twoPlayers 2
-
-
 
 @implementation DGStartMenu
 
 
 //@synthesize  ae;
-
+//@synthesize view;
 //@synthesize gameState, previousState;
 //menu 1
 @synthesize players, background1, menuNumbers, pointBackActive1, pointNextActive1, pointBackActive2, pointNextActive2, pointNextActive3, pointBackActive3, pointBack, pointNext;
@@ -30,9 +27,18 @@
 @synthesize menu3CrossMale, menu3CrossFemale, menu3male, menu3female;
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasy, buttonHard, buttonCustom, buttonMedium;
-@synthesize weight, name, gender, polaroid;
+//menu 3
+@synthesize weight, name, gender, polaroid, getNewPlayer;
 
 
+@synthesize numberPadDoneImageNormal;
+@synthesize numberPadDoneImageHighlighted;
+@synthesize numberPadDoneButton;
+
+//-(DGStartMenu*)init{
+//    [super init];
+//    
+//}
 
 
 
@@ -61,6 +67,11 @@
 
 - (void)dealloc
 {
+ 
+    [numberPadDoneImageNormal release];
+    [numberPadDoneImageHighlighted release];
+    [numberPadDoneButton release];
+    
     [super dealloc];
 }
 
@@ -72,6 +83,8 @@
 
 -(IBAction)buttonClickedContinue {
 //    firstView = self.view;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+    
     if (self.view == secondView) {
         self.view = thirdView;
     } else if (self.view == thirdView) {
@@ -119,7 +132,7 @@
 
 -(IBAction)buttonGetNewPlayer {
     // check if image is set (self.polariod.image) and there are still players to register
-    if (self.polaroid.image != nil && amountOfPlayers > 0) {
+  //  if (self.polaroid.image != nil && amountOfPlayers > 0) {
         NSLog(@"getNewPlayer %i", amountOfPlayers);
         // save new player
         [[DGController sharedInstance] addPlayerWithimage:self.polaroid.image 
@@ -138,7 +151,7 @@
         self.gender = NO;
         btnContinue3.hidden = 1;
         pointNextActive3.hidden = 1;
-    }
+ //   }
     if (amountOfPlayers <= 0) {
         // go and play
         [self startGame:nil];
@@ -149,6 +162,9 @@
 
 
 -(IBAction)buttonClickedBack {
+    amountOfPlayers = originalAmountOfPlayers;
+        [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+    
     if (self.view == secondView) {
         self.view = firstView;
     } else if (self.view == thirdView) {
@@ -162,6 +178,7 @@
 
 -(IBAction)buttonPlayers2 {
     amountOfPlayers = 2;
+    originalAmountOfPlayers = 2;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 0;
@@ -176,6 +193,7 @@
 }
 -(IBAction)buttonPlayers3 {
     amountOfPlayers = 3;
+    originalAmountOfPlayers = 3;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -189,6 +207,7 @@
 }
 -(IBAction)buttonPlayers4 {
     amountOfPlayers = 4;
+    originalAmountOfPlayers = 4;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -202,6 +221,7 @@
 }
 -(IBAction)buttonPlayers5 {
     amountOfPlayers = 5;
+    originalAmountOfPlayers = 5;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -215,6 +235,7 @@
 }
 -(IBAction)buttonPlayers6 {
     amountOfPlayers = 6;
+    originalAmountOfPlayers = 6;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -228,6 +249,7 @@
 }
 -(IBAction)buttonPlayers7 {
     amountOfPlayers = 7;
+    originalAmountOfPlayers = 7;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -241,6 +263,7 @@
 }
 -(IBAction)buttonPlayers8 {
     amountOfPlayers = 8;
+    originalAmountOfPlayers = 8;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -259,6 +282,7 @@
 -(IBAction)buttonEasyPressed {
     ((DGController*)[DGController sharedInstance]).gameLevel = 0;
     pointNextActive2.hidden = 0;
+    btnContinue2.hidden = 0;
     bottleEasySelected.hidden = 0;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
@@ -268,6 +292,7 @@
 -(IBAction)buttonMediumPressed {
     ((DGController*)[DGController sharedInstance]).gameLevel = 1;
     pointNextActive2.hidden = 0;
+    btnContinue2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 0;
     bottleHardSelected.hidden = 1;
@@ -278,6 +303,7 @@
     ((DGController*)[DGController sharedInstance]).gameLevel = 2;
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
+    btnContinue2.hidden = 0;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 0;
     bottleCustomSelected.hidden = 1;
@@ -287,6 +313,7 @@
     ((DGController*)[DGController sharedInstance]).gameLevel = 3;
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
+    btnContinue2.hidden = 0;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 0;
@@ -309,25 +336,245 @@
 }
 
 
+// DONE BUTTON FOR WEIGHT TEXT FIELD
+// DONE BUTTON FOR WEIGHT TEXT FIELD
+// DONE BUTTON FOR WEIGHT TEXT FIELD
+// DONE BUTTON FOR WEIGHT TEXT FIELD
+// DONE BUTTON FOR WEIGHT TEXT FIELD
+// DONE BUTTON FOR WEIGHT TEXT FIELD
+// DONE BUTTON FOR WEIGHT TEXT FIELD
+// DONE BUTTON FOR WEIGHT TEXT FIELD
+
+- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle {
+    if ([super initWithNibName:nibName bundle:nibBundle] == nil)
+        return nil;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.0) {
+        self.numberPadDoneImageNormal = [UIImage imageNamed:@"doneup.png"];
+        self.numberPadDoneImageHighlighted = [UIImage imageNamed:@"donedown.png"];
+    } else {        
+        self.numberPadDoneImageNormal = [UIImage imageNamed:@"doneup.png"];
+        self.numberPadDoneImageHighlighted = [UIImage imageNamed:@"donedown.png"];
+    }        
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Add listener for keyboard display events
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
+        [[NSNotificationCenter defaultCenter] addObserver:self 
+                                                 selector:@selector(keyboardDidShow:) 
+                                                     name:UIKeyboardDidShowNotification 
+                                                   object:nil];     
+    } else {
+        [[NSNotificationCenter defaultCenter] addObserver:self 
+                                                 selector:@selector(keyboardWillShow:) 
+                                                     name:UIKeyboardWillShowNotification 
+                                                   object:nil];
+    }
+    
+    // Add listener for all text fields starting to be edited
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(textFieldDidBeginEditing:)
+                                                 name:UITextFieldTextDidBeginEditingNotification 
+                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                        name:UIKeyboardDidShowNotification 
+                                                      object:nil];      
+    } else {
+        [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                        name:UIKeyboardWillShowNotification 
+                                                      object:nil];
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:UITextFieldTextDidBeginEditingNotification 
+                                                  object:nil];
+    [super viewWillDisappear:animated];
+}
+
+- (UIView *)findFirstResponderUnder:(UIView *)root {
+    if (root.isFirstResponder)
+        return root;    
+    for (UIView *subView in root.subviews) {
+        UIView *firstResponder = [self findFirstResponderUnder:subView];        
+        if (firstResponder != nil)
+            return firstResponder;
+    }
+    return nil;
+}
+
+- (UITextField *)findFirstResponderTextField {
+    UIResponder *firstResponder = [self findFirstResponderUnder:[self.view window]];
+    if (![firstResponder isKindOfClass:[UITextField class]])
+        return nil;
+    return (UITextField *)firstResponder;
+}
+
+- (void)updateKeyboardButtonFor:(UITextField *)weight {
+    
+    // Remove any previous button
+    [self.numberPadDoneButton removeFromSuperview];
+    self.numberPadDoneButton = nil;
+    
+    // Does the text field use a number pad?
+    if (weight.keyboardType != UIKeyboardTypeNumberPad)
+        return;
+    
+    // If there's no keyboard yet, don't do anything
+    if ([[[UIApplication sharedApplication] windows] count] < 2)
+        return;
+    UIWindow *keyboardWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
+    
+    // Create new custom button
+    self.numberPadDoneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.numberPadDoneButton.frame = CGRectMake(0, 163, 106, 53);
+    self.numberPadDoneButton.adjustsImageWhenHighlighted = FALSE;
+    [self.numberPadDoneButton setImage:self.numberPadDoneImageNormal forState:UIControlStateNormal];
+    [self.numberPadDoneButton setImage:self.numberPadDoneImageHighlighted forState:UIControlStateHighlighted];
+    [self.numberPadDoneButton addTarget:self action:@selector(numberPadDoneButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // Locate keyboard view and add button
+    NSString *keyboardPrefix = [[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2 ? @"<UIPeripheralHost" : @"<UIKeyboard";
+    for (UIView *subView in keyboardWindow.subviews) {
+        if ([[subView description] hasPrefix:keyboardPrefix]) {
+            [subView addSubview:self.numberPadDoneButton];
+            [self.numberPadDoneButton addTarget:self action:@selector(numberPadDoneButton:) forControlEvents:UIControlEventTouchUpInside];
+            break;
+        }
+    }
+}
+
+- (void)textFieldDidBeginEditing:(NSNotification *)note {
+    [self updateKeyboardButtonFor:[note object]];
+}
+
+
+
+- (void)keyboardWillShow:(NSNotification *)note {
+    [self updateKeyboardButtonFor:[self findFirstResponderTextField]];
+}
+
+- (void)keyboardDidShow:(NSNotification *)note {
+    [self updateKeyboardButtonFor:[self findFirstResponderTextField]];
+}
+
+- (IBAction)numberPadDoneButton:(id)sender {
+    UITextField *weight = [self findFirstResponderTextField];
+        thirdView.superview.frame = CGRectMake(0,20,320,480);
+    
+            btnBack3.hidden = 0;
+    if  // (self.polaroid.image != nil
+        // && 
+        (![name.text isEqualToString:@"NAME"]
+         && 
+         (![weight.text isEqualToString:@"***"]) 
+         && 
+         ((menu3CrossMale.hidden == 0) || (menu3CrossFemale.hidden == 0))) {
+            NSLog(@"Player completed...");
+            
+            
+            
+            
+            
+            
+            
+            if (amountOfPlayers == 0) {
+                
+                getNewPlayer.hidden = 1;
+                btnContinue3.hidden = 0;
+                pointNextActive3.hidden = 0;
+            }
+            
+            
+            else {
+                
+                getNewPlayer.hidden = 0;
+                pointNextActive3.hidden = 0;
+            }
+            
+        }
+    
+    else {
+        
+        getNewPlayer.hidden = 1;
+        btnContinue3.hidden = 1;
+        pointNextActive3.hidden = 1;
+    }
+    
+
+    [weight resignFirstResponder];
+}
+
+//DONE BUTTON FOR WEIGHT FIELD END
+//DONE BUTTON FOR WEIGHT FIELD END
+//DONE BUTTON FOR WEIGHT FIELD END
+//DONE BUTTON FOR WEIGHT FIELD END
+//DONE BUTTON FOR WEIGHT FIELD END
+//DONE BUTTON FOR WEIGHT FIELD END
+//DONE BUTTON FOR WEIGHT FIELD END
+
+
+
+
+
+
+
 -(IBAction)openkeyboard {
-    thirdView.superview.frame = CGRectMake(0,-200,320,480);
+    thirdView.superview.frame = CGRectMake(0,-195,320,480);
+    btnBack3.hidden = 1;
 }
 
 -(IBAction)closekeyboard {
-    thirdView.superview.frame = CGRectMake(0,0,320,480);
+    thirdView.superview.frame = CGRectMake(0,20,320,480);
     [self.view endEditing:TRUE];
-    if  (self.polaroid.image != nil 
-         && 
-         (![name.text isEqualToString:@"NAME"]) 
+        btnBack3.hidden = 0;
+    
+    if  // (self.polaroid.image != nil
+         // && 
+         (![name.text isEqualToString:@"NAME"]
          && 
          (![weight.text isEqualToString:@"***"]) 
          && 
          ((menu3CrossMale.hidden == 0) || (menu3CrossFemale.hidden == 0))) {
         NSLog(@"Player completed...");
+        
+
+    
+
+    
+    
+    
+    if (amountOfPlayers == 0) {
+        
+        getNewPlayer.hidden = 1;
         btnContinue3.hidden = 0;
         pointNextActive3.hidden = 0;
     }
+
+    
+    else {
+    
+        getNewPlayer.hidden = 0;
+        pointNextActive3.hidden = 0;
+    }
+
+         }
+    
+    else {
+        
+        getNewPlayer.hidden = 1;
+        btnContinue3.hidden = 1;
+        pointNextActive3.hidden = 1;
+    }
     
 }
+
+
+
 
 @end

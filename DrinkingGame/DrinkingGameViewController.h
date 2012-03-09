@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "DGGame.h"
 #import "DGRandomShot.h"
 #import "DGController.h"
 #import "DGGameSimonSays.h"
 #import "DGSteadyHands.h"
-#import "DGViewPlayer.h"
 #import "DGTestGameTwo.h"
 #import "DGFillTheBottle.h"
 #import "DGStartMenu.h"
 #import "SimpleAudioEngine.h"
-
+#import "DGPlayerStatView.h"
 typedef struct{
     NSString *playerName;
     int score;
@@ -28,19 +28,29 @@ typedef struct{
 @end
 
 
-@interface DrinkingGameViewController : UIViewController{
-    DGGame *currentCame;
+@interface DrinkingGameViewController : UIViewController<UITabBarDelegate>{
+    DGGame *currentGame;
     DGController* controller;
     
     //twitter
     IBOutlet UIButton *twitterButton;
     IBOutlet UIView *boozeChooserView;
     IBOutlet UIView*boo;
+    
+    IBOutlet UILabel *lostLabel;
+    IBOutlet UILabel *playerNameLabel;    
     IBOutlet UIView *playerImgFrame;    
     IBOutlet UIImageView *playerImg;
     IBOutlet UIView *nextPlayerView;
+    
+    IBOutlet UITableView* statView;
+
     id <ViewControllerProto> delegate;
     UIViewController *viewControl;
+    
+    IBOutlet UIView *debugView;
+    DGPlayer *loosingPlayer;
+
 }
 
 @property (readonly, nonatomic) DGController* controller;
@@ -51,20 +61,29 @@ typedef struct{
 -(IBAction)twitterAction:(id)sender;
 
 -(DGController *) controller;
+-(id)initWithController: (DGController*) controllerIn;
+
+//twitter
+/*
+@property (retain) UIButton *twitterButton;
+-(IBAction)twitterAction:(id)sender;
+*/
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;
-
+-(void) gameEndedWithLooser:(DGPlayer*) player;
 -(void) showPlayer:(DGPlayer*)player;
--(void) playerReadyToPlay;
--(IBAction) showNext:(id)sender;
--(void) gameEndedWithScores:(NSString*) scores;
--(IBAction) launchTestGame:(id)sender;
+
+-(IBAction) launchLOOSER:(id)sender;
+
+-(void) launchGame:(DGGame*)game;
+
+-(IBAction) launchRandomShot:(id)sender;
 -(IBAction) launchSimon:(id)sender;
 -(IBAction) launchSteadyHands:(id)sender;
 -(IBAction) launchWhackAMole:(id)sender;
 -(IBAction) launchFillTheBottle:(id)sender;
 -(IBAction) launchMenu:(id)sender;
 -(IBAction) stopMusic:(id)sender;
--(void)handleTap:(UITapGestureRecognizer *)sender;
+//-(void)handleTap:(UITapGestureRecognizer *)sender;
 @end

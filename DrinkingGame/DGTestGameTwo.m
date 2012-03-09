@@ -39,10 +39,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view=startView;
+    
+//    self.view=startView;
     points = [[NSMutableDictionary alloc] init];
     currentPlayer=0;
-    playerCount = [controller playerCount];
+    [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
+//    playerCount = [controller playerCount];
+    playerCount = 3;
+
     results = [[NSMutableString alloc] initWithString:@""];
     
     pName = [[[controller players] objectAtIndex:currentPlayer] name];
@@ -86,8 +90,7 @@
                                           userInfo:nil
                                            repeats:true];
 }
--(IBAction)startGame:(id)sender
-{
+-(void) playerReady{
     self.view = gameView;
     [mole1 setEnabled:true];
     [mole2 setEnabled:true];
@@ -95,7 +98,7 @@
     
     [scoreLabelText setHidden:NO];
     [scoreLabel setHidden:NO];
-
+    
     [timeLeftText setHidden:NO];
     [timeLeft setHidden:NO];
     
@@ -106,13 +109,41 @@
     zeroes = @"";
     
     self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
- 
+    
     self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",molesHit];
-
-  
+    
+    
     
     [self startTimers];
+
 }
+//-(IBAction)startGame:(id)sender
+//{
+//    self.view = gameView;
+//    [mole1 setEnabled:true];
+//    [mole2 setEnabled:true];
+//    [mole3 setEnabled:true];
+//    
+//    [scoreLabelText setHidden:NO];
+//    [scoreLabel setHidden:NO];
+//
+//    [timeLeftText setHidden:NO];
+//    [timeLeft setHidden:NO];
+//    
+//    molesHit=0;
+//    molesShown=0;
+//    seconds=30;
+//    maxMoles=(seconds/0.6);
+//    zeroes = @"";
+//    
+//    self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
+// 
+//    self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",molesHit];
+//
+//  
+//    
+//    [self startTimers];
+//}
 -(void)stopTimers:(bool)endGame
 {
     [self endTimers];
@@ -159,17 +190,26 @@
             [nextPlayerBtn setHidden:YES];
             [playerScore setHidden:YES];
             [playerName2 setHidden:YES];
-            
+            int minId=0;
+            int min=10000;
             NSArray *keys = [points allKeys];
-            
             for (NSNumber *key in keys) 
-            {
+            {   
+                
                 int x =[key intValue];
+                 
                 int p =[[points objectForKey:key] intValue];
+                
+                if(p<min){
+                    min=p;
+                    minId = [key intValue];
+                }
                 [results appendFormat:@"NAME: %@ , POINTS:%i \n",[[[controller players] objectAtIndex:x] name], p];
                 
+                
             }
-            
+            NSLog(@"%i",minId);
+            [delegate GameEndedWithLooser:[[controller players] objectAtIndex:minId]];
            self.playerScores.text=[[NSString alloc] initWithFormat:@"%@",results];
             
             [resultTitle setHidden:NO];
@@ -192,6 +232,7 @@
         nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
     }
     self.view=startView;
+    [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
 }
 
 -(void)updateSeconds:(NSTimer*)theTimer

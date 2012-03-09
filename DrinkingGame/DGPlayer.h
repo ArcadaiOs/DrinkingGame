@@ -22,6 +22,7 @@
     NSDate * lastUpdate;
     NSMutableArray* consumptions;
     NSNumber * gramAlcBody;
+    NSDate *firstDrink;
 }
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) UIImage * image;
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) NSNumber * weight;
 @property (nonatomic, retain) NSDate * lastUpdate;
 @property (nonatomic, retain) NSNumber * gramAlcBody;
+@property (nonatomic, retain) NSDate * firstDrink;
 
 - (id)initWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
 -(NSComparisonResult) comparePromille:(id) element; 

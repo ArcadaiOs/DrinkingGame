@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "DGController.h"
-#import "DGViewPlayer.h"
 
 @protocol GameEnded <NSObject>
 -(void) GameEndedWithLooser:(DGPlayer *)looser;
@@ -27,10 +26,9 @@ typedef enum {
 @interface DGGame : UIViewController{
     GameType gameType;
     DGController* controller;
-    DGViewPlayer *playerView;
     id < GameEnded > delegate;
-
-
+    DGPlayer *CurrentPlayer;
+    bool OnePlayerOnce;
 }
 
 @property(nonatomic,assign)id delegate;
@@ -38,6 +36,8 @@ typedef enum {
 @property (nonatomic, retain) DGController* controller;
 - (id)initWithController: (DGController*) controller;
 -(IBAction) endGame:(id)sender;
+-(void) GameEndedCalculateScores;
 -(void) showPlayer:(DGPlayer*) player;
 -(void) playerReady;
+-(void) NextPlayer;
 @end

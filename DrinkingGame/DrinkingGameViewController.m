@@ -16,10 +16,13 @@
 @synthesize controller;
 @synthesize twitterButton;
 @synthesize delegate;
--(id)init{
+-(id)initWithController: (DGController*) controllerIn{
     self = [super init];
     if (self) {
+        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1]];
+        controller = controllerIn;
         [controller setDelegate:self];
+
     }
     return self;
     
@@ -68,88 +71,126 @@ for (int i = 0; i < amountOfPlayers; i++) {
     return [DGController sharedInstance];
 }
 
--(void) playerReadyToPlay{
+-(void) launchGame:(DGGame*)game{
     
+    [currentGame.view removeFromSuperview];
+    [currentGame release];
+    [debugView removeFromSuperview];
+    currentGame = game;
+    [self dismissModalViewControllerAnimated:NO];
+    [self.view addSubview:currentGame.view];
+
 }
 
--(IBAction)launchTestGame:(id)sender{
-    [currentCame.view removeFromSuperview];
-    [currentCame release];
-    currentCame = [[DGRandomShot alloc] initWithController:controller];
-    [self.view addSubview:currentCame.view];
+-(IBAction)launchRandomShot:(id)sender{
+    [self launchGame:[[DGRandomShot alloc] initWithController:controller]];
+    
 }
 -(IBAction)launchSteadyHands:(id)sender{
-    [currentCame.view removeFromSuperview];
-    [currentCame release];
-    currentCame = [[DGSteadyHands alloc] initWithController:controller];
-    [self.view addSubview:currentCame.view];
+    [self launchGame:[[DGSteadyHands alloc] initWithController:controller]];
+    
 }
 -(IBAction) launchWhackAMole:(id)sender{
-    [currentCame.view removeFromSuperview];
-    [currentCame release];
-    currentCame = [[DGTestGameTwo alloc] initWithController:controller];
-    [self.view addSubview:currentCame.view];
+    [self launchGame:[[DGTestGameTwo alloc] initWithController:controller]];
 }
 -(IBAction) launchFillTheBottle:(id)sender{
-    [currentCame.view removeFromSuperview];
-    [currentCame release];
-    currentCame = [[DGFillTheBottle alloc] initWithController:controller];
-    [self.view addSubview:currentCame.view];
+    [self launchGame:[[DGFillTheBottle alloc] initWithController:controller]];
 }
 -(IBAction) launchMenu:(id)sender{
-    [currentCame.view removeFromSuperview];
-    [currentCame release];
-//    currentCame = [[DGStartMenu alloc] init];
-//    [self.view addSubview:currentCame.view];
-//    UIView * v = [[DGStartMenu alloc] init].view;
+    [currentGame.view removeFromSuperview];
+    [currentGame release];
+    //    currentCame = [[DGStartMenu alloc] init];
+    //    [self.view addSubview:currentCame.view];
+    //    UIView * v = [[DGStartMenu alloc] init].view;
     [self.view addSubview:[[DGStartMenu alloc] init].view];
+
 }
 -(IBAction)launchSimon:(id)sender{
-    [currentCame.view removeFromSuperview];
-    [currentCame release];
-    
-    currentCame = [[DGGameSimonSays alloc] initWithController:controller];
-    [self.view addSubview:currentCame.view];
+    [self launchGame:[[DGGameSimonSays alloc] initWithController:controller]];
 }
--(IBAction)showNext:(id)sender{
-    [self showPlayer:[controller.players objectAtIndex:0]];
-}
+
+
 -(void) showPlayer:(DGPlayer *)player{
-    [playerImgFrame removeFromSuperview];
-    [nextPlayerView addSubview:playerImgFrame];
+    NSLog(@"GDViewController ShowPlayer");
     
+    //[currentGame.view removeFromSuperview];
+    [playerImgFrame removeFromSuperview];
     playerImgFrame.center = CGPointMake(150, 195);
-    //playerImgFrame.frame=CGRectMake(10, 50, 250, 300);
-    [viewControl.view addSubview:nextPlayerView];
+    
+    [nextPlayerView removeFromSuperview];
+    [nextPlayerView addSubview:playerImgFrame];
     [nextPlayerView setCenter:CGPointMake(160, 210)];
+    [viewControl.view addSubview:nextPlayerView];
+    
+//    [self.view addSubview:nextPlayerView];
+    
+//    [viewControl presentModalViewController:viewControl animated:NO];
     [self presentModalViewController:viewControl animated:NO];
+    
     playerImg.image = player.image;
+    playerNameLabel.text = player.name;
 }
+
+
 -(IBAction)playerReadyToPlay:(id)sender{
     NSLog(@"player ready viewvontroller");
     [nextPlayerView removeFromSuperview];
-    [viewControl dismissModalViewControllerAnimated:YES];
-    [currentCame playerReady];
+    [viewControl dismissModalViewControllerAnimated:NO];
+    //[viewControl.view addSubview:currentGame.view];
+    
+    //[viewControl presentModalViewController:viewControl animated:NO];
+    [currentGame playerReady];
     //[delegate playerReady];
 }
--(IBAction)showPunnishmentChooser:(id)sender{
-    [playerImgFrame removeFromSuperview];
-    playerImgFrame.center = CGPointMake(130, 195);
-    [boozeChooserView addSubview:playerImgFrame];
-    [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
 
+-(IBAction)showPlayerStats:(id)sender{
+    
+    [debugView removeFromSuperview];
+    DGPlayerStatView* stat = [[DGPlayerStatView alloc] initWithController:controller];
+    //[viewControl.view addSubview:stat];
+    [self presentModalViewController:stat animated:NO];
+}
+-(void) gameEndedWithLooser:(DGPlayer *)player{
+    loosingPlayer = player;
+    //NSLog(@"gamendeViewController");
+    [debugView removeFromSuperview];
+    playerImg.image = player.image;
+    playerNameLabel.text = player.name;
+    [currentGame.view removeFromSuperview];
+    [playerImgFrame removeFromSuperview];
+    playerImgFrame.center = CGPointMake(160, 215);
+    [boozeChooserView addSubview:playerImgFrame];
     [viewControl.view addSubview:boozeChooserView];
+        
+
+    [self presentModalViewController:viewControl animated:NO];
+    [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
+}
+
+-(IBAction)launchLOOSER:(id)sender{
+    [self gameEndedWithLooser:[controller.players objectAtIndex:0]];
+}
+
+-(IBAction)showPunnishmentChooser:(id)sender{
+    [self dismissModalViewControllerAnimated:NO];
+    
+    [playerLostView removeFromSuperview];
+    [viewControl.view addSubview:boozeChooserView];
+    
     [self presentModalViewController:viewControl animated:NO];
     
 }
 -(IBAction)punnishmentChosen:(id) sender{
     [boozeChooserView removeFromSuperview];
     [viewControl dismissModalViewControllerAnimated:YES];
+    [playerImgFrame removeFromSuperview];
     
-    UIButton *s = (UIButton*)sender;
+
     
-    NSLog(@"%@",s.titleLabel.text);
+    NSString *chosenPunnishment = (NSString*) ((UIButton*)sender).titleLabel.text;
+    [loosingPlayer takeShot:[controller.drinks valueForKey:chosenPunnishment]];
     
+    [self.view addSubview:debugView ];    
 }
 
 -(IBAction) stopMusic:(id)sender{
@@ -157,10 +198,6 @@ for (int i = 0; i < amountOfPlayers; i++) {
     NSLog(@"%@",sender);
 }
 
-
--(void) gameEndedWithScores:(NSString*) scores{
-    NSLog(@"Game ended: %@", scores);
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -175,34 +212,33 @@ for (int i = 0; i < amountOfPlayers; i++) {
 
 - (void)viewDidLoad
 {
-    
+    NSLog(@"START");
     [super viewDidLoad];
-    controller = [[DGController alloc] init];
-    [controller setDelegate:self];
+    //controller = [[DGController alloc] init] ;
+    //[controller setDelegate:self];
     //[ctrl fetchRecords];
     viewControl = [[UIViewController alloc] init];
     [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];
-//    [nextPlayerView addSubview:playerImgFrame];
 
-    //[boozeChooserView addSubview:playerImgFrame];    
-//    [boo addSubview:playerImgFrame];
-    UILabel *ch = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 320, 50)];
-    UILabel *bo = [[UILabel alloc] initWithFrame:CGRectMake(0, 85, 320, 50)];
-    [ch setTextAlignment:UITextAlignmentCenter];
-    [bo setTextAlignment:UITextAlignmentCenter];
-    [ch setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:35]];
-    [bo setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:40]];
-    [ch setTransform:CGAffineTransformMakeRotation(-0.1)];
-    [bo setTransform:CGAffineTransformMakeRotation(0.258658)];
-    ch.text = @"Choose Your";
-    bo.text = @"BOOOZZE";
-    UIColor *baaaa = [UIColor colorWithWhite:0 alpha:0.0];
-    ch.backgroundColor = baaaa;
-    bo.backgroundColor = baaaa;
     
-    [boozeChooserView addSubview:ch];
-    [boozeChooserView addSubview:bo];
-
+    UIFont *rockwell = [UIFont fontWithName:@"Rockwell Extra Bold" size:35];
+    [playerNameLabel setFont:rockwell];
+    
+    UIColor *red = [UIColor colorWithRed:0.8 green:0.1 blue:0.1 alpha:1.0];
+    UIColor *transparent = [UIColor colorWithWhite:0.0 alpha:0.0];
+    UILabel *looserIs = [[UILabel alloc] initWithFrame:CGRectMake(10, 35, 300, 40)];
+    [looserIs setText:@"The Looser IS"];
+    looserIs.textColor = red;
+    looserIs.backgroundColor = transparent;
+    looserIs.font = rockwell;
+    
+    
+    [playerLostView addSubview:looserIs];
+    
+    [self.view addSubview:debugView ];
+    
+    NSLog(@"drinakr: %i", controller.drinks.count);
+    
     [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"song.mp3"];
     
 }   

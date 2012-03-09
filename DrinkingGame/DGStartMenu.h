@@ -15,6 +15,18 @@
 {
     int amountOfPlayers;
     
+    NSInteger originalAmountOfPlayers;
+    
+    
+
+    
+    UIImage *numberPadDoneImageNormal;
+    UIImage *numberPadDoneImageHighlighted;
+    UIButton *numberPadDoneButton;
+    
+
+    
+
     
     //Menu 1
     
@@ -70,6 +82,7 @@
     UIButton *Menu2CustomSelected;
     
     IBOutlet UIView *originalCenter;
+    UIView * view;
     IBOutlet UIView *firstView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
@@ -80,7 +93,7 @@
     UIImageView *menu3CrossFemale;
     UIButton *menu3male;
     UIButton *menu3female;
-    
+    UIButton *getNewPlayer;
     
     UITextField *name;
     UITextField *weight;
@@ -95,7 +108,7 @@
 
 //@property (nonatomic) NSInteger gameState;
 //@property (nonatomic) NSInteger previousState;
-
+//@property (nonatomic, retain) UIView *view;
 
 //Menu 1
 //@property (nonatomic, retain) SimpleAudioEngine *ae;
@@ -159,6 +172,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView *menu3CrossMale;
 @property (nonatomic, retain) IBOutlet UIButton *menu3female;
 @property (nonatomic, retain) IBOutlet UIButton *menu3male;
+@property (nonatomic, retain) IBOutlet UIButton *getNewPlayer;
 
 @property (nonatomic, retain) IBOutlet UITextField *name;
 @property (nonatomic, retain) IBOutlet UITextField *weight;
@@ -166,6 +180,17 @@
 @property BOOL gender;
 
 @property (nonatomic, retain) UIImageView *polaroid;
+
+
+
+@property (nonatomic, retain) UIImage *numberPadDoneImageNormal;
+@property (nonatomic, retain) UIImage *numberPadDoneImageHighlighted;
+@property (nonatomic, retain) UIButton *numberPadDoneButton;
+
+- (IBAction)numberPadDoneButton:(id)sender;
+
+//-(DGStartMenu*)init;
+
 
 
 -(IBAction)buttonClickedContinue;

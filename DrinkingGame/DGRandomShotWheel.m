@@ -9,7 +9,7 @@
 #import "DGRandomShotWheel.h"
 
 @implementation DGRandomShotWheel
-
+@synthesize spinAnimation,sel;
 - (id)initWithFrame:(CGRect)frame andController:(DGController*) controllerIn andSelection:(int) selIn
 {
     self = [super initWithFrame:frame];
@@ -23,21 +23,19 @@
     }
     return self;
 }
--(void) spin{
-    float spin = sel*((M_PI*2)-step)+M_PI_4+M_PI*4;
+-(void) spin:(id) animDelegate{
+    float spin = sel*((M_PI*2)-step)+M_PI_4+M_PI*2;
     NSLog(@"spin: %f",spin);
     NSLog(@"step: %f",step);
-    CABasicAnimation* spinAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    [spinAnimation setDelegate:self];
+    spinAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"] ;
+    [spinAnimation setDelegate:animDelegate];
     spinAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     spinAnimation.toValue = [NSNumber numberWithFloat:spin];
     spinAnimation.removedOnCompletion = NO;
     spinAnimation.fillMode = kCAFillModeForwards;
-    [spinAnimation setDuration:spin*0.4f];
+    [spinAnimation setDuration:spin*0.1f];
+
     [self.layer addAnimation:spinAnimation forKey:@"spinAnimation"];
-}
-- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag{
-    NSLog(@"%@'s gotta drink (%i)",[[[controller players] objectAtIndex:sel] name],sel);
 }
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -96,7 +94,7 @@
     }
     
     CGContextSetLineWidth(context, margin);
-    CGFloat strokeColor[4]    = {1.0f,0,0,1.0};
+    CGFloat strokeColor[4]    = {0.0f,0,0,1.0};
     CGContextSetStrokeColor(context, strokeColor);
     
     CGContextAddEllipseInRect(context, rect2);

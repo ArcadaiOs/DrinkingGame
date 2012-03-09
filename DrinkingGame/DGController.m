@@ -9,48 +9,68 @@
 #import "DGController.h"
 
 @implementation DGController
-@synthesize drinks;
+//@synthesize drinks;
 @synthesize players;
+@synthesize drinks;
+
 @synthesize gameLevel,playerCount;
 @synthesize delegate;
+@synthesize games;
+
+
 //@synthesize controller;
 - (id)init
 {
     self = [super init];
     if (self) {
-        drinks = [[NSMutableArray alloc] init];
-        [drinks addObject:[[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"]];
-        [drinks addObject:[[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"]];
-        [drinks addObject:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"]];
+
+        
+        drinks = [[NSMutableDictionary alloc] init];
+        [drinks setValue:[[DGDrink alloc] initWithVolumeCl:2 procent:40 andName:@"Shot"] forKey:@"Shot"];
+        [drinks setValue:[[DGDrink alloc] initWithVolumeCl:8 procent:11 andName:@"Wine"] forKey:@"Wine"];
+        [drinks setValue:[[DGDrink alloc] initWithVolumeCl:16 procent:4.7 andName:@"Beer"] forKey:@"Beer"];
+
+        
+        // has 17.5mg alcohole
+        [drinks setValue:[[DGDrink alloc] initWithVolumeCl:30 procent:5 andName:@"TESTDRINK"] forKey:@"TEST"];
+        
         
         players = [[NSMutableArray alloc] init];
-        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] name:@"Soini" weight:120 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"Soini.jpeg"] name:@"Soini" weight:100 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"niini.png"] name:@"Niini" weight:80 isFemale:false]];
         [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"naama.jpg"] name:@"Naama" weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"haddock.jpg"] name:@"Haddock" weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"poirot.jpg"] name:@"Poirot" weight:80 isFemale:false]];
+        [players addObject:[[DGPlayer alloc] initWithimage:[UIImage imageNamed:@"norris.jpg"] name:@"Norris" weight:80 isFemale:false]];
         playerCount = [players count];
-//        [[players objectAtIndex:0] takeShot:[drinks objectAtIndex:1]];
-//        [[players objectAtIndex:1] takeShot:[drinks objectAtIndex:0]];
-//        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
-//        [[players objectAtIndex:2] takeShot:[drinks objectAtIndex:2]];
-        
+
+        currentPlayer = 0;
+                
     }
     
     return self;
 } 
+
+-(DGPlayer*)NextPlayerRepeatPlayers:(_Bool)PlayerRepeat{
+    DGPlayer *next = nil;
+    if(currentPlayer < playerCount-1){
+        currentPlayer++;
+        next =  [players objectAtIndex:currentPlayer];  
+    } else if(PlayerRepeat){
+        next = [players objectAtIndex:0];
+    }
+
+    return next;
+}
 -(void) showPlayer:(DGPlayer*) player{
-    NSLog(@"DGController");
+    NSLog(@"DGController ShowPlayer");
     [delegate showPlayer:player];
 }
 -(void) GameEndedWithLooser:(DGPlayer *)looser{
-    [delegate showPlayer:looser];
-    NSLog(@"GAME ENDED AND LOSER IS FOUND");
+    //[delegate showPlayer:looser];
 
-}
--(void) playerReady{
-    NSLog(@"PLAYER READu CONTROLER");
-}
-- (void) startRandomGame{
-    // TALK TO DrinkingGameViewController
+    NSLog(@"GAME ENDED AND LOSER IS FOUND");
+    [delegate gameEndedWithLooser:looser];
 }
 
 

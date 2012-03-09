@@ -13,28 +13,35 @@
 @protocol ControllerProto <NSObject>
 -(void) playerReady;
 -(void) showPlayer:(DGPlayer*) player;
+-(void) gameEndedWithLooser:(DGPlayer*) looser;
 @end
 
 @interface DGController : NSObject{
-    NSMutableArray* drinks;
     NSMutableArray* players;
+    NSMutableDictionary *drinks;
+    NSMutableArray *games;
+
     int gameLevel;
     int playerCount;
-//    DGController * controller;
+    int currentPlayer;
     id <ControllerProto> delegate;
 }
 @property(nonatomic,assign)id delegate;
+@property (nonatomic, retain) NSMutableArray* players;
+@property (nonatomic, retain) NSMutableDictionary *drinks;
+@property (nonatomic, retain) NSMutableArray* games;
+
+
+@property int gameLevel;
+@property int playerCount;
+
++ (id) sharedInstance;
+
+-(DGPlayer*) NextPlayerRepeatPlayers:(bool) PlayerRepeat;
+- (void)addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
 
 -(void) GameEndedWithLooser:(DGPlayer*) looser;
 -(void) showPlayer:(DGPlayer*) player;
--(void) playerReady;
-@property (nonatomic, retain) NSMutableArray* drinks;
-@property (nonatomic, retain) NSMutableArray* players;
-@property int gameLevel;
-@property int playerCount;
-//@property (nonatomic, retain) DGController * controller;
-- (void)addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
 
-+ (id) sharedInstance;
-- (void) startRandomGame;
+
 @end

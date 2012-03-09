@@ -18,28 +18,46 @@
     if (self) {
         self.controller = controllerIn;
         // Custom initialization
-        playerView = [[DGViewPlayer alloc] init];
-        [playerView setDelegate:self];
         [self setDelegate:controller];
         [[controller players]sortUsingSelector:@selector(comparePromille:)];
+
         
+        // Set this to True if one player should only play once
+        OnePlayerOnce = false;
     }
     return self;
 }
 
+// implement this function in your game for returning the scores
+-(void) GameEndedCalculateScores{
+    
+}
+
+
 // this will show a player with his promille and imgae
 // playerReady will execute when player presses Lets Play
 -(void) showPlayer:(DGPlayer *)player{
-
-//    [delegate GameEndedWithLooser:player];
-    playerView.view.alpha = 0.0;
-    [self presentModalViewController:playerView animated:NO];
-    [UIView animateWithDuration:1.0
-                    animations:^{playerView.view.alpha = 1.0;}];
-
-
     
-    [playerView setPlayer:player];
+    //    [delegate GameEndedWithLooser:player];
+    //playerView.view.alpha = 0.0;
+    //[self presentModalViewController:playerView animated:NO];
+    //[UIView animateWithDuration:1.0
+    //                animations:^{playerView.view.alpha = 1.0;}];
+    
+    
+    [controller showPlayer:player];
+    //[playerView setPlayer:player];
+    
+}
+-(void) NextPlayer{
+    CurrentPlayer = [controller NextPlayerRepeatPlayers:OnePlayerOnce];
+    if(CurrentPlayer == nil){
+        // All Player has played once
+        [self GameEndedCalculateScores];
+            
+    } else {
+        [controller showPlayer:CurrentPlayer];
+    }
 }
 
 -(void) playerReady{
@@ -54,9 +72,10 @@
 }
 
 -(IBAction)endGame:(id)sender {
-    
+    [delegate GameEndedWithLooser:nil];
+    //[self endGame:nil];
     // killmiself
-    [self.view removeFromSuperview];
+    //[self.view removeFromSuperview];
     //[self release];
 }
 
@@ -74,7 +93,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    
 }
 
 - (void)viewDidUnload

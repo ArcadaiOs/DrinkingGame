@@ -16,9 +16,11 @@
     int sel;
     int count;
     CGFloat step;
+    CABasicAnimation* spinAnimation;
 }
 - (id)initWithFrame:(CGRect)frame andController:(DGController*) controllerIn andSelection:(int) selIn;
--(void) spin;
+-(void) spin:(id) animDelegate;
 - (CGPoint) getCirclePoint: (CGFloat) diam pos:(CGPoint) pos angle: (CGFloat) angle;
-- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag;
+@property (readonly, nonatomic) CABasicAnimation* spinAnimation;
+@property (readonly, nonatomic) int sel;
 @end
