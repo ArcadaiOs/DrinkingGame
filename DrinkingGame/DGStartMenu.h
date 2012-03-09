@@ -10,9 +10,14 @@
 #import "DGController.h"
 #import "SimpleAudioEngine.h"
 
+@protocol StartMenuProto <NSObject>
+-(void) setupDone;
+@end
+
 @interface DGStartMenu :  UIViewController 
 <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 {
+    id<StartMenuProto> delegate;
     int amountOfPlayers;
     
     NSInteger originalAmountOfPlayers;
@@ -104,7 +109,7 @@
     
     
 }
-
+@property(nonatomic,assign)id delegate;
 
 //@property (nonatomic) NSInteger gameState;
 //@property (nonatomic) NSInteger previousState;

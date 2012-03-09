@@ -46,6 +46,14 @@
 
         currentPlayer = 0;
                 
+        games = [[NSMutableDictionary alloc]init];
+        [games setValue:[[DGGameSimonSays alloc] init] forKey:@"Simon Says"];
+        [games setValue:[[DGTestGameTwo alloc] init] forKey:@"Whack A Mole"];
+        [games setValue:[[DGRandomShot alloc] init] forKey:@"Random Shot"];
+        [games setValue:[[DGFillTheBottle alloc] init] forKey:@"Fill the Bottle"];
+        [games setValue:[[DGSteadyHands alloc] init] forKey:@"Steady Hands"];
+
+    
     }
     
     return self;
@@ -57,6 +65,7 @@
         currentPlayer++;
         next =  [players objectAtIndex:currentPlayer];  
     } else if(PlayerRepeat){
+        NSLog(@"REPEAT PLAYER");
         next = [players objectAtIndex:0];
     }
 

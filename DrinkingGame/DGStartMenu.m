@@ -13,7 +13,7 @@
 
 @implementation DGStartMenu
 
-
+@synthesize delegate;
 //@synthesize  ae;
 //@synthesize view;
 //@synthesize gameState, previousState;
@@ -78,7 +78,8 @@
 
 -(IBAction)startGame:(id)sender{
     [self.view removeFromSuperview];
-    [[DGController sharedInstance] startRandomGame];
+    //[[DGController sharedInstance] startRandomGame];
+    [delegate setupDone];
 }
 
 -(IBAction)buttonClickedContinue {
@@ -162,8 +163,18 @@
 
 
 -(IBAction)buttonClickedBack {
+    // clear view
+    self.polaroid.image = nil;
+    self.weight.text = [NSString stringWithString:@"***"];
+    self.name.text = [NSString stringWithString:@"NAME"];
+    menu3CrossFemale.hidden = 1;
+    menu3CrossMale.hidden = 1;
+    self.gender = NO;
+    btnContinue3.hidden = 1;
+    pointNextActive3.hidden = 1;
     amountOfPlayers = originalAmountOfPlayers;
-        [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
     
     if (self.view == secondView) {
         self.view = firstView;
@@ -188,6 +199,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
     
 }
@@ -203,6 +216,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers4 {
@@ -217,6 +232,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers5 {
@@ -231,6 +248,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers6 {
@@ -245,6 +264,8 @@
     selected6.hidden = 0;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers7 {
@@ -259,6 +280,8 @@
     selected6.hidden = 1;
     selected7.hidden = 0;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers8 {
@@ -273,6 +296,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 0;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 
@@ -287,6 +312,8 @@
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 -(IBAction)buttonMediumPressed {
@@ -297,6 +324,8 @@
     bottleMediumSelected.hidden = 0;
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 -(IBAction)buttonHardPressed {
@@ -307,6 +336,8 @@
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 0;
     bottleCustomSelected.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 -(IBAction)buttonCustomPressed {
@@ -317,6 +348,8 @@
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 0;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 //Meny 3
@@ -326,6 +359,8 @@
     menu3CrossFemale.hidden = 1;
     self.gender = NO;
     [self closekeyboard];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 -(IBAction)menu3femalePressed {
@@ -333,6 +368,8 @@
     menu3CrossFemale.hidden = 0;
     self.gender = YES;
     [self closekeyboard];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 

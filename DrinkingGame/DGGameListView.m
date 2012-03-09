@@ -6,8 +6,8 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DGPlayerStatView.h"
-@implementation DGPlayerStatView
+#import "DGGameListView.h"
+@implementation DGGameListView
 @synthesize controller;
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -17,7 +17,7 @@
     self = [super init];
     
     if (self) {
-        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Players" image:[UIImage imageNamed:@"iconPlayerA.png"] tag:1]];
+        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconPlayerA.png"] tag:2]];
         controller = controllerIn;
         // Custom initialization
     }
@@ -59,7 +59,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[DGController sharedInstance] players] count];
+    return [[[DGController sharedInstance] games] count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -67,19 +67,19 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DGPlayerStatCell *cell = (DGPlayerStatCell*)[tableView dequeueReusableCellWithIdentifier:@"SimpleTableIdentifier"];
+    DGGameListCell *cell = (DGGameListCell*)[tableView dequeueReusableCellWithIdentifier:@"SimpleTableIdentifier"];
     if (cell == nil) {
-        NSBundle*b = [NSBundle mainBundle];
-        NSArray* nibObjects = [b loadNibNamed:@"DGPlayerStatCell" owner:self options:nil];
+        NSBundle *b = [NSBundle mainBundle];
+        NSArray *nibObjects = [b loadNibNamed:@"DGGameListCell" owner:self options:nil];
         for(id curObj in nibObjects){
-            if([curObj isKindOfClass:[DGPlayerStatCell class]]){
-                cell = (DGPlayerStatCell*)curObj;
+            if([curObj isKindOfClass:[DGGameListCell class]]){
+                cell = (DGGameListCell*)curObj;
             }
         }
     }
     
     NSUInteger row = [indexPath row];
-    [cell setPlayer:[[[DGController sharedInstance] players] objectAtIndex:row]];
+    [cell setGame:[[[DGController sharedInstance] games] objectAtIndex:row]];
     return cell;
     
 }

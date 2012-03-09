@@ -128,6 +128,10 @@
 		14FFF78814F6B6AC00899870 /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = 14FFF76C14F6B6AC00899870 /* cpVect.c */; };
 		3F00B7C61500DDC60085D992 /* DGmenuPoint_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F00B7C41500DDC60085D992 /* DGmenuPoint_dwn.png */; };
 		3F00B7C71500DDC60085D992 /* DGmenuPoint_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F00B7C51500DDC60085D992 /* DGmenuPoint_up.png */; };
+		3F0A1978150A0F4A00049E8F /* DGGameListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0A1976150A0F4A00049E8F /* DGGameListView.m */; };
+		3F0A1979150A0F4A00049E8F /* DGGameListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A1977150A0F4A00049E8F /* DGGameListView.xib */; };
+		3F0A197D150A102F00049E8F /* DGGameListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0A197B150A102F00049E8F /* DGGameListCell.m */; };
+		3F0A197E150A102F00049E8F /* DGGameListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A197C150A102F00049E8F /* DGGameListCell.xib */; };
 		3F0BEFB014E538D800240775 /* Rockeb.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BEFAF14E538D800240775 /* Rockeb.TTF */; };
 		3F10BE3414C9960800220F88 /* simon_blue_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F10BE2C14C9960800220F88 /* simon_blue_dwn.png */; };
 		3F10BE3514C9960800220F88 /* simon_blue_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F10BE2D14C9960800220F88 /* simon_blue_up.png */; };
@@ -218,9 +222,6 @@
 		3FBF66161500FC2500934C88 /* iconSettingsA.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66131500FC2500934C88 /* iconSettingsA.png */; };
 		3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF66141500FC2500934C88 /* iconGamesA.png */; };
 		3FC9856F14DABDD80023BB05 /* DGRandomShotWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */; };
-		3FD25ACE1508C744000D96AF /* DGGamesListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD25ACC1508C744000D96AF /* DGGamesListView.m */; };
-		3FD25ACF1508C744000D96AF /* DGGamesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD25ACD1508C744000D96AF /* DGGamesListView.xib */; };
-		3FD25AD21508C7D5000D96AF /* DGGameListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD25AD11508C7D5000D96AF /* DGGameListCell.m */; };
 		3FD60C3614DC1F9000DEAE7A /* haddock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C2E14DC1F9000DEAE7A /* haddock.jpg */; };
 		3FD60C3714DC1F9000DEAE7A /* hannibal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C2F14DC1F9000DEAE7A /* hannibal.jpg */; };
 		3FD60C3814DC1F9000DEAE7A /* naama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FD60C3014DC1F9000DEAE7A /* naama.jpg */; };
@@ -497,6 +498,12 @@
 		14FFF76D14F6B6AC00899870 /* prime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prime.h; sourceTree = "<group>"; };
 		3F00B7C41500DDC60085D992 /* DGmenuPoint_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenuPoint_dwn.png; sourceTree = "<group>"; };
 		3F00B7C51500DDC60085D992 /* DGmenuPoint_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DGmenuPoint_up.png; sourceTree = "<group>"; };
+		3F0A1975150A0F4A00049E8F /* DGGameListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGameListView.h; sourceTree = "<group>"; };
+		3F0A1976150A0F4A00049E8F /* DGGameListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGameListView.m; sourceTree = "<group>"; };
+		3F0A1977150A0F4A00049E8F /* DGGameListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGGameListView.xib; sourceTree = "<group>"; };
+		3F0A197A150A102F00049E8F /* DGGameListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGameListCell.h; sourceTree = "<group>"; };
+		3F0A197B150A102F00049E8F /* DGGameListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGameListCell.m; sourceTree = "<group>"; };
+		3F0A197C150A102F00049E8F /* DGGameListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGGameListCell.xib; sourceTree = "<group>"; };
 		3F0BEFAF14E538D800240775 /* Rockeb.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockeb.TTF; sourceTree = "<group>"; };
 		3F10BE2C14C9960800220F88 /* simon_blue_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_blue_dwn.png; sourceTree = "<group>"; };
 		3F10BE2D14C9960800220F88 /* simon_blue_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simon_blue_up.png; sourceTree = "<group>"; };
@@ -607,11 +614,6 @@
 		3FBF66141500FC2500934C88 /* iconGamesA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGamesA.png; sourceTree = "<group>"; };
 		3FC9856D14DABDD80023BB05 /* DGRandomShotWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRandomShotWheel.h; sourceTree = "<group>"; };
 		3FC9856E14DABDD80023BB05 /* DGRandomShotWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGRandomShotWheel.m; sourceTree = "<group>"; };
-		3FD25ACB1508C744000D96AF /* DGGamesListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGamesListView.h; sourceTree = "<group>"; };
-		3FD25ACC1508C744000D96AF /* DGGamesListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGamesListView.m; sourceTree = "<group>"; };
-		3FD25ACD1508C744000D96AF /* DGGamesListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGGamesListView.xib; sourceTree = "<group>"; };
-		3FD25AD01508C7D5000D96AF /* DGGameListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGGameListCell.h; sourceTree = "<group>"; };
-		3FD25AD11508C7D5000D96AF /* DGGameListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGGameListCell.m; sourceTree = "<group>"; };
 		3FD60C2E14DC1F9000DEAE7A /* haddock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = haddock.jpg; sourceTree = "<group>"; };
 		3FD60C2F14DC1F9000DEAE7A /* hannibal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hannibal.jpg; sourceTree = "<group>"; };
 		3FD60C3014DC1F9000DEAE7A /* naama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = naama.jpg; sourceTree = "<group>"; };
@@ -1276,11 +1278,12 @@
 		3FD25AC91508C5F1000D96AF /* GamesList */ = {
 			isa = PBXGroup;
 			children = (
-				3FD25ACB1508C744000D96AF /* DGGamesListView.h */,
-				3FD25ACC1508C744000D96AF /* DGGamesListView.m */,
-				3FD25ACD1508C744000D96AF /* DGGamesListView.xib */,
-				3FD25AD01508C7D5000D96AF /* DGGameListCell.h */,
-				3FD25AD11508C7D5000D96AF /* DGGameListCell.m */,
+				3F0A197A150A102F00049E8F /* DGGameListCell.h */,
+				3F0A197B150A102F00049E8F /* DGGameListCell.m */,
+				3F0A197C150A102F00049E8F /* DGGameListCell.xib */,
+				3F0A1975150A0F4A00049E8F /* DGGameListView.h */,
+				3F0A1976150A0F4A00049E8F /* DGGameListView.m */,
+				3F0A1977150A0F4A00049E8F /* DGGameListView.xib */,
 			);
 			name = GamesList;
 			sourceTree = "<group>";
@@ -1539,6 +1542,8 @@
 				3FBF66151500FC2500934C88 /* iconPlayerA.png in Resources */,
 				3FBF66161500FC2500934C88 /* iconSettingsA.png in Resources */,
 				3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */,
+				3F0A1979150A0F4A00049E8F /* DGGameListView.xib in Resources */,
+				3F0A197E150A102F00049E8F /* DGGameListCell.xib in Resources */,
 				3FD25ACF1508C744000D96AF /* DGGamesListView.xib in Resources */,
 				3FFAA789150A27C90006F628 /* donedown.png in Resources */,
 				3FFAA78A150A27C90006F628 /* doneup.png in Resources */,
@@ -1681,8 +1686,8 @@
 				14FFF78814F6B6AC00899870 /* cpVect.c in Sources */,
 				3F944A0F14FF92F10062F834 /* DGPlayerStatView.m in Sources */,
 				3F944A1314FF9E730062F834 /* DGPlayerStatCell.m in Sources */,
-				3FD25ACE1508C744000D96AF /* DGGamesListView.m in Sources */,
-				3FD25AD21508C7D5000D96AF /* DGGameListCell.m in Sources */,
+				3F0A1978150A0F4A00049E8F /* DGGameListView.m in Sources */,
+				3F0A197D150A102F00049E8F /* DGGameListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

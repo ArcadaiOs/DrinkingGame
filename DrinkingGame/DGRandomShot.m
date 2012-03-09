@@ -23,6 +23,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+-(id) init{
+    self = [super init];
+    if(self){
+        OnePlayerOnce = false;
+        name = @"Random Shot";
+    }
+    return self;
+}
+
+-(void) StartGame{
     //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DGmenubg.png"]];
     UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]];
     arrow.frame = CGRectMake(150, 150, 150, 150);
@@ -43,8 +54,8 @@
     subHeader.textAlignment = UITextAlignmentCenter;
     
     
-    int sel = arc4random() % [[controller players] count];
-    d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(-320, 140, 640, 640) andController:controller andSelection:sel];
+    int sel = arc4random() % [[[DGController sharedInstance] players] count];
+    d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(-320, 140, 640, 640) andSelection:sel];
     //DGRandomShotWheel* d = [[DGRandomShotWheel alloc] initWithFrame:CGRectMake(0, 100, 320, 320) andController:controller andSelection:sel];
     [self.view insertSubview:d atIndex:2];
     [self.view insertSubview:arrow atIndex:3];
@@ -52,10 +63,11 @@
     [self.view insertSubview:subHeader atIndex:4];
     [d spin:self];
     //[[d spinAnimation] setDelegate:self];
+
 }
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag{
-    DGPlayer* player = [controller.players objectAtIndex:d.sel];
-    [delegate GameEndedWithLooser:player];
+    DGPlayer* player = [[[DGController sharedInstance] players] objectAtIndex:d.sel];
+    [[DGController sharedInstance] GameEndedWithLooser:player];
 }
 - (void)viewDidUnload
 {
