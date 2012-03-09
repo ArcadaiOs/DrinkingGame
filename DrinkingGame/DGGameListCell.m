@@ -1,8 +1,8 @@
 //
-//  DGGameListCell.m
+//  DGPlayerStatCell.m
 //  DrinkingGame
 //
-//  Created by student on 3/8/12.
+//  Created by student on 3/1/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -14,26 +14,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
     }
     return self;
-
-}
--(void) setGame:(DGGame *)Game{
-    _Game = Game;
-    GameName.text = [_Game name];
-}
-
--(id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier Game:(DGGame *)Game{
-
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        _Game = Game;
-        GameName.text = [_Game name];
-    }
-    return self;
-
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -42,5 +24,16 @@
 
     // Configure the view for the selected state
 }
+- (void)setGame:(DGGame *)Game
+{
+    game = Game;
+    nameLabel.text = game.name;
 
+    
+//nameLabel.text = player.name;
+//    promilleLabel.text = [player.getPromille stringValue];
+    UIFont *rockwell = [UIFont fontWithName:@"Rockwell Extra Bold" size:35];
+    [nameLabel setFont:rockwell];
+
+}
 @end
