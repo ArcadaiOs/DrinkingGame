@@ -17,26 +17,29 @@
 @end
 
 @interface DGController : NSObject{
-//    NSMutableArray* drinks;
     NSMutableArray* players;
-    NSMutableDictionary *drinkar;
+    NSMutableDictionary *drinks;
+    NSMutableArray *games;
+
     int gameLevel;
     int playerCount;
     int currentPlayer;
     id <ControllerProto> delegate;
 }
 @property(nonatomic,assign)id delegate;
-
-//@property (nonatomic, retain) NSMutableArray* drinks;
 @property (nonatomic, retain) NSMutableArray* players;
-@property (nonatomic, retain) NSMutableDictionary *drinkar;;
+@property (nonatomic, retain) NSMutableDictionary *drinks;
+@property (nonatomic, retain) NSMutableArray* games;
+
 
 @property int gameLevel;
 @property int playerCount;
 
++ (id) sharedInstance;
+
 -(DGPlayer*) NextPlayerRepeatPlayers:(bool) PlayerRepeat;
 - (void)addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
-+ (id) sharedInstance;
+
 -(void) GameEndedWithLooser:(DGPlayer*) looser;
 -(void) showPlayer:(DGPlayer*) player;
 

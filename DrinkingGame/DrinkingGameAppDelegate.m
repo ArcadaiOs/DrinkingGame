@@ -13,13 +13,29 @@
 @implementation DrinkingGameAppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
+@synthesize tabBarController = _tabBarController;
+@synthesize controller;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-     
-    self.window.rootViewController = self.viewController;
+    
+    controller = [[DGController alloc] init] ;
+    
+    tabBarController = [[UITabBarController alloc] init];
+    
+    DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithController:controller];
+    
+    DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
+    
+   
+    //NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
+    //tabBarController.viewControllers = controllers;
+    
+    //self.window.rootViewController = tabBarController;
+    self.window.rootViewController =gameView;
+    
+    //self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -66,7 +82,7 @@
 - (void)dealloc
 {
     [_window release];
-    [_viewController release];
+    [_tabBarController release];
     [super dealloc];
 }
 

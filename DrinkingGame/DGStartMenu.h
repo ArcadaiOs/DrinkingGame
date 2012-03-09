@@ -15,6 +15,8 @@
 {
     int amountOfPlayers;
     
+    NSInteger originalAmountOfPlayers;
+    
     
     //Menu 1
     
@@ -70,6 +72,7 @@
     UIButton *Menu2CustomSelected;
     
     IBOutlet UIView *originalCenter;
+    UIView * view;
     IBOutlet UIView *firstView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
@@ -80,7 +83,7 @@
     UIImageView *menu3CrossFemale;
     UIButton *menu3male;
     UIButton *menu3female;
-    
+    UIButton *getNewPlayer;
     
     UITextField *name;
     UITextField *weight;
@@ -95,7 +98,7 @@
 
 //@property (nonatomic) NSInteger gameState;
 //@property (nonatomic) NSInteger previousState;
-
+//@property (nonatomic, retain) UIView *view;
 
 //Menu 1
 //@property (nonatomic, retain) SimpleAudioEngine *ae;
@@ -159,6 +162,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView *menu3CrossMale;
 @property (nonatomic, retain) IBOutlet UIButton *menu3female;
 @property (nonatomic, retain) IBOutlet UIButton *menu3male;
+@property (nonatomic, retain) IBOutlet UIButton *getNewPlayer;
 
 @property (nonatomic, retain) IBOutlet UITextField *name;
 @property (nonatomic, retain) IBOutlet UITextField *weight;
@@ -167,7 +171,7 @@
 
 @property (nonatomic, retain) UIImageView *polaroid;
 
-
+//-(DGStartMenu*)init;
 -(IBAction)buttonClickedContinue;
 -(IBAction)buttonClickedBack;
 

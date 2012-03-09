@@ -16,9 +16,11 @@
 @synthesize controller;
 //@synthesize twitterButton;
 @synthesize delegate;
--(id)init{
+-(id)initWithController: (DGController*) controllerIn{
     self = [super init];
     if (self) {
+        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1]];
+        controller = controllerIn;
         [controller setDelegate:self];
 
     }
@@ -47,14 +49,16 @@
 }
 
 -(void) launchGame:(DGGame*)game{
+    
     [currentGame.view removeFromSuperview];
     [currentGame release];
     [debugView removeFromSuperview];
-    
     currentGame = game;
+    [self dismissModalViewControllerAnimated:NO];
     [self.view addSubview:currentGame.view];
-    
+
 }
+
 -(IBAction)launchRandomShot:(id)sender{
     [self launchGame:[[DGRandomShot alloc] initWithController:controller]];
     
@@ -75,19 +79,29 @@
     //    currentCame = [[DGStartMenu alloc] init];
     //    [self.view addSubview:currentCame.view];
     //    UIView * v = [[DGStartMenu alloc] init].view;
-    //    [self.view addSubview:[[DGStartMenu alloc] init].view];
+    [self.view addSubview:[[DGStartMenu alloc] init].view];
+
 }
 -(IBAction)launchSimon:(id)sender{
     [self launchGame:[[DGGameSimonSays alloc] initWithController:controller]];
 }
+
+
 -(void) showPlayer:(DGPlayer *)player{
+    NSLog(@"GDViewController ShowPlayer");
+    
+    //[currentGame.view removeFromSuperview];
     [playerImgFrame removeFromSuperview];
     playerImgFrame.center = CGPointMake(150, 195);
     
+    [nextPlayerView removeFromSuperview];
     [nextPlayerView addSubview:playerImgFrame];
     [nextPlayerView setCenter:CGPointMake(160, 210)];
     [viewControl.view addSubview:nextPlayerView];
     
+//    [self.view addSubview:nextPlayerView];
+    
+//    [viewControl presentModalViewController:viewControl animated:NO];
     [self presentModalViewController:viewControl animated:NO];
     
     playerImg.image = player.image;
@@ -98,7 +112,10 @@
 -(IBAction)playerReadyToPlay:(id)sender{
     NSLog(@"player ready viewvontroller");
     [nextPlayerView removeFromSuperview];
-    [viewControl dismissModalViewControllerAnimated:YES];
+    [viewControl dismissModalViewControllerAnimated:NO];
+    //[viewControl.view addSubview:currentGame.view];
+    
+    //[viewControl presentModalViewController:viewControl animated:NO];
     [currentGame playerReady];
     //[delegate playerReady];
 }
@@ -106,7 +123,7 @@
 -(IBAction)showPlayerStats:(id)sender{
     
     [debugView removeFromSuperview];
-    DGPlayerStatView* stat = [[DGPlayerStatView alloc] initWithPlayers:controller.players];
+    DGPlayerStatView* stat = [[DGPlayerStatView alloc] initWithController:controller];
     //[viewControl.view addSubview:stat];
     [self presentModalViewController:stat animated:NO];
 }
@@ -120,9 +137,9 @@
     [playerImgFrame removeFromSuperview];
     playerImgFrame.center = CGPointMake(160, 215);
     [boozeChooserView addSubview:playerImgFrame];
-    
     [viewControl.view addSubview:boozeChooserView];
-    
+        
+
     [self presentModalViewController:viewControl animated:NO];
     [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
 }
@@ -148,7 +165,7 @@
 
     
     NSString *chosenPunnishment = (NSString*) ((UIButton*)sender).titleLabel.text;
-    [loosingPlayer takeShot:[controller.drinkar valueForKey:chosenPunnishment]];
+    [loosingPlayer takeShot:[controller.drinks valueForKey:chosenPunnishment]];
     
     [self.view addSubview:debugView ];    
 }
@@ -174,8 +191,8 @@
 {
     NSLog(@"START");
     [super viewDidLoad];
-    controller = [[DGController alloc] init] ;
-    [controller setDelegate:self];
+    //controller = [[DGController alloc] init] ;
+    //[controller setDelegate:self];
     //[ctrl fetchRecords];
     viewControl = [[UIViewController alloc] init];
     [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];
@@ -197,7 +214,7 @@
     
     [self.view addSubview:debugView ];
     
-    NSLog(@"drinakr: %i", controller.drinkar.count);
+    NSLog(@"drinakr: %i", controller.drinks.count);
     
     [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"song.mp3"];
     
