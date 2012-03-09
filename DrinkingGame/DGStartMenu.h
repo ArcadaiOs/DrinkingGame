@@ -23,6 +23,16 @@
     NSInteger originalAmountOfPlayers;
     
     
+
+    
+    UIImage *numberPadDoneImageNormal;
+    UIImage *numberPadDoneImageHighlighted;
+    UIButton *numberPadDoneButton;
+    
+
+    
+
+    
     //Menu 1
     
     
@@ -176,7 +186,18 @@
 
 @property (nonatomic, retain) UIImageView *polaroid;
 
+
+
+@property (nonatomic, retain) UIImage *numberPadDoneImageNormal;
+@property (nonatomic, retain) UIImage *numberPadDoneImageHighlighted;
+@property (nonatomic, retain) UIButton *numberPadDoneButton;
+
+- (IBAction)numberPadDoneButton:(id)sender;
+
 //-(DGStartMenu*)init;
+
+
+
 -(IBAction)buttonClickedContinue;
 -(IBAction)buttonClickedBack;
 

@@ -99,11 +99,30 @@
 
 -(IBAction)buttonPressed:(id)sender{
     UIButton *button = (UIButton*) sender;
+   
+    switch ([self colorToIntId:button.titleLabel.text]) {
+        case 1:
+            //BLUE Button press
+            [[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
+            break;
+        case 2:
+            //Yellow button press
+            [[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
+            break;
+        case 3:
+            //Red button press
+            [[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
+            break;
+        case 4:
+            //Green button press
+            [[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
+            break;
+    }
+
     if(playerAction){
         if(playCount < ([playList count]) ){
     //        NSLog(@"COMPARING: BUTTON: %i LIST: %i, COUNT %i", [self colorToIntId:button.titleLabel.text],
       //            [[playList objectAtIndex:playCount] intValue],playCount);
-            
             if([[playList objectAtIndex:playCount] intValue] == [self colorToIntId:button.titleLabel.text] ){
                 if(playCount == [playList count]-1){
                     [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
@@ -149,15 +168,19 @@
     switch (buttonNr) {
         case 1:
             btn = blueButton;
+            [[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
             break;
         case 2:
             btn = yellowButton;
+            [[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
             break;
         case 3:
             btn = redButton;
+            [[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
             break;
         case 4:
             btn = greenButton;
+            [[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
             break;
         default:
             return;
@@ -194,7 +217,7 @@
 }
 
 -(void) playerReady{
-    NSLog(@"NEXT PLAYER: READU SIMON");
+    NSLog(@"NEXT PLAYER: READY SIMON");
     [self startGame:nil];
 }
 
