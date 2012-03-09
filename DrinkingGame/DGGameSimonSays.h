@@ -7,6 +7,7 @@
 //
 
 #import "DGGame.h"
+#import "DrinkingGameViewController.h"
 #import <stdlib.h>
 #import <time.h>
 
