@@ -327,12 +327,12 @@
 
 
 -(IBAction)openkeyboard {
-    thirdView.superview.frame = CGRectMake(0,-200,320,480);
+    thirdView.superview.frame = CGRectMake(0,-195,320,480);
     btnBack3.hidden = 1;
 }
 
 -(IBAction)closekeyboard {
-    thirdView.superview.frame = CGRectMake(0,0,320,480);
+    thirdView.superview.frame = CGRectMake(0,20,320,480);
     [self.view endEditing:TRUE];
         btnBack3.hidden = 0;
     NSLog(@"gaygay");
