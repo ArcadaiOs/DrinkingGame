@@ -107,6 +107,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *quitPlayingBtn;
 
 /*FUNCTIONS*/
+
 -(IBAction)addScore:(id)sender;
 -(IBAction)startGame:(id)sender;
 -(IBAction)startNextPlayer:(id)sender;

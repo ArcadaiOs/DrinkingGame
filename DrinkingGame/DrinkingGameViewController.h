@@ -18,7 +18,7 @@
 #import "DGStartMenu.h"
 #import "SimpleAudioEngine.h"
 #import "DGPlayerStatView.h"
-#import "DGGameListView.h"
+
 
 typedef struct{
     NSString *playerName;
@@ -27,6 +27,7 @@ typedef struct{
 
 @protocol ViewControllerProto <NSObject>
 -(void) playerReady;
+
 @end
 
 
@@ -59,8 +60,6 @@ typedef struct{
     DGPlayer *loosingPlayer;
     UITabBarController *tabBarController;
 }
-
-@property (nonatomic, retain) UITabBarController *tabBarController;
 
 
 @property (readonly, nonatomic) DGController* controller;

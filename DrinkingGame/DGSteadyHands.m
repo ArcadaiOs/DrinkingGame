@@ -281,7 +281,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 -(void)dealloc{
-
+    [super dealloc];
     [accelerometer release];
 }
 @end
