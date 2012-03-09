@@ -466,6 +466,47 @@
 - (IBAction)numberPadDoneButton:(id)sender {
     UITextField *weight = [self findFirstResponderTextField];
         thirdView.superview.frame = CGRectMake(0,20,320,480);
+    
+    
+    if  // (self.polaroid.image != nil
+        // && 
+        (![name.text isEqualToString:@"NAME"]
+         && 
+         (![weight.text isEqualToString:@"***"]) 
+         && 
+         ((menu3CrossMale.hidden == 0) || (menu3CrossFemale.hidden == 0))) {
+            NSLog(@"Player completed...");
+            
+            
+            
+            
+            
+            
+            
+            if (amountOfPlayers == 0) {
+                
+                getNewPlayer.hidden = 1;
+                btnContinue3.hidden = 0;
+                pointNextActive3.hidden = 0;
+            }
+            
+            
+            else {
+                
+                getNewPlayer.hidden = 0;
+                pointNextActive3.hidden = 0;
+            }
+            
+        }
+    
+    else {
+        
+        getNewPlayer.hidden = 1;
+        btnContinue3.hidden = 1;
+        pointNextActive3.hidden = 1;
+    }
+    
+
     [weight resignFirstResponder];
 }
 
