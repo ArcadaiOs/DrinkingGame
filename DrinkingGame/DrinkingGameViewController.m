@@ -27,7 +27,14 @@
     return self;
     
 }
+// TwitterShittiii
 
+// -(IBAction)twitterAction:(id)sender{
+//        NSString *player1 = [[[controller players]objectAtIndex:0] name];
+//    TWTweetComposeViewController *twitt = [[TWTweetComposeViewController alloc] init];
+//    [twitt setInitialText:[NSString stringWithFormat:@"%@ was playing #DrinkingGame with @pstrande",player1]];
+//    //   [[twitt setInitialText:[NSString stringWithFormat:@"%.2f",[[ DGViewPlayer getPromille] floatValue]]];
+// }
 -(IBAction)twitterAction:(id)sender{       //TWITTER BEGINS
     
     int amountOfPlayers = [[controller players]count];
@@ -66,6 +73,9 @@ for (int i = 0; i < amountOfPlayers; i++) {
 */
     [self presentModalViewController:twitt animated:YES];
 }
+
+// end Twitter
+
 
 -(DGController *) controller{
     return [DGController sharedInstance];

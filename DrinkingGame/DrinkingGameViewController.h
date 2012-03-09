@@ -34,6 +34,10 @@ typedef struct{
     
     //twitter
     IBOutlet UIButton *twitterButton;
+    //IBOutlet UIButton *twitterButton;
+    
+    
+    IBOutlet UIView *playerLostView;
     IBOutlet UIView *boozeChooserView;
     IBOutlet UIView*boo;
     
@@ -55,19 +59,14 @@ typedef struct{
 
 @property (readonly, nonatomic) DGController* controller;
 @property(nonatomic,assign)id delegate;
-
-    //twitter
-@property (retain) UIButton *twitterButton;
--(IBAction)twitterAction:(id)sender;
-
 -(DGController *) controller;
 -(id)initWithController: (DGController*) controllerIn;
 
 //twitter
-/*
+
 @property (retain) UIButton *twitterButton;
 -(IBAction)twitterAction:(id)sender;
-*/
+
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;
