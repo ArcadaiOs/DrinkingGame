@@ -10,15 +10,12 @@
 
 
 
-#define twoPlayers 2
-
-
 
 @implementation DGStartMenu
 
 
 //@synthesize  ae;
-
+//@synthesize view;
 //@synthesize gameState, previousState;
 //menu 1
 @synthesize players, background1, menuNumbers, pointBackActive1, pointNextActive1, pointBackActive2, pointNextActive2, pointNextActive3, pointBackActive3, pointBack, pointNext;
@@ -30,9 +27,13 @@
 @synthesize menu3CrossMale, menu3CrossFemale, menu3male, menu3female;
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasy, buttonHard, buttonCustom, buttonMedium;
-@synthesize weight, name, gender, polaroid;
+//menu 3
+@synthesize weight, name, gender, polaroid, getNewPlayer;
 
-
+//-(DGStartMenu*)init{
+//    [super init];
+//    
+//}
 
 
 
@@ -72,6 +73,8 @@
 
 -(IBAction)buttonClickedContinue {
 //    firstView = self.view;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+    
     if (self.view == secondView) {
         self.view = thirdView;
     } else if (self.view == thirdView) {
@@ -149,6 +152,9 @@
 
 
 -(IBAction)buttonClickedBack {
+    amountOfPlayers = originalAmountOfPlayers;
+        [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+    
     if (self.view == secondView) {
         self.view = firstView;
     } else if (self.view == thirdView) {
@@ -162,6 +168,7 @@
 
 -(IBAction)buttonPlayers2 {
     amountOfPlayers = 2;
+    originalAmountOfPlayers = 2;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 0;
@@ -176,6 +183,7 @@
 }
 -(IBAction)buttonPlayers3 {
     amountOfPlayers = 3;
+    originalAmountOfPlayers = 3;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -189,6 +197,7 @@
 }
 -(IBAction)buttonPlayers4 {
     amountOfPlayers = 4;
+    originalAmountOfPlayers = 4;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -202,6 +211,7 @@
 }
 -(IBAction)buttonPlayers5 {
     amountOfPlayers = 5;
+    originalAmountOfPlayers = 5;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -215,6 +225,7 @@
 }
 -(IBAction)buttonPlayers6 {
     amountOfPlayers = 6;
+    originalAmountOfPlayers = 6;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -228,6 +239,7 @@
 }
 -(IBAction)buttonPlayers7 {
     amountOfPlayers = 7;
+    originalAmountOfPlayers = 7;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -241,6 +253,7 @@
 }
 -(IBAction)buttonPlayers8 {
     amountOfPlayers = 8;
+    originalAmountOfPlayers = 8;
     btnContinue.hidden = 0;
     pointNextActive1.hidden = 0;
     selected2.hidden = 1;
@@ -259,6 +272,7 @@
 -(IBAction)buttonEasyPressed {
     ((DGController*)[DGController sharedInstance]).gameLevel = 0;
     pointNextActive2.hidden = 0;
+    btnContinue2.hidden = 0;
     bottleEasySelected.hidden = 0;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
@@ -268,6 +282,7 @@
 -(IBAction)buttonMediumPressed {
     ((DGController*)[DGController sharedInstance]).gameLevel = 1;
     pointNextActive2.hidden = 0;
+    btnContinue2.hidden = 0;
     bottleEasySelected.hidden = 1;
     bottleMediumSelected.hidden = 0;
     bottleHardSelected.hidden = 1;
@@ -278,6 +293,7 @@
     ((DGController*)[DGController sharedInstance]).gameLevel = 2;
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
+    btnContinue2.hidden = 0;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 0;
     bottleCustomSelected.hidden = 1;
@@ -287,6 +303,7 @@
     ((DGController*)[DGController sharedInstance]).gameLevel = 3;
     pointNextActive2.hidden = 0;
     bottleEasySelected.hidden = 1;
+    btnContinue2.hidden = 0;
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 0;
@@ -311,23 +328,53 @@
 
 -(IBAction)openkeyboard {
     thirdView.superview.frame = CGRectMake(0,-200,320,480);
+    btnBack3.hidden = 1;
 }
 
 -(IBAction)closekeyboard {
     thirdView.superview.frame = CGRectMake(0,0,320,480);
     [self.view endEditing:TRUE];
-    if  (self.polaroid.image != nil 
-         && 
+        btnBack3.hidden = 0;
+    NSLog(@"gaygay");
+    if  (self.polaroid.image != nil
+          && 
          (![name.text isEqualToString:@"NAME"]) 
          && 
          (![weight.text isEqualToString:@"***"]) 
          && 
          ((menu3CrossMale.hidden == 0) || (menu3CrossFemale.hidden == 0))) {
         NSLog(@"Player completed...");
+        
+
+    
+
+    
+    
+    
+    if (amountOfPlayers == 0) {
+        
+        getNewPlayer.hidden = 1;
         btnContinue3.hidden = 0;
         pointNextActive3.hidden = 0;
     }
+
+    
+    else {
+    
+        getNewPlayer.hidden = 0;
+        pointNextActive3.hidden = 0;
+    }
+
+         }
+    
+    else {
+        
+        getNewPlayer.hidden = 1;
+        btnContinue3.hidden = 1;
+        pointNextActive3.hidden = 1;
+    }
     
 }
+
 
 @end
