@@ -199,6 +199,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
     
 }
@@ -214,6 +216,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers4 {
@@ -228,6 +232,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers5 {
@@ -242,6 +248,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers6 {
@@ -256,6 +264,8 @@
     selected6.hidden = 0;
     selected7.hidden = 1;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers7 {
@@ -270,6 +280,8 @@
     selected6.hidden = 1;
     selected7.hidden = 0;
     selected8.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 -(IBAction)buttonPlayers8 {
@@ -284,6 +296,8 @@
     selected6.hidden = 1;
     selected7.hidden = 1;
     selected8.hidden = 0;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
     
 }
 
@@ -298,6 +312,8 @@
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 -(IBAction)buttonMediumPressed {
@@ -308,6 +324,8 @@
     bottleMediumSelected.hidden = 0;
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 -(IBAction)buttonHardPressed {
@@ -318,6 +336,8 @@
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 0;
     bottleCustomSelected.hidden = 1;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 -(IBAction)buttonCustomPressed {
@@ -328,6 +348,8 @@
     bottleMediumSelected.hidden = 1;
     bottleHardSelected.hidden = 1;
     bottleCustomSelected.hidden = 0;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 //Meny 3
@@ -337,6 +359,8 @@
     menu3CrossFemale.hidden = 1;
     self.gender = NO;
     [self closekeyboard];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 -(IBAction)menu3femalePressed {
@@ -344,6 +368,8 @@
     menu3CrossFemale.hidden = 0;
     self.gender = YES;
     [self closekeyboard];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+
 }
 
 
