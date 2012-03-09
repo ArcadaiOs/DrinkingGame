@@ -13,7 +13,7 @@
 
 @implementation DGStartMenu
 
-
+@synthesize delegate;
 //@synthesize  ae;
 //@synthesize view;
 //@synthesize gameState, previousState;
@@ -68,7 +68,8 @@
 
 -(IBAction)startGame:(id)sender{
     [self.view removeFromSuperview];
-    [[DGController sharedInstance] startRandomGame];
+    //[[DGController sharedInstance] startRandomGame];
+    [delegate setupDone];
 }
 
 -(IBAction)buttonClickedContinue {

@@ -30,7 +30,8 @@ typedef struct{
 @end
 
 
-@interface DrinkingGameViewController : UIViewController<UITabBarControllerDelegate>{
+@interface DrinkingGameViewController : UIViewController{
+
     DGGame *currentGame;
     DGController* controller;
     
@@ -71,6 +72,7 @@ typedef struct{
 @property (retain) UIButton *twitterButton;
 -(IBAction)twitterAction:(id)sender;
 */
+-(void) setupDone;
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;

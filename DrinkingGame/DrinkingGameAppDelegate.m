@@ -20,14 +20,14 @@
 {
     // Override point for customization after application launch.
     
-    controller = [[DGController alloc] init] ;
+//    controller = [[DGController alloc] init] ;
     
-    tabBarController = [[UITabBarController alloc] init];
+ //   tabBarController = [[UITabBarController alloc] init];
     
-    DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithController:controller];
+DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithController:[DGController sharedInstance]];
     
    
-    DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
+//    DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
     
    //NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
     //tabBarController.viewControllers = controllers;

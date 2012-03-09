@@ -15,6 +15,15 @@
 @synthesize playList;
 @synthesize playEnumerator;
 
+-(id) init{
+    self = [super init];
+    if(self){
+        OnePlayerOnce = false;
+        name = @"Simon Says";
+    }
+    return self;
+}
+
 -(void) nextPlay:(NSTimer *)timer{
     
     NSEnumerator* en = (NSEnumerator*) timer.userInfo;
@@ -42,7 +51,7 @@
     
     playEnumerator = [playList objectEnumerator];
     
-    [NSTimer scheduledTimerWithTimeInterval:1.5
+    [NSTimer scheduledTimerWithTimeInterval:0.5
                                      target:self
                                    selector:@selector(nextPlay:)
                                    userInfo:playEnumerator
@@ -104,13 +113,13 @@
             } else {
                 playCount = 0;
                 playerAction = false;
-                [delegate GameEndedWithLooser:CurrentPlayer];
+                [[DGController sharedInstance] GameEndedWithLooser:CurrentPlayer];
             }
             
         } else{
             playerAction = false;
             playCount = 0;
-           [delegate GameEndedWithLooser:CurrentPlayer];
+           [[DGController sharedInstance] GameEndedWithLooser:CurrentPlayer];
             
         }
         
@@ -178,8 +187,9 @@
 -(IBAction)next:(id)sender{
 
     [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
-//    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
-    [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
+    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
+
+    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayer]];
     
 }
 
@@ -188,20 +198,16 @@
     [self startGame:nil];
 }
 
-#pragma mark - View lifecycle
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-        
-    
 }
 
 -(void) StartGame{
+    NSLog(@"SIMON StartGame");
     playerAction = false;
     playList = [[NSMutableArray alloc] init];
-    [[controller players]sortUsingSelector:@selector(comparePromille:)];
+    [[[DGController sharedInstance] players]sortUsingSelector:@selector(comparePromille:)];
 
     // create som starting point values
     int i=4;
