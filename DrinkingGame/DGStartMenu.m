@@ -467,7 +467,7 @@
     UITextField *weight = [self findFirstResponderTextField];
         thirdView.superview.frame = CGRectMake(0,20,320,480);
     
-    
+            btnBack3.hidden = 0;
     if  // (self.polaroid.image != nil
         // && 
         (![name.text isEqualToString:@"NAME"]
