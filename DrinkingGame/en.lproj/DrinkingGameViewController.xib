@@ -447,9 +447,11 @@
 			</object>
 			<object class="IBUIViewController" id="867588684">
 				<object class="IBUIView" key="IBUIView" id="501699061">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">274</int>
 					<string key="NSFrame">{{0, 20}, {320, 460}}</string>
+					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<string key="NSReuseIdentifierKey">_NS:180</string>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
@@ -732,10 +734,10 @@
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">twitterAction:</string>
 						<reference key="source" ref="777818618"/>
-						<reference key="destination" ref="843779117"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">65</int>
+					<int key="connectionID">66</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -999,7 +1001,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">65</int>
+			<int key="maxID">66</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1020,10 +1022,12 @@
 							<string>punnishmentChosen:</string>
 							<string>showNext:</string>
 							<string>showPunnishmentChooser:</string>
+							<string>stopMusic:</string>
 							<string>twitterAction:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -1049,6 +1053,7 @@
 							<string>punnishmentChosen:</string>
 							<string>showNext:</string>
 							<string>showPunnishmentChooser:</string>
+							<string>stopMusic:</string>
 							<string>twitterAction:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -1087,6 +1092,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">showPunnishmentChooser:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">stopMusic:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
