@@ -28,7 +28,6 @@
  //       [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1]];
         controller = controllerIn;
         [[DGController sharedInstance] setDelegate:self];
-        
         //tabBarController = [[UITabBarController alloc] init];
         //tabBarController.delegate = self;
         //DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
@@ -144,7 +143,6 @@ for (int i = 0; i < amountOfPlayers; i++) {
     [self launchGame:[[[DGController sharedInstance] games] objectForKey:@"Simon Says"]];
     
 }
-
 
 -(void) showPlayer:(DGPlayer *)player{
     NSLog(@"GDViewController ShowPlayer");

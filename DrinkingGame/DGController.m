@@ -52,17 +52,37 @@
         [games setValue:[[DGRandomShot alloc] init] forKey:@"Random Shot"];
         [games setValue:[[DGFillTheBottle alloc] init] forKey:@"Fill the Bottle"];
         [games setValue:[[DGSteadyHands alloc] init] forKey:@"Steady Hands"];
-
+        
+        [delegate launchGame:[games valueForKey:@"Simon Says"]];
     
     }
     
     return self;
 } 
+-(float) getTargetPromille:(int) level{
+    switch (level) {
+        case 0:
+            return 0.75;
+        case 1:
+            return 1.25;
+        case 2:
+            return 1.5;
+        case 3:
+            return 2.5;
+        default:
+            return 0;
+    }
+}
 
 -(DGPlayer*) getMostDrunkPlayer{
     [[[DGController sharedInstance] players]sortUsingSelector:@selector(comparePromille:)];
-    return [players objectAtIndex:0];
+
+    if([[[players objectAtIndex:0] getPromille] floatValue] >= [self getTargetPromille:gameLevel])
+        return [players objectAtIndex:0];   
+    else 
+        return nil;
 }
+
 
 -(DGPlayer*)NextPlayerRepeatPlayers:(_Bool)PlayerRepeat{
     DGPlayer *next = nil;
