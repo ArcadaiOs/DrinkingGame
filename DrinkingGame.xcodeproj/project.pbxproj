@@ -241,6 +241,7 @@
 		3FFA5F4614E53FD80054078B /* kork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA5F4414E53FD80054078B /* kork.png */; };
 		3FFAA789150A27C90006F628 /* donedown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFAA787150A27C90006F628 /* donedown.png */; };
 		3FFAA78A150A27C90006F628 /* doneup.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFAA788150A27C90006F628 /* doneup.png */; };
+		3FFAA790150A2BB80006F628 /* boo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FFAA78F150A2BB80006F628 /* boo.mp3 */; };
 		3FFD199D14F7A27D00D04C20 /* ChooseText.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFD199C14F7A27D00D04C20 /* ChooseText.png */; };
 		3FFD19A014F7A28900D04C20 /* Polaroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFD199F14F7A28900D04C20 /* Polaroid.png */; };
 /* End PBXBuildFile section */
@@ -631,6 +632,7 @@
 		3FFA5F4414E53FD80054078B /* kork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kork.png; sourceTree = "<group>"; };
 		3FFAA787150A27C90006F628 /* donedown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donedown.png; sourceTree = "<group>"; };
 		3FFAA788150A27C90006F628 /* doneup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doneup.png; sourceTree = "<group>"; };
+		3FFAA78F150A2BB80006F628 /* boo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boo.mp3; sourceTree = "<group>"; };
 		3FFD199C14F7A27D00D04C20 /* ChooseText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChooseText.png; sourceTree = "<group>"; };
 		3FFD199F14F7A28900D04C20 /* Polaroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Polaroid.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1205,6 +1207,7 @@
 				3F4B704714E3E4ED00BAE149 /* DGStartMenu.h */,
 				3F4B704814E3E4ED00BAE149 /* DGStartMenu.m */,
 				3FFAA787150A27C90006F628 /* donedown.png */,
+				3FFAA78F150A2BB80006F628 /* boo.mp3 */,
 				3FFAA788150A27C90006F628 /* doneup.png */,
 				3F4B704914E3E4ED00BAE149 /* DGStartMenu.xib */,
 			);
@@ -1533,9 +1536,9 @@
 				3FBF66161500FC2500934C88 /* iconSettingsA.png in Resources */,
 				3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */,
 				3FD25ACF1508C744000D96AF /* DGGamesListView.xib in Resources */,
-				3F68D25E1508D673007D802F /* boo.mp3 in Resources */,
 				3FFAA789150A27C90006F628 /* donedown.png in Resources */,
 				3FFAA78A150A27C90006F628 /* doneup.png in Resources */,
+				3FFAA790150A2BB80006F628 /* boo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
