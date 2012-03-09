@@ -162,8 +162,18 @@
 
 
 -(IBAction)buttonClickedBack {
+    // clear view
+    self.polaroid.image = nil;
+    self.weight.text = [NSString stringWithString:@"***"];
+    self.name.text = [NSString stringWithString:@"NAME"];
+    menu3CrossFemale.hidden = 1;
+    menu3CrossMale.hidden = 1;
+    self.gender = NO;
+    btnContinue3.hidden = 1;
+    pointNextActive3.hidden = 1;
     amountOfPlayers = originalAmountOfPlayers;
-        [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
+    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"boo.mp3"];
     
     if (self.view == secondView) {
         self.view = firstView;
