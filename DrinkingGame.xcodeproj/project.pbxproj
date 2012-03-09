@@ -1540,6 +1540,10 @@
 				3FBF66171500FC2500934C88 /* iconGamesA.png in Resources */,
 				3F0A1979150A0F4A00049E8F /* DGGameListView.xib in Resources */,
 				3F0A197E150A102F00049E8F /* DGGameListCell.xib in Resources */,
+				3FD25ACF1508C744000D96AF /* DGGamesListView.xib in Resources */,
+				3FFAA789150A27C90006F628 /* donedown.png in Resources */,
+				3FFAA78A150A27C90006F628 /* doneup.png in Resources */,
+				3FFAA790150A2BB80006F628 /* boo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

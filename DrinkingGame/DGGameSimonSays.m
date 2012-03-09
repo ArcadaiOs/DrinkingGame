@@ -103,19 +103,19 @@
     switch ([self colorToIntId:button.titleLabel.text]) {
         case 1:
             //BLUE Button press
-            [[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
             break;
         case 2:
             //Yellow button press
-            [[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
             break;
         case 3:
             //Red button press
-            [[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
             break;
         case 4:
             //Green button press
-            [[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
             break;
     }
 
@@ -168,19 +168,19 @@
     switch (buttonNr) {
         case 1:
             btn = blueButton;
-            [[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
             break;
         case 2:
             btn = yellowButton;
-            [[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
             break;
         case 3:
             btn = redButton;
-            [[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
             break;
         case 4:
             btn = greenButton;
-            [[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
             break;
         default:
             return;

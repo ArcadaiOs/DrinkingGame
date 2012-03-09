@@ -87,6 +87,20 @@
                                    userInfo:nil
                                     repeats:YES];
 }
+
+-(IBAction)startGame:(id)sender
+{
+    self.view = gameView;
+    btnGreen = [UIImage imageNamed:@"greenPlusButton.png"];
+    btnRed = [UIImage imageNamed:@"redPlusButton.png"];
+    [moreButton2 setImage:btnRed forState:UIControlStateNormal];
+    [moreButton setImage:btnGreen forState:UIControlStateNormal];
+    click = 0;
+    i = 0;
+    timeForGame = 15;
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"emptybeerglass.mp3"];
+    [self startTimers];
+}
 - (void)updateCounter:(NSTimer *)theTimer {
 	if(timeForGame == 0 || (int) self.pilar.frame.size.height <= 3 ){
         int score = click*self.pilar.frame.size.height/(timeForGame+1);
@@ -97,7 +111,9 @@
         NSLog(@"End height:%i", (int) self.pilar.frame.size.height);
         NSLog(@"End time:%i", timeForGame);
         NSLog(@"Total clicks:%i", click);
+        self.view = endView;
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+        
     }
     else{
         static int count = 0;
@@ -109,33 +125,11 @@
         
         objectHeight = objectHeight-subtractor;
         self.pilar.frame = CGRectMake(old.origin.x, old.origin.y+subtractor, old.size.width, objectHeight);
-        
+    
     }
 }
--(void)playerReady{
-    self.view = gameView;
-    btnGreen = [UIImage imageNamed:@"greenPlusButton.png"];
-    btnRed = [UIImage imageNamed:@"redPlusButton.png"];
-    [moreButton2 setImage:btnRed forState:UIControlStateNormal];
-    [moreButton setImage:btnGreen forState:UIControlStateNormal];
-    click = 0;
-    i = 0;
-    timeForGame = 15;
-    [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume :0.2f];
-    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"emptybeerglass.mp3"];
-    [self startTimers];
-}
--(void)startNextPlayer:(id)sender
-{
-    currentPlayer++;
-    pName = [[[controller players] objectAtIndex:currentPlayer] name];
-    for (UILabel *nameLabel in nameCollection) 
-    {
-        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
-    }
-    self.view=startView;
-    [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
-}
+
+
 - (void)timeCounter:(NSTimer *)theTimer {
     NSString *t = [[NSString alloc]
                    initWithFormat:@"%d", --timeForGame];
