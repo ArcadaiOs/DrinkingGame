@@ -57,10 +57,17 @@
             [self autoFillPlayers];
             playerCount = [players count];
         } else {
+//            playerCount = [players count];
+            if (self.debugging) {
+                [self autoFillPlayers];
+                playerCount = [players count];
+            }
+            NSLog(@"No full auto; launch menu");
             [self.mainViewController launchMenu];
         }
 #endif
-
+//        [self autoFillPlayers];
+//        playerCount = [players count];
         currentPlayer = 0;
                 
         games = [[NSMutableDictionary alloc]init];
