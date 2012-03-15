@@ -15,34 +15,36 @@
 @implementation DrinkingGameViewController
 @synthesize controller;
 @synthesize twitterButton;
-@synthesize delegate;
+@synthesize delegate, debugView;
+
 
 //@synthesize tabBarController = _tabBarController;
 
 -(void ) setupDone{
     NSLog(@"SETUP DONE");
 }
--(id)initWithController: (DGController*) controllerIn{
-    self = [super init];
-    if (self) {
- //       [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1]];
-        controller = controllerIn;
-        [[DGController sharedInstance] setDelegate:self];
-        //tabBarController = [[UITabBarController alloc] init];
-        //tabBarController.delegate = self;
-        //DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
-        //DGGameListView* gameList = [[DGGameListView alloc] initWithController:controller];
-        
-        
+//-(id)initWithController: (DGController*) controllerIn{
+//    self = [super init];
+//    if (self) {
+// //       [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Games" image:[UIImage imageNamed:@"iconGamesA.png"] tag:1]];
+////        controller = controllerIn;
+////        [[DGController sharedInstance] setDelegate:self];
+//        //tabBarController = [[UITabBarController alloc] init];
+//        //tabBarController.delegate = self;
+//        //DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
+//        //DGGameListView* gameList = [[DGGameListView alloc] initWithController:controller];
+//        
+//        
+//
+//       // NSArray* controllers = [NSArray arrayWithObjects:statView, gameList, nil];
+//        //tabBarController.viewControllers = controllers;
+//        //[self presentModalViewController:tabBarController animated:NO];
+//        
+//    }
+//    return self;
+//    
+//}
 
-       // NSArray* controllers = [NSArray arrayWithObjects:statView, gameList, nil];
-        //tabBarController.viewControllers = controllers;
-        //[self presentModalViewController:tabBarController animated:NO];
-        
-    }
-    return self;
-    
-}
 // TwitterShittiii
 
 // -(IBAction)twitterAction:(id)sender{
@@ -51,12 +53,12 @@
 //    [twitt setInitialText:[NSString stringWithFormat:@"%@ was playing #DrinkingGame with @pstrande",player1]];
 //    //   [[twitt setInitialText:[NSString stringWithFormat:@"%.2f",[[ DGViewPlayer getPromille] floatValue]]];
 // }
+
 -(IBAction)twitterAction:(id)sender{       //TWITTER BEGINS
     
     int amountOfPlayers = [[controller players]count];
 //        NSString *player1 = [[[controller players]objectAtIndex:1] name];
   
-    
     NSString *names = @""; 
     NSMutableString *namelist;
     namelist = [NSMutableString stringWithString: names];
@@ -93,54 +95,59 @@ for (int i = 0; i < amountOfPlayers; i++) {
 // end Twitter
 
 
--(DGController *) controller{
-    return [DGController sharedInstance];
-}
+//-(DGController *) controller{
+//    return [DGController sharedInstance];
+//}
 
--(void) launchGame:(DGGame*)game{
+-(void) launchGameView:(DGGame*)game{
+    if (currentGame != nil) {
+        [currentGame.view removeFromSuperview];
+//        [currentGame release];
+    }
     
-    [currentGame.view removeFromSuperview];
-    [currentGame release];
     [debugView removeFromSuperview];
-    
     currentGame = game;
     //[self dismissModalViewControllerAnimated:NO];
+    NSLog(@"current game: %@", currentGame.name);
     [self.view addSubview:currentGame.view];
-    [currentGame StartGame];
+    [currentGame startGame];
 
 }
 
 -(IBAction)launchRandomShot:(id)sender{
     //[self launchGame:[[DGRandomShot alloc] init]];
-    [self launchGame:[[[DGController sharedInstance] games] objectForKey:@"Random Shot"]];
+    [self launchGameView:[[[DGController sharedInstance] games] objectForKey:@"Random Shot"]];
     
 }
 -(IBAction)launchSteadyHands:(id)sender{
     //[self launchGame:[[DGSteadyHands alloc] init]];
-    [self launchGame:[[[DGController sharedInstance] games] objectForKey:@"Steady Hands"]];
+    [self launchGameView:[[[DGController sharedInstance] games] objectForKey:@"Steady Hands"]];
     
 }
 -(IBAction) launchWhackAMole:(id)sender{
-    [self launchGame:[[[DGController sharedInstance] games] objectForKey:@"Whack A Mole"]];
+    [self launchGameView:[[[DGController sharedInstance] games] objectForKey:@"Whack A Mole"]];
 }
 -(IBAction) launchFillTheBottle:(id)sender{
-    [self launchGame:[[[DGController sharedInstance] games] objectForKey:@"Fill the Bottle"]];
+    [self launchGameView:[[[DGController sharedInstance] games] objectForKey:@"Fill the Bottle"]];
     
 }
 -(IBAction) launchMenu:(id)sender{
-    [currentGame.view removeFromSuperview];
-    [currentGame release];
+    if (currentGame != nil) {
+        [currentGame.view removeFromSuperview];
+        [currentGame release];
+    }    
     //    currentCame = [[DGStartMenu alloc] init];
     //    [self.view addSubview:currentCame.view];
     //    UIView * v = [[DGStartMenu alloc] init].view;
     DGStartMenu *startMeny = [[DGStartMenu alloc] init];
-    [startMeny setDelegate:self];
+//    [startMeny setDelegate:self];
     
     [self.view addSubview:startMeny.view];
 
 }
+
 -(IBAction)launchSimon:(id)sender{
-    [self launchGame:[[[DGController sharedInstance] games] objectForKey:@"Simon Says"]];
+    [self launchGameView:[[[DGController sharedInstance] games] objectForKey:@"Simon Says"]];
     
 }
 
@@ -180,31 +187,41 @@ for (int i = 0; i < amountOfPlayers; i++) {
 }
 
 -(IBAction)showPlayerStats:(id)sender{
-    
+    if (currentGame != nil) {
+        [currentGame.view removeFromSuperview];
+    }
     [debugView removeFromSuperview];
-    DGPlayerStatView* stat = [[DGPlayerStatView alloc] initWithController:controller];
-    //[viewControl.view addSubview:stat];
+    NSLog(@"Game Stat View");
+    DGPlayerStatView* stat = [[DGPlayerStatView alloc] init];
+    [self.view addSubview:stat.view];
     [self presentModalViewController:stat animated:NO];
 }
--(void) gameEndedWithLooser:(DGPlayer *)player{
-    loosingPlayer = player;
-    //NSLog(@"gamendeViewController");
-    [debugView removeFromSuperview];
-    playerImg.image = player.image;
-    playerNameLabel.text = player.name;
-    [currentGame.view removeFromSuperview];
-    [playerImgFrame removeFromSuperview];
-    playerImgFrame.center = CGPointMake(160, 215);
-    [boozeChooserView addSubview:playerImgFrame];
-    [viewControl.view addSubview:boozeChooserView];
-        
 
-    [self presentModalViewController:viewControl animated:NO];
-    [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
+-(void) gameEndedWithPlayer:(DGPlayer *)player{
+    NSLog(@"Game %@ ended with loser %@", currentGame.name, player.name);
+    DGController* gameController = [DGController sharedInstance];
+    if (gameController.fullAuto) {
+        [player takeShot:[gameController.drinks valueForKey:@"Shot"]];
+    } else {
+        loosingPlayer = player;
+        //NSLog(@"gamendeViewController");
+        [debugView removeFromSuperview];
+        playerImg.image = player.image;
+        playerNameLabel.text = player.name;
+        [currentGame.view removeFromSuperview];
+        [playerImgFrame removeFromSuperview];
+        playerImgFrame.center = CGPointMake(160, 215);
+        [boozeChooserView addSubview:playerImgFrame];
+        [viewControl.view addSubview:boozeChooserView];
+        
+        
+        [self presentModalViewController:viewControl animated:NO];
+        [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
+    }
 }
 
 -(IBAction)launchLOOSER:(id)sender{
-    [self gameEndedWithLooser:[[[DGController sharedInstance] players] objectAtIndex:0]];
+    [self gameEndedWithPlayer:[[[DGController sharedInstance] players] objectAtIndex:0]];
 }
 
 -(IBAction)showPunnishmentChooser:(id)sender{
@@ -234,6 +251,13 @@ for (int i = 0; i < amountOfPlayers; i++) {
     NSLog(@"%@",sender);
 }
 
+-(IBAction)fullAuto:(id)sender{
+    DGController * gameController = [DGController sharedInstance];
+    gameController.fullAuto = YES;
+//    [gameController autoFillPlayers];
+    [gameController startCompetition];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -254,23 +278,30 @@ for (int i = 0; i < amountOfPlayers; i++) {
     //[[DGController sharedInstance] setDelegate:self];
     //[ctrl fetchRecords];
     
-    viewControl = [[UIViewController alloc] init];
-    [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];
-
+//    viewControl = [[UIViewController alloc] init];
+//    [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];
     
     UIFont *rockwell = [UIFont fontWithName:@"Rockwell Extra Bold" size:35];
     [playerNameLabel setFont:rockwell];
     
     UIColor *red = [UIColor colorWithRed:0.8 green:0.1 blue:0.1 alpha:1.0];
     UIColor *transparent = [UIColor colorWithWhite:0.0 alpha:0.0];
-    UILabel *looserIs = [[UILabel alloc] initWithFrame:CGRectMake(10, 35, 300, 40)];
-    [looserIs setText:@"The Looser IS"];
-    looserIs.textColor = red;
-    looserIs.backgroundColor = transparent;
-    looserIs.font = rockwell;
-    [playerLostView addSubview:looserIs];
+    UILabel *loserIs = [[UILabel alloc] initWithFrame:CGRectMake(10, 35, 300, 40)];
+    [loserIs setText:@"The Loser IS"];
+    loserIs.textColor = red;
+    loserIs.backgroundColor = transparent;
+    loserIs.font = rockwell;
+    [playerLostView addSubview:loserIs];
+    DGController * gameController = [DGController sharedInstance];
+    if (gameController.debugging) {
+        [self.view addSubview:debugView ];
+    }else if (gameController.fullAuto) {
+        [gameController startCompetition]; 
+    } else {
+        [self launchMenu:nil];
+    }
     
-    [self.view addSubview:debugView ];
+//    [self.view addSubview:debugView ];
     
     //[self launchGame:[[DGGameSimonSays alloc] initWithController:[DGController sharedInstance]]];
     //[self launchGame:[self.controller.games objectAtIndex:0]];

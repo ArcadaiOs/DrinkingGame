@@ -78,8 +78,8 @@
 
 -(IBAction)startGame:(id)sender{
     [self.view removeFromSuperview];
-    //[[DGController sharedInstance] startRandomGame];
-    [delegate setupDone];
+    [[DGController sharedInstance] startCompetition];
+//    [delegate setupDone];
 }
 
 -(IBAction)buttonClickedContinue {
@@ -452,14 +452,14 @@
     return (UITextField *)firstResponder;
 }
 
-- (void)updateKeyboardButtonFor:(UITextField *)weight {
+- (void)updateKeyboardButtonFor:(UITextField *)weightTextField {
     
     // Remove any previous button
     [self.numberPadDoneButton removeFromSuperview];
     self.numberPadDoneButton = nil;
     
     // Does the text field use a number pad?
-    if (weight.keyboardType != UIKeyboardTypeNumberPad)
+    if (weightTextField.keyboardType != UIKeyboardTypeNumberPad)
         return;
     
     // If there's no keyboard yet, don't do anything
@@ -501,7 +501,7 @@
 }
 
 - (IBAction)numberPadDoneButton:(id)sender {
-    UITextField *weight = [self findFirstResponderTextField];
+    UITextField *weightTextField = [self findFirstResponderTextField];
         thirdView.superview.frame = CGRectMake(0,20,320,480);
     
             btnBack3.hidden = 0;
@@ -509,7 +509,7 @@
         // && 
         (![name.text isEqualToString:@"NAME"]
          && 
-         (![weight.text isEqualToString:@"***"]) 
+         (![weightTextField.text isEqualToString:@"***"]) 
          && 
          ((menu3CrossMale.hidden == 0) || (menu3CrossFemale.hidden == 0))) {
             NSLog(@"Player completed...");

@@ -6,6 +6,10 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
+//#define FULL_AUTO (YES);
+//#define TESTING (NO);
+//#define TWITTING (NO);
+
 #import <UIKit/UIKit.h>
 #import "DGController.h"
 @class DrinkingGameViewController;

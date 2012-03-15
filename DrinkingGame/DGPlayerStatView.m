@@ -11,14 +11,18 @@
 @synthesize controller;
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-- (id)initWithController: (DGController*) controllerIn
+- (id)init
 {
     //self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     self = [super init];
     
     if (self) {
-        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Players" image:[UIImage imageNamed:@"iconPlayerA.png"] tag:1]];
-        controller = controllerIn;
+//        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Players" image:[UIImage imageNamed:@"iconPlayerA.png"] tag:1]];
+        controller = [DGController sharedInstance];
+        UITapGestureRecognizer *swipeLeft = [[UITapGestureRecognizer alloc]
+                                                    initWithTarget:self action:@selector(handleSwipeLeft:)];
+        [self.view addGestureRecognizer:swipeLeft];
+        [swipeLeft release];
         // Custom initialization
     }
     return self;
@@ -82,5 +86,13 @@
     [cell setPlayer:[[[DGController sharedInstance] players] objectAtIndex:row]];
     return cell;
     
+}
+
+-(IBAction)swipeLeft:(UIGestureRecognizer*)sender{
+    NSLog(@"Swipe");
+    UIView* main = [self.view superview];
+    [self.view removeFromSuperview];
+    DGController*gameController = [DGController sharedInstance];
+    [main addSubview:[gameController.mainViewController debugView ]]; 
 }
 @end

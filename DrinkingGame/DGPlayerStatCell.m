@@ -7,6 +7,7 @@
 //
 
 #import "DGPlayerStatCell.h"
+#define PROMILLE_OF_DEATH (1.5)
 
 @implementation DGPlayerStatCell
 
@@ -29,6 +30,8 @@
     playerImage.image = player.image;
     nameLabel.text = player.name;
     promilleLabel.text = [player.getPromille stringValue];
+    float fullness = ([player.getPromille floatValue] / PROMILLE_OF_DEATH);
+    promilleBar.frame = CGRectMake(80., 42., 240. * fullness, 17.);
     UIFont *rockwell = [UIFont fontWithName:@"Rockwell Extra Bold" size:35];
     [nameLabel setFont:rockwell];
 }
