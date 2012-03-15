@@ -72,14 +72,7 @@
      [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
     pName = [[[controller players] objectAtIndex:currentPlayer] name];
     
-
-
--(void)startNextPlayer:(id)sender
-{
-    currentPlayer++;
-    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
-    for (UILabel *nameLabel in nameCollection) 
-    {
+    for (UILabel *nameLabel in nameCollection) {
         nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
     }
     self.view=startView;
@@ -136,7 +129,7 @@
         
         objectHeight = objectHeight-subtractor;
         self.pilar.frame = CGRectMake(old.origin.x, old.origin.y+subtractor, old.size.width, objectHeight);
-        
+    
     }
 }
 
@@ -168,8 +161,6 @@
     //self.view=startView;
     [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
 }
-
-
 - (void)timeCounter:(NSTimer *)theTimer {
     NSString *t = [[NSString alloc]
                    initWithFormat:@"%d", --timeForGame];
