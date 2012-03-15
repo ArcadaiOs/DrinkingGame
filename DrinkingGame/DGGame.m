@@ -33,7 +33,7 @@
     srand( time(NULL));
     int n = [[[DGController sharedInstance] players] count];
     DGPlayer* player = [[[DGController sharedInstance] players] objectAtIndex:rand()% n];
-    [[DGController sharedInstance] gameEndedWithLooser:player];
+    [[DGController sharedInstance] gameEndedWithLoser:player];
 }
 // this will show a player with his promille and imgae
 // playerReady will execute when player presses Lets Play
@@ -71,12 +71,12 @@
 
 -(void) gameEndWithLooser:(DGPlayer*) lostPlayer{
     NSLog(@"GameEdned DGGame;");
-    [[DGController sharedInstance] gameEndedWithLooser:lostPlayer];
+    [[DGController sharedInstance] gameEndedWithLoser:lostPlayer];
     [self endGame:nil];
 }
 
 -(IBAction)endGame:(id)sender {
-    [[DGController sharedInstance] gameEndedWithLooser:nil];
+    [[DGController sharedInstance] gameEndedWithLoser:nil];
     //[self endGame:nil];
     // killmiself
     //[self.view removeFromSuperview];

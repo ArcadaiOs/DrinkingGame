@@ -198,7 +198,7 @@ for (int i = 0; i < amountOfPlayers; i++) {
 }
 
 -(void) gameEndedWithPlayer:(DGPlayer *)player{
-    NSLog(@"Game %@ ended with looser %@", currentGame.name, player.name);
+    NSLog(@"Game %@ ended with loser %@", currentGame.name, player.name);
     DGController* gameController = [DGController sharedInstance];
     if (gameController.fullAuto) {
         [player takeShot:[gameController.drinks valueForKey:@"Shot"]];
@@ -286,12 +286,12 @@ for (int i = 0; i < amountOfPlayers; i++) {
     
     UIColor *red = [UIColor colorWithRed:0.8 green:0.1 blue:0.1 alpha:1.0];
     UIColor *transparent = [UIColor colorWithWhite:0.0 alpha:0.0];
-    UILabel *looserIs = [[UILabel alloc] initWithFrame:CGRectMake(10, 35, 300, 40)];
-    [looserIs setText:@"The Looser IS"];
-    looserIs.textColor = red;
-    looserIs.backgroundColor = transparent;
-    looserIs.font = rockwell;
-    [playerLostView addSubview:looserIs];
+    UILabel *loserIs = [[UILabel alloc] initWithFrame:CGRectMake(10, 35, 300, 40)];
+    [loserIs setText:@"The Loser IS"];
+    loserIs.textColor = red;
+    loserIs.backgroundColor = transparent;
+    loserIs.font = rockwell;
+    [playerLostView addSubview:loserIs];
     DGController * gameController = [DGController sharedInstance];
     if (gameController.debugging) {
         [self.view addSubview:debugView ];

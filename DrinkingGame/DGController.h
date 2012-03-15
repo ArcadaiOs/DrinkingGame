@@ -72,13 +72,13 @@
                     weight:(int) weightIn 
                   isFemale:(bool) isFemaleIn;
 
-//-(void) GameEndedWithLooser:(DGPlayer*) looser;
+//-(void) GameEndedWithLoser:(DGPlayer*) loser;
 -(void) showPlayer:(DGPlayer*) player;
 -(void) startCompetition;
 
 //-(void) playerReady;
 -(void) showPlayer:(DGPlayer*) player;
--(void) gameEndedWithLooser:(DGPlayer*) looser;
+-(void) gameEndedWithLoser:(DGPlayer*) looser;
 -(void) launchGame:(DGGame*) game;
 //-(BOOL) testing;
 //-(void) setTesting:(BOOL) value;

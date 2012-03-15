@@ -135,13 +135,13 @@
             } else {
                 playCount = 0;
                 playerAction = false;
-                [[DGController sharedInstance] gameEndedWithLooser:CurrentPlayer];
+                [[DGController sharedInstance] gameEndedWithLoser:CurrentPlayer];
             }
             
         } else{
             playerAction = false;
             playCount = 0;
-           [[DGController sharedInstance] gameEndedWithLooser:CurrentPlayer];
+           [[DGController sharedInstance] gameEndedWithLoser:CurrentPlayer];
             
         }
         

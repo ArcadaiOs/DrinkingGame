@@ -73,7 +73,7 @@
 }
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag{
     DGPlayer* player = [[[DGController sharedInstance] players] objectAtIndex:d.sel];
-    [[DGController sharedInstance] gameEndedWithLooser:player];
+    [[DGController sharedInstance] gameEndedWithLoser:player];
 }
 - (void)viewDidUnload
 {

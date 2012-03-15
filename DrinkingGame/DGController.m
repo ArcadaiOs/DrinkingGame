@@ -129,8 +129,8 @@
     [self.mainViewController showPlayer:player];
 }
 
--(void) gameEndedWithLooser:(DGPlayer *)player {
-    //[delegate showPlayer:looser];
+-(void) gameEndedWithLoser:(DGPlayer *)player {
+    //[delegate showPlayer:loser];
     NSLog(@"GAME ENDED AND LOSER IS FOUND");
     [self.mainViewController gameEndedWithPlayer:player];
 }

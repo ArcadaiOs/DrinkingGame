@@ -228,7 +228,7 @@
                 
             }
             NSLog(@"%i",minId);
-            [[DGController sharedInstance] gameEndedWithLooser:[[[DGController sharedInstance] players] objectAtIndex:minId]];
+            [[DGController sharedInstance] gameEndedWithLoser:[[[DGController sharedInstance] players] objectAtIndex:minId]];
            self.playerScores.text=[[NSString alloc] initWithFormat:@"%@",results];
             
             [resultTitle setHidden:NO];
