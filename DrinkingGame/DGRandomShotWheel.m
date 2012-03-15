@@ -10,13 +10,13 @@
 
 @implementation DGRandomShotWheel
 @synthesize spinAnimation,sel;
-- (id)initWithFrame:(CGRect)frame andController:(DGController*) controllerIn andSelection:(int) selIn
+- (id)initWithFrame:(CGRect)frame andSelection:(int) selIn
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        controller = controllerIn;
-        count = [controller.players count];
+        //controller = controllerIn;
+        count = [[[DGController sharedInstance] players] count];
         step = (M_PI * 2)/count;
         sel = selIn;
         NSLog(@"sel: %i",sel);
@@ -65,7 +65,7 @@
     
     endAngle = startAngle;
     for(i=0;i<count;i++){
-        player = [[controller players] objectAtIndex:i];
+        player = [[[DGController sharedInstance] players] objectAtIndex:i];
         startAngle = endAngle;
         endAngle = startAngle + step;
         middleAngle = (startAngle+endAngle)/2;

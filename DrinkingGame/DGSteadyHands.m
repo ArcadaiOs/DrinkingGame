@@ -36,19 +36,24 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
+-(id) init{
+    self = [super init];
+    if(self){
+        OnePlayerOnce = true;
+        name = @"Steady Hands";
+    }
+    return self;
+}
 
 #pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+-(void) StartGame{
     self.view=startView;
     points = [[NSMutableDictionary alloc] init];
     currentPlayer=0;
-    playerCount = [controller playerCount];
+    playerCount = [[DGController sharedInstance] playerCount];
     results = [[NSMutableString alloc] initWithString:@""];
     
-    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
     
     for (UILabel *nameLabel in nameCollection) {
         nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
@@ -58,6 +63,11 @@
     accelerattt=0;
     // Do any additional setup after loading the view from its nib.
 
+}
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+   
     
 }
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
@@ -181,7 +191,7 @@
             {
                 int x =[key intValue];
                 int p =[[points objectForKey:key] intValue];
-                [results appendFormat:@"NAME: %@ , POINTS:%i \n",[[[controller players] objectAtIndex:x] name], p];
+                [results appendFormat:@"NAME: %@ , POINTS:%i \n",[[[[DGController sharedInstance] players] objectAtIndex:x] name], p];
                 
             }
             
@@ -201,7 +211,7 @@
 -(void)startNextPlayer:(id)sender
 {
     currentPlayer++;
-    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
     for (UILabel *nameLabel in nameCollection) 
     {
         nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
@@ -271,7 +281,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 -(void)dealloc{
-
+    [super dealloc];
     [accelerometer release];
 }
 @end

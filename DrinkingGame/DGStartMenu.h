@@ -10,13 +10,28 @@
 #import "DGController.h"
 #import "SimpleAudioEngine.h"
 
+@protocol StartMenuProto <NSObject>
+-(void) setupDone;
+@end
+
 @interface DGStartMenu :  UIViewController 
 <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 {
+    id<StartMenuProto> delegate;
     int amountOfPlayers;
     
     NSInteger originalAmountOfPlayers;
     
+    
+
+    
+    UIImage *numberPadDoneImageNormal;
+    UIImage *numberPadDoneImageHighlighted;
+    UIButton *numberPadDoneButton;
+    
+
+    
+
     
     //Menu 1
     
@@ -94,7 +109,7 @@
     
     
 }
-
+@property(nonatomic,assign)id delegate;
 
 //@property (nonatomic) NSInteger gameState;
 //@property (nonatomic) NSInteger previousState;
@@ -171,7 +186,18 @@
 
 @property (nonatomic, retain) UIImageView *polaroid;
 
+
+
+@property (nonatomic, retain) UIImage *numberPadDoneImageNormal;
+@property (nonatomic, retain) UIImage *numberPadDoneImageHighlighted;
+@property (nonatomic, retain) UIButton *numberPadDoneButton;
+
+- (IBAction)numberPadDoneButton:(id)sender;
+
 //-(DGStartMenu*)init;
+
+
+
 -(IBAction)buttonClickedContinue;
 -(IBAction)buttonClickedBack;
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
-		<int key="IBDocument.SystemTarget">1296</int>
+		<int key="IBDocument.SystemTarget">1056</int>
 		<string key="IBDocument.SystemVersion">11D50d</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1617</string>
 		<string key="IBDocument.AppKitVersion">1138.32</string>
 		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
@@ -239,6 +239,7 @@
 							<reference ref="186087499"/>
 						</object>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Player Stat Cell - SimpleTableIdentifier</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>

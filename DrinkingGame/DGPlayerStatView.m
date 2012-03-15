@@ -59,7 +59,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [controller.players count];
+    return [[[DGController sharedInstance] players] count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -79,7 +79,7 @@
     }
     
     NSUInteger row = [indexPath row];
-    [cell setPlayer:[controller.players objectAtIndex:row]];
+    [cell setPlayer:[[[DGController sharedInstance] players] objectAtIndex:row]];
     return cell;
     
 }

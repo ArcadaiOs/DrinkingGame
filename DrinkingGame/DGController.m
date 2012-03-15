@@ -46,10 +46,43 @@
 
         currentPlayer = 0;
                 
+        games = [[NSMutableDictionary alloc]init];
+        [games setValue:[[DGGameSimonSays alloc] init] forKey:@"Simon Says"];
+        [games setValue:[[DGTestGameTwo alloc] init] forKey:@"Whack A Mole"];
+        [games setValue:[[DGRandomShot alloc] init] forKey:@"Random Shot"];
+        [games setValue:[[DGFillTheBottle alloc] init] forKey:@"Fill the Bottle"];
+        [games setValue:[[DGSteadyHands alloc] init] forKey:@"Steady Hands"];
+        
+        [delegate launchGame:[games valueForKey:@"Simon Says"]];
+    
     }
     
     return self;
 } 
+-(float) getTargetPromille:(int) level{
+    switch (level) {
+        case 0:
+            return 0.75;
+        case 1:
+            return 1.25;
+        case 2:
+            return 1.5;
+        case 3:
+            return 2.5;
+        default:
+            return 0;
+    }
+}
+
+-(DGPlayer*) getMostDrunkPlayer{
+    [[[DGController sharedInstance] players]sortUsingSelector:@selector(comparePromille:)];
+
+    if([[[players objectAtIndex:0] getPromille] floatValue] >= [self getTargetPromille:gameLevel])
+        return [players objectAtIndex:0];   
+    else 
+        return nil;
+}
+
 
 -(DGPlayer*)NextPlayerRepeatPlayers:(_Bool)PlayerRepeat{
     DGPlayer *next = nil;
@@ -57,6 +90,7 @@
         currentPlayer++;
         next =  [players objectAtIndex:currentPlayer];  
     } else if(PlayerRepeat){
+        NSLog(@"REPEAT PLAYER");
         next = [players objectAtIndex:0];
     }
 
@@ -68,7 +102,6 @@
 }
 -(void) GameEndedWithLooser:(DGPlayer *)looser{
     //[delegate showPlayer:looser];
-
     NSLog(@"GAME ENDED AND LOSER IS FOUND");
     [delegate gameEndedWithLooser:looser];
 }

@@ -18,6 +18,8 @@
 #import "DGStartMenu.h"
 #import "SimpleAudioEngine.h"
 #import "DGPlayerStatView.h"
+
+
 typedef struct{
     NSString *playerName;
     int score;
@@ -25,14 +27,17 @@ typedef struct{
 
 @protocol ViewControllerProto <NSObject>
 -(void) playerReady;
+
 @end
 
 
-@interface DrinkingGameViewController : UIViewController<UITabBarDelegate>{
+@interface DrinkingGameViewController : UIViewController{
+
     DGGame *currentGame;
     DGController* controller;
     
     //twitter
+    IBOutlet UIButton *twitterButton;
     //IBOutlet UIButton *twitterButton;
     
     
@@ -53,8 +58,9 @@ typedef struct{
     
     IBOutlet UIView *debugView;
     DGPlayer *loosingPlayer;
-
+    UITabBarController *tabBarController;
 }
+
 
 @property (readonly, nonatomic) DGController* controller;
 @property(nonatomic,assign)id delegate;
@@ -62,10 +68,10 @@ typedef struct{
 -(id)initWithController: (DGController*) controllerIn;
 
 //twitter
-/*
+
 @property (retain) UIButton *twitterButton;
 -(IBAction)twitterAction:(id)sender;
-*/
+
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;

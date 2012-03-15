@@ -18,7 +18,7 @@
     CGFloat step;
     CABasicAnimation* spinAnimation;
 }
-- (id)initWithFrame:(CGRect)frame andController:(DGController*) controllerIn andSelection:(int) selIn;
+- (id)initWithFrame:(CGRect)frame andSelection:(int) selIn;
 -(void) spin:(id) animDelegate;
 - (CGPoint) getCirclePoint: (CGFloat) diam pos:(CGPoint) pos angle: (CGFloat) angle;
 @property (readonly, nonatomic) CABasicAnimation* spinAnimation;

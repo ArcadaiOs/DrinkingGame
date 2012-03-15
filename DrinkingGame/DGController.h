@@ -10,32 +10,46 @@
 #import "DGDrink.h"
 #import "DGPlayer.h"
 
+//#import "DGGame.h"
+@class DGGame;
+@class DGGameSimonSays;
+@class DGRandomShot;
+@class DGTestGameTwo;
+@class DGRandomShot;
+@class DGFillTheBottle;
+@class DGSteadyHands;
+
+//#import "DGGameSimonSays.h"
 @protocol ControllerProto <NSObject>
 -(void) playerReady;
 -(void) showPlayer:(DGPlayer*) player;
 -(void) gameEndedWithLooser:(DGPlayer*) looser;
+-(void) launchGame:(DGGame*) game;
 @end
 
 @interface DGController : NSObject{
     NSMutableArray* players;
     NSMutableDictionary *drinks;
-    NSMutableArray *games;
-
+    NSMutableDictionary *games;
+    
     int gameLevel;
+
     int playerCount;
     int currentPlayer;
     id <ControllerProto> delegate;
+
 }
 @property(nonatomic,assign)id delegate;
 @property (nonatomic, retain) NSMutableArray* players;
 @property (nonatomic, retain) NSMutableDictionary *drinks;
-@property (nonatomic, retain) NSMutableArray* games;
+@property (nonatomic, retain) NSMutableDictionary* games;
 
 
 @property int gameLevel;
 @property int playerCount;
 
 + (id) sharedInstance;
+-(float) getTargetPromille:(int) level;
 
 -(DGPlayer*) NextPlayerRepeatPlayers:(bool) PlayerRepeat;
 - (void)addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
