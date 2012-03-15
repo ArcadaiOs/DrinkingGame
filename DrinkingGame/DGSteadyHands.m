@@ -46,7 +46,11 @@
 }
 
 #pragma mark - View lifecycle
--(void) StartGame{
+-(void) startGame{
+    if ([[DGController sharedInstance] fullAuto]) {
+        [super startGame];
+        return;
+    }
     self.view=startView;
     points = [[NSMutableDictionary alloc] init];
     currentPlayer=0;

@@ -35,6 +35,6 @@ typedef enum {
 -(void) playerReady;
 -(void) NextPlayer;
 
--(void) StartGame;
+-(void) startGame;
 
 @end

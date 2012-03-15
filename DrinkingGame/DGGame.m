@@ -28,10 +28,12 @@
 }
 
 // You should implement this function to start your game, and reset
--(void) StartGame{
-    
+-(void) startGame{    
     NSLog(@"DGGame StartGame");
-    
+    srand( time(NULL));
+    int n = [[[DGController sharedInstance] players] count];
+    DGPlayer* player = [[[DGController sharedInstance] players] objectAtIndex:rand()% n];
+    [[DGController sharedInstance] gameEndedWithLooser:player];
 }
 // this will show a player with his promille and imgae
 // playerReady will execute when player presses Lets Play
@@ -69,12 +71,12 @@
 
 -(void) gameEndWithLooser:(DGPlayer*) lostPlayer{
     NSLog(@"GameEdned DGGame;");
-    [[DGController sharedInstance] GameEndedWithLooser:lostPlayer];
+    [[DGController sharedInstance] gameEndedWithLooser:lostPlayer];
     [self endGame:nil];
 }
 
 -(IBAction)endGame:(id)sender {
-    [[DGController sharedInstance] GameEndedWithLooser:nil];
+    [[DGController sharedInstance] gameEndedWithLooser:nil];
     //[self endGame:nil];
     // killmiself
     //[self.view removeFromSuperview];

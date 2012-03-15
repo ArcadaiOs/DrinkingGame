@@ -16,34 +16,39 @@
     self = [super init];
     if(self){
         OnePlayerOnce = false;
-        name = @"Fill the Bottle";
+        self.name = @"Fill the Bottle";
     }
     return self;
 }
 
--(void) StartGame{
-    self.view=self.startView;
-    points = [[NSMutableDictionary alloc] init];
-    currentPlayer = 0;
-    playerCount = [[DGController sharedInstance] playerCount];
-    results = [[NSMutableString alloc] initWithString:@""];
-    
-    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
-    
-    for (UILabel *nameLabel in nameCollection) {
-        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+-(void) startGame{
+    DGController* gameController = [DGController sharedInstance];
+    if (gameController.fullAuto) {
+        [super startGame];
+        return;
+    } else {
+        self.view=self.startView;
+        points = [[NSMutableDictionary alloc] init];
+        currentPlayer = 0;
+        playerCount = [[DGController sharedInstance] playerCount];
+        results = [[NSMutableString alloc] initWithString:@""];
+        
+        pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
+        
+        for (UILabel *nameLabel in nameCollection) {
+            nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+        }
+        
+        [timeLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
+        [timerLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+        [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+        [resultTitle setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+        [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
+        [yourUpNext setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+        [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
+        [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+        
     }
-    
-    [timeLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
-    [timerLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    [resultTitle setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
-    [yourUpNext setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
-    [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-    
-
 }
 
 - (void)didReceiveMemoryWarning

@@ -48,7 +48,10 @@
  Function that starts the gameLoop
  */
 -(IBAction) startGame:(id) sender{
-    
+    if ([[DGController sharedInstance] fullAuto]) {
+        [super startGame];
+        return;
+    }
     playEnumerator = [playList objectEnumerator];
     
     [NSTimer scheduledTimerWithTimeInterval:0.5
@@ -132,13 +135,13 @@
             } else {
                 playCount = 0;
                 playerAction = false;
-                [[DGController sharedInstance] GameEndedWithLooser:CurrentPlayer];
+                [[DGController sharedInstance] gameEndedWithLooser:CurrentPlayer];
             }
             
         } else{
             playerAction = false;
             playCount = 0;
-           [[DGController sharedInstance] GameEndedWithLooser:CurrentPlayer];
+           [[DGController sharedInstance] gameEndedWithLooser:CurrentPlayer];
             
         }
         
@@ -226,7 +229,7 @@
     [super viewDidLoad];
 }
 
--(void) StartGame{
+-(void) startGame{
     NSLog(@"SIMON StartGame");
     playerAction = false;
     playList = [[NSMutableArray alloc] init];

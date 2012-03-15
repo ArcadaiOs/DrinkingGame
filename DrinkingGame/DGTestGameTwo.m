@@ -43,9 +43,12 @@
     [super viewDidLoad];
     
 }
--(void) StartGame
+-(IBAction)startGame:(id)sender
 {
-    
+    if ([[DGController sharedInstance] fullAuto]) {
+        [super startGame];
+        return;
+    }
     //    self.view=startView;
     points = [[NSMutableDictionary alloc] init];
     currentPlayer=0;
@@ -225,7 +228,7 @@
                 
             }
             NSLog(@"%i",minId);
-            [[DGController sharedInstance] GameEndedWithLooser:[[[DGController sharedInstance] players] objectAtIndex:minId]];
+            [[DGController sharedInstance] gameEndedWithLooser:[[[DGController sharedInstance] players] objectAtIndex:minId]];
            self.playerScores.text=[[NSString alloc] initWithFormat:@"%@",results];
             
             [resultTitle setHidden:NO];

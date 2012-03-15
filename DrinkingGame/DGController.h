@@ -10,7 +10,14 @@
 #import "DGDrink.h"
 #import "DGPlayer.h"
 
+#define FULL_AUTO (NO);
+#define TESTING (NO);
+#define TWITTING (NO);
+#define DEBUGGING (YES);
+#define GAME_LEVEL (0);
+
 //#import "DGGame.h"
+@class DrinkingGameViewController;
 @class DGGame;
 @class DGGameSimonSays;
 @class DGRandomShot;
@@ -20,42 +27,59 @@
 @class DGSteadyHands;
 
 //#import "DGGameSimonSays.h"
-@protocol ControllerProto <NSObject>
--(void) playerReady;
--(void) showPlayer:(DGPlayer*) player;
--(void) gameEndedWithLooser:(DGPlayer*) looser;
--(void) launchGame:(DGGame*) game;
-@end
+//@protocol ControllerProto <NSObject>
+
+//@end
+
+
 
 @interface DGController : NSObject{
+//    BOOL fullAuto;
     NSMutableArray* players;
     NSMutableDictionary *drinks;
     NSMutableDictionary *games;
-    
+//    BOOL isTwitting;
     int gameLevel;
 
     int playerCount;
     int currentPlayer;
-    id <ControllerProto> delegate;
-
+//    id <ControllerProto> delegate;
+    DrinkingGameViewController* mainViewController;
 }
-@property(nonatomic,assign)id delegate;
+
+@property (nonatomic, retain) DrinkingGameViewController* mainViewController;
+//@property (nonatomic, assign) id delegate;
 @property (nonatomic, retain) NSMutableArray* players;
 @property (nonatomic, retain) NSMutableDictionary *drinks;
 @property (nonatomic, retain) NSMutableDictionary* games;
-
+@property BOOL testing;
+@property BOOL fullAuto;
+@property BOOL debugging; 
 
 @property int gameLevel;
 @property int playerCount;
 
-+ (id) sharedInstance;
+
++(id) sharedInstance;
+-(void) autoFillPlayers;
+-(void) linkMainViewController:(DrinkingGameViewController*)gameViewController;
 -(float) getTargetPromille:(int) level;
+-(float) getTargetPromille;
 
 -(DGPlayer*) NextPlayerRepeatPlayers:(bool) PlayerRepeat;
-- (void)addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn;
+-(void) addPlayerWithimage:(UIImage*) imageIn 
+                      name:(NSString*) nameIn 
+                    weight:(int) weightIn 
+                  isFemale:(bool) isFemaleIn;
 
--(void) GameEndedWithLooser:(DGPlayer*) looser;
+//-(void) GameEndedWithLooser:(DGPlayer*) looser;
 -(void) showPlayer:(DGPlayer*) player;
+-(void) startCompetition;
 
-
+//-(void) playerReady;
+-(void) showPlayer:(DGPlayer*) player;
+-(void) gameEndedWithLooser:(DGPlayer*) looser;
+-(void) launchGame:(DGGame*) game;
+//-(BOOL) testing;
+//-(void) setTesting:(BOOL) value;
 @end
