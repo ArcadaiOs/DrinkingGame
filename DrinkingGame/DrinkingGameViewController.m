@@ -139,6 +139,7 @@ for (int i = 0; i < amountOfPlayers; i++) {
     //    currentCame = [[DGStartMenu alloc] init];
     //    [self.view addSubview:currentCame.view];
     //    UIView * v = [[DGStartMenu alloc] init].view;
+    NSLog(@"DGStartMenu *startMeny");
     DGStartMenu *startMeny = [[DGStartMenu alloc] init];
 //    [startMeny setDelegate:self];
     
@@ -278,8 +279,8 @@ for (int i = 0; i < amountOfPlayers; i++) {
     //[[DGController sharedInstance] setDelegate:self];
     //[ctrl fetchRecords];
     
-//    viewControl = [[UIViewController alloc] init];
-//    [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];
+    viewControl = [[UIViewController alloc] init];
+    [viewControl setView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DGmenubg.png"]]];
     
     UIFont *rockwell = [UIFont fontWithName:@"Rockwell Extra Bold" size:35];
     [playerNameLabel setFont:rockwell];
