@@ -28,7 +28,7 @@
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasy, buttonHard, buttonCustom, buttonMedium;
 //menu 3
-@synthesize weight, name, gender, polaroid, getNewPlayer;
+@synthesize weight, name, gender, polaroid, getNewPlayer, help, openhelp, helpmenu;
 
 
 @synthesize numberPadDoneImageNormal;
@@ -557,9 +557,16 @@
 
 
 
+-(IBAction)openhelp {
+    
+    helpmenu.hidden = 0;
+    
+}
 
-
-
+-(IBAction)closehelp {
+    
+    helpmenu.hidden = 1;
+}
 
 -(IBAction)openkeyboard {
     thirdView.superview.frame = CGRectMake(0,-195,320,480);

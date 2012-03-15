@@ -96,10 +96,12 @@
     
     UIImageView *menu3CrossMale;
     UIImageView *menu3CrossFemale;
+    UIImageView *help;
     UIButton *menu3male;
     UIButton *menu3female;
     UIButton *getNewPlayer;
-    
+    UIButton *openhelp;
+    UIImageView *helpmenu;
     UITextField *name;
     UITextField *weight;
     
@@ -175,6 +177,13 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView *menu3CrossFemale;
 @property (nonatomic, retain) IBOutlet UIImageView *menu3CrossMale;
+
+@property (nonatomic, retain) IBOutlet UIButton *openhelp;
+@property (nonatomic, retain) IBOutlet UIImageView *help;
+@property (nonatomic, retain) IBOutlet UIImageView *helpmenu;
+
+
+
 @property (nonatomic, retain) IBOutlet UIButton *menu3female;
 @property (nonatomic, retain) IBOutlet UIButton *menu3male;
 @property (nonatomic, retain) IBOutlet UIButton *getNewPlayer;
@@ -225,5 +234,8 @@
 -(IBAction)buttonGetNewPlayer;
 
 -(IBAction)takePicture:(id)sender;
+
+-(IBAction)openhelp;
+
 @end
 
