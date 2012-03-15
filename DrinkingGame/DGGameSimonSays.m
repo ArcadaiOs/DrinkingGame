@@ -15,6 +15,15 @@
 @synthesize playList;
 @synthesize playEnumerator;
 
+-(id) init{
+    self = [super init];
+    if(self){
+        OnePlayerOnce = false;
+        name = @"Simon Says";
+    }
+    return self;
+}
+
 -(void) nextPlay:(NSTimer *)timer{
     
     NSEnumerator* en = (NSEnumerator*) timer.userInfo;
@@ -39,10 +48,13 @@
  Function that starts the gameLoop
  */
 -(IBAction) startGame:(id) sender{
-    
+    if ([[DGController sharedInstance] fullAuto]) {
+        [super startGame];
+        return;
+    }
     playEnumerator = [playList objectEnumerator];
     
-    [NSTimer scheduledTimerWithTimeInterval:1.5
+    [NSTimer scheduledTimerWithTimeInterval:0.5
                                      target:self
                                    selector:@selector(nextPlay:)
                                    userInfo:playEnumerator
@@ -94,19 +106,19 @@
     switch ([self colorToIntId:button.titleLabel.text]) {
         case 1:
             //BLUE Button press
-            [[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
             break;
         case 2:
             //Yellow button press
-            [[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
             break;
         case 3:
             //Red button press
-            [[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
             break;
         case 4:
             //Green button press
-            [[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
             break;
     }
 
@@ -123,13 +135,13 @@
             } else {
                 playCount = 0;
                 playerAction = false;
-                [delegate GameEndedWithLooser:CurrentPlayer];
+                [[DGController sharedInstance] gameEndedWithLoser:CurrentPlayer];
             }
             
         } else{
             playerAction = false;
             playCount = 0;
-           [delegate GameEndedWithLooser:CurrentPlayer];
+           [[DGController sharedInstance] gameEndedWithLoser:CurrentPlayer];
             
         }
         
@@ -159,19 +171,19 @@
     switch (buttonNr) {
         case 1:
             btn = blueButton;
-            [[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"g1.mp3"];
             break;
         case 2:
             btn = yellowButton;
-            [[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"e1.mp3"];
             break;
         case 3:
             btn = redButton;
-            [[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"c1.mp3"];
             break;
         case 4:
             btn = greenButton;
-            [[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"c2.mp3"];
             break;
         default:
             return;
@@ -201,8 +213,9 @@
 -(IBAction)next:(id)sender{
 
     [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
-//    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
-    [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
+    [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
+
+    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayer]];
     
 }
 
@@ -211,26 +224,26 @@
     [self startGame:nil];
 }
 
-#pragma mark - View lifecycle
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+}
+
+-(void) startGame{
+    NSLog(@"SIMON StartGame");
     playerAction = false;
     playList = [[NSMutableArray alloc] init];
-    
+    [[[DGController sharedInstance] players]sortUsingSelector:@selector(comparePromille:)];
+
     // create som starting point values
     int i=4;
     while (i--) {
         int rand = [self getRandomIntMin:1 max:4];
         [playList addObject:[[NSNumber alloc] initWithInt:rand]];
     }
-//    [self showPlayer:[controller.players objectAtIndex:0]];
 
     [self NextPlayer];
-    
-    
+
 }
 
 - (void)viewDidUnload

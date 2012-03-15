@@ -26,6 +26,8 @@
 /*VIEWS*/
 @synthesize startView,gameView,endView;
 
+
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -40,16 +42,23 @@
 {
     [super viewDidLoad];
     
-//    self.view=startView;
+}
+-(IBAction)startGame:(id)sender
+{
+    if ([[DGController sharedInstance] fullAuto]) {
+        [super startGame];
+        return;
+    }
+    //    self.view=startView;
     points = [[NSMutableDictionary alloc] init];
     currentPlayer=0;
-    [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
-//    playerCount = [controller playerCount];
+    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayer]];
+    //    playerCount = [[DGController sharedInstance] playerCount];
     playerCount = 3;
-
+    
     results = [[NSMutableString alloc] initWithString:@""];
     
-    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
     
     for (UILabel *nameLabel in nameCollection) {
         nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
@@ -116,6 +125,16 @@
     
     [self startTimers];
 
+}
+-(id) init{
+    self = [super init];
+    if(self){
+        OnePlayerOnce = true;
+        name = @"Whack A Mole";
+    }
+    return self;
+
+    
 }
 //-(IBAction)startGame:(id)sender
 //{
@@ -204,12 +223,12 @@
                     min=p;
                     minId = [key intValue];
                 }
-                [results appendFormat:@"NAME: %@ , POINTS:%i \n",[[[controller players] objectAtIndex:x] name], p];
+                [results appendFormat:@"NAME: %@ , POINTS:%i \n",[[[[DGController sharedInstance] players] objectAtIndex:x] name], p];
                 
                 
             }
             NSLog(@"%i",minId);
-            [delegate GameEndedWithLooser:[[controller players] objectAtIndex:minId]];
+            [[DGController sharedInstance] gameEndedWithLoser:[[[DGController sharedInstance] players] objectAtIndex:minId]];
            self.playerScores.text=[[NSString alloc] initWithFormat:@"%@",results];
             
             [resultTitle setHidden:NO];
@@ -226,13 +245,13 @@
 -(void)startNextPlayer:(id)sender
 {
     currentPlayer++;
-    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
     for (UILabel *nameLabel in nameCollection) 
     {
         nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
     }
     self.view=startView;
-    [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
+    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayer]];
 }
 
 -(void)updateSeconds:(NSTimer*)theTimer

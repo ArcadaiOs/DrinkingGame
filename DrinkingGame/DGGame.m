@@ -9,19 +9,13 @@
 #import "DGGame.h"
 
 @implementation DGGame
-@synthesize controller;
-@synthesize delegate;
+@synthesize name;
 
-- (id)initWithController: (DGController*) controllerIn
+
+- (id)init
 {
     self = [super init];
     if (self) {
-        self.controller = controllerIn;
-        // Custom initialization
-        [self setDelegate:controller];
-        [[controller players]sortUsingSelector:@selector(comparePromille:)];
-
-        
         // Set this to True if one player should only play once
         OnePlayerOnce = false;
     }
@@ -33,7 +27,14 @@
     
 }
 
-
+// You should implement this function to start your game, and reset
+-(void) startGame{    
+    NSLog(@"DGGame StartGame");
+    srand( time(NULL));
+    int n = [[[DGController sharedInstance] players] count];
+    DGPlayer* player = [[[DGController sharedInstance] players] objectAtIndex:rand()% n];
+    [[DGController sharedInstance] gameEndedWithLoser:player];
+}
 // this will show a player with his promille and imgae
 // playerReady will execute when player presses Lets Play
 -(void) showPlayer:(DGPlayer *)player{
@@ -45,18 +46,21 @@
     //                animations:^{playerView.view.alpha = 1.0;}];
     
     
-    [controller showPlayer:player];
+    [[DGController sharedInstance] showPlayer:player];
     //[playerView setPlayer:player];
     
 }
 -(void) NextPlayer{
-    CurrentPlayer = [controller NextPlayerRepeatPlayers:OnePlayerOnce];
+    NSLog(@"repeat: %i",OnePlayerOnce);
+    
+    CurrentPlayer = [[DGController sharedInstance] NextPlayerRepeatPlayers:OnePlayerOnce];
     if(CurrentPlayer == nil){
+        NSLog(@"DGGAME nillPlayer");
         // All Player has played once
         [self GameEndedCalculateScores];
             
     } else {
-        [controller showPlayer:CurrentPlayer];
+        [[DGController sharedInstance] showPlayer:CurrentPlayer];
     }
 }
 
@@ -67,12 +71,12 @@
 
 -(void) gameEndWithLooser:(DGPlayer*) lostPlayer{
     NSLog(@"GameEdned DGGame;");
-    [delegate GameEndedWithLooser:lostPlayer];
+    [[DGController sharedInstance] gameEndedWithLoser:lostPlayer];
     [self endGame:nil];
 }
 
 -(IBAction)endGame:(id)sender {
-    [delegate GameEndedWithLooser:nil];
+    [[DGController sharedInstance] gameEndedWithLoser:nil];
     //[self endGame:nil];
     // killmiself
     //[self.view removeFromSuperview];

@@ -18,6 +18,8 @@
 #import "DGStartMenu.h"
 #import "SimpleAudioEngine.h"
 #import "DGPlayerStatView.h"
+
+
 typedef struct{
     NSString *playerName;
     int score;
@@ -25,20 +27,24 @@ typedef struct{
 
 @protocol ViewControllerProto <NSObject>
 -(void) playerReady;
+
 @end
 
 
-@interface DrinkingGameViewController : UIViewController<UITabBarDelegate>{
+@interface DrinkingGameViewController : UIViewController{
+
     DGGame *currentGame;
     DGController* controller;
     
     //twitter
+    IBOutlet UIButton *twitterButton;
     //IBOutlet UIButton *twitterButton;
     
     
     IBOutlet UIView *playerLostView;
     IBOutlet UIView *boozeChooserView;
-    IBOutlet UIView*boo;
+    IBOutlet UIView *boo;
+//    IBOutlet UIView *view;
     
     IBOutlet UILabel *lostLabel;
     IBOutlet UILabel *playerNameLabel;    
@@ -53,28 +59,31 @@ typedef struct{
     
     IBOutlet UIView *debugView;
     DGPlayer *loosingPlayer;
-
+    UITabBarController *tabBarController;
 }
 
+
 @property (readonly, nonatomic) DGController* controller;
+@property (readonly, retain) UIView* debugView;
 @property(nonatomic,assign)id delegate;
--(DGController *) controller;
--(id)initWithController: (DGController*) controllerIn;
+//-(DGController *) controller;
+//-(id)initWithController: (DGController*) controllerIn;
 
 //twitter
-/*
+
 @property (retain) UIButton *twitterButton;
 -(IBAction)twitterAction:(id)sender;
-*/
+
 
 -(IBAction) showPunnishmentChooser:(id)sender;
 -(IBAction) punnishmentChosen:(id) sender;
--(void) gameEndedWithLooser:(DGPlayer*) player;
+-(void) gameEndedWithPlayer:(DGPlayer*) player;
 -(void) showPlayer:(DGPlayer*)player;
+-(IBAction)showPlayerStats:(id)sender;
 
 -(IBAction) launchLOOSER:(id)sender;
 
--(void) launchGame:(DGGame*)game;
+-(void) launchGameView:(DGGame*)game;
 
 -(IBAction) launchRandomShot:(id)sender;
 -(IBAction) launchSimon:(id)sender;
@@ -84,4 +93,5 @@ typedef struct{
 -(IBAction) launchMenu:(id)sender;
 -(IBAction) stopMusic:(id)sender;
 //-(void)handleTap:(UITapGestureRecognizer *)sender;
+-(IBAction)fullAuto:(id)sender;
 @end

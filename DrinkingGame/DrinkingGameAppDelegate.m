@@ -19,23 +19,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+//   tabBarController = [[UITabBarController alloc] init];
     
-    controller = [[DGController alloc] init] ;
+
     
-    tabBarController = [[UITabBarController alloc] init];
+    DrinkingGameViewController* gameViewController = [[DrinkingGameViewController alloc] initWithNibName:@"DrinkingGameViewController" bundle:nil];
+    DGController* gameController = [DGController sharedInstance];
+    [gameController linkMainViewController:gameViewController];
+    gameController.testing = TESTING;
+//    [[DGController sharedInstance] setTesting:YES];
     
-    DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithController:controller];
+//    DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithNibName:@"DrinkingGameViewController" bundle:nil];
     
-    DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
+//    DGPlayerStatView* statView = [[DGPlayerStatView alloc] initWithController:controller];
     
-   
-    //NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
+   //NSArray* controllers = [NSArray arrayWithObjects:gameView,statView, nil];
     //tabBarController.viewControllers = controllers;
     
-    //self.window.rootViewController = tabBarController;
-    self.window.rootViewController =gameView;
-    
     //self.window.rootViewController = self.tabBarController;
+    
+    self.window.rootViewController = gameViewController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -10,16 +10,16 @@
 #import "DGPlayerStatCell.h"
 #import "DGPlayer.h"
 #import "DGController.h"
-@protocol CloseScreen <NSObject>
--(void) closeScreen;
-@end
+//@protocol CloseScreen <NSObject>
+//-(void) closeScreen;
+//@end
 
-@interface DGPlayerStatView : UIViewController <UITableViewDelegate,UITableViewDataSource>{
+@interface DGPlayerStatView : UITableViewController <UITableViewDelegate,UITableViewDataSource>{
     IBOutlet UITableView* table;
     DGController* controller;
-    id < CloseScreen > delegate;
+//    id < CloseScreen > delegate;
 }
-@property(nonatomic, retain) DGController* controller;
-- (id)initWithController: (DGController*) controllerIn;
--(IBAction) back:(id)sender;
+@property(nonatomic, assign) DGController* controller;
+-(id) init;
+-(IBAction) swipeLeft:(UIGestureRecognizer*)sender;
 @end
