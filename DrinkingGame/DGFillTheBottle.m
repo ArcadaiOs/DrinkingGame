@@ -105,7 +105,7 @@
                                     repeats:YES];
 }
 -(void) playerReady{
-    [self startGame];
+    [self startGame:nil];
 }
 
 -(IBAction)startGame:(id)sender
@@ -217,7 +217,7 @@
             
             
         }
-        [[DGController sharedInstance] GameEndedWithLooser:[[[DGController sharedInstance] players] objectAtIndex:1]];
+        [[DGController sharedInstance] gameEndedWithLoser:[[[DGController sharedInstance] players] objectAtIndex:1]];
 
     }
     else if ((currentPlayerIndex+1)< playerCount)

@@ -205,19 +205,21 @@ for (int i = 0; i < amountOfPlayers; i++) {
 -(void) gameEndedWithPlayer:(DGPlayer *)player{
     NSLog(@"Game %@ ended with loser %@", currentGame.name, player.name);
     
-        loosingPlayer = player;
-        //NSLog(@"gamendeViewController");
-        [debugView removeFromSuperview];
-        playerImg.image = player.image;
-        playerNameLabel.text = player.name;
-        [currentGame.view removeFromSuperview];
-        [playerImgFrame removeFromSuperview];
-        playerImgFrame.center = CGPointMake(160, 215);
-        [boozeChooserView addSubview:playerImgFrame];
-        [viewControl.view addSubview:boozeChooserView];
-        
-        [self presentModalViewController:viewControl animated:NO];
-        [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
+    loosingPlayer = player;
+    //NSLog(@"gamendeViewController");
+    [debugView removeFromSuperview];
+    playerImg.image = player.image;
+    playerNameLabel.text = player.name;
+    [currentGame.view removeFromSuperview];
+    [playerImgFrame removeFromSuperview];
+    playerImgFrame.center = CGPointMake(160, 215);
+    [boozeChooserView addSubview:playerImgFrame];
+    [viewControl.view addSubview:boozeChooserView];
+    
+    [self dismissModalViewControllerAnimated:NO]; //?
+    NSLog(@"gameEndedWithPlayer: dismiss");
+    [self presentModalViewController:viewControl animated:NO];
+    [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
 }
 
 -(IBAction)launchLOOSER:(id)sender{
