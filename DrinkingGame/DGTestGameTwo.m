@@ -14,11 +14,11 @@
 /*LABELS*/
 @synthesize scoreLabel,scoreLabelText,playerNameText,playerName,playerName2, timeLeftText,timeLeft,playerScore,resultTitle,playerScores,yourUpNext,playerName0;
 /*STRINGS*/
-@synthesize zeroes,pName,results;
+@synthesize zeroes,results;
 /*ARRAYS*/
 @synthesize buttonWithFonts,nameCollection;
 /*INT*/
-@synthesize molesHit,molesShown,seconds,maxMoles,playerCount,currentPlayer;
+@synthesize molesHit,molesShown,seconds,maxMoles,playerCount;
 /*TIMERS*/
 @synthesize timer1,timer2;
 /*DICTIONARIES*/
@@ -42,26 +42,23 @@
 {
     [super viewDidLoad];
     
-}
--(IBAction)startGame:(id)sender
-{
     if ([[DGController sharedInstance] fullAuto]) {
         [super startGame];
         return;
     }
     //    self.view=startView;
     points = [[NSMutableDictionary alloc] init];
-    currentPlayer=0;
-    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayer]];
+    currentPlayerIndex=0;
+    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex]];
     //    playerCount = [[DGController sharedInstance] playerCount];
     playerCount = 3;
     
     results = [[NSMutableString alloc] initWithString:@""];
     
-    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
+    currentPlayerName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex] name];
     
     for (UILabel *nameLabel in nameCollection) {
-        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",currentPlayerName]; 
     }
     
     [self setFonts];
@@ -113,7 +110,7 @@
     
     molesHit=0;
     molesShown=0;
-    seconds=30;
+    seconds=4;
     maxMoles=(seconds/0.6);
     zeroes = @"";
     
@@ -136,38 +133,41 @@
 
     
 }
-//-(IBAction)startGame:(id)sender
-//{
-//    self.view = gameView;
-//    [mole1 setEnabled:true];
-//    [mole2 setEnabled:true];
-//    [mole3 setEnabled:true];
-//    
-//    [scoreLabelText setHidden:NO];
-//    [scoreLabel setHidden:NO];
-//
-//    [timeLeftText setHidden:NO];
-//    [timeLeft setHidden:NO];
-//    
-//    molesHit=0;
-//    molesShown=0;
-//    seconds=30;
-//    maxMoles=(seconds/0.6);
-//    zeroes = @"";
-//    
-//    self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
-// 
-//    self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",molesHit];
-//
-//  
-//    
-//    [self startTimers];
-//}
+
+-(IBAction)startGame:(id)sender
+{
+    NSLog(@"%@: start Wack", [[self class] description]);
+    self.view = gameView;
+    [mole1 setEnabled:true];
+    [mole2 setEnabled:true];
+    [mole3 setEnabled:true];
+    
+    [scoreLabelText setHidden:NO];
+    [scoreLabel setHidden:NO];
+
+    [timeLeftText setHidden:NO];
+    [timeLeft setHidden:NO];
+    
+    molesHit=0;
+    molesShown=0;
+    seconds=5;
+    maxMoles=(seconds/0.6);
+    zeroes = @"";
+    
+    self.timeLeft.text = [[NSString alloc] initWithFormat:@"00:%@%i",zeroes,seconds];
+ 
+    self.scoreLabel.text = [[NSString alloc] initWithFormat:@"%i",molesHit];
+
+  
+    
+    [self startTimers];
+}
+
 -(void)stopTimers:(bool)endGame
 {
     [self endTimers];
     NSNumber *point = [[NSNumber alloc] initWithInt:molesHit];
-    NSNumber *idp = [[NSNumber alloc] initWithInt:currentPlayer];
+    NSNumber *idp = [[NSNumber alloc] initWithInt:currentPlayerIndex];
     [points setObject:point forKey:idp];
     
     [mole1 setHidden:true];
@@ -186,25 +186,21 @@
 
     [playerScore setHidden:false];
     
-    if(endGame==true)
-    {
+    if(endGame==true) {
         NSLog(@"you quitthegame");
-    }
-    else{
-         self.view=endView;
+    } else{
+        self.view=endView;
         
-         if(molesHit<(maxMoles/2))
-         {
-                 self.playerScore.text=[[NSString alloc] initWithFormat:@"You suck!\n you hit:\n%i/%i corks",molesHit,molesShown];
-        
-         }
-        else{
+        if(molesHit<(maxMoles/2)) {
+            self.playerScore.text=[[NSString alloc] initWithFormat:@"You suck!\n you hit:\n%i/%i corks",molesHit,molesShown];
+            
+        } else{
             self.playerScore.text=[[NSString alloc] initWithFormat:@"You're great!\n you hit:\n%i/%i corks",molesHit,molesShown];
             
         }
         
         
-        if ((currentPlayer+1)>= playerCount)
+        if ((currentPlayerIndex+1)>= playerCount)
         {
             [nextPlayerBtn setHidden:YES];
             [playerScore setHidden:YES];
@@ -216,7 +212,7 @@
             {   
                 
                 int x =[key intValue];
-                 
+                
                 int p =[[points objectForKey:key] intValue];
                 
                 if(p<min){
@@ -229,14 +225,15 @@
             }
             NSLog(@"%i",minId);
             [[DGController sharedInstance] gameEndedWithLoser:[[[DGController sharedInstance] players] objectAtIndex:minId]];
-           self.playerScores.text=[[NSString alloc] initWithFormat:@"%@",results];
+            self.playerScores.text=[[NSString alloc] initWithFormat:@"%@",results];
             
             [resultTitle setHidden:NO];
             [playerScores setHidden:NO];
         }
         
-        else if ((currentPlayer+1)< playerCount)
+        else if ((currentPlayerIndex+1)< playerCount)
         {
+            NSLog(@"Next player, please");
             [nextPlayerBtn setHidden:NO];
         }
         
@@ -244,14 +241,14 @@
 }
 -(void)startNextPlayer:(id)sender
 {
-    currentPlayer++;
-    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
+    currentPlayerIndex++;
+    currentPlayerName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex] name];
     for (UILabel *nameLabel in nameCollection) 
     {
-        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",currentPlayerName]; 
     }
     self.view=startView;
-    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayer]];
+    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex]];
 }
 
 -(void)updateSeconds:(NSTimer*)theTimer
@@ -333,7 +330,7 @@
     mole1 = nil;
     
     zeroes=nil;
-    pName=nil;
+    currentPlayerName=nil;
     results=nil;
     
     [self setButtonWithFonts:nil];
@@ -394,7 +391,7 @@
     [yourUpNext release];
     
     [zeroes release];
-    [pName release];
+    [currentPlayerName release];
     [results release];
 
     [buttonWithFonts release];

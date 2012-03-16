@@ -13,13 +13,17 @@
 #import "DGController.h"
 
 @implementation DrinkingGameViewController
-@synthesize controller;
+@synthesize competitionController;
 @synthesize twitterButton;
 @synthesize delegate, debugView;
 
 
 //@synthesize tabBarController = _tabBarController;
-
+-(id) initWithNibName:(NSString*) nibNameOrNil bundle:(NSBundle*) nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    competitionController = [DGController sharedInstance];
+    return self;
+}
 -(void ) setupDone{
     NSLog(@"SETUP DONE");
 }
@@ -56,7 +60,7 @@
 
 -(IBAction)twitterAction:(id)sender{       //TWITTER BEGINS
     
-    int amountOfPlayers = [[controller players]count];
+    int amountOfPlayers = [[competitionController players]count];
 //        NSString *player1 = [[[controller players]objectAtIndex:1] name];
   
     NSString *names = @""; 
@@ -65,7 +69,7 @@
     
     for (int i = 0; i < amountOfPlayers; i++) {
         
-        [namelist appendString:[[[controller players]objectAtIndex:i]name]];
+        [namelist appendString:[[[competitionController players]objectAtIndex:i]name]];
         
         if(i+1 < amountOfPlayers-1 ){
         [namelist appendString:[NSString stringWithFormat: @", "]];
@@ -107,10 +111,11 @@ for (int i = 0; i < amountOfPlayers; i++) {
     
     [debugView removeFromSuperview];
     currentGame = game;
-    //[self dismissModalViewControllerAnimated:NO];
+    [self dismissModalViewControllerAnimated:NO];
     NSLog(@"current game: %@", currentGame.name);
+//    [currentGame startGame:self.view];
     [self.view addSubview:currentGame.view];
-    [currentGame startGame];
+//    [currentGame startGame];
 
 }
 
@@ -153,22 +158,20 @@ for (int i = 0; i < amountOfPlayers; i++) {
 }
 
 -(void) showPlayer:(DGPlayer *)player{
-    NSLog(@"GDViewController ShowPlayer");
+    NSLog(@"DGViewController ShowPlayer %@", player.name);
     
-    [currentGame.view removeFromSuperview];
+//    [currentGame.view removeFromSuperview];
     [playerImgFrame removeFromSuperview];
     playerImgFrame.center = CGPointMake(150, 195);
     
     [nextPlayerView removeFromSuperview];
     [nextPlayerView addSubview:playerImgFrame];
     [nextPlayerView setCenter:CGPointMake(160, 210)];
-
     [viewControl.view addSubview:nextPlayerView];
     
-    [self.view addSubview:nextPlayerView];
+//    [self.view addSubview:nextPlayerView];
     
-//    [viewControl presentModalViewController:viewControl animated:NO];
-//    [self presentModalViewController:viewControl animated:NO];
+    [self presentModalViewController:viewControl animated:NO];
     
     playerImg.image = player.image;
     playerNameLabel.text = player.name;
@@ -176,13 +179,14 @@ for (int i = 0; i < amountOfPlayers; i++) {
 
 
 -(IBAction)playerReadyToPlay:(id)sender{
-    NSLog(@"player ready viewvontroller");
+    NSLog(@"player ready viewController");
     [nextPlayerView removeFromSuperview];
-//    [viewControl dismissModalViewControllerAnimated:NO];
-    //[viewControl.view addSubview:currentGame.view];
+    [self dismissModalViewControllerAnimated:NO];
+//    [viewControl removeFromParentViewController];
+//    [viewControl.view addSubview:currentGame.view];
     
-    [self.view addSubview:currentGame.view];
-    //[viewControl presentModalViewController:viewControl animated:NO];
+//    [self.view addSubview:currentGame.view];
+//    [self presentModalViewController:viewControl animated:NO];
     [currentGame playerReady];
     //[delegate playerReady];
 }
@@ -200,25 +204,22 @@ for (int i = 0; i < amountOfPlayers; i++) {
 
 -(void) gameEndedWithPlayer:(DGPlayer *)player{
     NSLog(@"Game %@ ended with loser %@", currentGame.name, player.name);
-    DGController* gameController = [DGController sharedInstance];
-    if (gameController.fullAuto) {
-        [player takeShot:[gameController.drinks valueForKey:@"Shot"]];
-    } else {
-        loosingPlayer = player;
-        //NSLog(@"gamendeViewController");
-        [debugView removeFromSuperview];
-        playerImg.image = player.image;
-        playerNameLabel.text = player.name;
-        [currentGame.view removeFromSuperview];
-        [playerImgFrame removeFromSuperview];
-        playerImgFrame.center = CGPointMake(160, 215);
-        [boozeChooserView addSubview:playerImgFrame];
-        [viewControl.view addSubview:boozeChooserView];
-        
-        
-        [self presentModalViewController:viewControl animated:NO];
-        [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
-    }
+    
+    loosingPlayer = player;
+    //NSLog(@"gamendeViewController");
+    [debugView removeFromSuperview];
+    playerImg.image = player.image;
+    playerNameLabel.text = player.name;
+    [currentGame.view removeFromSuperview];
+    [playerImgFrame removeFromSuperview];
+    playerImgFrame.center = CGPointMake(160, 215);
+    [boozeChooserView addSubview:playerImgFrame];
+    [viewControl.view addSubview:boozeChooserView];
+    
+    [self dismissModalViewControllerAnimated:NO]; //?
+    NSLog(@"gameEndedWithPlayer: dismiss");
+    [self presentModalViewController:viewControl animated:NO];
+    [[playerImgFrame superview] sendSubviewToBack:playerImgFrame];
 }
 
 -(IBAction)launchLOOSER:(id)sender{
@@ -308,7 +309,7 @@ for (int i = 0; i < amountOfPlayers; i++) {
     //[self launchGame:[self.controller.games objectAtIndex:0]];
   //  [currentGame StartGame];
 
-    [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"song.mp3"];
+//    [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"song.mp3"];
 
 }   
 
@@ -325,5 +326,23 @@ for (int i = 0; i < amountOfPlayers; i++) {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+static id sharedController = nil;
+
++(void) initialize {
+    if (self == [DrinkingGameViewController class]) {
+        sharedController = [[self alloc] init];
+    }
+}
+
++(id) sharedInstance {    
+    if (sharedController == nil) {
+        NSLog(@"sharedController init");
+        sharedController = [[self alloc] init];
+        NSLog(@"sharedController: %@", sharedController);
+    }
+    return sharedController;
+}
+
 
 @end

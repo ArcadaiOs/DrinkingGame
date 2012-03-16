@@ -24,9 +24,12 @@ typedef enum {
     DGPlayer *CurrentPlayer;
     bool OnePlayerOnce;
     NSString *name;
+    int currentPlayerIndex;
+    NSString *currentPlayerName;
 }
 
 @property(nonatomic, retain) NSString *name;
+@property int currentPlayerIndex;
 
 
 -(IBAction) endGame:(id)sender;
@@ -36,5 +39,6 @@ typedef enum {
 -(void) NextPlayer;
 
 -(void) startGame;
+-(void) startGame:(UIView*) mainView;
 
 @end

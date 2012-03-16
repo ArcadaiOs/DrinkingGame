@@ -24,9 +24,9 @@
 
     
     DrinkingGameViewController* gameViewController = [[DrinkingGameViewController alloc] initWithNibName:@"DrinkingGameViewController" bundle:nil];
-    DGController* gameController = [DGController sharedInstance];
-    [gameController linkMainViewController:gameViewController];
-    gameController.testing = TESTING;
+//    gameViewController.competitionController = [DGController sharedInstance];
+    [gameViewController.competitionController linkMainViewController:gameViewController];
+//    gameViewController.competitionController.testing = TESTING;
 //    [[DGController sharedInstance] setTesting:YES];
     
 //    DrinkingGameViewController* gameView = [[DrinkingGameViewController alloc] initWithNibName:@"DrinkingGameViewController" bundle:nil];
