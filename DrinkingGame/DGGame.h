@@ -39,6 +39,6 @@ typedef enum {
 -(void) NextPlayer;
 
 -(void) startGame;
--(void) startGame:(UIView*) mainView;
+-(void) startGameWithView:(UIView*) mainView;
 
 @end
