@@ -117,11 +117,13 @@
     [moreButton setImage:btnGreen forState:UIControlStateNormal];
     click = 0;
     i = 0;
-    timeForGame = 15;
+    timeForGame = 3;
+    self.pilar.frame = CGRectMake(self.pilar.frame.origin.x, 122, self.pilar.frame.size.width, 180);
     [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"emptybeerglass.mp3"];
     [self startTimers];
 }
 - (void)updateCounter:(NSTimer *)theTimer {
+    NSLog(@"(int) self.pilar.frame.size.height %i", (int) self.pilar.frame.size.height);
 	if(timeForGame == 0 || (int) self.pilar.frame.size.height <= 3 ){
          int score = click*self.pilar.frame.size.height/(timeForGame+1);
 //        [moreButton setHidden:YES];
@@ -131,9 +133,10 @@
         NSLog(@"End height:%i", (int) self.pilar.frame.size.height);
         NSLog(@"End time:%i", timeForGame);
         NSLog(@"Total clicks:%i", click);
-        if ((currentPlayerIndex+1)>= playerCount){
+        if ((currentPlayerIndex+1)> playerCount){
             // present loser
-            self.view = endView;
+            // self.view = endView;
+            [[DGController sharedInstance] gameEndedWithLoser:[[[DGController sharedInstance] players] objectAtIndex:0]];
         } else {
             [self startNextPlayer:nil];
         }
@@ -201,7 +204,7 @@
     int min=10000;
     NSArray *keys = [points allKeys];
 
-    if((currentPlayerIndex+1)>= playerCount){
+    if((currentPlayerIndex+1) == playerCount){
         for (NSNumber *key in keys) 
         {   
             
@@ -220,10 +223,7 @@
         [[DGController sharedInstance] gameEndedWithLoser:[[[DGController sharedInstance] players] objectAtIndex:1]];
 
     }
-    else if ((currentPlayerIndex+1)< playerCount)
-    {
-        
-       
+    else{
         NSLog(@"playercunt:%i\n",playerCount);
         NSLog(@"current:%i\n",currentPlayerIndex);
         [nextPlayerBtn setHidden:NO];
