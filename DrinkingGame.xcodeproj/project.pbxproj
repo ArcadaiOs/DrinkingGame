@@ -1626,6 +1626,8 @@
 				3FFAA789150A27C90006F628 /* donedown.png in Resources */,
 				3FFAA78A150A27C90006F628 /* doneup.png in Resources */,
 				3FFAA790150A2BB80006F628 /* boo.mp3 in Resources */,
+				3F785F1415121E8100A7D89F /* info.png in Resources */,
+				3FC584FF15135B45009C5D37 /* helpmenuDG.png in Resources */,
 				3F2EF45015136FFA00E5DF29 /* DGLogic.xib in Resources */,
 				3F2EF45C1513714500E5DF29 /* q1.png in Resources */,
 				3F2EF45D1513714500E5DF29 /* q10.png in Resources */,
