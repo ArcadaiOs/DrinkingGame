@@ -104,7 +104,7 @@
     UIImageView *helpmenu;
     UITextField *name;
     UITextField *weight;
-    
+    UIButton *closehelp;
     IBOutlet UIImageView *polaroid;
     
     BOOL gender;
@@ -181,8 +181,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *openhelp;
 @property (nonatomic, retain) IBOutlet UIImageView *help;
 @property (nonatomic, retain) IBOutlet UIImageView *helpmenu;
-
-
+@property (nonatomic, retain) IBOutlet UIButton *closehelp;
 
 @property (nonatomic, retain) IBOutlet UIButton *menu3female;
 @property (nonatomic, retain) IBOutlet UIButton *menu3male;
@@ -236,6 +235,6 @@
 -(IBAction)takePicture:(id)sender;
 
 -(IBAction)openhelp;
-
+-(IBAction)closehelp;
 @end
 

@@ -28,7 +28,7 @@
 @synthesize bottleEasySelected, bottleMediumSelected, bottleHardSelected, bottleCustomSelected;
 @synthesize buttonEasy, buttonHard, buttonCustom, buttonMedium;
 //menu 3
-@synthesize weight, name, gender, polaroid, getNewPlayer, help, openhelp, helpmenu;
+@synthesize weight, name, gender, polaroid, getNewPlayer, help, openhelp, helpmenu, closehelp;
 
 
 @synthesize numberPadDoneImageNormal;
@@ -502,7 +502,7 @@
 
 - (IBAction)numberPadDoneButton:(id)sender {
     UITextField *weightTextField = [self findFirstResponderTextField];
-        thirdView.superview.frame = CGRectMake(0,20,320,480);
+        thirdView.superview.frame = CGRectMake(0,0,320,480);
     
             btnBack3.hidden = 0;
     if  // (self.polaroid.image != nil
@@ -558,13 +558,13 @@
 
 
 -(IBAction)openhelp {
-    
     helpmenu.hidden = 0;
+    closehelp.hidden = 0; 
     
 }
 
 -(IBAction)closehelp {
-    
+    closehelp.hidden = 1;
     helpmenu.hidden = 1;
 }
 
@@ -574,7 +574,7 @@
 }
 
 -(IBAction)closekeyboard {
-    thirdView.superview.frame = CGRectMake(0,20,320,480);
+    thirdView.superview.frame = CGRectMake(0,0,320,480);
     [self.view endEditing:TRUE];
         btnBack3.hidden = 0;
     
