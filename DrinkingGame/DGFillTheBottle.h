@@ -53,6 +53,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *timerLabel;
 @property (nonatomic, retain) IBOutlet UILabel *timeLabelText;
 @property int click;
+
 @property int objectHeight;
 @property (nonatomic, retain) IBOutlet UIButton *moreButton;
 @property (nonatomic, retain) IBOutlet UIButton *moreButton2;
