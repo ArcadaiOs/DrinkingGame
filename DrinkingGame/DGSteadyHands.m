@@ -16,11 +16,11 @@
 /*LABELS*/
 @synthesize scoreLabel,scoreLabelText,playerNameText,playerName,playerName2, timeLeftText,timeLeft,playerScore,resultTitle,playerScores,yourUpNext,playerName0;
 /*STRINGS*/
-@synthesize zeroes,pName,results;
+@synthesize zeroes,results;
 /*ARRAYS*/
 @synthesize buttonWithFonts,nameCollection;
 /*INT*/
-@synthesize molesHit,molesShown,seconds,maxMoles,playerCount,currentPlayer;
+@synthesize molesHit,molesShown,seconds,maxMoles,playerCount;
 /*TIMERS*/
 @synthesize timer1,timer2;
 /*DICTIONARIES*/
@@ -53,14 +53,14 @@
     }
     self.view=startView;
     points = [[NSMutableDictionary alloc] init];
-    currentPlayer=0;
+    currentPlayerIndex=0;
     playerCount = [[DGController sharedInstance] playerCount];
     results = [[NSMutableString alloc] initWithString:@""];
     
-    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
+    currentPlayerName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex] name];
     
     for (UILabel *nameLabel in nameCollection) {
-        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",currentPlayerName]; 
     }
     
     [self setFonts];
@@ -160,7 +160,7 @@
 {
     [self endTimers];
     NSNumber *point = [[NSNumber alloc] initWithFloat:accelerattt];
-    NSNumber *idp = [[NSNumber alloc] initWithInt:currentPlayer];
+    NSNumber *idp = [[NSNumber alloc] initWithInt:currentPlayerIndex];
     [points setObject:point forKey:idp];
     
     
@@ -183,7 +183,7 @@
        
         
         
-        if ((currentPlayer+1)>= playerCount)
+        if ((currentPlayerIndex+1)>= playerCount)
         {
             [nextPlayerBtn setHidden:YES];
             [playerScore setHidden:YES];
@@ -205,7 +205,7 @@
             [playerScores setHidden:NO];
         }
         
-        else if ((currentPlayer+1)< playerCount)
+        else if ((currentPlayerIndex+1)< playerCount)
         {
             [nextPlayerBtn setHidden:NO];
         }
@@ -214,11 +214,11 @@
 }
 -(void)startNextPlayer:(id)sender
 {
-    currentPlayer++;
-    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
+    currentPlayerIndex++;
+    currentPlayerName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex] name];
     for (UILabel *nameLabel in nameCollection) 
     {
-        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",currentPlayerName]; 
     }
     self.view=startView;
 }
