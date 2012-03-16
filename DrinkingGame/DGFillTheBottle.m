@@ -123,9 +123,9 @@
 }
 - (void)updateCounter:(NSTimer *)theTimer {
 	if(timeForGame == 0 || (int) self.pilar.frame.size.height <= 3 ){
-        int score = click*self.pilar.frame.size.height/(timeForGame+1);
-        [moreButton setHidden:YES];
-        [moreButton2 setHidden:YES];
+         int score = click*self.pilar.frame.size.height/(timeForGame+1);
+//        [moreButton setHidden:YES];
+//        [moreButton2 setHidden:YES];
         [theTimer invalidate];
         NSLog(@"Score:%i", score);
         NSLog(@"End height:%i", (int) self.pilar.frame.size.height);
@@ -139,7 +139,7 @@
         }
         
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-        
+        [self timersEnded];
     }
     else{
         static int count = 0;
@@ -155,14 +155,81 @@
     }
 }
 
-
+-(void)playerReady{
+    self.view = gameView;
+    btnGreen = [UIImage imageNamed:@"greenPlusButton.png"];
+    btnRed = [UIImage imageNamed:@"redPlusButton.png"];
+    [moreButton2 setImage:btnRed forState:UIControlStateNormal];
+    [moreButton setImage:btnGreen forState:UIControlStateNormal];
+    click = 0;
+    i = 0;
+    //score = 0;
+    timeForGame = 5;
+    CGRect old = self.pilar.frame;
+    self.pilar.frame = CGRectMake(old.origin.x, 122, old.size.width, 180);
+//    self.pilar.frame.size.height = 175;
+    [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume :0.2f];
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"emptybeerglass.mp3"];
+    [self startTimers];
+}
+-(void)startNextPlayer:(id)sender
+{
+    currentPlayer++;
+    pName = [[[controller players] objectAtIndex:currentPlayer] name];
+    for (UILabel *nameLabel in nameCollection) 
+    {
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+    }
+    //self.view=startView;
+    [self showPlayer:[controller.players objectAtIndex:currentPlayer]];
+}
 - (void)timeCounter:(NSTimer *)theTimer {
     NSString *t = [[NSString alloc]
                    initWithFormat:@"%d", --timeForGame];
     self.timerLabel.text = t;
     if(timeForGame <= 0){
         [theTimer invalidate];
+        
     }
+}
+-(void)timersEnded{
+    NSNumber *point = [[NSNumber alloc] initWithInt:10];
+    NSNumber *idp = [[NSNumber alloc] initWithInt:currentPlayer];
+    [points setObject:point forKey:idp];
+     self.view=endView;
+    int minId=0;
+    int min=10000;
+    NSArray *keys = [points allKeys];
+
+    if((currentPlayer+1)>= playerCount){
+        for (NSNumber *key in keys) 
+        {   
+            
+            int x =[key intValue];
+            
+            int p =[[points objectForKey:key] intValue];
+            
+            if(p<min){
+                min=p;
+                minId = [key intValue];
+            }
+            [results appendFormat:@"NAME: %@ , POINTS:%i \n",[[[controller players] objectAtIndex:x] name], p];
+            
+            
+        }
+        [delegate GameEndedWithLooser:[[controller players] objectAtIndex:1]];
+
+    }
+    else if ((currentPlayer+1)< playerCount)
+    {
+        
+       
+        NSLog(@"playercunt:%i\n",playerCount);
+        NSLog(@"current:%i\n",currentPlayer);
+        [nextPlayerBtn setHidden:NO];
+
+    }
+    
 }
 - (IBAction)addHeight:(id)sender{
     CGRect old = self.pilar.frame;
