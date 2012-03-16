@@ -130,7 +130,7 @@
                                           userInfo:nil
                                            repeats:true];
 }
--(IBAction)startGame:(id)sender
+-(IBAction)startGameAction:(id)sender
 {
     self.view = gameView;
     self.accelerometer = [UIAccelerometer sharedAccelerometer];

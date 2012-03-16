@@ -72,6 +72,7 @@
 #pragma mark - View lifecycle
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     [self startGame];
 }
@@ -136,13 +137,15 @@
         if ((currentPlayerIndex+1)> playerCount){
             // present loser
             // self.view = endView;
+             [self timersEnded];
             [[DGController sharedInstance] gameEndedWithLoser:[[[DGController sharedInstance] players] objectAtIndex:0]];
+            
         } else {
             [self startNextPlayer:nil];
         }
         
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-        [self timersEnded];
+       
     }
     else{
         static int count = 0;

@@ -40,7 +40,7 @@
 -(IBAction) buttonPressed:(id)sender;
 
 -(IBAction) flashRandomColor:(id)sender;
--(IBAction) startGame:(id)sender;
+-(IBAction) startGameAction:(id)sender;
 
 
 @end

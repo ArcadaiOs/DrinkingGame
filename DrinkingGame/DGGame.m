@@ -29,19 +29,20 @@
 
 // You should implement this function to start your game, and reset
 -(void) startGame{    
-    NSLog(@"DGGame StartGame");
+    NSLog(@"DGGame StartGame: %@", [[self class] description]);
     
     DGController* gameController = [DGController sharedInstance];
     if (gameController.fullAuto) {
+//        [self.view removeFromSuperview]; //?
         srand( time(NULL));
         int n = [[[DGController sharedInstance] players] count];
-        DGPlayer* player = [[[DGController sharedInstance] players] objectAtIndex:rand()% n];
+        DGPlayer* player = [[gameController players] objectAtIndex:rand()% n];
         [gameController gameEndedWithLoser:player];
     }
     
 }
 
--(void) startGame:(UIView*) mainView{
+-(void) startGameWithView:(UIView*) mainView{
     [mainView addSubview:self.view];
 }
 // this will show a player with his promille and imgae
@@ -102,6 +103,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"%@ viewDidLoad", [[self class] description]);
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     

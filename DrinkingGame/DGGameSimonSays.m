@@ -47,11 +47,11 @@
 /*
  Function that starts the gameLoop
  */
--(IBAction) startGame:(id) sender{
-    if ([[DGController sharedInstance] fullAuto]) {
-        [super startGame];
-        return;
-    }
+-(IBAction) startGameAction:(id) sender{
+//    if ([[DGController sharedInstance] fullAuto]) {
+//        [super startGame];
+//        return;
+//    }
     playEnumerator = [playList objectEnumerator];
     
     [NSTimer scheduledTimerWithTimeInterval:0.5
@@ -221,7 +221,7 @@
 
 -(void) playerReady{
     NSLog(@"NEXT PLAYER: READY SIMON");
-    [self startGame:nil];
+    [self startGameAction:nil];
 }
 
 - (void)viewDidLoad
@@ -232,6 +232,10 @@
 
 -(void) startGame{
     NSLog(@"SIMON StartGame");
+    if ([[DGController sharedInstance] fullAuto]) {
+        [super startGame];
+        return;
+    }
     playerAction = false;
     playList = [[NSMutableArray alloc] init];
     [[[DGController sharedInstance] players]sortUsingSelector:@selector(comparePromille:)];
