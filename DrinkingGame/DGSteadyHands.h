@@ -120,7 +120,7 @@
 
 /*FUNCTIONS*/
 -(IBAction)addScore:(id)sender;
--(IBAction)startGame:(id)sender;
+-(IBAction)startGameAction:(id)sender;
 -(IBAction)startNextPlayer:(id)sender;
 -(void)endTimers;
 -(void)startTimers;

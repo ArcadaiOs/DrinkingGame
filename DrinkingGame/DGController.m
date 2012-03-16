@@ -194,7 +194,8 @@ static BOOL isTwitting = TWITTING;
 }
 
 -(void) launchGame:(DGGame*) game{
-    [self.mainViewController launchGameView:game];
+//    [self.mainViewController launchGameView:game];
+    [game startGame];
 }
 
 static id sharedController = nil;
