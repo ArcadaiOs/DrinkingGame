@@ -39,13 +39,11 @@
     int objectHeight;
     int i;
     int timeForGame;
-    int currentPlayer;
     int playerCount;
     
     NSMutableDictionary *points;
     NSArray *nameCollection;
     NSMutableArray *pInfo;
-    NSString *pName;
     NSMutableString *results;
    
 }
@@ -60,12 +58,10 @@
 @property (nonatomic, retain) NSTimer *countTimer;
 @property (nonatomic, retain) UIImage *btnGreen;
 @property (nonatomic, retain) UIImage *btnRed;
-@property int currentPlayer;
 @property int playerCount;
 @property (nonatomic, retain) IBOutlet NSMutableDictionary *points;
 @property (nonatomic, retain) IBOutletCollection(UILabel) NSArray *nameCollection;
 @property (nonatomic, retain) IBOutlet NSMutableArray *pInfo;
-@property (nonatomic, retain) IBOutlet NSString *pName;
 @property (nonatomic, retain) IBOutlet NSMutableString *results;
 
 /*VIEWS*/

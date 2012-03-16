@@ -47,7 +47,7 @@
     DrinkingGameViewController* mainViewController;
 }
 
-@property (nonatomic, retain) DrinkingGameViewController* mainViewController;
+@property (nonatomic, assign) DrinkingGameViewController* mainViewController;
 //@property (nonatomic, assign) id delegate;
 @property (nonatomic, retain) NSMutableArray* players;
 @property (nonatomic, retain) NSMutableDictionary *drinks;

@@ -215,7 +215,7 @@
     [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
     [playList addObject:[[NSNumber alloc] initWithInt:[self getRandomIntMin:1 max:4]]];
 
-    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayer]];
+    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex]];
     
 }
 
@@ -227,6 +227,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self startGame];
 }
 
 -(void) startGame{

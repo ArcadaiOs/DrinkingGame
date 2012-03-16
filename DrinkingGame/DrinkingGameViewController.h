@@ -34,7 +34,7 @@ typedef struct{
 @interface DrinkingGameViewController : UIViewController{
 
     DGGame *currentGame;
-    DGController* controller;
+    DGController* competitionController;
     
     //twitter
     IBOutlet UIButton *twitterButton;
@@ -63,7 +63,7 @@ typedef struct{
 }
 
 
-@property (readonly, nonatomic) DGController* controller;
+@property (readonly, nonatomic) DGController* competitionController;
 @property (readonly, retain) UIView* debugView;
 @property(nonatomic,assign)id delegate;
 //-(DGController *) controller;
@@ -93,5 +93,6 @@ typedef struct{
 -(IBAction) launchMenu:(id)sender;
 -(IBAction) stopMusic:(id)sender;
 //-(void)handleTap:(UITapGestureRecognizer *)sender;
--(IBAction)fullAuto:(id)sender;
+-(IBAction) fullAuto:(id)sender;
+-(id) initWithNibName:(NSString*) nibNameOrNil bundle:(NSBundle*) nibBundleOrNil;
 @end

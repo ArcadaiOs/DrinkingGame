@@ -18,12 +18,6 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
 -(id) init{
     self = [super init];
     if(self){
@@ -32,6 +26,15 @@
     }
     return self;
 }
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self startGame];
+}
+
 
 -(void) startGame{
     DGController* gameController = [DGController sharedInstance];

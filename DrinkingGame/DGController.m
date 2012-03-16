@@ -138,8 +138,14 @@
 
 -(void) gameEndedWithLoser:(DGPlayer *)player {
     //[delegate showPlayer:loser];
-    NSLog(@"GAME ENDED AND LOSER IS FOUND");
-    [self.mainViewController gameEndedWithPlayer:player];
+    NSLog(@"DGController gameEndedWithLoser:");
+    DGController* gameController = [DGController sharedInstance];
+    if (gameController.fullAuto) {
+        NSLog(@"player %@ took Shot", player.name);
+        [player takeShot:[gameController.drinks valueForKey:@"Shot"]];
+    } else {
+        [self.mainViewController gameEndedWithPlayer:player];
+    }
 }
 
 -(void) addPlayerWithimage:(UIImage*) imageIn name:(NSString*)nameIn weight:(int)weightIn isFemale:(bool) isFemaleIn{
@@ -178,6 +184,7 @@ static BOOL isTwitting = TWITTING;
 -(void) startCompetition {
     if (self.fullAuto && [players count] == 0) {
         [self autoFillPlayers];
+        NSLog(@"DGController: startCompetition: players count: %i", [players count]);
     }
     while ([self getMostDrunkPlayer] == nil) {
         [self startRandomGame];

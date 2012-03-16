@@ -23,7 +23,6 @@
     Boolean playerAction;
     NSTimer* playActionTimeOut;
     int playCount;
-    int currentPlayer;
 }
 
 @property (nonatomic, retain) NSMutableArray* playList;

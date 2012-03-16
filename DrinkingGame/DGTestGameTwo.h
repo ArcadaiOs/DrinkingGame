@@ -39,7 +39,6 @@
     IBOutlet UIView *endView;
     
     NSString *zeroes;
-    NSString *pName;
     NSMutableString *results;
     
     int molesShown;
@@ -47,7 +46,6 @@
     int seconds;
     int maxMoles;
     int playerCount;
-    int currentPlayer;
     
     NSMutableDictionary *points;
     NSArray *nameCollection;
@@ -67,7 +65,6 @@
 @property(nonatomic, retain) IBOutlet UIView *endView;
 /*STRINGS*/
 @property(nonatomic,retain) NSString *zeroes;
-@property(nonatomic,retain) NSString *pName;
 @property(nonatomic,retain) NSMutableString *results;
 /*TIMERS*/
 @property(nonatomic,retain) NSTimer *timer1;
@@ -94,7 +91,7 @@
 @property int seconds;
 @property int maxMoles;
 @property int playerCount;
-@property int currentPlayer;
+
 /*BUTTONS*/
     /*BUTTONS-VIEW1*/
 @property (nonatomic, retain) IBOutlet UIButton *startPlayingBtn;

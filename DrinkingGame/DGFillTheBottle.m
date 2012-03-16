@@ -10,7 +10,7 @@
 
 
 @implementation DGFillTheBottle
-@synthesize startPlayingBtn, playerName0, playerName2, playerScore, resultTitle, playerScores, nextPlayerBtn, quitPlayingBtn, startView, gameView, endView, yourUpNext, btnGreen, btnRed, countTimer, objectHeight, pilar, click, timeLabelText, timerLabel, moreButton, moreButton2, currentPlayer, playerCount, points, nameCollection, pInfo, pName, results;
+@synthesize startPlayingBtn, playerName0, playerName2, playerScore, resultTitle, playerScores, nextPlayerBtn, quitPlayingBtn, startView, gameView, endView, yourUpNext, btnGreen, btnRed, countTimer, objectHeight, pilar, click, timeLabelText, timerLabel, moreButton, moreButton2, playerCount, points, nameCollection, pInfo, results;
 
 -(id) init{
     self = [super init];
@@ -21,6 +21,17 @@
     return self;
 }
 
+- (void)setFonts {
+    [timeLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
+    [timerLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [resultTitle setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
+    [yourUpNext setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+    [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
+    [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+}
+
 -(void) startGame{
     DGController* gameController = [DGController sharedInstance];
     if (gameController.fullAuto) {
@@ -29,24 +40,23 @@
     } else {
         self.view=self.startView;
         points = [[NSMutableDictionary alloc] init];
-        currentPlayer = 0;
-        playerCount = [[DGController sharedInstance] playerCount];
-        results = [[NSMutableString alloc] initWithString:@""];
-        
-        pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
-        
-        for (UILabel *nameLabel in nameCollection) {
-            nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+        currentPlayerIndex = 0;
+        [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex]];
+        if ([[DGController sharedInstance] debugging]) {
+            playerCount = 3;
+        } else {
+            playerCount = [[DGController sharedInstance] playerCount];
         }
         
-        [timeLabelText setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
-        [timerLabel setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-        [playerScore setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-        [resultTitle setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-        [playerScores setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:22 ] ];
-        [yourUpNext setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
-        [playerName0 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:30 ] ];
-        [playerName2 setFont:[UIFont fontWithName:@"Rockwell Extra Bold" size:26 ] ];
+        results = [[NSMutableString alloc] initWithString:@""];
+        
+        currentPlayerName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex] name];
+        
+        for (UILabel *nameLabel in nameCollection) {
+            nameLabel.text= [[NSString alloc] initWithFormat:@"%@",currentPlayerName]; 
+        }
+        
+        [self setFonts];
         
     }
 }
@@ -63,6 +73,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self startGame];
 }
 
     
@@ -70,13 +81,14 @@
 
 -(void)startNextPlayer:(id)sender
 {
-    currentPlayer++;
-    pName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayer] name];
+    currentPlayerIndex++;
+    currentPlayerName = [[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex] name];
     for (UILabel *nameLabel in nameCollection) 
     {
-        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",pName]; 
+        nameLabel.text= [[NSString alloc] initWithFormat:@"%@",currentPlayerName]; 
     }
     self.view=startView;
+    [self showPlayer:[[[DGController sharedInstance] players] objectAtIndex:currentPlayerIndex]];
 }
 -(void)startTimers
 {    
@@ -91,6 +103,9 @@
                                    selector:@selector(timeCounter:)
                                    userInfo:nil
                                     repeats:YES];
+}
+-(void) playerReady{
+    [self startGame];
 }
 
 -(IBAction)startGame:(id)sender
@@ -116,7 +131,13 @@
         NSLog(@"End height:%i", (int) self.pilar.frame.size.height);
         NSLog(@"End time:%i", timeForGame);
         NSLog(@"Total clicks:%i", click);
-        self.view = endView;
+        if ((currentPlayerIndex+1)>= playerCount){
+            // present loser
+            self.view = endView;
+        } else {
+            [self startNextPlayer:nil];
+        }
+        
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
         
     }
