@@ -82,6 +82,7 @@
         
         [games setValue:[[DGSteadyHands alloc] init] forKey:@"Steady Hands"];
         
+        [games setValue:[[DGLogic alloc] init] forKey:@"Logic Game"];
 //        [[DGController sharedInstance] launchGame:[games valueForKey:@"Simon Says"]];
     }
     return self;

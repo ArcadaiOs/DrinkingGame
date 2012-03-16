@@ -136,6 +136,10 @@ for (int i = 0; i < amountOfPlayers; i++) {
     [self launchGameView:[[[DGController sharedInstance] games] objectForKey:@"Fill the Bottle"]];
     
 }
+-(IBAction) launchLogicGame:(id)sender{
+    [self launchGameView:[[[DGController sharedInstance] games] objectForKey:@"Logic Game"]];
+    
+}
 -(IBAction) launchMenu:(id)sender{
     if (currentGame != nil) {
         [currentGame.view removeFromSuperview];

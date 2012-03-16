@@ -8,7 +8,7 @@
 #import "DGGame.h"
 #import "DGController.h"
 
-@interface DGLogic : UIViewController{
+@interface DGLogic : DGGame{
     NSTimer *timer;
     IBOutlet UILabel *myCounterLabel;
     NSUInteger time;

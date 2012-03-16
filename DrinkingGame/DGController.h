@@ -25,7 +25,7 @@
 @class DGRandomShot;
 @class DGFillTheBottle;
 @class DGSteadyHands;
-
+@class DGLogic;
 //#import "DGGameSimonSays.h"
 //@protocol ControllerProto <NSObject>
 

@@ -15,6 +15,7 @@
 #import "DGSteadyHands.h"
 #import "DGTestGameTwo.h"
 #import "DGFillTheBottle.h"
+#import "DGLogic.h"
 #import "DGStartMenu.h"
 #import "SimpleAudioEngine.h"
 #import "DGPlayerStatView.h"
